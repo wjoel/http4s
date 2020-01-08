@@ -657,6 +657,10 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <a class="class" href="MalformedMessageBodyFailure.html" title="Indicates an syntactic error decoding the body of an HTTP Message."></a>
                         <a href="MalformedMessageBodyFailure.html" title="Indicates an syntactic error decoding the body of an HTTP Message.">MalformedMessageBodyFailure</a>
                       </li><li class="current-entities indented2">
+                        <a class="object" href="Media$.html" title=""></a>
+                        <a class="trait" href="Media.html" title=""></a>
+                        <a href="Media.html" title="">Media</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="MediaRange$.html" title=""></a>
                         <a class="class" href="MediaRange.html" title=""></a>
                         <a href="MediaRange.html" title="">MediaRange</a>
@@ -1063,9 +1067,9 @@ with some commonly used instances which can be resolved implicitly.
               
         </dd></dl></div>
     </li><li name="org.http4s.EntityDecoder#collectBinary" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="collectBinary[F[_]](msg:org.http4s.Message[F])(implicitevidence$3:cats.effect.Sync[F]):org.http4s.DecodeResult[F,fs2.Chunk[Byte]]"></a><a id="collectBinary[F[_]](Message[F])(Sync[F]):DecodeResult[F,Chunk[Byte]]"></a>
+      <a id="collectBinary[F[_]](m:org.http4s.Media[F])(implicitevidence$3:cats.effect.Sync[F]):org.http4s.DecodeResult[F,fs2.Chunk[Byte]]"></a><a id="collectBinary[F[_]](Media[F])(Sync[F]):DecodeResult[F,Chunk[Byte]]"></a>
       <span class="permalink">
-      <a href="../../org/http4s/EntityDecoder$.html#collectBinary[F[_]](msg:org.http4s.Message[F])(implicitevidence$3:cats.effect.Sync[F]):org.http4s.DecodeResult[F,fs2.Chunk[Byte]]" title="Permalink">
+      <a href="../../org/http4s/EntityDecoder$.html#collectBinary[F[_]](m:org.http4s.Media[F])(implicitevidence$3:cats.effect.Sync[F]):org.http4s.DecodeResult[F,fs2.Chunk[Byte]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1074,14 +1078,14 @@ with some commonly used instances which can be resolved implicitly.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">collectBinary</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="msg">msg: <a href="Message.html" class="extype" name="org.http4s.Message">Message</a>[<span class="extype" name="org.http4s.EntityDecoder.collectBinary.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.EntityDecoder.collectBinary.F">F</span>]</span>)</span><span class="result">: <a href="index.html#DecodeResult[F[_],A]=cats.data.EitherT[F,org.http4s.DecodeFailure,A]" class="extmbr" name="org.http4s.DecodeResult">DecodeResult</a>[<span class="extype" name="org.http4s.EntityDecoder.collectBinary.F">F</span>, <span class="extype" name="fs2.Chunk">Chunk</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Byte.html#scala.Byte" class="extype" name="scala.Byte">Byte</a>]]</span>
+        <span class="name">collectBinary</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="m">m: <a href="Media.html" class="extype" name="org.http4s.Media">Media</a>[<span class="extype" name="org.http4s.EntityDecoder.collectBinary.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.EntityDecoder.collectBinary.F">F</span>]</span>)</span><span class="result">: <a href="index.html#DecodeResult[F[_],A]=cats.data.EitherT[F,org.http4s.DecodeFailure,A]" class="extmbr" name="org.http4s.DecodeResult">DecodeResult</a>[<span class="extype" name="org.http4s.EntityDecoder.collectBinary.F">F</span>, <span class="extype" name="fs2.Chunk">Chunk</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Byte.html#scala.Byte" class="extype" name="scala.Byte">Byte</a>]]</span>
       </span>
       
       <p class="shortcomment cmt">Helper method which simply gathers the body into a single Chunk</p>
     </li><li name="org.http4s.EntityDecoder#decodeBy" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="decodeBy[F[_],T](r1:org.http4s.MediaRange,rs:org.http4s.MediaRange*)(f:org.http4s.Message[F]=&gt;org.http4s.DecodeResult[F,T])(implicitevidence$2:cats.Applicative[F]):org.http4s.EntityDecoder[F,T]"></a><a id="decodeBy[F[_],T](MediaRange,MediaRange*)((Message[F])⇒DecodeResult[F,T])(Applicative[F]):EntityDecoder[F,T]"></a>
+      <a id="decodeBy[F[_],T](r1:org.http4s.MediaRange,rs:org.http4s.MediaRange*)(f:org.http4s.Media[F]=&gt;org.http4s.DecodeResult[F,T])(implicitevidence$2:cats.Applicative[F]):org.http4s.EntityDecoder[F,T]"></a><a id="decodeBy[F[_],T](MediaRange,MediaRange*)((Media[F])⇒DecodeResult[F,T])(Applicative[F]):EntityDecoder[F,T]"></a>
       <span class="permalink">
-      <a href="../../org/http4s/EntityDecoder$.html#decodeBy[F[_],T](r1:org.http4s.MediaRange,rs:org.http4s.MediaRange*)(f:org.http4s.Message[F]=&gt;org.http4s.DecodeResult[F,T])(implicitevidence$2:cats.Applicative[F]):org.http4s.EntityDecoder[F,T]" title="Permalink">
+      <a href="../../org/http4s/EntityDecoder$.html#decodeBy[F[_],T](r1:org.http4s.MediaRange,rs:org.http4s.MediaRange*)(f:org.http4s.Media[F]=&gt;org.http4s.DecodeResult[F,T])(implicitevidence$2:cats.Applicative[F]):org.http4s.EntityDecoder[F,T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1090,7 +1094,7 @@ with some commonly used instances which can be resolved implicitly.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">decodeBy</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="T">T</span>]</span><span class="params">(<span name="r1">r1: <a href="MediaRange.html" class="extype" name="org.http4s.MediaRange">MediaRange</a></span>, <span name="rs">rs: <a href="MediaRange.html" class="extype" name="org.http4s.MediaRange">MediaRange</a>*</span>)</span><span class="params">(<span name="f">f: (<a href="Message.html" class="extype" name="org.http4s.Message">Message</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeBy.F">F</span>]) ⇒ <a href="index.html#DecodeResult[F[_],A]=cats.data.EitherT[F,org.http4s.DecodeFailure,A]" class="extmbr" name="org.http4s.DecodeResult">DecodeResult</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeBy.F">F</span>, <span class="extype" name="org.http4s.EntityDecoder.decodeBy.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/Applicative.html#cats.Applicative" class="extype" name="cats.Applicative">Applicative</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeBy.F">F</span>]</span>)</span><span class="result">: <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeBy.F">F</span>, <span class="extype" name="org.http4s.EntityDecoder.decodeBy.T">T</span>]</span>
+        <span class="name">decodeBy</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="T">T</span>]</span><span class="params">(<span name="r1">r1: <a href="MediaRange.html" class="extype" name="org.http4s.MediaRange">MediaRange</a></span>, <span name="rs">rs: <a href="MediaRange.html" class="extype" name="org.http4s.MediaRange">MediaRange</a>*</span>)</span><span class="params">(<span name="f">f: (<a href="Media.html" class="extype" name="org.http4s.Media">Media</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeBy.F">F</span>]) ⇒ <a href="index.html#DecodeResult[F[_],A]=cats.data.EitherT[F,org.http4s.DecodeFailure,A]" class="extmbr" name="org.http4s.DecodeResult">DecodeResult</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeBy.F">F</span>, <span class="extype" name="org.http4s.EntityDecoder.decodeBy.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/Applicative.html#cats.Applicative" class="extype" name="cats.Applicative">Applicative</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeBy.F">F</span>]</span>)</span><span class="result">: <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeBy.F">F</span>, <span class="extype" name="org.http4s.EntityDecoder.decodeBy.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Create a new <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a></p><div class="fullcomment"><div class="comment cmt"><p>Create a new <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a></p><p>The new <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a> will attempt to decode messages of type <code>T</code>
@@ -1099,9 +1103,9 @@ that recoverable errors are returned as a
 <a href="DecodeResult$.html#failure[F[_],A](e:org.http4s.DecodeFailure)(implicitF:cats.Applicative[F]):org.http4s.DecodeResult[F,A]" class="extmbr" name="org.http4s.DecodeResult#failure">DecodeResult.failure</a>, or that system errors are raised in <code>F</code>.
 </p></div></div>
     </li><li name="org.http4s.EntityDecoder#decodeString" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="decodeString[F[_]](msg:org.http4s.Message[F])(implicitevidence$4:cats.effect.Sync[F],implicitdefaultCharset:org.http4s.Charset):F[String]"></a><a id="decodeString[F[_]](Message[F])(Sync[F],Charset):F[String]"></a>
+      <a id="decodeString[F[_]](m:org.http4s.Media[F])(implicitevidence$4:cats.effect.Sync[F],implicitdefaultCharset:org.http4s.Charset):F[String]"></a><a id="decodeString[F[_]](Media[F])(Sync[F],Charset):F[String]"></a>
       <span class="permalink">
-      <a href="../../org/http4s/EntityDecoder$.html#decodeString[F[_]](msg:org.http4s.Message[F])(implicitevidence$4:cats.effect.Sync[F],implicitdefaultCharset:org.http4s.Charset):F[String]" title="Permalink">
+      <a href="../../org/http4s/EntityDecoder$.html#decodeString[F[_]](m:org.http4s.Media[F])(implicitevidence$4:cats.effect.Sync[F],implicitdefaultCharset:org.http4s.Charset):F[String]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1110,7 +1114,7 @@ that recoverable errors are returned as a
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">decodeString</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="msg">msg: <a href="Message.html" class="extype" name="org.http4s.Message">Message</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeString.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.EntityDecoder.decodeString.F">F</span>]</span>, <span name="defaultCharset">defaultCharset: <a href="Charset.html" class="extype" name="org.http4s.Charset">Charset</a> = <span class="symbol"><span class="name"><a href="index.html#DefaultCharset:org.http4s.Charset">DefaultCharset</a></span></span></span>)</span><span class="result">: <span class="extype" name="org.http4s.EntityDecoder.decodeString.F">F</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">decodeString</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="m">m: <a href="Media.html" class="extype" name="org.http4s.Media">Media</a>[<span class="extype" name="org.http4s.EntityDecoder.decodeString.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.EntityDecoder.decodeString.F">F</span>]</span>, <span name="defaultCharset">defaultCharset: <a href="Charset.html" class="extype" name="org.http4s.Charset">Charset</a> = <span class="symbol"><span class="name"><a href="index.html#DefaultCharset:org.http4s.Charset">DefaultCharset</a></span></span></span>)</span><span class="result">: <span class="extype" name="org.http4s.EntityDecoder.decodeString.F">F</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Decodes a message to a String</p>

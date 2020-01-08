@@ -657,6 +657,10 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <a class="class" href="MalformedMessageBodyFailure.html" title="Indicates an syntactic error decoding the body of an HTTP Message."></a>
                         <a href="MalformedMessageBodyFailure.html" title="Indicates an syntactic error decoding the body of an HTTP Message.">MalformedMessageBodyFailure</a>
                       </li><li class="current-entities indented2">
+                        <a class="object" href="Media$.html" title=""></a>
+                        <a class="trait" href="Media.html" title=""></a>
+                        <a href="Media.html" title="">Media</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="MediaRange$.html" title=""></a>
                         <a class="class" href="MediaRange.html" title=""></a>
                         <a href="MediaRange.html" title="">MediaRange</a>
@@ -1536,6 +1540,22 @@ constructed from a partial function and combined as a
       </span>
       
       <p class="shortcomment cmt">Indicates an syntactic error decoding the body of an HTTP <a href="Message.html" class="extype" name="org.http4s.Message">Message</a>.</p>
+    </li><li name="org.http4s.Media" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="Media[F[_]]extendsAnyRef"></a><a id="Media[F[_]]:Media[F]"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Media.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Media.html"><span class="name">Media</span></a><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
     </li><li name="org.http4s.MediaRange" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="MediaRangeextendsAnyRef"></a><a id="MediaRange:MediaRange"></a>
       <span class="permalink">
@@ -1602,7 +1622,7 @@ constructed from a partial function and combined as a
       <p class="shortcomment cmt">Indicates that a <a href="Message.html" class="extype" name="org.http4s.Message">Message</a> attempting to be decoded has no <a href="MediaType.html" class="extype" name="org.http4s.MediaType">MediaType</a> and no
 <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a> was lenient enough to accept it.</p>
     </li><li name="org.http4s.Message" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="Message[F[_]]extendsAnyRef"></a><a id="Message[F[_]]:Message[F]"></a>
+      <a id="Message[F[_]]extendsMedia[F]"></a><a id="Message[F[_]]:Message[F]"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html" title="Permalink">
         <i class="material-icons"></i>
@@ -1613,7 +1633,7 @@ constructed from a partial function and combined as a
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a title="Represents a HTTP Message." href="Message.html"><span class="name">Message</span></a><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
+        <a title="Represents a HTTP Message." href="Message.html"><span class="name">Message</span></a><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="Media.html" class="extype" name="org.http4s.Media">Media</a>[<span class="extype" name="org.http4s.Message.F">F</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Represents a HTTP Message.</p><div class="fullcomment"><div class="comment cmt"><p>Represents a HTTP Message. The interesting subclasses are Request and Response.
@@ -2748,6 +2768,22 @@ with some commonly used instances which can be resolved implicitly.</p>
       <p class="shortcomment cmt">Thanks to ip4s for the singlePartInterpolator implementation
 https://github.com/Comcast/ip4s/blob/b4f01a4637f2766a8e12668492a3814c478c6a03/shared/src/main/scala/com/comcast/ip4s/LiteralSyntaxMacros.scala
 </p>
+    </li><li name="org.http4s.Media" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Media"></a><a id="Media:Media"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Media$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Media$.html"><span class="name">Media</span></a>
+      </span>
+      
+      
     </li><li name="org.http4s.MediaRange" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="MediaRange"></a><a id="MediaRange:MediaRange"></a>
       <span class="permalink">

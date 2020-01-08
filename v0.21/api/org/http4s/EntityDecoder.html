@@ -657,6 +657,10 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <a class="class" href="MalformedMessageBodyFailure.html" title="Indicates an syntactic error decoding the body of an HTTP Message."></a>
                         <a href="MalformedMessageBodyFailure.html" title="Indicates an syntactic error decoding the body of an HTTP Message.">MalformedMessageBodyFailure</a>
                       </li><li class="current-entities indented2">
+                        <a class="object" href="Media$.html" title=""></a>
+                        <a class="trait" href="Media.html" title=""></a>
+                        <a href="Media.html" title="">Media</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="MediaRange$.html" title=""></a>
                         <a class="class" href="MediaRange.html" title=""></a>
                         <a href="MediaRange.html" title="">MediaRange</a>
@@ -921,9 +925,9 @@ a streaming decoder by having the value of A be some kind of streaming construct
       
       <p class="shortcomment cmt">The <a href="MediaRange.html" class="extype" name="org.http4s.MediaRange">MediaRange</a>s this <a href="" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a> knows how to handle</p>
     </li><li name="org.http4s.EntityDecoder#decode" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="decode(msg:org.http4s.Message[F],strict:Boolean):org.http4s.DecodeResult[F,T]"></a><a id="decode(Message[F],Boolean):DecodeResult[F,T]"></a>
+      <a id="decode(m:org.http4s.Media[F],strict:Boolean):org.http4s.DecodeResult[F,T]"></a><a id="decode(Media[F],Boolean):DecodeResult[F,T]"></a>
       <span class="permalink">
-      <a href="../../org/http4s/EntityDecoder.html#decode(msg:org.http4s.Message[F],strict:Boolean):org.http4s.DecodeResult[F,T]" title="Permalink">
+      <a href="../../org/http4s/EntityDecoder.html#decode(m:org.http4s.Media[F],strict:Boolean):org.http4s.DecodeResult[F,T]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -932,7 +936,7 @@ a streaming decoder by having the value of A be some kind of streaming construct
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">decode</span><span class="params">(<span name="msg">msg: <a href="Message.html" class="extype" name="org.http4s.Message">Message</a>[<span class="extype" name="org.http4s.EntityDecoder.F">F</span>]</span>, <span name="strict">strict: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="index.html#DecodeResult[F[_],A]=cats.data.EitherT[F,org.http4s.DecodeFailure,A]" class="extmbr" name="org.http4s.DecodeResult">DecodeResult</a>[<span class="extype" name="org.http4s.EntityDecoder.F">F</span>, <span class="extype" name="org.http4s.EntityDecoder.T">T</span>]</span>
+        <span class="name">decode</span><span class="params">(<span name="m">m: <a href="Media.html" class="extype" name="org.http4s.Media">Media</a>[<span class="extype" name="org.http4s.EntityDecoder.F">F</span>]</span>, <span name="strict">strict: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="index.html#DecodeResult[F[_],A]=cats.data.EitherT[F,org.http4s.DecodeFailure,A]" class="extmbr" name="org.http4s.DecodeResult">DecodeResult</a>[<span class="extype" name="org.http4s.EntityDecoder.F">F</span>, <span class="extype" name="org.http4s.EntityDecoder.T">T</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Attempt to decode the body of the <a href="Message.html" class="extype" name="org.http4s.Message">Message</a></p>

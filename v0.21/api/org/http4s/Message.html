@@ -657,6 +657,10 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <a class="class" href="MalformedMessageBodyFailure.html" title="Indicates an syntactic error decoding the body of an HTTP Message."></a>
                         <a href="MalformedMessageBodyFailure.html" title="Indicates an syntactic error decoding the body of an HTTP Message.">MalformedMessageBodyFailure</a>
                       </li><li class="current-entities indented2">
+                        <a class="object" href="Media$.html" title=""></a>
+                        <a class="trait" href="Media.html" title=""></a>
+                        <a href="Media.html" title="">Media</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="MediaRange$.html" title=""></a>
                         <a class="class" href="MediaRange.html" title=""></a>
                         <a href="MediaRange.html" title="">MediaRange</a>
@@ -829,7 +833,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Message</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
+        <span class="name">Message</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="Media.html" class="extype" name="org.http4s.Media">Media</a>[<span class="extype" name="org.http4s.Message.F">F</span>]</span>
       </span>
       </h4>
 
@@ -839,7 +843,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.10/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="Media.html" class="extype" name="org.http4s.Media">Media</a>[<span class="extype" name="org.http4s.Message.F">F</span>], <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.10/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
         </div><div class="toggleContainer block">
             <span class="toggle">
               Known Subclasses
@@ -870,7 +874,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="org.http4s.Message"><span>Message</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="org.http4s.Message"><span>Message</span></li><li class="in" name="org.http4s.Media"><span>Media</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
                   <span class="filtertype">Implicitly<br />
@@ -934,7 +938,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </span>
       
       
-    </li><li name="org.http4s.Message#body" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.Message#body" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="body:org.http4s.EntityBody[F]"></a><a id="body:EntityBody[F]"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html#body:org.http4s.EntityBody[F]" title="Permalink">
@@ -949,7 +953,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span class="name">body</span><span class="result">: <a href="index.html#EntityBody[+F[_]]=fs2.Stream[F,Byte]" class="extmbr" name="org.http4s.EntityBody">EntityBody</a>[<span class="extype" name="org.http4s.Message.F">F</span>]</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.Message">Message</a> → <a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
     </li><li name="org.http4s.Message#change" visbl="prt" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="change(httpVersion:org.http4s.HttpVersion,body:org.http4s.EntityBody[F],headers:org.http4s.Headers,attributes:io.chrisdavenport.vault.Vault):Message.this.Self"></a><a id="change(HttpVersion,EntityBody[F],Headers,Vault):Self"></a>
       <span class="permalink">
@@ -966,7 +970,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
-    </li><li name="org.http4s.Message#headers" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.Message#headers" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="headers:org.http4s.Headers"></a><a id="headers:Headers"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html#headers:org.http4s.Headers" title="Permalink">
@@ -981,7 +985,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span class="name">headers</span><span class="result">: <a href="Headers.html" class="extype" name="org.http4s.Headers">Headers</a></span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.Message">Message</a> → <a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
     </li><li name="org.http4s.Message#httpVersion" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="httpVersion:org.http4s.HttpVersion"></a><a id="httpVersion:HttpVersion"></a>
       <span class="permalink">
@@ -1095,7 +1099,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.http4s.Message#as" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.http4s.Media#as" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="as[A](implicitF:cats.MonadError[F,Throwable],implicitdecoder:org.http4s.EntityDecoder[F,A]):F[A]"></a><a id="as[A](MonadError[F,Throwable],EntityDecoder[F,A]):F[A]"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html#as[A](implicitF:cats.MonadError[F,Throwable],implicitdecoder:org.http4s.EntityDecoder[F,A]):F[A]" title="Permalink">
@@ -1103,15 +1107,15 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">as</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <a href="http://typelevel.org/cats/api/cats/MonadError.html#cats.MonadError" class="extype" name="cats.MonadError">MonadError</a>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="scala.Throwable">Throwable</span>]</span>, <span name="decoder">decoder: <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="org.http4s.Message.as.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.Message.F">F</span>[<span class="extype" name="org.http4s.Message.as.A">A</span>]</span>
+        <span class="name">as</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <a href="http://typelevel.org/cats/api/cats/MonadError.html#cats.MonadError" class="extype" name="cats.MonadError">MonadError</a>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="scala.Throwable">Throwable</span>]</span>, <span name="decoder">decoder: <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="org.http4s.Media.as.A">A</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.Message.F">F</span>[<span class="extype" name="org.http4s.Media.as.A">A</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Decode the <a href="" class="extype" name="org.http4s.Message">Message</a> to the specified type</p><div class="fullcomment"><div class="comment cmt"><p>Decode the <a href="" class="extype" name="org.http4s.Message">Message</a> to the specified type</p><p>If no valid <a href="Status.html" class="extype" name="org.http4s.Status">Status</a> has been described, allow Ok
-</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>type of the result</p></dd><dt class="param">decoder</dt><dd class="cmt"><p><a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a> used to decode the <a href="" class="extype" name="org.http4s.Message">Message</a></p></dd><dt>returns</dt><dd class="cmt"><p>the effect which will generate the A</p></dd></dl></div>
+      <p class="shortcomment cmt">Decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a> to the specified type</p><div class="fullcomment"><div class="comment cmt"><p>Decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a> to the specified type</p><p>If no valid <a href="Status.html" class="extype" name="org.http4s.Status">Status</a> has been described, allow Ok
+</p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>type of the result</p></dd><dt class="param">decoder</dt><dd class="cmt"><p><a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a> used to decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a></p></dd><dt>returns</dt><dd class="cmt"><p>the effect which will generate the A</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -1128,7 +1132,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.http4s.Message#attemptAs" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.http4s.Media#attemptAs" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="attemptAs[T](implicitdecoder:org.http4s.EntityDecoder[F,T]):org.http4s.DecodeResult[F,T]"></a><a id="attemptAs[T](EntityDecoder[F,T]):DecodeResult[F,T]"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html#attemptAs[T](implicitdecoder:org.http4s.EntityDecoder[F,T]):org.http4s.DecodeResult[F,T]" title="Permalink">
@@ -1136,17 +1140,17 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">attemptAs</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="decoder">decoder: <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="org.http4s.Message.attemptAs.T">T</span>]</span>)</span><span class="result">: <a href="index.html#DecodeResult[F[_],A]=cats.data.EitherT[F,org.http4s.DecodeFailure,A]" class="extmbr" name="org.http4s.DecodeResult">DecodeResult</a>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="org.http4s.Message.attemptAs.T">T</span>]</span>
+        <span class="name">attemptAs</span><span class="tparams">[<span name="T">T</span>]</span><span class="params">(<span class="implicit">implicit </span><span name="decoder">decoder: <a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="org.http4s.Media.attemptAs.T">T</span>]</span>)</span><span class="result">: <a href="index.html#DecodeResult[F[_],A]=cats.data.EitherT[F,org.http4s.DecodeFailure,A]" class="extmbr" name="org.http4s.DecodeResult">DecodeResult</a>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="org.http4s.Media.attemptAs.T">T</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Decode the <a href="" class="extype" name="org.http4s.Message">Message</a> to the specified type
-</p><div class="fullcomment"><div class="comment cmt"><p>Decode the <a href="" class="extype" name="org.http4s.Message">Message</a> to the specified type
-</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>type of the result</p></dd><dt class="param">decoder</dt><dd class="cmt"><p><a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a> used to decode the <a href="" class="extype" name="org.http4s.Message">Message</a></p></dd><dt>returns</dt><dd class="cmt"><p>the effect which will generate the <code>DecodeResult[T]</code></p></dd></dl></div>
-    </li><li name="org.http4s.Message#bodyAsText" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <p class="shortcomment cmt">Decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a> to the specified type
+</p><div class="fullcomment"><div class="comment cmt"><p>Decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a> to the specified type
+</p></div><dl class="paramcmts block"><dt class="tparam">T</dt><dd class="cmt"><p>type of the result</p></dd><dt class="param">decoder</dt><dd class="cmt"><p><a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a> used to decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a></p></dd><dt>returns</dt><dd class="cmt"><p>the effect which will generate the <code>DecodeResult[T]</code></p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
+    </li><li name="org.http4s.Media#bodyAsText" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="bodyAsText(implicitdefaultCharset:org.http4s.Charset):fs2.Stream[F,String]"></a><a id="bodyAsText(Charset):Stream[F,String]"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html#bodyAsText(implicitdefaultCharset:org.http4s.Charset):fs2.Stream[F,String]" title="Permalink">
@@ -1154,15 +1158,15 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
         <span class="name">bodyAsText</span><span class="params">(<span class="implicit">implicit </span><span name="defaultCharset">defaultCharset: <a href="Charset.html" class="extype" name="org.http4s.Charset">Charset</a> = <span class="symbol"><span class="name"><a href="index.html#DefaultCharset:org.http4s.Charset">DefaultCharset</a></span></span></span>)</span><span class="result">: <span class="extype" name="fs2.Stream">Stream</span>[<span class="extype" name="org.http4s.Message.F">F</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       
-      
-    </li><li name="org.http4s.Message#charset" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
+    </li><li name="org.http4s.Media#charset" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="charset:Option[org.http4s.Charset]"></a><a id="charset:Option[Charset]"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html#charset:Option[org.http4s.Charset]" title="Permalink">
@@ -1170,17 +1174,14 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
         <span class="name">charset</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Charset.html" class="extype" name="org.http4s.Charset">Charset</a>]</span>
       </span>
       
-      <p class="shortcomment cmt">Returns the charset parameter of the <code>Content-Type</code> header, if present.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the charset parameter of the <code>Content-Type</code> header, if present.
-Does not introspect the body for media types that define a charset
-internally.
-</p></div></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -1205,7 +1206,7 @@ internally.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.http4s.Message#contentLength" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.Media#contentLength" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="contentLength:Option[Long]"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html#contentLength:Option[Long]" title="Permalink">
@@ -1213,15 +1214,15 @@ internally.
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
         <span class="name">contentLength</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a>]</span>
       </span>
       
-      
-    </li><li name="org.http4s.Message#contentType" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
+    </li><li name="org.http4s.Media#contentType" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="contentType:Option[org.http4s.headers.Content-Type]"></a><a id="contentType:Option[Content-Type]"></a>
       <span class="permalink">
       <a href="../../org/http4s/Message.html#contentType:Option[org.http4s.headers.Content-Type]" title="Permalink">
@@ -1229,14 +1230,14 @@ internally.
       </a>
     </span>
       <span class="modifier_kind">
-        <span class="modifier"></span>
+        <span class="modifier">final </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
         <span class="name">contentType</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="headers/Content$minusType.html" class="extype" name="org.http4s.headers.Content-Type">Content-Type</a>]</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
     </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a><a id="ensuring((Message[F])⇒Boolean,⇒Any):Message[F]"></a>
       <span class="permalink">
@@ -2047,7 +2048,9 @@ that make no sense with an empty body.</p>
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="org.http4s.Media">
+              <h3>Inherited from <a href="Media.html" class="extype" name="org.http4s.Media">Media</a>[<span class="extype" name="org.http4s.Message.F">F</span>]</h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.10/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></h3>
