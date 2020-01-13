@@ -765,6 +765,10 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <a class="class" href="ResponseCookie.html" title=""></a>
                         <a href="ResponseCookie.html" title="">ResponseCookie</a>
                       </li><li class="current-entities indented2">
+                        <a class="object" href="SameSite$.html" title=""></a>
+                        <a class="trait" href="SameSite.html" title="RFC6265 SameSite cookie attribute values."></a>
+                        <a href="SameSite.html" title="RFC6265 SameSite cookie attribute values.">SameSite</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="ServerSentEvent$.html" title=""></a>
                         <a class="class" href="ServerSentEvent.html" title=""></a>
                         <a href="ServerSentEvent.html" title="">ServerSentEvent</a>
@@ -1986,10 +1990,26 @@ status line, headers, and a possible request body.
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="ResponseCookie.html"><span class="name">ResponseCookie</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="expires">expires: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a>] = <span class="symbol">None</span></span>, <span name="maxAge">maxAge: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a>] = <span class="symbol">None</span></span>, <span name="domain">domain: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="secure">secure: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="httpOnly">httpOnly: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="extension">extension: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="" href="ResponseCookie.html"><span class="name">ResponseCookie</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="expires">expires: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a>] = <span class="symbol">None</span></span>, <span name="maxAge">maxAge: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a>] = <span class="symbol">None</span></span>, <span name="domain">domain: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="sameSite">sameSite: <a href="SameSite.html" class="extype" name="org.http4s.SameSite">SameSite</a> = <span class="symbol"><span class="name"><a href="SameSite$.html">SameSite.Lax</a></span></span></span>, <span name="secure">secure: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="httpOnly">httpOnly: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="extension">extension: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       
+    </li><li name="org.http4s.SameSite" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SameSiteextendsRenderable"></a><a id="SameSite:SameSite"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/SameSite.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="RFC6265 SameSite cookie attribute values." href="SameSite.html"><span class="name">SameSite</span></a><span class="result"> extends <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">RFC6265 SameSite cookie attribute values.</p>
     </li><li name="org.http4s.ServerSentEvent" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ServerSentEventextendsRenderablewithProductwithSerializable"></a><a id="ServerSentEvent:ServerSentEvent"></a>
       <span class="permalink">
@@ -3053,6 +3073,22 @@ https://github.com/Comcast/ip4s/blob/b4f01a4637f2766a8e12668492a3814c478c6a03/sh
       </span>
       <span class="symbol">
         <a title="" href="Response$.html"><span class="name">Response</span></a><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.10/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      
+      
+    </li><li name="org.http4s.SameSite" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SameSite"></a><a id="SameSite:SameSite"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/SameSite$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="SameSite$.html"><span class="name">SameSite</span></a>
       </span>
       
       

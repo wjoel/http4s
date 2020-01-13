@@ -167,6 +167,10 @@
                         <a href="CSRF.html" title="Middleware to avoid Cross-site request forgery attacks.">CSRF</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
+                        <a class="object" href="Caching$.html" title="Caching contains middlewares to support caching functionality."></a>
+                        <a href="Caching$.html" title="Caching contains middlewares to support caching functionality.">Caching</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
                         <a class="object" href="ChunkAggregator$.html" title=""></a>
                         <a href="ChunkAggregator$.html" title="">ChunkAggregator</a>
                       </li><li class="current-entities indented4">
@@ -401,9 +405,9 @@ by the service.
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.http4s.server.middleware.Date#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply[G[_],F[_],A](k:cats.data.Kleisli[G,A,org.http4s.Response[F]])(implicitevidence$1:cats.MonadError[G,Throwable],implicitevidence$2:cats.effect.Clock[G]):cats.data.Kleisli[G,A,org.http4s.Response[F]]"></a><a id="apply[G[_],F[_],A](Kleisli[G,A,Response[F]])(MonadError[G,Throwable],Clock[G]):Kleisli[G,A,Response[F]]"></a>
+      <a id="apply[G[_],F[_],A](k:cats.data.Kleisli[G,A,org.http4s.Response[F]])(implicitevidence$1:cats.Monad[G],implicitevidence$2:cats.effect.Clock[G]):cats.data.Kleisli[G,A,org.http4s.Response[F]]"></a><a id="apply[G[_],F[_],A](Kleisli[G,A,Response[F]])(Monad[G],Clock[G]):Kleisli[G,A,Response[F]]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/Date$.html#apply[G[_],F[_],A](k:cats.data.Kleisli[G,A,org.http4s.Response[F]])(implicitevidence$1:cats.MonadError[G,Throwable],implicitevidence$2:cats.effect.Clock[G]):cats.data.Kleisli[G,A,org.http4s.Response[F]]" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/Date$.html#apply[G[_],F[_],A](k:cats.data.Kleisli[G,A,org.http4s.Response[F]])(implicitevidence$1:cats.Monad[G],implicitevidence$2:cats.effect.Clock[G]):cats.data.Kleisli[G,A,org.http4s.Response[F]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -412,7 +416,7 @@ by the service.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="A">A</span>]</span><span class="params">(<span name="k">k: <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.G">G</span>, <span class="extype" name="org.http4s.server.middleware.Date.apply.A">A</span>, <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.F">F</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/MonadError.html#cats.MonadError" class="extype" name="cats.MonadError">MonadError</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.G">G</span>, <span class="extype" name="java.lang.Throwable">Throwable</span>]</span>, <span name="arg1">arg1: <span class="extype" name="cats.effect.Clock">Clock</span>[<span class="extype" name="org.http4s.server.middleware.Date.apply.G">G</span>]</span>)</span><span class="result">: <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.G">G</span>, <span class="extype" name="org.http4s.server.middleware.Date.apply.A">A</span>, <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.F">F</span>]]</span>
+        <span class="name">apply</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="A">A</span>]</span><span class="params">(<span name="k">k: <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.G">G</span>, <span class="extype" name="org.http4s.server.middleware.Date.apply.A">A</span>, <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.F">F</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/Monad.html#cats.Monad" class="extype" name="cats.Monad">Monad</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.G">G</span>]</span>, <span name="arg1">arg1: <span class="extype" name="cats.effect.Clock">Clock</span>[<span class="extype" name="org.http4s.server.middleware.Date.apply.G">G</span>]</span>)</span><span class="result">: <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.G">G</span>, <span class="extype" name="org.http4s.server.middleware.Date.apply.A">A</span>, <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.Date.apply.F">F</span>]]</span>
       </span>
       
       
