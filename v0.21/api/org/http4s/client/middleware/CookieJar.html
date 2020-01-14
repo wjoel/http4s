@@ -135,8 +135,8 @@
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../index.html" class="extype" name="org.http4s.client">client</a></dd></dl></div>
     </li><li class="current-entities indented4">
                         <a class="object" href="CookieJar$.html" title="Cookie Jar Companion Object Contains constructors for client middleware or raw jar creation, as well as the middleware"></a>
-                        <a class="trait" href="CookieJar.html" title="Algebra for Interfacing with the Cookie Jar."></a>
-                        <a href="CookieJar.html" title="Algebra for Interfacing with the Cookie Jar.">CookieJar</a>
+                        <a class="trait" href="" title="Algebra for Interfacing with the Cookie Jar."></a>
+                        <a href="" title="Algebra for Interfacing with the Cookie Jar.">CookieJar</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="DestinationAttribute$.html" title="Client middleware that sets the destination attribute of every request to the specified value."></a>
@@ -155,8 +155,8 @@
                         <a href="Logger$.html" title="Simple Middleware for Logging All Requests and Responses">Logger</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="" title="Client middleware to record metrics for the http4s client."></a>
-                        <a href="" title="Client middleware to record metrics for the http4s client.">Metrics</a>
+                        <a class="object" href="Metrics$.html" title="Client middleware to record metrics for the http4s client."></a>
+                        <a href="Metrics$.html" title="Client middleware to record metrics for the http4s client.">Metrics</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="RequestLogger$.html" title="Simple Middleware for Logging Requests As They Are Processed"></a>
@@ -178,35 +178,34 @@
             </div>
           </div>
           <div id="content">
-            <body class="object value">
+            <body class="trait type">
       <div id="definition">
-        <div class="big-circle object">o</div>
+        <a href="CookieJar$.html" title="See companion object"><div class="big-circle trait-companion-object">t</div></a>
         <p id="owner"><a href="../../../index.html" class="extype" name="org">org</a>.<a href="../../index.html" class="extype" name="org.http4s">http4s</a>.<a href="../index.html" class="extype" name="org.http4s.client">client</a>.<a href="index.html" class="extype" name="org.http4s.client.middleware">middleware</a></p>
-        <h1>Metrics<span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html" title="Permalink">
+        <h1><a href="CookieJar$.html" title="See companion object">CookieJar</a><span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"></span></h3>
+        <h3><span class="morelinks"><div>
+            Companion <a href="CookieJar$.html" title="See companion object">object CookieJar</a>
+          </div></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Metrics</span>
+        <span class="name">CookieJar</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Client middleware to record metrics for the http4s client.</p><p>This middleware will record:
-- Number of active requests
-- Time duration to receive the response headers
-- Time duration to process the whole response body
-- Time duration of errors, timeouts and other abnormal terminations</p><p>This middleware can be extended to support any metrics ecosystem by implementing the <span class="extype" name="MetricsOps">MetricsOps</span> type
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/tree/master/client/src/main/scala/org/http4s/client/middleware/Metrics.scala" target="_blank">Metrics.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Algebra for Interfacing with the Cookie Jar.
+Allows manual intervention and eviction.
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/tree/master/client/src/main/scala/org/http4s/client/middleware/CookieJar.scala" target="_blank">CookieJar.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -236,7 +235,12 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="org.http4s.client.middleware.Metrics"><span>Metrics</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="org.http4s.client.middleware.CookieJar"><span>CookieJar</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+                  <span class="filtertype">Implicitly<br />
+                  </span>
+                  <ol id="implicits"> <li class="in" name="scala.Predef.any2stringadd" data-hidden="true"><span>by any2stringadd</span></li><li class="in" name="scala.Predef.StringFormat" data-hidden="true"><span>by StringFormat</span></li><li class="in" name="scala.Predef.Ensuring" data-hidden="true"><span>by Ensuring</span></li><li class="in" name="scala.Predef.ArrowAssoc" data-hidden="true"><span>by ArrowAssoc</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -258,15 +262,86 @@
 
         
 
-        
+        <div class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="org.http4s.client.middleware.CookieJar#addCookies" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="addCookies[G[_]](cookies:G[(org.http4s.ResponseCookie,org.http4s.Uri)])(implicitevidence$1:cats.Foldable[G]):F[Unit]"></a><a id="addCookies[G[_]](G[(ResponseCookie,Uri)])(Foldable[G]):F[Unit]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#addCookies[G[_]](cookies:G[(org.http4s.ResponseCookie,org.http4s.Uri)])(implicitevidence$1:cats.Foldable[G]):F[Unit]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addCookies</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="cookies">cookies: <span class="extype" name="org.http4s.client.middleware.CookieJar.addCookies.G">G</span>[(<a href="../../ResponseCookie.html" class="extype" name="org.http4s.ResponseCookie">ResponseCookie</a>, <a href="../../Uri.html" class="extype" name="org.http4s.Uri">Uri</a>)]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.Foldable">Foldable</span>[<span class="extype" name="org.http4s.client.middleware.CookieJar.addCookies.G">G</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Like addCookie but puts several in at once
+</p>
+    </li><li name="org.http4s.client.middleware.CookieJar#enrichRequest" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="enrichRequest[G[_]](r:org.http4s.Request[G]):F[org.http4s.Request[G]]"></a><a id="enrichRequest[G[_]](Request[G]):F[Request[G]]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#enrichRequest[G[_]](r:org.http4s.Request[G]):F[org.http4s.Request[G]]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">enrichRequest</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="r">r: <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.enrichRequest.G">G</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>[<a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.enrichRequest.G">G</span>]]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Enrich a Request with the cookies available
+</p>
+    </li><li name="org.http4s.client.middleware.CookieJar#evictAll" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="evictAll:F[Unit]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#evictAll:F[Unit]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">evictAll</span><span class="result">: <span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Available for Use To Relieve Memory Pressure
+</p>
+    </li><li name="org.http4s.client.middleware.CookieJar#evictExpired" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="evictExpired:F[Unit]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#evictExpired:F[Unit]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">evictExpired</span><span class="result">: <span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Default Expiration Approach, Removes Expired Cookies
+</p>
+    </li></ol>
+            </div>
 
         <div class="values members">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol>
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -282,7 +357,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html###():Int" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -295,10 +370,53 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Predef.any2stringadd#+" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="+(other:String):String"></a><a id="+(String):String"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#+(other:String):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $plus" class="implicit">+</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to
+            <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]] performed by method any2stringadd in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>any2stringadd</dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#-&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="-&gt;[B](y:B):(A,B)"></a><a id="-&gt;[B](B):(CookieJar[F],B)"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#-&gt;[B](y:B):(A,B)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $minus$greater" class="implicit">-&gt;</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>], <span class="extype" name="scala.Predef.ArrowAssoc.-&gt;.B">B</span>)</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -311,10 +429,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.http4s.client.middleware.Metrics#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply[F[_]](ops:org.http4s.metrics.MetricsOps[F],classifierF:org.http4s.Request[F]=&gt;Option[String])(client:org.http4s.client.Client[F])(implicitF:cats.effect.Sync[F],implicitclock:cats.effect.Clock[F]):org.http4s.client.Client[F]"></a><a id="apply[F[_]](MetricsOps[F],(Request[F])⇒Option[String])(Client[F])(Sync[F],Clock[F]):Client[F]"></a>
+    </li><li name="org.http4s.client.middleware.CookieJar#addCookie" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="addCookie(c:org.http4s.ResponseCookie,uri:org.http4s.Uri):F[Unit]"></a><a id="addCookie(ResponseCookie,Uri):F[Unit]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#apply[F[_]](ops:org.http4s.metrics.MetricsOps[F],classifierF:org.http4s.Request[F]=&gt;Option[String])(client:org.http4s.client.Client[F])(implicitF:cats.effect.Sync[F],implicitclock:cats.effect.Clock[F]):org.http4s.client.Client[F]" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#addCookie(c:org.http4s.ResponseCookie,uri:org.http4s.Uri):F[Unit]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -323,16 +441,15 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="ops">ops: <a href="../../metrics/MetricsOps.html" class="extype" name="org.http4s.metrics.MetricsOps">MetricsOps</a>[<span class="extype" name="org.http4s.client.middleware.Metrics.apply.F">F</span>]</span>, <span name="classifierF">classifierF: (<a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.client.middleware.Metrics.apply.F">F</span>]) ⇒ <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">_: Request[F] =&gt;<br />    None</span></span>)</span><span class="params">(<span name="client">client: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.Metrics.apply.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.client.middleware.Metrics.apply.F">F</span>]</span>, <span name="clock">clock: <span class="extype" name="cats.effect.Clock">Clock</span>[<span class="extype" name="org.http4s.client.middleware.Metrics.apply.F">F</span>]</span>)</span><span class="result">: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.Metrics.apply.F">F</span>]</span>
+        <span class="name">addCookie</span><span class="params">(<span name="c">c: <a href="../../ResponseCookie.html" class="extype" name="org.http4s.ResponseCookie">ResponseCookie</a></span>, <span name="uri">uri: <a href="../../Uri.html" class="extype" name="org.http4s.Uri">Uri</a></span>)</span><span class="result">: <span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>
       </span>
       
-      <p class="shortcomment cmt">Wraps a <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a> with a middleware capable of recording metrics
-</p><div class="fullcomment"><div class="comment cmt"><p>Wraps a <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a> with a middleware capable of recording metrics
-</p></div><dl class="paramcmts block"><dt class="param">ops</dt><dd class="cmt"><p>a algebra describing the metrics operations</p></dd><dt class="param">classifierF</dt><dd class="cmt"><p>a function that allows to add a classifier that can be customized per request</p></dd><dt class="param">client</dt><dd class="cmt"><p>the <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a> to gather metrics from</p></dd><dt>returns</dt><dd class="cmt"><p>the metrics middleware wrapping the <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a></p></dd></dl></div>
+      <p class="shortcomment cmt">Add Cookie to the cookie jar
+</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -348,7 +465,7 @@
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#clone():Object" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -369,10 +486,90 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A"></a><a id="ensuring((CookieJar[F])⇒Boolean,⇒Any):CookieJar[F]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#ensuring(cond:A=&gt;Boolean,msg:=&gt;Any):A" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]) ⇒ <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="https://www.scala-lang.org/api/2.12.10/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:A=&gt;Boolean):A"></a><a id="ensuring((CookieJar[F])⇒Boolean):CookieJar[F]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#ensuring(cond:A=&gt;Boolean):A" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: (<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]) ⇒ <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean,msg:=&gt;Any):A"></a><a id="ensuring(Boolean,⇒Any):CookieJar[F]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#ensuring(cond:Boolean,msg:=&gt;Any):A" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>, <span name="msg">msg: ⇒ <a href="https://www.scala-lang.org/api/2.12.10/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
+    </li><li name="scala.Predef.Ensuring#ensuring" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ensuring(cond:Boolean):A"></a><a id="ensuring(Boolean):CookieJar[F]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#ensuring(cond:Boolean):A" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">ensuring</span><span class="params">(<span name="cond">cond: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to
+            <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]] performed by method Ensuring in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>Ensuring</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -388,7 +585,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -404,7 +601,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#finalize():Unit" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -423,10 +620,33 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="scala.Predef.StringFormat#formatted" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="formatted(fmtstr:String):String"></a><a id="formatted(String):String"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#formatted(fmtstr:String):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="implicit">formatted</span><span class="params">(<span name="fmtstr">fmtstr: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to
+            <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]] performed by method StringFormat in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>StringFormat</dd><dt>Annotations</dt><dd>
+                <span class="name">@inline</span><span class="args">()</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -445,7 +665,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#hashCode():Int" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -464,7 +684,7 @@
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -480,7 +700,7 @@
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -496,7 +716,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#notify():Unit" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -515,7 +735,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -534,7 +754,7 @@
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -550,7 +770,7 @@
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#toString():String" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -566,7 +786,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#wait():Unit" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -588,7 +808,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -610,7 +830,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/Metrics$.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -631,6 +851,26 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="→[B](y:B):(A,B)"></a><a id="→[B](B):(CookieJar[F],B)"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/client/middleware/CookieJar.html#→[B](y:B):(A,B)" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $u2192" class="implicit">→</span><span class="tparams">[<span name="B">B</span>]</span><span class="params">(<span name="y">y: <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span></span>)</span><span class="result">: (<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>], <span class="extype" name="scala.Predef.ArrowAssoc.→.B">B</span>)</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt class="implicit">Implicit</dt><dd>
+            This member is added by an implicit conversion from <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to
+            <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]] performed by method ArrowAssoc in scala.Predef.
+            
+          </dd><dt>Definition Classes</dt><dd>ArrowAssoc</dd></dl></div>
     </li>
               </ol>
             </div>
@@ -646,7 +886,23 @@
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.10/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></h3>
             </div>
-        
+        <div class="conversion" name="scala.Predef.any2stringadd">
+              <h3>Inherited by implicit conversion any2stringadd from
+                <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to <span class="extype" name="scala.Predef.any2stringadd">any2stringadd</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.StringFormat">
+              <h3>Inherited by implicit conversion StringFormat from
+                <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to <span class="extype" name="scala.Predef.StringFormat">StringFormat</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.Ensuring">
+              <h3>Inherited by implicit conversion Ensuring from
+                <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to <span class="extype" name="scala.Predef.Ensuring">Ensuring</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]]
+              </h3>
+            </div><div class="conversion" name="scala.Predef.ArrowAssoc">
+              <h3>Inherited by implicit conversion ArrowAssoc from
+                <a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>] to <span class="extype" name="scala.Predef.ArrowAssoc">ArrowAssoc</span>[<a href="" class="extype" name="org.http4s.client.middleware.CookieJar">CookieJar</a>[<span class="extype" name="org.http4s.client.middleware.CookieJar.F">F</span>]]
+              </h3>
+            </div>
         </div>
 
         <div id="groupedMembers">

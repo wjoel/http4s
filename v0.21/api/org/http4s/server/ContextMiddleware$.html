@@ -484,6 +484,26 @@ for serious static content serving.
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.http4s.server.ContextMiddleware#const" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="const[F[_],T](t:T)(implicitevidence$2:cats.Monad[F]):org.http4s.server.ContextMiddleware[F,T]"></a><a id="const[F[_],T](T)(Monad[F]):ContextMiddleware[F,T]"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/server/ContextMiddleware$.html#const[F[_],T](t:T)(implicitevidence$2:cats.Monad[F]):org.http4s.server.ContextMiddleware[F,T]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">const</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="T">T</span>]</span><span class="params">(<span name="t">t: <span class="extype" name="org.http4s.server.ContextMiddleware.const.T">T</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/Monad.html#cats.Monad" class="extype" name="cats.Monad">Monad</a>[<span class="extype" name="org.http4s.server.ContextMiddleware.const.F">F</span>]</span>)</span><span class="result">: <a href="index.html#ContextMiddleware[F[_],T]=org.http4s.server.package.Middleware[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.ContextRequest[F,T],org.http4s.Response[F],org.http4s.Request[F],org.http4s.Response[F]]" class="extmbr" name="org.http4s.server.ContextMiddleware">ContextMiddleware</a>[<span class="extype" name="org.http4s.server.ContextMiddleware.const.F">F</span>, <span class="extype" name="org.http4s.server.ContextMiddleware.const.T">T</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Useful for Testing, Construct a Middleware from a single
+value T to use as the context
+</p><div class="fullcomment"><div class="comment cmt"><p>Useful for Testing, Construct a Middleware from a single
+value T to use as the context
+</p></div><dl class="paramcmts block"><dt class="param">t</dt><dd class="cmt"><p>The value to use as the context</p></dd><dt>returns</dt><dd class="cmt"><p>A ContextMiddleware that always provides T</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
