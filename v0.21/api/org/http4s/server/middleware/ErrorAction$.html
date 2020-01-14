@@ -187,8 +187,8 @@
                         <a href="EntityLimiter$.html" title="">EntityLimiter</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="ErrorAction$.html" title=""></a>
-                        <a href="ErrorAction$.html" title="">ErrorAction</a>
+                        <a class="object" href="" title=""></a>
+                        <a href="" title="">ErrorAction</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="ErrorHandling$.html" title=""></a>
@@ -223,8 +223,8 @@
                         <a href="Logger$.html" title="Simple Middleware for Logging All Requests and Responses">Logger</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
-                        <a class="object" href="" title=""></a>
-                        <a href="" title="">MaxActiveRequests</a>
+                        <a class="object" href="MaxActiveRequests$.html" title=""></a>
+                        <a href="MaxActiveRequests$.html" title="">MaxActiveRequests</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
                         <a class="object" href="Metrics$.html" title="Server middleware to record metrics for the http4s server."></a>
@@ -282,8 +282,8 @@
       <div id="definition">
         <div class="big-circle object">o</div>
         <p id="owner"><a href="../../../index.html" class="extype" name="org">org</a>.<a href="../../index.html" class="extype" name="org.http4s">http4s</a>.<a href="../index.html" class="extype" name="org.http4s.server">server</a>.<a href="index.html" class="extype" name="org.http4s.server.middleware">middleware</a></p>
-        <h1>MaxActiveRequests<span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html" title="Permalink">
+        <h1>ErrorAction<span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
@@ -296,12 +296,12 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">MaxActiveRequests</span>
+        <span class="name">ErrorAction</span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/tree/master/server/src/main/scala/org/http4s/server/middleware/MaxActiveRequests.scala" target="_blank">MaxActiveRequests.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/tree/master/server/src/main/scala/org/http4s/server/middleware/ErrorAction.scala" target="_blank">ErrorAction.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -331,7 +331,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="org.http4s.server.middleware.MaxActiveRequests"><span>MaxActiveRequests</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="org.http4s.server.middleware.ErrorAction"><span>ErrorAction</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -361,7 +361,7 @@
                 <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#!=(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#!=(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -377,7 +377,7 @@
     </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="##():Int"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html###():Int" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html###():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -393,7 +393,7 @@
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#==(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#==(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -406,10 +406,26 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.http4s.server.middleware.ErrorAction#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply[F[_],G[_],B](k:cats.data.Kleisli[F,org.http4s.Request[G],B],f:(org.http4s.Request[G],Throwable)=&gt;F[Unit])(implicitevidence$1:cats.ApplicativeError[F,Throwable]):cats.data.Kleisli[F,org.http4s.Request[G],B]"></a><a id="apply[F[_],G[_],B](Kleisli[F,Request[G],B],(Request[G],Throwable)⇒F[Unit])(ApplicativeError[F,Throwable]):Kleisli[F,Request[G],B]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#apply[F[_],G[_],B](k:cats.data.Kleisli[F,org.http4s.Request[G],B],f:(org.http4s.Request[G],Throwable)=&gt;F[Unit])(implicitevidence$1:cats.ApplicativeError[F,Throwable]):cats.data.Kleisli[F,org.http4s.Request[G],B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="B">B</span>]</span><span class="params">(<span name="k">k: <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.F">F</span>, <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.G">G</span>], <span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.B">B</span>]</span>, <span name="f">f: (<a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.G">G</span>], <span class="extype" name="scala.Throwable">Throwable</span>) ⇒ <span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/ApplicativeError.html#cats.ApplicativeError" class="extype" name="cats.ApplicativeError">ApplicativeError</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.F">F</span>, <span class="extype" name="java.lang.Throwable">Throwable</span>]</span>)</span><span class="result">: <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.F">F</span>, <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.G">G</span>], <span class="extype" name="org.http4s.server.middleware.ErrorAction.apply.B">B</span>]</span>
+      </span>
+      
+      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#asInstanceOf[T0]:T0" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#asInstanceOf[T0]:T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -425,7 +441,7 @@
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#clone():Object" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#clone():Object" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -449,7 +465,7 @@
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -465,7 +481,7 @@
     </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#equals(x$1:Any):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#equals(x$1:Any):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -481,7 +497,7 @@
     </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#finalize():Unit" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#finalize():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -503,7 +519,7 @@
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#getClass():Class[_]" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#getClass():Class[_]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -522,7 +538,7 @@
     </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="hashCode():Int"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#hashCode():Int" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#hashCode():Int" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -538,74 +554,10 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.http4s.server.middleware.MaxActiveRequests#httpApp" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="httpApp[F[_]](maxActive:Long,defaultResp:org.http4s.Response[F])(implicitevidence$1:cats.effect.Concurrent[F]):F[cats.data.Kleisli[F,org.http4s.Request[F],org.http4s.Response[F]]=&gt;cats.data.Kleisli[F,org.http4s.Request[F],org.http4s.Response[F]]]"></a><a id="httpApp[F[_]](Long,Response[F])(Concurrent[F]):F[(Kleisli[F,Request[F],Response[F]])⇒Kleisli[F,Request[F],Response[F]]]"></a>
-      <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#httpApp[F[_]](maxActive:Long,defaultResp:org.http4s.Response[F])(implicitevidence$1:cats.effect.Concurrent[F]):F[cats.data.Kleisli[F,org.http4s.Request[F],org.http4s.Response[F]]=&gt;cats.data.Kleisli[F,org.http4s.Request[F],org.http4s.Response[F]]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">httpApp</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="maxActive">maxActive: <a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>, <span name="defaultResp">defaultResp: <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>] = <span class="defval" name='<span class="name"><a href="../../../index.html">Response[F](status = Status.ServiceUnavailable)</a></span>'>...</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Concurrent">Concurrent</span>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>[(<a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>, <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>], <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>]]) ⇒ <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>, <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>], <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpApp.F">F</span>]]]</span>
-      </span>
-      
-      
-    </li><li name="org.http4s.server.middleware.MaxActiveRequests#httpRoutes" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="httpRoutes[F[_]](maxActive:Long,defaultResp:org.http4s.Response[F])(implicitevidence$4:cats.effect.Concurrent[F]):F[cats.data.Kleisli[[β$0$]cats.data.OptionT[F,β$0$],org.http4s.Request[F],org.http4s.Response[F]]=&gt;cats.data.Kleisli[[β$1$]cats.data.OptionT[F,β$1$],org.http4s.Request[F],org.http4s.Response[F]]]"></a><a id="httpRoutes[F[_]](Long,Response[F])(Concurrent[F]):F[(Kleisli[[β$0$]OptionT[F,β$0$],Request[F],Response[F]])⇒Kleisli[[β$1$]OptionT[F,β$1$],Request[F],Response[F]]]"></a>
-      <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#httpRoutes[F[_]](maxActive:Long,defaultResp:org.http4s.Response[F])(implicitevidence$4:cats.effect.Concurrent[F]):F[cats.data.Kleisli[[β$0$]cats.data.OptionT[F,β$0$],org.http4s.Request[F],org.http4s.Response[F]]=&gt;cats.data.Kleisli[[β$1$]cats.data.OptionT[F,β$1$],org.http4s.Request[F],org.http4s.Response[F]]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">httpRoutes</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="maxActive">maxActive: <a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>, <span name="defaultResp">defaultResp: <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>] = <span class="defval" name='<span class="name"><a href="../../../index.html">Response[F](status = Status.ServiceUnavailable)</a></span>'>...</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Concurrent">Concurrent</span>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>[(<a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[[β$0$]<a href="http://typelevel.org/cats/api/cats/data/OptionT.html#cats.data.OptionT" class="extype" name="cats.data.OptionT">OptionT</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>, <span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.&lt;refinement&gt;.Λ$.β$0$">β$0$</span>], <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>], <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>]]) ⇒ <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[[β$1$]<a href="http://typelevel.org/cats/api/cats/data/OptionT.html#cats.data.OptionT" class="extype" name="cats.data.OptionT">OptionT</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>, <span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.&lt;refinement&gt;.Λ$.β$1$">β$1$</span>], <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>], <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.httpRoutes.F">F</span>]]]</span>
-      </span>
-      
-      
-    </li><li name="org.http4s.server.middleware.MaxActiveRequests#inHttpApp" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="inHttpApp[G[_],F[_]](maxActive:Long,defaultResp:org.http4s.Response[F])(implicitevidence$2:cats.effect.Sync[G],implicitevidence$3:cats.effect.Concurrent[F]):G[cats.data.Kleisli[F,org.http4s.Request[F],org.http4s.Response[F]]=&gt;cats.data.Kleisli[F,org.http4s.Request[F],org.http4s.Response[F]]]"></a><a id="inHttpApp[G[_],F[_]](Long,Response[F])(Sync[G],Concurrent[F]):G[(Kleisli[F,Request[F],Response[F]])⇒Kleisli[F,Request[F],Response[F]]]"></a>
-      <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#inHttpApp[G[_],F[_]](maxActive:Long,defaultResp:org.http4s.Response[F])(implicitevidence$2:cats.effect.Sync[G],implicitevidence$3:cats.effect.Concurrent[F]):G[cats.data.Kleisli[F,org.http4s.Request[F],org.http4s.Response[F]]=&gt;cats.data.Kleisli[F,org.http4s.Request[F],org.http4s.Response[F]]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">inHttpApp</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="maxActive">maxActive: <a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>, <span name="defaultResp">defaultResp: <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.F">F</span>] = <span class="defval" name='<span class="name"><a href="../../../index.html">Response[F](status = Status.ServiceUnavailable)</a></span>'>...</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.G">G</span>]</span>, <span name="arg1">arg1: <span class="extype" name="cats.effect.Concurrent">Concurrent</span>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.F">F</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.G">G</span>[(<a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.F">F</span>, <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.F">F</span>], <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.F">F</span>]]) ⇒ <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.F">F</span>, <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.F">F</span>], <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpApp.F">F</span>]]]</span>
-      </span>
-      
-      
-    </li><li name="org.http4s.server.middleware.MaxActiveRequests#inHttpRoutes" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="inHttpRoutes[G[_],F[_]](maxActive:Long,defaultResp:org.http4s.Response[F])(implicitevidence$5:cats.effect.Sync[G],implicitevidence$6:cats.effect.Concurrent[F]):G[cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.Request[F],org.http4s.Response[F]]=&gt;cats.data.Kleisli[[β$3$]cats.data.OptionT[F,β$3$],org.http4s.Request[F],org.http4s.Response[F]]]"></a><a id="inHttpRoutes[G[_],F[_]](Long,Response[F])(Sync[G],Concurrent[F]):G[(Kleisli[[β$2$]OptionT[F,β$2$],Request[F],Response[F]])⇒Kleisli[[β$3$]OptionT[F,β$3$],Request[F],Response[F]]]"></a>
-      <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#inHttpRoutes[G[_],F[_]](maxActive:Long,defaultResp:org.http4s.Response[F])(implicitevidence$5:cats.effect.Sync[G],implicitevidence$6:cats.effect.Concurrent[F]):G[cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.Request[F],org.http4s.Response[F]]=&gt;cats.data.Kleisli[[β$3$]cats.data.OptionT[F,β$3$],org.http4s.Request[F],org.http4s.Response[F]]]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">inHttpRoutes</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="maxActive">maxActive: <a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a></span>, <span name="defaultResp">defaultResp: <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.F">F</span>] = <span class="defval" name='<span class="name"><a href="../../../index.html">Response[F](status = Status.ServiceUnavailable)</a></span>'>...</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.G">G</span>]</span>, <span name="arg1">arg1: <span class="extype" name="cats.effect.Concurrent">Concurrent</span>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.F">F</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.G">G</span>[(<a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[[β$2$]<a href="http://typelevel.org/cats/api/cats/data/OptionT.html#cats.data.OptionT" class="extype" name="cats.data.OptionT">OptionT</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.F">F</span>, <span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.&lt;refinement&gt;.Λ$.β$2$">β$2$</span>], <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.F">F</span>], <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.F">F</span>]]) ⇒ <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[[β$3$]<a href="http://typelevel.org/cats/api/cats/data/OptionT.html#cats.data.OptionT" class="extype" name="cats.data.OptionT">OptionT</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.F">F</span>, <span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.&lt;refinement&gt;.Λ$.β$3$">β$3$</span>], <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.F">F</span>], <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.MaxActiveRequests.inHttpRoutes.F">F</span>]]]</span>
-      </span>
-      
-      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#isInstanceOf[T0]:Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -618,10 +570,26 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.http4s.server.middleware.ErrorAction#log" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="log[F[_],G[_],B](http:cats.data.Kleisli[F,org.http4s.Request[G],B],messageFailureLogAction:(Throwable,=&gt;String)=&gt;F[Unit],serviceErrorLogAction:(Throwable,=&gt;String)=&gt;F[Unit])(implicitevidence$2:cats.ApplicativeError[F,Throwable]):cats.data.Kleisli[F,org.http4s.Request[G],B]"></a><a id="log[F[_],G[_],B](Kleisli[F,Request[G],B],(Throwable,⇒String)⇒F[Unit],(Throwable,⇒String)⇒F[Unit])(ApplicativeError[F,Throwable]):Kleisli[F,Request[G],B]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#log[F[_],G[_],B](http:cats.data.Kleisli[F,org.http4s.Request[G],B],messageFailureLogAction:(Throwable,=&gt;String)=&gt;F[Unit],serviceErrorLogAction:(Throwable,=&gt;String)=&gt;F[Unit])(implicitevidence$2:cats.ApplicativeError[F,Throwable]):cats.data.Kleisli[F,org.http4s.Request[G],B]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">log</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="B">B</span>]</span><span class="params">(<span name="http">http: <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.log.F">F</span>, <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.log.G">G</span>], <span class="extype" name="org.http4s.server.middleware.ErrorAction.log.B">B</span>]</span>, <span name="messageFailureLogAction">messageFailureLogAction: (<span class="extype" name="scala.Throwable">Throwable</span>, ⇒ <span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="org.http4s.server.middleware.ErrorAction.log.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>, <span name="serviceErrorLogAction">serviceErrorLogAction: (<span class="extype" name="scala.Throwable">Throwable</span>, ⇒ <span class="extype" name="scala.Predef.String">String</span>) ⇒ <span class="extype" name="org.http4s.server.middleware.ErrorAction.log.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/ApplicativeError.html#cats.ApplicativeError" class="extype" name="cats.ApplicativeError">ApplicativeError</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.log.F">F</span>, <span class="extype" name="java.lang.Throwable">Throwable</span>]</span>)</span><span class="result">: <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.log.F">F</span>, <a href="../../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.server.middleware.ErrorAction.log.G">G</span>], <span class="extype" name="org.http4s.server.middleware.ErrorAction.log.B">B</span>]</span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -637,7 +605,7 @@
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#notify():Unit" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#notify():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -656,7 +624,7 @@
     </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notifyAll():Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#notifyAll():Unit" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#notifyAll():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -675,7 +643,7 @@
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -691,7 +659,7 @@
     </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="toString():String"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#toString():String" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#toString():String" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -707,7 +675,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#wait():Unit" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#wait():Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -729,7 +697,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -751,7 +719,7 @@
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/middleware/MaxActiveRequests$.html#wait(x$1:Long):Unit" title="Permalink">
+      <a href="../../../../org/http4s/server/middleware/ErrorAction$.html#wait(x$1:Long):Unit" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
