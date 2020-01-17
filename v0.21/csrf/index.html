@@ -111,7 +111,7 @@ is modeled after the <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cro
   case _ =&gt;
     Ok()
 } 
-// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$34824/302567695@6f96d1f0)
+// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$34863/1828526360@768fdaa7)
 
 val request = Request[IO](Method.GET, uri&quot;/&quot;)
 // request: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers())
@@ -133,7 +133,7 @@ val csrfBuilder = CSRF[IO,IO](key, defaultOriginCheck)
 but we will create a fairly simple CSRF Middleware in our example.</p>
 
 <pre><code class="language-scala">val csrf = csrfBuilder.withCookieName(cookieName).withCookieDomain(Some(&quot;localhost&quot;)).withCookiePath(Some(&quot;/&quot;)).build
-// csrf: org.http4s.server.middleware.CSRF[cats.effect.IO,cats.effect.IO] = org.http4s.server.middleware.CSRF@4fa68f02
+// csrf: org.http4s.server.middleware.CSRF[cats.effect.IO,cats.effect.IO] = org.http4s.server.middleware.CSRF@3dd7e739
 </code></pre>
 
 <p>Now we need to wrap this around our service! We&rsquo;re gonna start with a safe call</p>
@@ -161,14 +161,14 @@ and send it up in our POST. I&rsquo;ve also added the response cookie as a Reque
 the browser would send this up with our request, but I needed to do it manually for the purpose of this demo.</p>
 
 <pre><code class="language-scala">val cookie = resp.cookies.head
-// cookie: org.http4s.ResponseCookie = csrf-token=DF365E3491FF8E84FA59E86941E97258DF3A5AFE0A1311F757257820E210CBBD-1579179935416-D1DBAEB88B69EB15B7FE2277C5348BB9CFA5544A; Domain=localhost; Path=/; SameSite=Lax; HttpOnly
+// cookie: org.http4s.ResponseCookie = csrf-token=E12235715DDD19618A2EDFD688BEFC7504A8F26BA39270607AA2CA07D66B4E6F-1579236669294-308C3437E82E608785A216F517C07B9ED81B3529; Domain=localhost; Path=/; SameSite=Lax; HttpOnly
 
 val dummyPostRequest: Request[IO] =
     Request[IO](method = Method.POST).putHeaders(
       Header(&quot;Origin&quot;, &quot;http://localhost&quot;),
       Header(&quot;X-Csrf-Token&quot;, cookie.content)
     ).addCookie(RequestCookie(cookie.name,cookie.content))
-// dummyPostRequest: org.http4s.Request[cats.effect.IO] = Request(method=POST, uri=/, headers=Headers(Origin: http://localhost, X-Csrf-Token: DF365E3491FF8E84FA59E86941E97258DF3A5AFE0A1311F757257820E210CBBD-1579179935416-D1DBAEB88B69EB15B7FE2277C5348BB9CFA5544A, Cookie: &lt;REDACTED&gt;))
+// dummyPostRequest: org.http4s.Request[cats.effect.IO] = Request(method=POST, uri=/, headers=Headers(Origin: http://localhost, X-Csrf-Token: E12235715DDD19618A2EDFD688BEFC7504A8F26BA39270607AA2CA07D66B4E6F-1579236669294-308C3437E82E608785A216F517C07B9ED81B3529, Cookie: &lt;REDACTED&gt;))
 
 val resp = csrf.validate()(service.orNotFound)(dummyPostRequest).unsafeRunSync()
 // resp: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Set-Cookie: &lt;REDACTED&gt;))
