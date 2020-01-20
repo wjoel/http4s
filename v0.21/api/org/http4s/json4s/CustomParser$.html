@@ -379,9 +379,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.typelevel.jawn.support.json4s.Parser#facade" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="facade:org.typelevel.jawn.RawFacade[org.json4s.JsonAST.JValue]"></a><a id="facade:RawFacade[JValue]"></a>
+      <a id="facade:org.typelevel.jawn.Facade[org.json4s.JsonAST.JValue]"></a><a id="facade:Facade[JValue]"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/json4s/CustomParser$.html#facade:org.typelevel.jawn.RawFacade[org.json4s.JsonAST.JValue]" title="Permalink">
+      <a href="../../../org/http4s/json4s/CustomParser$.html#facade:org.typelevel.jawn.Facade[org.json4s.JsonAST.JValue]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -390,7 +390,7 @@
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">facade</span><span class="result">: <span class="extype" name="org.typelevel.jawn.RawFacade">RawFacade</span>[<span class="extype" name="org.json4s.JsonAST.JValue">JValue</span>]</span>
+        <span class="name">facade</span><span class="result">: <span class="extype" name="org.typelevel.jawn.Facade">Facade</span>[<span class="extype" name="org.json4s.JsonAST.JValue">JValue</span>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Parser → SupportParser</dd></dl></div>
@@ -524,6 +524,22 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.typelevel.jawn.SupportParser#parseFromByteArray" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parseFromByteArray(src:Array[Byte]):scala.util.Try[J]"></a><a id="parseFromByteArray(Array[Byte]):Try[JValue]"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/json4s/CustomParser$.html#parseFromByteArray(src:Array[Byte]):scala.util.Try[J]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parseFromByteArray</span><span class="params">(<span name="src">src: <a href="https://www.scala-lang.org/api/2.12.10/scala/Array.html#scala.Array" class="extype" name="scala.Array">Array</a>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Byte.html#scala.Byte" class="extype" name="scala.Byte">Byte</a>]</span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.10/scala/util/Try.html#scala.util.Try" class="extype" name="scala.util.Try">Try</a>[<span class="extype" name="org.json4s.JsonAST.JValue">JValue</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SupportParser</dd></dl></div>
     </li><li name="org.typelevel.jawn.SupportParser#parseFromByteBuffer" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="parseFromByteBuffer(buf:java.nio.ByteBuffer):scala.util.Try[J]"></a><a id="parseFromByteBuffer(ByteBuffer):Try[JValue]"></a>
       <span class="permalink">
@@ -553,6 +569,22 @@
       </span>
       <span class="symbol">
         <span class="name">parseFromChannel</span><span class="params">(<span name="ch">ch: <span class="extype" name="java.nio.channels.ReadableByteChannel">ReadableByteChannel</span></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.10/scala/util/Try.html#scala.util.Try" class="extype" name="scala.util.Try">Try</a>[<span class="extype" name="org.json4s.JsonAST.JValue">JValue</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SupportParser</dd></dl></div>
+    </li><li name="org.typelevel.jawn.SupportParser#parseFromCharSequence" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="parseFromCharSequence(cs:CharSequence):scala.util.Try[J]"></a><a id="parseFromCharSequence(CharSequence):Try[JValue]"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/json4s/CustomParser$.html#parseFromCharSequence(cs:CharSequence):scala.util.Try[J]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">parseFromCharSequence</span><span class="params">(<span name="cs">cs: <span class="extype" name="java.lang.CharSequence">CharSequence</span></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.10/scala/util/Try.html#scala.util.Try" class="extype" name="scala.util.Try">Try</a>[<span class="extype" name="org.json4s.JsonAST.JValue">JValue</span>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SupportParser</dd></dl></div>
