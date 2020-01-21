@@ -1951,10 +1951,32 @@ returned.
       </span>
       
       
-    </li><li name="org.http4s.QueryOps#withOptionQueryParam" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="withOptionQueryParam[T](value:Option[T])(implicitevidence$30:org.http4s.QueryParam[T],implicitevidence$31:org.http4s.QueryParamEncoder[T]):QueryOps.this.Self"></a><a id="withOptionQueryParam[T](Option[T])(QueryParam[T],QueryParamEncoder[T]):Self"></a>
+    </li><li name="org.http4s.QueryOps#withMultiValueQueryParams" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withMultiValueQueryParams[T,K](params:Map[K,Seq[T]])(implicitevidence$30:org.http4s.QueryParamEncoder[T],implicitevidence$31:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self"></a><a id="withMultiValueQueryParams[T,K](Map[K,Seq[T]])(QueryParamEncoder[T],QueryParamKeyLike[K]):Self"></a>
       <span class="permalink">
-      <a href="../../org/http4s/Uri.html#withOptionQueryParam[T](value:Option[T])(implicitevidence$30:org.http4s.QueryParam[T],implicitevidence$31:org.http4s.QueryParamEncoder[T]):QueryOps.this.Self" title="Permalink">
+      <a href="../../org/http4s/Uri.html#withMultiValueQueryParams[T,K](params:Map[K,Seq[T]])(implicitevidence$30:org.http4s.QueryParamEncoder[T],implicitevidence$31:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withMultiValueQueryParams</span><span class="tparams">[<span name="T">T</span>, <span name="K">K</span>]</span><span class="params">(<span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="org.http4s.QueryOps.withMultiValueQueryParams.K">K</span>, <a href="https://www.scala-lang.org/api/2.12.10/scala/collection/Seq.html#scala.collection.Seq" class="extype" name="scala.collection.Seq">Seq</a>[<span class="extype" name="org.http4s.QueryOps.withMultiValueQueryParams.T">T</span>]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="QueryParamEncoder.html" class="extype" name="org.http4s.QueryParamEncoder">QueryParamEncoder</a>[<span class="extype" name="org.http4s.QueryOps.withMultiValueQueryParams.T">T</span>]</span>, <span name="arg1">arg1: <a href="QueryParamKeyLike.html" class="extype" name="org.http4s.QueryParamKeyLike">QueryParamKeyLike</a>[<span class="extype" name="org.http4s.QueryOps.withMultiValueQueryParams.K">K</span>]</span>)</span><span class="result">: <a href="#Self=org.http4s.Uri" class="extmbr" name="org.http4s.Uri.Self">Self</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Creates maybe a new <code>Self</code> with all the specified parameters in the
+<a href="Query.html" class="extype" name="org.http4s.Query">Query</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates maybe a new <code>Self</code> with all the specified parameters in the
+<a href="Query.html" class="extype" name="org.http4s.Query">Query</a>. If any of the given parameters' keys already exists, the
+value(s) will be replaced. Parameters from the input map are added
+left-to-right, so if a parameter with a given key is specified more than
+once, it will be self-overwriting.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
+    </li><li name="org.http4s.QueryOps#withOptionQueryParam" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withOptionQueryParam[T](value:Option[T])(implicitevidence$34:org.http4s.QueryParam[T],implicitevidence$35:org.http4s.QueryParamEncoder[T]):QueryOps.this.Self"></a><a id="withOptionQueryParam[T](Option[T])(QueryParam[T],QueryParamEncoder[T]):Self"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Uri.html#withOptionQueryParam[T](value:Option[T])(implicitevidence$34:org.http4s.QueryParam[T],implicitevidence$35:org.http4s.QueryParamEncoder[T]):QueryOps.this.Self" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1973,9 +1995,9 @@ If a parameter with the given <code>name</code> already exists the values will b
 replaced.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
     </li><li name="org.http4s.QueryOps#withOptionQueryParam" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="withOptionQueryParam[T,K](key:K,value:Option[T])(implicitevidence$28:org.http4s.QueryParamEncoder[T],implicitevidence$29:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self"></a><a id="withOptionQueryParam[T,K](K,Option[T])(QueryParamEncoder[T],QueryParamKeyLike[K]):Self"></a>
+      <a id="withOptionQueryParam[T,K](key:K,value:Option[T])(implicitevidence$32:org.http4s.QueryParamEncoder[T],implicitevidence$33:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self"></a><a id="withOptionQueryParam[T,K](K,Option[T])(QueryParamEncoder[T],QueryParamKeyLike[K]):Self"></a>
       <span class="permalink">
-      <a href="../../org/http4s/Uri.html#withOptionQueryParam[T,K](key:K,value:Option[T])(implicitevidence$28:org.http4s.QueryParamEncoder[T],implicitevidence$29:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self" title="Permalink">
+      <a href="../../org/http4s/Uri.html#withOptionQueryParam[T,K](key:K,value:Option[T])(implicitevidence$32:org.http4s.QueryParamEncoder[T],implicitevidence$33:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -2085,6 +2107,28 @@ replaced with an empty list.
       <p class="shortcomment cmt">Creates a new <code>Self</code> with the specified parameter in the <a href="Query.html" class="extype" name="org.http4s.Query">Query</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a new <code>Self</code> with the specified parameter in the <a href="Query.html" class="extype" name="org.http4s.Query">Query</a>.
 If a parameter with the given <code>QueryParam.key</code> already exists the values will be
 replaced with an empty list.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
+    </li><li name="org.http4s.QueryOps#withQueryParams" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withQueryParams[T,K](params:Map[K,T])(implicitevidence$28:org.http4s.QueryParamEncoder[T],implicitevidence$29:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self"></a><a id="withQueryParams[T,K](Map[K,T])(QueryParamEncoder[T],QueryParamKeyLike[K]):Self"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Uri.html#withQueryParams[T,K](params:Map[K,T])(implicitevidence$28:org.http4s.QueryParamEncoder[T],implicitevidence$29:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withQueryParams</span><span class="tparams">[<span name="T">T</span>, <span name="K">K</span>]</span><span class="params">(<span name="params">params: <span class="extype" name="scala.Predef.Map">Map</span>[<span class="extype" name="org.http4s.QueryOps.withQueryParams.K">K</span>, <span class="extype" name="org.http4s.QueryOps.withQueryParams.T">T</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="QueryParamEncoder.html" class="extype" name="org.http4s.QueryParamEncoder">QueryParamEncoder</a>[<span class="extype" name="org.http4s.QueryOps.withQueryParams.T">T</span>]</span>, <span name="arg1">arg1: <a href="QueryParamKeyLike.html" class="extype" name="org.http4s.QueryParamKeyLike">QueryParamKeyLike</a>[<span class="extype" name="org.http4s.QueryOps.withQueryParams.K">K</span>]</span>)</span><span class="result">: <a href="#Self=org.http4s.Uri" class="extmbr" name="org.http4s.Uri.Self">Self</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Creates maybe a new <code>Self</code> with all the specified parameters in the
+<a href="Query.html" class="extype" name="org.http4s.Query">Query</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Creates maybe a new <code>Self</code> with all the specified parameters in the
+<a href="Query.html" class="extype" name="org.http4s.Query">Query</a>. If any of the given parameters' keys already exists, the
+value(s) will be replaced. Parameters from the input map are added
+left-to-right, so if a parameter with a given key is specified more than
+once, it will be self-overwriting.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
     </li><li name="org.http4s.Uri#withoutFragment" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withoutFragment:org.http4s.Uri"></a><a id="withoutFragment:Uri"></a>
