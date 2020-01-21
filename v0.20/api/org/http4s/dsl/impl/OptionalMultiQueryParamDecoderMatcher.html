@@ -296,13 +296,13 @@
 <span class="kw">object</span> FooMatcher <span class="kw">extends</span> OptionalMultiQueryParamDecoderMatcher[Foo](<span class="lit">"foo"</span>)
 <span class="kw">val</span> routes = HttpRoutes.of {
   <span class="cmt">// matches http://.../closest?foo=2&foo=3&foo=4</span>
-  <span class="kw">case</span> GET -&gt; Root / <span class="lit">"closest"</span> :? FooMatcher(<span class="std">Some</span>(<span class="std">Seq</span>(<span class="num">2</span>,<span class="num">3</span>,<span class="num">4</span>))) <span class="kw">=&gt;</span> ...
+  <span class="kw">case</span> GET -&gt; Root / <span class="lit">"closest"</span> :? FooMatcher(Validated.Valid(<span class="std">Seq</span>(Foo(<span class="num">2</span>),Foo(<span class="num">3</span>),Foo(<span class="num">4</span>)))) <span class="kw">=&gt;</span> ...
 
   <span class="cmt">/*
   *  matches http://.../closest?foo=2&foo=3&foo=4 as well as http://.../closest (no parameters)
   *  or http://.../closest?foo=2 (single occurrence)
   */</span>
-  <span class="kw">case</span> GET -&gt; Root / <span class="lit">"closest"</span> :? FooMatcher(is) <span class="kw">=&gt;</span> ...</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/6541d0038127bb1a43d5e697ecb6e1af8c578628/dsl/src/main/scala/org/http4s/dsl/impl/Path.scala" target="_blank">Path.scala</a></dd></dl><div class="toggleContainer block">
+  <span class="kw">case</span> GET -&gt; Root / <span class="lit">"closest"</span> :? FooMatcher(is) <span class="kw">=&gt;</span> ...</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/4c552aa2b87f34bf06ddb9f02775406308187568/dsl/src/main/scala/org/http4s/dsl/impl/Path.scala" target="_blank">Path.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>

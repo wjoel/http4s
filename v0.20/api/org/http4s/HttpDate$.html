@@ -798,7 +798,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/6541d0038127bb1a43d5e697ecb6e1af8c578628/core/src/main/scala/org/http4s/HttpDate.scala" target="_blank">HttpDate.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/4c552aa2b87f34bf06ddb9f02775406308187568/core/src/main/scala/org/http4s/HttpDate.scala" target="_blank">HttpDate.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -992,6 +992,25 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.http4s.HttpDate#current" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="current[F[_]](implicitevidence$1:cats.Functor[F],implicitevidence$2:cats.effect.Clock[F]):F[org.http4s.HttpDate]"></a><a id="current[F[_]](Functor[F],Clock[F]):F[HttpDate]"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/HttpDate$.html#current[F[_]](implicitevidence$1:cats.Functor[F],implicitevidence$2:cats.effect.Clock[F]):F[org.http4s.HttpDate]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">current</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.Functor">Functor</span>[<span class="extype" name="org.http4s.HttpDate.current.F">F</span>]</span>, <span name="arg1">arg1: <span class="extype" name="cats.effect.Clock">Clock</span>[<span class="extype" name="org.http4s.HttpDate.current.F">F</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.HttpDate.current.F">F</span>[<a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Constructs an <a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a> from the current time.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs an <a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a> from the current time. Starting on January 1,n
+10000, this will throw an exception. The author intends to leave this
+problem for future generations.
+</p></div></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -1224,25 +1243,6 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.http4s.HttpDate#now" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="now:org.http4s.HttpDate"></a><a id="now:HttpDate"></a>
-      <span class="permalink">
-      <a href="../../org/http4s/HttpDate$.html#now:org.http4s.HttpDate" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">now</span><span class="result">: <a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a></span>
-      </span>
-      
-      <p class="shortcomment cmt">Constructs an <code>HttpDate</code> from the current time.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs an <code>HttpDate</code> from the current time. Starting on January 1,n
-10000, this will throw an exception. The author intends to leave this
-problem for future generations.
-</p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -1413,7 +1413,32 @@ problem for future generations.
 
         
 
-        
+        <div class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="org.http4s.HttpDate#now" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="now:org.http4s.HttpDate"></a><a id="now:HttpDate"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/HttpDate$.html#now:org.http4s.HttpDate" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version Use HttpDate.current instead, this breaks referential transparency) 0.20.16">now</span><span class="result">: <a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Constructs an <code>HttpDate</code> from the current time.</p><div class="fullcomment"><div class="comment cmt"><p>Constructs an <code>HttpDate</code> from the current time. Starting on January 1,n
+10000, this will throw an exception. The author intends to leave this
+problem for future generations.
+</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version Use HttpDate.current instead, this breaks referential transparency)</i> 0.20.16</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">
