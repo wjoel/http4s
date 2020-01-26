@@ -89,6 +89,20 @@
 ordered chronologically, so each release contains all changes described below
 it.</p>
 
+<h1 id="v0-20-17-2020-01-24">v0.20.17 (2020-01-24)</h1>
+
+<h2 id="bugfixes">Bugfixes</h2>
+
+<ul>
+<li><a href="https://github.com/http4s/http4s/pull/3105">#3105</a>: Fix &ldquo;cannot have more than one pending write request&rdquo; error in blaze-server web sockets.</li>
+</ul>
+
+<h2 id="dependency-updates">Dependency updates</h2>
+
+<ul>
+<li>simpleclient-0.8.1 (Prometheus)</li>
+</ul>
+
 <h1 id="v0-18-25-2020-01-21">v0.18.25 (2020-01-21)</h1>
 
 <h2 id="bug-fixes">Bug fixes</h2>
@@ -128,7 +142,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3092">#3092</a>: Add TLS support to ember-server via fs2-io.</li>
 </ul>
 
-<h2 id="dependency-updates">Dependency updates</h2>
+<h2 id="dependency-updates-1">Dependency updates</h2>
 
 <ul>
 <li>cats-2.1.0</li>
@@ -145,7 +159,7 @@ it.</p>
 
 <h1 id="v0-20-16-2020-01-21">v0.20.16 (2020-01-21)</h1>
 
-<h2 id="bugfixes">Bugfixes</h2>
+<h2 id="bugfixes-1">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/3086">#3086</a>: Fix connection leak in blaze-client pool manager when the next request in the queue is expired.</li>
@@ -174,7 +188,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3020">#3020</a>: Update scaladoc to compiling example code on OptionalMultiQueryParamDecoderMatcher</li>
 </ul>
 
-<h2 id="dependency-updates-1">Dependency updates</h2>
+<h2 id="dependency-updates-2">Dependency updates</h2>
 
 <ul>
 <li>async-http-client-2.10.4</li>
@@ -218,7 +232,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2911">#2911</a>: Add missing bincompat syntax to <code>org.http4s.implicits</code>.</li>
 </ul>
 
-<h2 id="dependency-updates-2">Dependency updates</h2>
+<h2 id="dependency-updates-3">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.11</li>
@@ -247,7 +261,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2948">#2948</a>: Add all missing <code>ContentCoding</code>s from the IANA registry.</li>
 </ul>
 
-<h2 id="dependency-updates-3">Dependency updates</h2>
+<h2 id="dependency-updates-4">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.9</li>
@@ -261,7 +275,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2830">#2930</a>: Move private <code>UrlCodingUtils</code> to the <code>Uri</code> companion object, make public</li>
 </ul>
 
-<h2 id="dependency-updates-4">Dependency updates</h2>
+<h2 id="dependency-updates-5">Dependency updates</h2>
 
 <ul>
 <li>jawn-0.14.2</li>
@@ -297,7 +311,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2733">#2733</a>: Add CSRF documentation</li>
 </ul>
 
-<h2 id="dependency-updates-5">Dependency updates</h2>
+<h2 id="dependency-updates-6">Dependency updates</h2>
 
 <ul>
 <li>async-http-client-2.10.2</li>
@@ -334,7 +348,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2817">#2817</a>: In jetty-client, disable internal client&rsquo;s default <code>Content-Type</code> to prevent default <code>application/octet-stream</code> for empty bodies.</li>
 </ul>
 
-<h2 id="dependency-updates-6">Dependency updates</h2>
+<h2 id="dependency-updates-7">Dependency updates</h2>
 
 <ul>
 <li>jetty-9.4.20</li>
@@ -342,7 +356,7 @@ it.</p>
 
 <h1 id="v0-21-0-m4-2019-08-14">v0.21.0-M4 (2019-08-14)</h1>
 
-<h2 id="dependency-updates-7">Dependency updates</h2>
+<h2 id="dependency-updates-8">Dependency updates</h2>
 
 <ul>
 <li>cats-core-2.0.0-RC1</li>
@@ -436,7 +450,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2550">#2550</a>: Adjust default timeouts and add warnings about misconfiguration</li>
 </ul>
 
-<h2 id="dependency-updates-8">Dependency updates</h2>
+<h2 id="dependency-updates-9">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.8</li>
@@ -475,7 +489,7 @@ it.</p>
 
 <p>This release drops support for Scala 2.11 and adds the <code>http4s-ember-server</code> and <code>http4s-ember-client</code> backends.  Ember is new and experimental, but we intend for it to become the reference implementation.  Notably, it only requires a <code>Concurrent</code> constraint.</p>
 
-<h2 id="bugfixes-1">Bugfixes</h2>
+<h2 id="bugfixes-2">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2691">#2691</a>: Fix deadlock in client by releasing current connection before retrying in <code>Retry</code> client middleware.  The constraint is upgraded to <code>Concurrent</code>.</li>
@@ -515,7 +529,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2655">#2655</a>: Tune JVM options for throughput</li>
 </ul>
 
-<h2 id="dependency-updates-9">Dependency updates</h2>
+<h2 id="dependency-updates-10">Dependency updates</h2>
 
 <ul>
 <li>async-http-client-2.10.1</li>
@@ -673,7 +687,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2639">#2639</a>: Fix leaking sensitive headers in server RequestLogger</li>
 </ul>
 
-<h2 id="dependency-updates-10">Dependency updates</h2>
+<h2 id="dependency-updates-11">Dependency updates</h2>
 
 <ul>
 <li>cats-1.6.1</li>
@@ -702,7 +716,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2579">#2579</a>: Skip Travis CI on tags</li>
 </ul>
 
-<h2 id="dependency-updates-11">Dependency updates</h2>
+<h2 id="dependency-updates-12">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.4</li>
@@ -751,7 +765,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2575">#2575</a>: Fix the Travis CI release pipeline</li>
 </ul>
 
-<h2 id="dependency-updates-12">Dependency updates</h2>
+<h2 id="dependency-updates-13">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.2</li>
@@ -788,7 +802,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2506">#2506</a>: Raise <code>DecodeFailure</code> with <code>MonadError</code> in <code>Message#as</code> rather than relying on effect to catch in <code>fold</code>. Requires a new <code>MonadError</code> constraint.</li>
 </ul>
 
-<h2 id="bugfixes-2">Bugfixes</h2>
+<h2 id="bugfixes-3">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2502">#2502</a>: Stop relying on undefined behavior of <code>fold</code> to catch errors in client.</li>
@@ -816,7 +830,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2521">#2521</a>: Add utility conversion for <code>java.util.concurrent.CompletableFuture</code> to <code>F[_]: Concurrent</code></li>
 </ul>
 
-<h2 id="dependency-updates-13">Dependency updates</h2>
+<h2 id="dependency-updates-14">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.0</li>
@@ -867,7 +881,7 @@ it.</p>
 </ul></li>
 </ul>
 
-<h2 id="bugfixes-3">Bugfixes</h2>
+<h2 id="bugfixes-4">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2470">#2470</a>: Don&rsquo;t wait indefinitely if a request timeout happens while borrowing a connection in blaze-client.</li>
@@ -900,7 +914,7 @@ it.</p>
 
 <h1 id="v0-20-0-m7-2019-03-20">v0.20.0-M7 (2019-03-20)</h1>
 
-<h2 id="bugfixes-4">Bugfixes</h2>
+<h2 id="bugfixes-5">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2450">#2450</a>: Fix <code>CirceInstances.builder</code> initialization, which referenced unintialized eager vals.</li>
@@ -979,7 +993,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2419">#2419</a>: Relax constraint on <code>Retry</code> middleware from <code>Effect</code> to <code>Sync</code></li>
 </ul>
 
-<h2 id="bugfixes-5">Bugfixes</h2>
+<h2 id="bugfixes-6">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2421">#2421</a>: Fix buggy use of <code>toString</code> in async-http-client when rendering URIs.</li>
@@ -1097,7 +1111,7 @@ there is a scalafix to assist migration from 0.18!</p>
 
 <h1 id="v0-20-0-m4-2018-12-05">v0.20.0-M4 (2018-12-05)</h1>
 
-<h2 id="bugfixes-6">Bugfixes</h2>
+<h2 id="bugfixes-7">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2283">#2283</a>: Fix client metrics bug that decremented active requests and recorded time before the resource was released.</li>
@@ -1155,7 +1169,7 @@ there is a scalafix to assist migration from 0.18!</p>
 <li><a href="https://github.com/http4s/http4s/pull/2262">#2197</a>: Require <code>Signal</code> rather than <code>SignallingRef</code> in <code>serveWhile</code></li>
 </ul>
 
-<h2 id="bugfixes-7">Bugfixes</h2>
+<h2 id="bugfixes-8">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2260">#2260</a>: Fix leak in blaze-client on a canceled connection</li>
@@ -1487,7 +1501,7 @@ there is a scalafix to assist migration from 0.18!</p>
 </ul></li>
 </ul>
 
-<h2 id="bugfixes-8">Bugfixes</h2>
+<h2 id="bugfixes-9">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2069">#2069</a>: Add proper <code>withMaxTotalConnections</code> method to <code>BlazeClientBuilder</code> in place of misnamed <code>withIdleTimeout</code> overload.</li>
@@ -1676,7 +1690,7 @@ there is a scalafix to assist migration from 0.18!</p>
 <li><a href="https://github.com/http4s/http4s/pull/2062">#2062</a>: Eliminate &ldquo;unhandled inbund command: Disconnected&rdquo;` warnings in blaze-server</li>
 </ul>
 
-<h2 id="bugfixes-9">Bugfixes</h2>
+<h2 id="bugfixes-10">Bugfixes</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2024">#2027</a>: Miscellaneous websocket fixes
