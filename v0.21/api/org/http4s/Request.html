@@ -1100,6 +1100,22 @@ status line, headers, and a possible request body.
       
       <p class="shortcomment cmt">Decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a> to the specified type</p><div class="fullcomment"><div class="comment cmt"><p>Decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a> to the specified type</p><p>If no valid <a href="Status.html" class="extype" name="org.http4s.Status">Status</a> has been described, allow Ok
 </p></div><dl class="paramcmts block"><dt class="tparam">A</dt><dd class="cmt"><p>type of the result</p></dd><dt class="param">decoder</dt><dd class="cmt"><p><a href="EntityDecoder.html" class="extype" name="org.http4s.EntityDecoder">EntityDecoder</a> used to decode the <a href="Media.html" class="extype" name="org.http4s.Media">Media</a></p></dd><dt>returns</dt><dd class="cmt"><p>the effect which will generate the A</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
+    </li><li name="org.http4s.Request#asCurl" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asCurl(redactHeadersWhen:org.http4s.util.CaseInsensitiveString=&gt;Boolean):String"></a><a id="asCurl((CaseInsensitiveString)⇒Boolean):String"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Request.html#asCurl(redactHeadersWhen:org.http4s.util.CaseInsensitiveString=&gt;Boolean):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asCurl</span><span class="params">(<span name="redactHeadersWhen">redactHeadersWhen: (<a href="util/CaseInsensitiveString.html" class="extype" name="org.http4s.util.CaseInsensitiveString">CaseInsensitiveString</a>) ⇒ <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol"><span class="name"><a href="Headers$.html">Headers.SensitiveHeaders.contains</a></span></span></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">cURL representation of the request.</p><div class="fullcomment"><div class="comment cmt"><p>cURL representation of the request.</p><p>Supported cURL-Parameters are: -X, -H</p></div></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">

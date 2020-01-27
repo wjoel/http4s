@@ -255,7 +255,7 @@
                         <a class="trait" href="Connection.html" title=""></a>
                         <a href="Connection.html" title="">Connection</a>
                       </li><li class="current-entities indented3">
-                        <span class="separator"></span>
+                        <a class="object" href="ConnectionFailure$.html" title=""></a>
                         <a class="class" href="" title="Indicates a failure to establish a client connection, preserving the request key that we tried to connect to."></a>
                         <a href="" title="Indicates a failure to establish a client connection, preserving the request key that we tried to connect to.">ConnectionFailure</a>
                       </li><li class="current-entities indented3">
@@ -297,14 +297,16 @@
           <div id="content">
             <body class="class type">
       <div id="definition">
-        <div class="big-circle class">c</div>
+        <a href="ConnectionFailure$.html" title="See companion object"><div class="big-circle class-companion-object">c</div></a>
         <p id="owner"><a href="../../index.html" class="extype" name="org">org</a>.<a href="../index.html" class="extype" name="org.http4s">http4s</a>.<a href="index.html" class="extype" name="org.http4s.client">client</a></p>
-        <h1>ConnectionFailure<span class="permalink">
+        <h1><a href="ConnectionFailure$.html" title="See companion object">ConnectionFailure</a><span class="permalink">
       <a href="../../../org/http4s/client/ConnectionFailure.html" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span></h1>
-        <h3><span class="morelinks"></span></h3>
+        <h3><span class="morelinks"><div>
+            Companion <a href="ConnectionFailure$.html" title="See companion object">object ConnectionFailure</a>
+          </div></span></h3>
       </div>
 
       <h4 id="signature" class="signature">
@@ -376,9 +378,9 @@ that we tried to connect to.
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.http4s.client.ConnectionFailure#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(requestKey:org.http4s.client.RequestKey,cause:Throwable):org.http4s.client.ConnectionFailure"></a><a id="&lt;init&gt;:ConnectionFailure"></a>
+      <a id="&lt;init&gt;(requestKey:org.http4s.client.RequestKey,upstream:java.net.InetSocketAddress,cause:Throwable):org.http4s.client.ConnectionFailure"></a><a id="&lt;init&gt;:ConnectionFailure"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/client/ConnectionFailure.html#&lt;init&gt;(requestKey:org.http4s.client.RequestKey,cause:Throwable):org.http4s.client.ConnectionFailure" title="Permalink">
+      <a href="../../../org/http4s/client/ConnectionFailure.html#&lt;init&gt;(requestKey:org.http4s.client.RequestKey,upstream:java.net.InetSocketAddress,cause:Throwable):org.http4s.client.ConnectionFailure" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -387,7 +389,7 @@ that we tried to connect to.
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">ConnectionFailure</span><span class="params">(<span name="requestKey">requestKey: <a href="RequestKey.html" class="extype" name="org.http4s.client.RequestKey">RequestKey</a></span>, <span name="cause">cause: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span>
+        <span class="name">ConnectionFailure</span><span class="params">(<span name="requestKey">requestKey: <a href="RequestKey.html" class="extype" name="org.http4s.client.RequestKey">RequestKey</a></span>, <span name="upstream">upstream: <span class="extype" name="java.net.InetSocketAddress">InetSocketAddress</span></span>, <span name="cause">cause: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span>
       </span>
       
       
@@ -524,6 +526,22 @@ that we tried to connect to.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.http4s.client.ConnectionFailure#cause" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cause:Throwable"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/client/ConnectionFailure.html#cause:Throwable" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cause</span><span class="result">: <span class="extype" name="scala.Throwable">Throwable</span></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a><a id="clone():AnyRef"></a>
       <span class="permalink">
@@ -973,6 +991,22 @@ that we tried to connect to.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable</dd></dl></div>
+    </li><li name="org.http4s.client.ConnectionFailure#requestKey" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="requestKey:org.http4s.client.RequestKey"></a><a id="requestKey:RequestKey"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/client/ConnectionFailure.html#requestKey:org.http4s.client.RequestKey" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">requestKey</span><span class="result">: <a href="RequestKey.html" class="extype" name="org.http4s.client.RequestKey">RequestKey</a></span>
+      </span>
+      
+      
     </li><li name="java.lang.Throwable#setStackTrace" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="setStackTrace(x$1:Array[StackTraceElement]):Unit"></a><a id="setStackTrace(Array[StackTraceElement]):Unit"></a>
       <span class="permalink">
@@ -1021,6 +1055,22 @@ that we tried to connect to.
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Throwable → AnyRef → Any</dd></dl></div>
+    </li><li name="org.http4s.client.ConnectionFailure#upstream" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="upstream:java.net.InetSocketAddress"></a><a id="upstream:InetSocketAddress"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/client/ConnectionFailure.html#upstream:java.net.InetSocketAddress" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">upstream</span><span class="result">: <span class="extype" name="java.net.InetSocketAddress">InetSocketAddress</span></span>
+      </span>
+      
+      
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">
