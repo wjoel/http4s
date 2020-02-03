@@ -1057,22 +1057,6 @@ The backend is shut down when the stream is finalized.
       </span>
       
       
-    </li><li name="org.http4s.server.jetty.JettyBuilder#withSSLContext" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="withSSLContext(sslContext:javax.net.ssl.SSLContext,clientAuth:org.http4s.server.SSLClientAuthMode):JettyBuilder.this.Self"></a><a id="withSSLContext(SSLContext,SSLClientAuthMode):Self"></a>
-      <span class="permalink">
-      <a href="../../../../org/http4s/server/jetty/JettyBuilder.html#withSSLContext(sslContext:javax.net.ssl.SSLContext,clientAuth:org.http4s.server.SSLClientAuthMode):JettyBuilder.this.Self" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">withSSLContext</span><span class="params">(<span name="sslContext">sslContext: <span class="extype" name="javax.net.ssl.SSLContext">SSLContext</span></span>, <span name="clientAuth">clientAuth: <a href="../SSLClientAuthMode.html" class="extype" name="org.http4s.server.SSLClientAuthMode">SSLClientAuthMode</a> = <span class="symbol"><span class="name"><a href="../SSLClientAuthMode$.html">SSLClientAuthMode.NotRequested</a></span></span></span>)</span><span class="result">: <a href="#Self=org.http4s.server.jetty.JettyBuilder[F]" class="extmbr" name="org.http4s.server.jetty.JettyBuilder.Self">Self</a></span>
-      </span>
-      
-      
     </li><li name="org.http4s.server.jetty.JettyBuilder#withServiceErrorHandler" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="withServiceErrorHandler(serviceErrorHandler:org.http4s.server.ServiceErrorHandler[F]):JettyBuilder.this.Self"></a><a id="withServiceErrorHandler(ServiceErrorHandler[F]):Self"></a>
       <span class="permalink">
@@ -1127,6 +1111,40 @@ Not to be confused with the server connectors.
       
       <p class="shortcomment cmt">Sets the graceful shutdown timeout for Jetty.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the graceful shutdown timeout for Jetty.  Closing the resource
 will wait this long before a forcible stop.</p></div></div>
+    </li><li name="org.http4s.server.jetty.JettyBuilder#withSslContext" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSslContext(sslContext:javax.net.ssl.SSLContext):JettyBuilder.this.Self"></a><a id="withSslContext(SSLContext):Self"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/jetty/JettyBuilder.html#withSslContext(sslContext:javax.net.ssl.SSLContext):JettyBuilder.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSslContext</span><span class="params">(<span name="sslContext">sslContext: <span class="extype" name="javax.net.ssl.SSLContext">SSLContext</span></span>)</span><span class="result">: <a href="#Self=org.http4s.server.jetty.JettyBuilder[F]" class="extmbr" name="org.http4s.server.jetty.JettyBuilder.Self">Self</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Configures the server with TLS, using the provided <code>SSLContext</code> and its
+default <code>SSLParameters</code></p>
+    </li><li name="org.http4s.server.jetty.JettyBuilder#withSslContextAndParameters" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSslContextAndParameters(sslContext:javax.net.ssl.SSLContext,sslParameters:javax.net.ssl.SSLParameters):JettyBuilder.this.Self"></a><a id="withSslContextAndParameters(SSLContext,SSLParameters):Self"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/jetty/JettyBuilder.html#withSslContextAndParameters(sslContext:javax.net.ssl.SSLContext,sslParameters:javax.net.ssl.SSLParameters):JettyBuilder.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSslContextAndParameters</span><span class="params">(<span name="sslContext">sslContext: <span class="extype" name="javax.net.ssl.SSLContext">SSLContext</span></span>, <span name="sslParameters">sslParameters: <span class="extype" name="javax.net.ssl.SSLParameters">SSLParameters</span></span>)</span><span class="result">: <a href="#Self=org.http4s.server.jetty.JettyBuilder[F]" class="extmbr" name="org.http4s.server.jetty.JettyBuilder.Self">Self</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Configures the server with TLS, using the provided <code>SSLContext</code> and its
+default <code>SSLParameters</code></p>
     </li><li name="org.http4s.server.jetty.JettyBuilder#withThreadPool" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withThreadPool(threadPool:org.eclipse.jetty.util.thread.ThreadPool):org.http4s.server.jetty.JettyBuilder[F]"></a><a id="withThreadPool(ThreadPool):JettyBuilder[F]"></a>
       <span class="permalink">
@@ -1159,6 +1177,22 @@ will wait this long before a forcible stop.</p></div></div>
       </span>
       
       <p class="shortcomment cmt">Disable the banner when the server starts up</p><div class="fullcomment"><div class="comment cmt"><p>Disable the banner when the server starts up</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a></dd></dl></div>
+    </li><li name="org.http4s.server.jetty.JettyBuilder#withoutSsl" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withoutSsl:JettyBuilder.this.Self"></a><a id="withoutSsl:Self"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/jetty/JettyBuilder.html#withoutSsl:JettyBuilder.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withoutSsl</span><span class="result">: <a href="#Self=org.http4s.server.jetty.JettyBuilder[F]" class="extmbr" name="org.http4s.server.jetty.JettyBuilder.Self">Self</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Disables SSL.</p>
     </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="→[B](y:B):(A,B)"></a><a id="→[B](B):(JettyBuilder[F],B)"></a>
       <span class="permalink">
@@ -1185,7 +1219,29 @@ will wait this long before a forcible stop.</p></div></div>
 
         
 
-        
+        <div class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="org.http4s.server.jetty.JettyBuilder#withSSLContext" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withSSLContext(sslContext:javax.net.ssl.SSLContext,clientAuth:org.http4s.server.SSLClientAuthMode):JettyBuilder.this.Self"></a><a id="withSSLContext(SSLContext,SSLClientAuthMode):Self"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/jetty/JettyBuilder.html#withSSLContext(sslContext:javax.net.ssl.SSLContext,clientAuth:org.http4s.server.SSLClientAuthMode):JettyBuilder.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 0.21.0-RC3) Use withSslContext (note lowercase). To request client certificates, use withSslContextAndParameters, calling either .setWantClientAuth(true) or setNeedClientAuth(true) on the SSLParameters.">withSSLContext</span><span class="params">(<span name="sslContext">sslContext: <span class="extype" name="javax.net.ssl.SSLContext">SSLContext</span></span>, <span name="clientAuth">clientAuth: <a href="../SSLClientAuthMode.html" class="extype" name="org.http4s.server.SSLClientAuthMode">SSLClientAuthMode</a> = <span class="symbol"><span class="name"><a href="../SSLClientAuthMode$.html">SSLClientAuthMode.NotRequested</a></span></span></span>)</span><span class="result">: <a href="#Self=org.http4s.server.jetty.JettyBuilder[F]" class="extmbr" name="org.http4s.server.jetty.JettyBuilder.Self">Self</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.21.0-RC3)</i> Use <code>withSslContext</code> (note lowercase). To request client certificates, use <code>withSslContextAndParameters, calling either </code>.setWantClientAuth(true)<code> or </code>setNeedClientAuth(true)<code> on the </code>SSLParameters<code>.</code></p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">
