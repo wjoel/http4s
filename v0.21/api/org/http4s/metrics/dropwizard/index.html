@@ -239,9 +239,9 @@
               <h3>Value Members</h3>
               <ol>
                 <li name="org.http4s.metrics.dropwizard#metricRegistryEncoder" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="metricRegistryEncoder[F[_]](mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$1:cats.Applicative[F]):org.http4s.EntityEncoder[F,com.codahale.metrics.MetricRegistry]"></a><a id="metricRegistryEncoder[F[_]](ObjectMapper)(Applicative[F]):EntityEncoder[F,MetricRegistry]"></a>
+      <a id="metricRegistryEncoder[F[_]](mapper:com.fasterxml.jackson.databind.ObjectMapper):org.http4s.EntityEncoder[F,com.codahale.metrics.MetricRegistry]"></a><a id="metricRegistryEncoder[F[_]](ObjectMapper):EntityEncoder[F,MetricRegistry]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/metrics/dropwizard/index.html#metricRegistryEncoder[F[_]](mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$1:cats.Applicative[F]):org.http4s.EntityEncoder[F,com.codahale.metrics.MetricRegistry]" title="Permalink">
+      <a href="../../../../org/http4s/metrics/dropwizard/index.html#metricRegistryEncoder[F[_]](mapper:com.fasterxml.jackson.databind.ObjectMapper):org.http4s.EntityEncoder[F,com.codahale.metrics.MetricRegistry]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -250,14 +250,14 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">metricRegistryEncoder</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="mapper">mapper: <span class="extype" name="com.fasterxml.jackson.databind.ObjectMapper">ObjectMapper</span> = <span class="symbol">defaultMapper</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/Applicative.html#cats.Applicative" class="extype" name="cats.Applicative">Applicative</a>[<span class="extype" name="org.http4s.metrics.dropwizard.metricRegistryEncoder.F">F</span>]</span>)</span><span class="result">: <a href="../../EntityEncoder.html" class="extype" name="org.http4s.EntityEncoder">EntityEncoder</a>[<span class="extype" name="org.http4s.metrics.dropwizard.metricRegistryEncoder.F">F</span>, <span class="extype" name="com.codahale.metrics.MetricRegistry">MetricRegistry</span>]</span>
+        <span class="name">metricRegistryEncoder</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="mapper">mapper: <span class="extype" name="com.fasterxml.jackson.databind.ObjectMapper">ObjectMapper</span> = <span class="symbol">defaultMapper</span></span>)</span><span class="result">: <a href="../../EntityEncoder.html" class="extype" name="org.http4s.EntityEncoder">EntityEncoder</a>[<span class="extype" name="org.http4s.metrics.dropwizard.metricRegistryEncoder.F">F</span>, <span class="extype" name="com.codahale.metrics.MetricRegistry">MetricRegistry</span>]</span>
       </span>
       
       <p class="shortcomment cmt">Encodes a metric registry in JSON format</p>
     </li><li name="org.http4s.metrics.dropwizard#metricsResponse" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="metricsResponse[F[_]](registry:com.codahale.metrics.MetricRegistry,mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$2:cats.Applicative[F]):F[org.http4s.Response[F]]"></a><a id="metricsResponse[F[_]](MetricRegistry,ObjectMapper)(Applicative[F]):F[Response[F]]"></a>
+      <a id="metricsResponse[F[_]](registry:com.codahale.metrics.MetricRegistry,mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$1:cats.Applicative[F]):F[org.http4s.Response[F]]"></a><a id="metricsResponse[F[_]](MetricRegistry,ObjectMapper)(Applicative[F]):F[Response[F]]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/metrics/dropwizard/index.html#metricsResponse[F[_]](registry:com.codahale.metrics.MetricRegistry,mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$2:cats.Applicative[F]):F[org.http4s.Response[F]]" title="Permalink">
+      <a href="../../../../org/http4s/metrics/dropwizard/index.html#metricsResponse[F[_]](registry:com.codahale.metrics.MetricRegistry,mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$1:cats.Applicative[F]):F[org.http4s.Response[F]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -271,9 +271,9 @@
       
       <p class="shortcomment cmt">Returns an OK response with a JSON dump of a MetricRegistry</p>
     </li><li name="org.http4s.metrics.dropwizard#metricsService" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="metricsService[F[_]](registry:com.codahale.metrics.MetricRegistry,mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$3:cats.effect.Sync[F]):org.http4s.HttpRoutes[F]"></a><a id="metricsService[F[_]](MetricRegistry,ObjectMapper)(Sync[F]):HttpRoutes[F]"></a>
+      <a id="metricsService[F[_]](registry:com.codahale.metrics.MetricRegistry,mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$2:cats.effect.Sync[F]):org.http4s.HttpRoutes[F]"></a><a id="metricsService[F[_]](MetricRegistry,ObjectMapper)(Sync[F]):HttpRoutes[F]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/metrics/dropwizard/index.html#metricsService[F[_]](registry:com.codahale.metrics.MetricRegistry,mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$3:cats.effect.Sync[F]):org.http4s.HttpRoutes[F]" title="Permalink">
+      <a href="../../../../org/http4s/metrics/dropwizard/index.html#metricsService[F[_]](registry:com.codahale.metrics.MetricRegistry,mapper:com.fasterxml.jackson.databind.ObjectMapper)(implicitevidence$2:cats.effect.Sync[F]):org.http4s.HttpRoutes[F]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
