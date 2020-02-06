@@ -1005,9 +1005,9 @@ routes via <code>SemigroupK</code>.
               
         </dd></dl></div>
     </li><li name="org.http4s.ContextRoutes#empty" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="empty[T,F[_]](implicitevidence$1:cats.Applicative[F]):org.http4s.ContextRoutes[T,F]"></a><a id="empty[T,F[_]](Applicative[F]):ContextRoutes[T,F]"></a>
+      <a id="empty[T,F[_]](implicitevidence$2:cats.Applicative[F]):org.http4s.ContextRoutes[T,F]"></a><a id="empty[T,F[_]](Applicative[F]):ContextRoutes[T,F]"></a>
       <span class="permalink">
-      <a href="../../org/http4s/ContextRoutes$.html#empty[T,F[_]](implicitevidence$1:cats.Applicative[F]):org.http4s.ContextRoutes[T,F]" title="Permalink">
+      <a href="../../org/http4s/ContextRoutes$.html#empty[T,F[_]](implicitevidence$2:cats.Applicative[F]):org.http4s.ContextRoutes[T,F]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1202,6 +1202,26 @@ routes via <code>SemigroupK</code>.
 partial function is suspended in <code>F</code> to permit more efficient combination
 of authed services via <code>SemigroupK</code>.
 </p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>the base effect of the <a href="index.html#ContextRoutes[T,F[_]]=cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.ContextRequest[F,T],org.http4s.Response[F]]" class="extmbr" name="org.http4s.ContextRoutes">ContextRoutes</a></p></dd><dt class="param">pf</dt><dd class="cmt"><p>the partial function to lift</p></dd><dt>returns</dt><dd class="cmt"><p>An <a href="index.html#ContextRoutes[T,F[_]]=cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.ContextRequest[F,T],org.http4s.Response[F]]" class="extmbr" name="org.http4s.ContextRoutes">ContextRoutes</a> that returns some <a href="Response.html" class="extype" name="org.http4s.Response">Response</a> in an <code>OptionT[F, ?]</code>
+wherever <code>pf</code> is defined, an <code>OptionT.none</code> wherever it is not</p></dd></dl></div>
+    </li><li name="org.http4s.ContextRoutes#strict" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="strict[T,F[_]](pf:PartialFunction[org.http4s.ContextRequest[F,T],F[org.http4s.Response[F]]])(implicitevidence$1:cats.Applicative[F]):org.http4s.ContextRoutes[T,F]"></a><a id="strict[T,F[_]](PartialFunction[ContextRequest[F,T],F[Response[F]]])(Applicative[F]):ContextRoutes[T,F]"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/ContextRoutes$.html#strict[T,F[_]](pf:PartialFunction[org.http4s.ContextRequest[F,T],F[org.http4s.Response[F]]])(implicitevidence$1:cats.Applicative[F]):org.http4s.ContextRoutes[T,F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">strict</span><span class="tparams">[<span name="T">T</span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="pf">pf: <a href="https://www.scala-lang.org/api/2.12.10/scala/PartialFunction.html#scala.PartialFunction" class="extype" name="scala.PartialFunction">PartialFunction</a>[<a href="ContextRequest.html" class="extype" name="org.http4s.ContextRequest">ContextRequest</a>[<span class="extype" name="org.http4s.ContextRoutes.strict.F">F</span>, <span class="extype" name="org.http4s.ContextRoutes.strict.T">T</span>], <span class="extype" name="org.http4s.ContextRoutes.strict.F">F</span>[<a href="Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.ContextRoutes.strict.F">F</span>]]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/Applicative.html#cats.Applicative" class="extype" name="cats.Applicative">Applicative</a>[<span class="extype" name="org.http4s.ContextRoutes.strict.F">F</span>]</span>)</span><span class="result">: <a href="index.html#ContextRoutes[T,F[_]]=cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.ContextRequest[F,T],org.http4s.Response[F]]" class="extmbr" name="org.http4s.ContextRoutes">ContextRoutes</a>[<span class="extype" name="org.http4s.ContextRoutes.strict.T">T</span>, <span class="extype" name="org.http4s.ContextRoutes.strict.F">F</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Lifts a partial function into an <a href="index.html#ContextRoutes[T,F[_]]=cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.ContextRequest[F,T],org.http4s.Response[F]]" class="extmbr" name="org.http4s.ContextRoutes">ContextRoutes</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Lifts a partial function into an <a href="index.html#ContextRoutes[T,F[_]]=cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.ContextRequest[F,T],org.http4s.Response[F]]" class="extmbr" name="org.http4s.ContextRoutes">ContextRoutes</a>.  The application of the
+partial function is not suspended in <code>F</code>, unlike <a href="#of[T,F[_]](pf:PartialFunction[org.http4s.ContextRequest[F,T],F[org.http4s.Response[F]]])(implicitF:cats.Defer[F],implicitFA:cats.Applicative[F]):org.http4s.ContextRoutes[T,F]" class="extmbr" name="org.http4s.ContextRoutes#of">of</a>. This allows for less
+constraints when not combining many routes.
+</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>the base effect of the <a href="index.html#ContextRoutes[T,F[_]]=cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.ContextRequest[F,T],org.http4s.Response[F]]" class="extmbr" name="org.http4s.ContextRoutes">ContextRoutes</a></p></dd><dt class="param">pf</dt><dd class="cmt"><p>the partial function to lift</p></dd><dt>returns</dt><dd class="cmt"><p>A <a href="index.html#ContextRoutes[T,F[_]]=cats.data.Kleisli[[β$2$]cats.data.OptionT[F,β$2$],org.http4s.ContextRequest[F,T],org.http4s.Response[F]]" class="extmbr" name="org.http4s.ContextRoutes">ContextRoutes</a> that returns some <a href="Response.html" class="extype" name="org.http4s.Response">Response</a> in an <code>OptionT[F, ?]</code>
 wherever <code>pf</code> is defined, an <code>OptionT.none</code> wherever it is not</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
