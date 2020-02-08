@@ -6,12 +6,12 @@
 
   <title>http4s | CORS</title>
 
-  <link rel="stylesheet" type="text/css" href="https://http4s.org/v0.21/css/bootstrap.min.css" >  
-  <link rel="stylesheet" type="text/css" href="https://http4s.org/v0.21/css/font-awesome.min.css" >  
-  <link rel="stylesheet" type="text/css" href="https://http4s.org/v0.21/css/fontello.css" >
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/v0.21/css/bootstrap.min.css" >  
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/v0.21/css/font-awesome.min.css" >  
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/v0.21/css/fontello.css" >
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Share+Tech" >
-  <link rel="stylesheet" type="text/css" href="https://http4s.org/v0.21/css/highlight-github.css">
-  <link rel="stylesheet" type="text/css" href="https://http4s.org/v0.21/css/style.css" >
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/v0.21/css/highlight-github.css">
+  <link rel="stylesheet" type="text/css" href="http://127.0.0.1:4000/v0.21/css/style.css" >
 </head>
 
   <body>
@@ -111,7 +111,7 @@ import org.http4s.implicits._
   case _ =&gt;
     Ok()
 }
-// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$17054/126490259@607fea12)
+// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$28776/1292677270@2b4ed343)
 
 val request = Request[IO](Method.GET, uri&quot;/&quot;)
 // request: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers())
@@ -126,7 +126,7 @@ service.orNotFound(request).unsafeRunSync
 </code></pre>
 
 <pre><code class="language-scala">val corsService = CORS(service)
-// corsService: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$17161/1800262719@2a1b1504)
+// corsService: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$28883/1594091506@2ca2096e)
 
 corsService.orNotFound(request).unsafeRunSync
 // res1: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0))
@@ -180,10 +180,10 @@ and <code>POST</code>, pass that to the <code>CORS</code> middleware, and try it
   allowedMethods = Some(Set(&quot;GET&quot;, &quot;POST&quot;)),
   allowCredentials = true,
   maxAge = 1.day.toSeconds)
-// methodConfig: org.http4s.server.middleware.CORSConfig = CORSConfig(true,true,86400,false,org.http4s.server.middleware.CORSConfig$$$Lambda$17160/479442635@14730a64,Some(Set(GET, POST)),Some(Set(Content-Type, Authorization, *)),Some(Set(*)))
+// methodConfig: org.http4s.server.middleware.CORSConfig = CORSConfig(true,true,86400,false,org.http4s.server.middleware.CORSConfig$$$Lambda$28882/711696533@5add6f2a,Some(Set(GET, POST)),Some(Set(Content-Type, Authorization, *)),Some(Set(*)))
 
 val corsMethodSvc = CORS(service, methodConfig)
-// corsMethodSvc: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$17161/1800262719@bafc3bb)
+// corsMethodSvc: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$28883/1594091506@3ec71d4b)
 
 corsMethodSvc.orNotFound(googleGet).unsafeRunSync
 // res3: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: true, Access-Control-Allow-Methods: GET, POST, Access-Control-Allow-Origin: https://google.com, Access-Control-Max-Age: 86400))
@@ -207,7 +207,7 @@ Next, we&rsquo;ll create a configuration that limits the origins to &ldquo;yahoo
 // originConfig: org.http4s.server.middleware.CORSConfig = CORSConfig(false,false,86400,true,Set(https://yahoo.com, https://duckduckgo.com),None,Some(Set(Content-Type, Authorization, *)),Some(Set(*)))
 
 val corsOriginSvc = CORS(service, originConfig)
-// corsOriginSvc: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$17161/1800262719@2f32cdbe)
+// corsOriginSvc: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$28883/1594091506@3ce858f4)
 
 corsOriginSvc.orNotFound(googleGet).unsafeRunSync
 // res6: org.http4s.Response[cats.effect.IO] = Response(status=403, headers=Headers())
@@ -316,7 +316,7 @@ that only some of your endpoints are CORS enabled.</p>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-<script src="https://http4s.org/v0.21/js/highlight.pack.js"></script>
+<script src="http://127.0.0.1:4000/v0.21/js/highlight.pack.js"></script>
 <script>
   hljs.initHighlightingOnLoad();
   
