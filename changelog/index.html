@@ -89,6 +89,14 @@
 ordered chronologically, so each release contains all changes described below
 it.</p>
 
+<h1 id="v0-21-0-2020-02-09">v0.21.0 (2020-02-09)</h1>
+
+<h2 id="dependency-updates">Dependency updates</h2>
+
+<ul>
+<li>circe-0.13.0</li>
+</ul>
+
 <h1 id="v0-21-0-rc5-2020-02-08">v0.21.0-RC5 (2020-02-08)</h1>
 
 <p>This release is binary compatible with 0.21.0-RC4.</p>
@@ -99,12 +107,11 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3148">#3148</a>: Add <code>HttpRoutes.strict</code> and <code>ContextRoutes.strict</code> for routes that require only an <code>Applicative</code>, at the cost of evaluating <code>combineK</code>ed routes strictly.</li>
 </ul>
 
-<h2 id="dependency-updates">Dependency updates</h2>
+<h2 id="dependency-updates-1">Dependency updates</h2>
 
 <ul>
 <li>async-http-client-2.10.5</li>
 <li>cats-effect-2.1.1</li>
-<li>circe-0.13.0</li>
 <li>scalatags-0.8.5</li>
 </ul>
 
@@ -162,7 +169,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3132">#3132</a>: In <code>BlazeBuilder</code>, add <code>withSslContext</code> and <code>withSslContextAndParameters</code> to permit full control of <code>SSLParameters</code>.  Add <code>withoutSsl</code>.</li>
 </ul>
 
-<h2 id="dependency-updates-1">Dependency updates</h2>
+<h2 id="dependency-updates-2">Dependency updates</h2>
 
 <ul>
 <li>cats-effect-2.1.0</li>
@@ -216,7 +223,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3105">#3105</a>: Fix &ldquo;cannot have more than one pending write request&rdquo; error in blaze-server web sockets.</li>
 </ul>
 
-<h2 id="dependency-updates-2">Dependency updates</h2>
+<h2 id="dependency-updates-3">Dependency updates</h2>
 
 <ul>
 <li>simpleclient-0.8.1 (Prometheus)</li>
@@ -261,7 +268,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3092">#3092</a>: Add TLS support to ember-server via fs2-io.</li>
 </ul>
 
-<h2 id="dependency-updates-3">Dependency updates</h2>
+<h2 id="dependency-updates-4">Dependency updates</h2>
 
 <ul>
 <li>cats-2.1.0</li>
@@ -307,7 +314,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3020">#3020</a>: Update scaladoc to compiling example code on OptionalMultiQueryParamDecoderMatcher</li>
 </ul>
 
-<h2 id="dependency-updates-4">Dependency updates</h2>
+<h2 id="dependency-updates-5">Dependency updates</h2>
 
 <ul>
 <li>async-http-client-2.10.4</li>
@@ -351,7 +358,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2911">#2911</a>: Add missing bincompat syntax to <code>org.http4s.implicits</code>.</li>
 </ul>
 
-<h2 id="dependency-updates-5">Dependency updates</h2>
+<h2 id="dependency-updates-6">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.11</li>
@@ -380,7 +387,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2948">#2948</a>: Add all missing <code>ContentCoding</code>s from the IANA registry.</li>
 </ul>
 
-<h2 id="dependency-updates-6">Dependency updates</h2>
+<h2 id="dependency-updates-7">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.9</li>
@@ -394,7 +401,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2830">#2930</a>: Move private <code>UrlCodingUtils</code> to the <code>Uri</code> companion object, make public</li>
 </ul>
 
-<h2 id="dependency-updates-7">Dependency updates</h2>
+<h2 id="dependency-updates-8">Dependency updates</h2>
 
 <ul>
 <li>jawn-0.14.2</li>
@@ -430,7 +437,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2733">#2733</a>: Add CSRF documentation</li>
 </ul>
 
-<h2 id="dependency-updates-8">Dependency updates</h2>
+<h2 id="dependency-updates-9">Dependency updates</h2>
 
 <ul>
 <li>async-http-client-2.10.2</li>
@@ -467,7 +474,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2817">#2817</a>: In jetty-client, disable internal client&rsquo;s default <code>Content-Type</code> to prevent default <code>application/octet-stream</code> for empty bodies.</li>
 </ul>
 
-<h2 id="dependency-updates-9">Dependency updates</h2>
+<h2 id="dependency-updates-10">Dependency updates</h2>
 
 <ul>
 <li>jetty-9.4.20</li>
@@ -475,7 +482,7 @@ it.</p>
 
 <h1 id="v0-21-0-m4-2019-08-14">v0.21.0-M4 (2019-08-14)</h1>
 
-<h2 id="dependency-updates-10">Dependency updates</h2>
+<h2 id="dependency-updates-11">Dependency updates</h2>
 
 <ul>
 <li>cats-core-2.0.0-RC1</li>
@@ -569,7 +576,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2550">#2550</a>: Adjust default timeouts and add warnings about misconfiguration</li>
 </ul>
 
-<h2 id="dependency-updates-11">Dependency updates</h2>
+<h2 id="dependency-updates-12">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.8</li>
@@ -648,7 +655,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2655">#2655</a>: Tune JVM options for throughput</li>
 </ul>
 
-<h2 id="dependency-updates-12">Dependency updates</h2>
+<h2 id="dependency-updates-13">Dependency updates</h2>
 
 <ul>
 <li>async-http-client-2.10.1</li>
@@ -806,7 +813,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2639">#2639</a>: Fix leaking sensitive headers in server RequestLogger</li>
 </ul>
 
-<h2 id="dependency-updates-13">Dependency updates</h2>
+<h2 id="dependency-updates-14">Dependency updates</h2>
 
 <ul>
 <li>cats-1.6.1</li>
@@ -835,7 +842,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2579">#2579</a>: Skip Travis CI on tags</li>
 </ul>
 
-<h2 id="dependency-updates-14">Dependency updates</h2>
+<h2 id="dependency-updates-15">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.4</li>
@@ -884,7 +891,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2575">#2575</a>: Fix the Travis CI release pipeline</li>
 </ul>
 
-<h2 id="dependency-updates-15">Dependency updates</h2>
+<h2 id="dependency-updates-16">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.2</li>
@@ -949,7 +956,7 @@ it.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2521">#2521</a>: Add utility conversion for <code>java.util.concurrent.CompletableFuture</code> to <code>F[_]: Concurrent</code></li>
 </ul>
 
-<h2 id="dependency-updates-16">Dependency updates</h2>
+<h2 id="dependency-updates-17">Dependency updates</h2>
 
 <ul>
 <li>blaze-0.14.0</li>
