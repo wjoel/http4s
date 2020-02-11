@@ -812,7 +812,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/37948029373228ab13ef4f4aed8f8b412e3fca47/core/src/main/scala/org/http4s/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/52894fc79f5d4689c2d4daeadb90889176726e0e/core/src/main/scala/org/http4s/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -1902,7 +1902,7 @@ status line, headers, and a possible request body.
 </p><div class="fullcomment"><div class="comment cmt"><p>Representation of the HTTP response to send back to the client
 </p></div><dl class="paramcmts block"><dt class="param">status</dt><dd class="cmt"><p><a href="Status.html" class="extype" name="org.http4s.Status">Status</a> code and message</p></dd><dt class="param">headers</dt><dd class="cmt"><p><a href="Headers.html" class="extype" name="org.http4s.Headers">Headers</a> containing all response headers</p></dd><dt class="param">body</dt><dd class="cmt"><p>EntityBody[F] representing the possible body of the response</p></dd><dt class="param">attributes</dt><dd class="cmt"><p><span class="extype" name="Vault">Vault</span> containing additional parameters which may be used by the http4s
                   backend for additional processing such as java.io.File object</p></dd></dl></div>
-    </li><li name="org.http4s.ResponseCookie" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.ResponseCookie" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ResponseCookieextendsRenderablewithProductwithSerializable"></a><a id="ResponseCookie:ResponseCookie"></a>
       <span class="permalink">
       <a href="../../org/http4s/ResponseCookie.html" title="Permalink">
@@ -1917,7 +1917,9 @@ status line, headers, and a possible request body.
         <a title="" href="ResponseCookie.html"><span class="name">ResponseCookie</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="expires">expires: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a>] = <span class="symbol">None</span></span>, <span name="maxAge">maxAge: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a>] = <span class="symbol">None</span></span>, <span name="domain">domain: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="secure">secure: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="httpOnly">httpOnly: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="extension">extension: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">extension</dt><dd class="cmt"><p>The extension attributes of the cookie.  If there is more
+than one, they are joined by semi-colon, which must not appear in an
+attribute value.</p></dd></dl></div>
     </li><li name="org.http4s.ServerSentEvent" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="ServerSentEventextendsRenderablewithProductwithSerializable"></a><a id="ServerSentEvent:ServerSentEvent"></a>
       <span class="permalink">
