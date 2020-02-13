@@ -31,8 +31,12 @@
             Documentation
           </a>
           <div class="dropdown-menu" aria-labelledby="doc-menu-item">
-  <a class="dropdown-item" href="/v0.19/">v0.19 (development)</a>
-  <a class="dropdown-item" href="/v0.18/">v0.18 (stable)</a>
+  <a class="dropdown-item" href="/v0.21/">v0.21 (dev)</a>  
+  <a class="dropdown-item" href="/v0.20/">v0.20 (stable)</a>
+  <a class="dropdown-item" href="/v0.19/">v0.19 (EOL)</a>
+  <a class="dropdown-item" href="/v0.18/">v0.18 (EOL)</a>
+  <a class="dropdown-item" href="/v0.17/">v0.17 (EOL)</a>
+  <a class="dropdown-item" href="/v0.16/">v0.16 (EOL)</a>
   <a class="dropdown-item" href="/versions/">Help me choose...</a>
 </div>
 
@@ -44,6 +48,7 @@
           <div class="dropdown-menu" aria-labelledby="projects-menu-item"> 
             <a class="dropdown-item" href="/">http4s</a>
             <a class="dropdown-item" href="https://github.com/http4s/blaze">blaze</a>
+            <a class="dropdown-item" href="https://jdk-http-client.http4s.org/">http4s-jdk-http-client</a>
             <a class="dropdown-item" href="https://github.com/http4s/rho">rho</a>
           </div>
         </li>
@@ -64,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/release-0.18.x/docs/src/main/tut/gzip.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.18/docs/src/main/tut/gzip.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -95,18 +100,19 @@ body using GZip.</p>
 <pre><code class="language-scala">import cats.effect._
 import org.http4s._
 import org.http4s.dsl.io._
+import org.http4s.implicits._
 </code></pre>
 
 <p>Let&rsquo;s start by making a simple service that returns a (relatively) large string
 in its body. We&rsquo;ll use <code>as[String]</code> to examine the body.</p>
 
-<pre><code class="language-scala">val service = HttpService[IO] {
+<pre><code class="language-scala">val service = HttpRoutes.of[IO] {
   case _ =&gt;
     Ok(&quot;I repeat myself when I'm under stress. &quot; * 3)
 }
-// service: org.http4s.HttpService[cats.effect.IO] = Kleisli(org.http4s.HttpService$$$Lambda$61887/1865183403@742cea4f)
+// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$22546/1178461704@34f9b54e)
 
-val request = Request[IO](Method.GET, uri(&quot;/&quot;))
+val request = Request[IO](Method.GET, uri&quot;/&quot;)
 // request: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers())
 
 // Do not call 'unsafeRun' in your code - see note at bottom.
@@ -126,7 +132,7 @@ body.length
 // import org.http4s.server.middleware._
 
 val zipService = GZip(service)
-// zipService: org.http4s.HttpService[cats.effect.IO] = Kleisli(org.http4s.server.middleware.GZip$$$Lambda$62178/1467267067@4885b1db)
+// zipService: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.GZip$$$Lambda$22745/298157246@323b2dce)
 
 // Do not call 'unsafeRun' in your code - see note at bottom.
 val response = zipService.orNotFound(request).unsafeRunSync
@@ -183,6 +189,10 @@ of a service or middleware code. You can work with values while keeping them ins
             </li>
             
             <li class="nav-item">
+	      <a class="nav-link" href="/v0.18/upgrading/">Upgrading from 0.18</a>
+            </li>
+            
+            <li class="nav-item">
 	      <a class="nav-link" href="/v0.18/service/">Service</a>
             </li>
             
@@ -200,6 +210,10 @@ of a service or middleware code. You can work with values while keeping them ins
             
             <li class="nav-item">
 	      <a class="nav-link" href="/v0.18/cors/">CORS</a>
+            </li>
+            
+            <li class="nav-item">
+	      <a class="nav-link" href="/v0.18/csrf/">CSRF</a>
             </li>
             
             <li class="nav-item">

@@ -31,8 +31,12 @@
             Documentation
           </a>
           <div class="dropdown-menu" aria-labelledby="doc-menu-item">
-  <a class="dropdown-item" href="/v0.19/">v0.19 (development)</a>
-  <a class="dropdown-item" href="/v0.18/">v0.18 (stable)</a>
+  <a class="dropdown-item" href="/v0.21/">v0.21 (dev)</a>  
+  <a class="dropdown-item" href="/v0.20/">v0.20 (stable)</a>
+  <a class="dropdown-item" href="/v0.19/">v0.19 (EOL)</a>
+  <a class="dropdown-item" href="/v0.18/">v0.18 (EOL)</a>
+  <a class="dropdown-item" href="/v0.17/">v0.17 (EOL)</a>
+  <a class="dropdown-item" href="/v0.16/">v0.16 (EOL)</a>
   <a class="dropdown-item" href="/versions/">Help me choose...</a>
 </div>
 
@@ -44,6 +48,7 @@
           <div class="dropdown-menu" aria-labelledby="projects-menu-item"> 
             <a class="dropdown-item" href="/">http4s</a>
             <a class="dropdown-item" href="https://github.com/http4s/blaze">blaze</a>
+            <a class="dropdown-item" href="https://jdk-http-client.http4s.org/">http4s-jdk-http-client</a>
             <a class="dropdown-item" href="https://github.com/http4s/rho">rho</a>
           </div>
         </li>
@@ -64,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/release-0.18.x/docs/src/main/tut/entity.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.18/docs/src/main/tut/entity.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -122,52 +127,38 @@ runtime errors.</p>
 <p>Decoders&rsquo; content types are used when chaining decoders with <code>orElse</code> in order to
 determine which of the chained decoders are to be used.</p>
 
-<pre><code class="language-scala">scala&gt; import org.http4s._
-import org.http4s._
-
-scala&gt; import org.http4s.headers.`Content-Type`
-import org.http4s.headers.Content$minusType
-
-scala&gt; import org.http4s.dsl.io._
+<pre><code class="language-scala">import org.http4s._
+import org.http4s.headers.`Content-Type`
 import org.http4s.dsl.io._
+import cats._, cats.effect._, cats.implicits._, cats.data._
 
-scala&gt; import cats._, cats.effect._, cats.implicits._, cats.data._
-import cats._
-import cats.effect._
-import cats.implicits._
-import cats.data._
+sealed trait Resp
+case class Audio(body: String) extends Resp
+case class Video(body: String) extends Resp
+</code></pre>
 
-scala&gt; sealed trait Resp
-defined trait Resp
+<pre><code class="language-scala">val response = Ok(&quot;&quot;).map(_.withContentType(`Content-Type`(MediaType.audio.ogg)))
+// response: cats.effect.IO[org.http4s.Response[cats.effect.IO]] = &lt;function1&gt;
 
-scala&gt; case class Audio(body: String) extends Resp
-defined class Audio
+val audioDec = EntityDecoder.decodeBy(MediaType.audio.ogg) { m: Media[IO] =&gt;
+  EitherT {
+    m.as[String].map(s =&gt; Audio(s).asRight[DecodeFailure])
+  }
+}
+// audioDec: org.http4s.EntityDecoder[cats.effect.IO,Audio] = org.http4s.EntityDecoder$$anon$7@635f623
 
-scala&gt; case class Video(body: String) extends Resp
-defined class Video
+val videoDec = EntityDecoder.decodeBy(MediaType.video.ogg) { m: Media[IO] =&gt;
+  EitherT {
+    m.as[String].map(s =&gt; Video(s).asRight[DecodeFailure])
+  }
+}
+// videoDec: org.http4s.EntityDecoder[cats.effect.IO,Video] = org.http4s.EntityDecoder$$anon$7@1daaaeca
 
-scala&gt; val response = Ok(&quot;&quot;).map(_.withContentType(`Content-Type`(MediaType.`audio/ogg`)))
-response: cats.effect.IO[org.http4s.Response[cats.effect.IO]] = &lt;function1&gt;
+implicit val bothDec = audioDec.widen[Resp] orElse videoDec.widen[Resp]
+// bothDec: org.http4s.EntityDecoder[cats.effect.IO,Resp] = org.http4s.EntityDecoder$$anon$5$$anon$6@e5abc72
 
-scala&gt; val audioDec = EntityDecoder.decodeBy(MediaType.`audio/ogg`) { msg: Message[IO] =&gt;
-     |   EitherT {
-     |     msg.as[String].map(s =&gt; Audio(s).asRight[DecodeFailure])
-     |   }
-     | }
-audioDec: org.http4s.EntityDecoder[cats.effect.IO,Audio] = org.http4s.EntityDecoder$$anon$5@203aadc4
-
-scala&gt; val videoDec = EntityDecoder.decodeBy(MediaType.`video/ogg`) { msg: Message[IO] =&gt;
-     |   EitherT {
-     |     msg.as[String].map(s =&gt; Video(s).asRight[DecodeFailure])
-     |   }
-     | }
-videoDec: org.http4s.EntityDecoder[cats.effect.IO,Video] = org.http4s.EntityDecoder$$anon$5@10fcfa4d
-
-scala&gt; implicit val bothDec = audioDec.widen[Resp] orElse videoDec.widen[Resp]
-bothDec: org.http4s.EntityDecoder[cats.effect.IO,Resp] = org.http4s.EntityDecoder$OrDec@fc649a5
-
-scala&gt; println(response.flatMap(_.as[Resp]).unsafeRunSync)
-Audio()
+println(response.flatMap(_.as[Resp]).unsafeRunSync)
+// Audio()
 </code></pre>
 
 <h2 id="presupplied-encoders-decoders">Presupplied Encoders/Decoders</h2>
@@ -185,10 +176,10 @@ a full list.</p>
 <p>With <code>jsonOf</code> for the <code>EntityDecoder</code>, and <code>jsonEncoderOf</code> for the <code>EntityEncoder</code>:</p>
 
 <ul>
-<li>argonaut: <code>&quot;org.http4s&quot; %% &quot;http4s-argonaut&quot; % Http4sVersion</code></li>
-<li>circe: <code>&quot;org.http4s&quot; %% &quot;http4s-circe&quot; % Http4sVersion</code></li>
-<li>json4s-native: <code>&quot;org.http4s&quot; %% &quot;http4s-json4s-native&quot; % Http4sVersion</code></li>
-<li>json4s-jackson: <code>&quot;org.http4s&quot; %% &quot;http4s-json4s-jackson&quot; % Http4sVersion</code></li>
+<li>argonaut: <code>&quot;org.http4s&quot; %% &quot;http4s-argonaut&quot; % http4sVersion</code></li>
+<li>circe: <code>&quot;org.http4s&quot; %% &quot;http4s-circe&quot; % http4sVersion</code></li>
+<li>json4s-native: <code>&quot;org.http4s&quot; %% &quot;http4s-json4s-native&quot; % http4sVersion</code></li>
+<li>json4s-jackson: <code>&quot;org.http4s&quot; %% &quot;http4s-json4s-jackson&quot; % http4sVersion</code></li>
 </ul>
 
 <h3 id="xml">XML</h3>
@@ -198,7 +189,7 @@ required here, because there is no Decoder instance for <code>String</code> that
 cause conflicts with the builtin Decoders.</p>
 
 <ul>
-<li>scala-xml: <code>&quot;org.http4s&quot; %% &quot;http4s-scala-xml&quot; % Http4sVersion</code></li>
+<li>scala-xml: <code>&quot;org.http4s&quot; %% &quot;http4s-scala-xml&quot; % http4sVersion</code></li>
 </ul>
 
 <h3 id="support-for-twirl-and-scalatags">Support for Twirl and Scalatags</h3>
@@ -206,8 +197,8 @@ cause conflicts with the builtin Decoders.</p>
 <p>If you&rsquo;re working with either <a href="https://github.com/playframework/twirl">twirl</a> or <a href="http://www.lihaoyi.com/scalatags/">scalatags</a> you can use our bridges:</p>
 
 <ul>
-<li>scala-twirl: <code>&quot;org.http4s&quot; %% &quot;http4s-twirl&quot; % Http4sVersion</code></li>
-<li>scala-scalatags: <code>&quot;org.http4s&quot; %% &quot;http4s-scalatags&quot; % Http4sVersion</code></li>
+<li>scala-twirl: <code>&quot;org.http4s&quot; %% &quot;http4s-twirl&quot; % http4sVersion</code></li>
+<li>scala-scalatags: <code>&quot;org.http4s&quot; %% &quot;http4s-scalatags&quot; % http4sVersion</code></li>
 </ul>
 
         </div>
@@ -218,6 +209,10 @@ cause conflicts with the builtin Decoders.</p>
             
             <li class="nav-item">
 	      <a class="nav-link" href="/v0.18/">Quick Start</a>
+            </li>
+            
+            <li class="nav-item">
+	      <a class="nav-link" href="/v0.18/upgrading/">Upgrading from 0.18</a>
             </li>
             
             <li class="nav-item">
@@ -238,6 +233,10 @@ cause conflicts with the builtin Decoders.</p>
             
             <li class="nav-item">
 	      <a class="nav-link" href="/v0.18/cors/">CORS</a>
+            </li>
+            
+            <li class="nav-item">
+	      <a class="nav-link" href="/v0.18/csrf/">CSRF</a>
             </li>
             
             <li class="nav-item">

@@ -31,8 +31,12 @@
             Documentation
           </a>
           <div class="dropdown-menu" aria-labelledby="doc-menu-item">
-  <a class="dropdown-item" href="/v0.19/">v0.19 (development)</a>
-  <a class="dropdown-item" href="/v0.18/">v0.18 (stable)</a>
+  <a class="dropdown-item" href="/v0.21/">v0.21 (dev)</a>  
+  <a class="dropdown-item" href="/v0.20/">v0.20 (stable)</a>
+  <a class="dropdown-item" href="/v0.19/">v0.19 (EOL)</a>
+  <a class="dropdown-item" href="/v0.18/">v0.18 (EOL)</a>
+  <a class="dropdown-item" href="/v0.17/">v0.17 (EOL)</a>
+  <a class="dropdown-item" href="/v0.16/">v0.16 (EOL)</a>
   <a class="dropdown-item" href="/versions/">Help me choose...</a>
 </div>
 
@@ -44,6 +48,7 @@
           <div class="dropdown-menu" aria-labelledby="projects-menu-item"> 
             <a class="dropdown-item" href="/">http4s</a>
             <a class="dropdown-item" href="https://github.com/http4s/blaze">blaze</a>
+            <a class="dropdown-item" href="https://jdk-http-client.http4s.org/">http4s-jdk-http-client</a>
             <a class="dropdown-item" href="https://github.com/http4s/rho">rho</a>
           </div>
         </li>
@@ -64,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/release-0.18.x/docs/src/main/tut/uri.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.18/docs/src/main/tut/uri.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -88,9 +93,10 @@ Instead of passing plain <code>String</code>s, http4s operates on URIs. You can 
 literal URI with</p>
 
 <pre><code class="language-scala">import org.http4s._
-// import org.http4s._
+import org.http4s.implicits._
+</code></pre>
 
-val uri = Uri.uri(&quot;http://http4s.org&quot;)
+<pre><code class="language-scala">val uri = uri&quot;http://http4s.org&quot;
 // uri: org.http4s.Uri = http://http4s.org
 </code></pre>
 
@@ -116,9 +122,9 @@ assert(docs == docs2)
 <h3 id="uri-template">URI Template</h3>
 
 <pre><code class="language-scala">import org.http4s.UriTemplate._
-// import org.http4s.UriTemplate._
+</code></pre>
 
-val template = UriTemplate(
+<pre><code class="language-scala">val template = UriTemplate(
   authority = Some(Uri.Authority(host = Uri.RegName(&quot;http4s.org&quot;))),
   scheme = Some(Uri.Scheme.http),
   path = List(PathElm(&quot;docs&quot;), PathElm(&quot;0.15&quot;))
@@ -151,6 +157,10 @@ own, use <a href="../api/index.html#org.http4s.Uri$@fromString(s:String):org.htt
             </li>
             
             <li class="nav-item">
+	      <a class="nav-link" href="/v0.18/upgrading/">Upgrading from 0.18</a>
+            </li>
+            
+            <li class="nav-item">
 	      <a class="nav-link" href="/v0.18/service/">Service</a>
             </li>
             
@@ -168,6 +178,10 @@ own, use <a href="../api/index.html#org.http4s.Uri$@fromString(s:String):org.htt
             
             <li class="nav-item">
 	      <a class="nav-link" href="/v0.18/cors/">CORS</a>
+            </li>
+            
+            <li class="nav-item">
+	      <a class="nav-link" href="/v0.18/csrf/">CSRF</a>
             </li>
             
             <li class="nav-item">
