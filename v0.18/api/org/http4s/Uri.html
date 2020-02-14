@@ -843,7 +843,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Representation of the <a href="Request.html" class="extype" name="org.http4s.Request">Request</a> URI
-</p></div><dl class="paramcmts block"><dt class="param">scheme</dt><dd class="cmt"><p>optional Uri Scheme. eg, http, https</p></dd><dt class="param">authority</dt><dd class="cmt"><p>optional Uri Authority. eg, localhost:8080, www.foo.bar</p></dd><dt class="param">path</dt><dd class="cmt"><p>url-encoded string representation of the path component of the Uri.</p></dd><dt class="param">query</dt><dd class="cmt"><p>optional Query. url-encoded.</p></dd><dt class="param">fragment</dt><dd class="cmt"><p>optional Uri Fragment. url-encoded.</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/06bcb54cee700eb0a68ca69a42234574e673fc3a/core/src/main/scala/org/http4s/Uri.scala" target="_blank">Uri.scala</a></dd></dl><div class="toggleContainer block">
+</p></div><dl class="paramcmts block"><dt class="param">scheme</dt><dd class="cmt"><p>optional Uri Scheme. eg, http, https</p></dd><dt class="param">authority</dt><dd class="cmt"><p>optional Uri Authority. eg, localhost:8080, www.foo.bar</p></dd><dt class="param">path</dt><dd class="cmt"><p>url-encoded string representation of the path component of the Uri.</p></dd><dt class="param">query</dt><dd class="cmt"><p>optional Query. url-encoded.</p></dd><dt class="param">fragment</dt><dd class="cmt"><p>optional Uri Fragment. url-encoded.</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/2c21e66d8312973ba159c6c271bf9e6225077b60/core/src/main/scala/org/http4s/Uri.scala" target="_blank">Uri.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -1193,7 +1193,8 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span title="gt4s: $div" class="name">/</span><span class="params">(<span name="newSegment">newSegment: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
       </span>
       
-      
+      <p class="shortcomment cmt">This is an alias to <span class="extype" name="addSegment(Path)">addSegment(Path)</span>
+</p>
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
@@ -1242,6 +1243,41 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </span>
       
       <p class="shortcomment cmt">alias for containsQueryParam</p><div class="fullcomment"><div class="comment cmt"><p>alias for containsQueryParam</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
+    </li><li name="org.http4s.Uri#addPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addPath(morePath:org.http4s.Uri.Path):org.http4s.Uri"></a><a id="addPath(Path):Uri"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Uri.html#addPath(morePath:org.http4s.Uri.Path):org.http4s.Uri" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addPath</span><span class="params">(<span name="morePath">morePath: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Splits the path segments and adds each of them to the path url-encoded.</p><div class="fullcomment"><div class="comment cmt"><p>Splits the path segments and adds each of them to the path url-encoded.
+A segment is delimited by /</p></div><dl class="paramcmts block"><dt class="param">morePath</dt><dd class="cmt"><p>the path to add</p></dd><dt>returns</dt><dd class="cmt"><p>a new uri with the segments added to the path</p></dd></dl></div>
+    </li><li name="org.http4s.Uri#addSegment" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="addSegment(newSegment:org.http4s.Uri.Path):org.http4s.Uri"></a><a id="addSegment(Path):Uri"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Uri.html#addSegment(newSegment:org.http4s.Uri.Path):org.http4s.Uri" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">addSegment</span><span class="params">(<span name="newSegment">newSegment: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Urlencodes and adds a path segment to the Uri
+</p><div class="fullcomment"><div class="comment cmt"><p>Urlencodes and adds a path segment to the Uri
+</p></div><dl class="paramcmts block"><dt class="param">newSegment</dt><dd class="cmt"><p>the segment to add.</p></dd><dt>returns</dt><dd class="cmt"><p>a new uri with the segment added to the path</p></dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <span class="permalink">
@@ -2015,7 +2051,7 @@ entry the same instance of <code>Self</code> will be returned.
 If a parameter with the given <code>key</code> already exists the values will be
 replaced.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
-    </li><li name="org.http4s.Uri#withPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.Uri#withPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="withPath(path:org.http4s.Uri.Path):org.http4s.Uri"></a><a id="withPath(Path):Uri"></a>
       <span class="permalink">
       <a href="../../org/http4s/Uri.html#withPath(path:org.http4s.Uri.Path):org.http4s.Uri" title="Permalink">
@@ -2030,7 +2066,7 @@ replaced.
         <span class="name">withPath</span><span class="params">(<span name="path">path: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
       </span>
       
-      
+      <p class="shortcomment cmt">Adds the path exactly as described.</p><div class="fullcomment"><div class="comment cmt"><p>Adds the path exactly as described. Any path element must be urlencoded ahead of time.</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>the path string to replace</p></dd></dl></div>
     </li><li name="org.http4s.QueryOps#withQueryParam" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="withQueryParam[T,K](key:K,values:Seq[T])(implicitevidence$26:org.http4s.QueryParamEncoder[T],implicitevidence$27:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self"></a><a id="withQueryParam[T,K](K,Seq[T])(QueryParamEncoder[T],QueryParamKeyLike[K]):Self"></a>
       <span class="permalink">
