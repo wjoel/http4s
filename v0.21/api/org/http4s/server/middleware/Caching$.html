@@ -303,7 +303,7 @@
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Caching contains middlewares to support caching functionality.</p><p>Helper functions to support <a href="#cache[G[_],F[_]](lifetime:scala.concurrent.duration.Duration,isPublic:Either[org.http4s.CacheDirective.public.type,org.http4s.CacheDirective.private],methodToSetOn:org.http4s.Method=&gt;Boolean,statusToSetOn:org.http4s.Status=&gt;Boolean,http:org.http4s.Http[G,F])(implicitevidence$7:cats.MonadError[G,Throwable],implicitevidence$8:cats.effect.Clock[G]):org.http4s.Http[G,F]" class="extmbr" name="org.http4s.server.middleware.Caching#cache">Caching.cache</a> can be found in
 <a href="Caching$$Helpers$.html" class="extype" name="org.http4s.server.middleware.Caching.Helpers">Caching.Helpers</a>
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/868c08f60d35d32026902c626fe20b3260a1fd04/server/src/main/scala/org/http4s/server/middleware/Caching.scala" target="_blank">Caching.scala</a></dd></dl><div class="toggleContainer block">
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/20bed6082f237b34df3e6d8500aa024ec650f8d8/server/src/main/scala/org/http4s/server/middleware/Caching.scala" target="_blank">Caching.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -353,7 +353,42 @@
         <div id="allMembers">
         
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.http4s.server.middleware.Caching.PartiallyAppliedCache" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PartiallyAppliedCache[G[_]]extendsAnyRef"></a><a id="PartiallyAppliedCache[G[_]]:PartiallyAppliedCache[G]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/Caching$$PartiallyAppliedCache.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Caching$$PartiallyAppliedCache.html"><span class="name">PartiallyAppliedCache</span></a><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
+    </li><li name="org.http4s.server.middleware.Caching.PartiallyAppliedNoStoreCache" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="PartiallyAppliedNoStoreCache[G[_]]extendsAnyRef"></a><a id="PartiallyAppliedNoStoreCache[G[_]]:PartiallyAppliedNoStoreCache[G]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/Caching$$PartiallyAppliedNoStoreCache.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="Caching$$PartiallyAppliedNoStoreCache.html"><span class="name">PartiallyAppliedNoStoreCache</span></a><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></span>
+      </span>
+      
+      
+    </li></ol>
+            </div>
 
         
 
@@ -440,6 +475,26 @@
       </span>
       
       <p class="shortcomment cmt">Construct a Middleware that will apply the appropriate caching headers.</p><div class="fullcomment"><div class="comment cmt"><p>Construct a Middleware that will apply the appropriate caching headers.</p><p>Helper functions for methodToSetOn and statusToSetOn can be found in <a href="Caching$$Helpers$.html" class="extype" name="org.http4s.server.middleware.Caching.Helpers">Helpers</a>.</p><p>Note: If set to Duration.Inf, lifetime falls back to
+10 years for support of Http1 caches.
+</p></div></div>
+    </li><li name="org.http4s.server.middleware.Caching#cacheResponse" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="cacheResponse[G[_]](lifetime:scala.concurrent.duration.Duration,isPublic:Either[org.http4s.CacheDirective.public.type,org.http4s.CacheDirective.private]):org.http4s.server.middleware.Caching.PartiallyAppliedCache[G]"></a><a id="cacheResponse[G[_]](Duration,Either[public.type,private]):PartiallyAppliedCache[G]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/Caching$.html#cacheResponse[G[_]](lifetime:scala.concurrent.duration.Duration,isPublic:Either[org.http4s.CacheDirective.public.type,org.http4s.CacheDirective.private]):org.http4s.server.middleware.Caching.PartiallyAppliedCache[G]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cacheResponse</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="lifetime">lifetime: <a href="https://www.scala-lang.org/api/2.12.10/scala/concurrent/duration/Duration.html#scala.concurrent.duration.Duration" class="extype" name="scala.concurrent.duration.Duration">Duration</a></span>, <span name="isPublic">isPublic: <span class="extype" name="scala.Either">Either</span>[<a href="../../CacheDirective$$public$.html" class="extype" name="org.http4s.CacheDirective.public">public</a>.type, <a href="../../CacheDirective$$private.html" class="extype" name="org.http4s.CacheDirective.private">private</a>]</span>)</span><span class="result">: <a href="Caching$$PartiallyAppliedCache.html" class="extype" name="org.http4s.server.middleware.Caching.PartiallyAppliedCache">PartiallyAppliedCache</a>[<span class="extype" name="org.http4s.server.middleware.Caching.cacheResponse.G">G</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt"> Method in order to turn a generated Response into one that
+will be appropriately cached.</p><div class="fullcomment"><div class="comment cmt"><p> Method in order to turn a generated Response into one that
+will be appropriately cached.</p><p> Note: If set to Duration.Inf, lifetime falls back to
 10 years for support of Http1 caches.
 </p></div></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
@@ -608,6 +663,22 @@
       <p class="shortcomment cmt">Middleware that implies responses should NOT be cached.</p><div class="fullcomment"><div class="comment cmt"><p>Middleware that implies responses should NOT be cached.
 This is a best attempt, many implementors of caching have done so differently.
 </p></div></div>
+    </li><li name="org.http4s.server.middleware.Caching#no-store-response" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="no-store-response[G[_]]:org.http4s.server.middleware.Caching.PartiallyAppliedNoStoreCache[G]"></a><a id="no-store-response[G[_]]:PartiallyAppliedNoStoreCache[G]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/Caching$.html#no-store-response[G[_]]:org.http4s.server.middleware.Caching.PartiallyAppliedNoStoreCache[G]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: no$minusstore$minusresponse" class="name">no-store-response</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result">: <a href="Caching$$PartiallyAppliedNoStoreCache.html" class="extype" name="org.http4s.server.middleware.Caching.PartiallyAppliedNoStoreCache">PartiallyAppliedNoStoreCache</a>[<span class="extype" name="org.http4s.server.middleware.Caching.no-store-response.G">G</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Transform a Response so that it will not be cached.</p>
     </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="notify():Unit"></a>
       <span class="permalink">
@@ -664,6 +735,24 @@ This is a best attempt, many implementors of caching have done so differently.
       <p class="shortcomment cmt">Sets headers for response to be privately cached for the specified duration.</p><div class="fullcomment"><div class="comment cmt"><p>Sets headers for response to be privately cached for the specified duration.</p><p>Note: If set to Duration.Inf, lifetime falls back to
 10 years for support of Http1 caches.
 </p></div></div>
+    </li><li name="org.http4s.server.middleware.Caching#privateCacheResponse" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="privateCacheResponse[G[_]](lifetime:scala.concurrent.duration.Duration,fieldNames:List[org.http4s.util.CaseInsensitiveString]):org.http4s.server.middleware.Caching.PartiallyAppliedCache[G]"></a><a id="privateCacheResponse[G[_]](Duration,List[CaseInsensitiveString]):PartiallyAppliedCache[G]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/Caching$.html#privateCacheResponse[G[_]](lifetime:scala.concurrent.duration.Duration,fieldNames:List[org.http4s.util.CaseInsensitiveString]):org.http4s.server.middleware.Caching.PartiallyAppliedCache[G]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">privateCacheResponse</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="lifetime">lifetime: <a href="https://www.scala-lang.org/api/2.12.10/scala/concurrent/duration/Duration.html#scala.concurrent.duration.Duration" class="extype" name="scala.concurrent.duration.Duration">Duration</a></span>, <span name="fieldNames">fieldNames: <span class="extype" name="scala.List">List</span>[<a href="../../util/CaseInsensitiveString.html" class="extype" name="org.http4s.util.CaseInsensitiveString">CaseInsensitiveString</a>] = <span class="symbol">Nil</span></span>)</span><span class="result">: <a href="Caching$$PartiallyAppliedCache.html" class="extype" name="org.http4s.server.middleware.Caching.PartiallyAppliedCache">PartiallyAppliedCache</a>[<span class="extype" name="org.http4s.server.middleware.Caching.privateCacheResponse.G">G</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Privately Caches A Response for the given lifetime.</p><div class="fullcomment"><div class="comment cmt"><p>Privately Caches A Response for the given lifetime.</p><p>Note: If set to Duration.Inf, lifetime falls back to
+10 years for support of Http1 caches.
+</p></div></div>
     </li><li name="org.http4s.server.middleware.Caching#publicCache" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="publicCache[G[_],F[_]](lifetime:scala.concurrent.duration.Duration,http:org.http4s.Http[G,F])(implicitevidence$3:cats.MonadError[G,Throwable],implicitevidence$4:cats.effect.Clock[G]):org.http4s.Http[G,F]"></a><a id="publicCache[G[_],F[_]](Duration,Http[G,F])(MonadError[G,Throwable],Clock[G]):Http[G,F]"></a>
       <span class="permalink">
@@ -680,6 +769,24 @@ This is a best attempt, many implementors of caching have done so differently.
       </span>
       
       <p class="shortcomment cmt">Sets headers for response to be publicly cached for the specified duration.</p><div class="fullcomment"><div class="comment cmt"><p>Sets headers for response to be publicly cached for the specified duration.</p><p>Note: If set to Duration.Inf, lifetime falls back to
+10 years for support of Http1 caches.
+</p></div></div>
+    </li><li name="org.http4s.server.middleware.Caching#publicCacheResponse" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="publicCacheResponse[G[_]](lifetime:scala.concurrent.duration.Duration):org.http4s.server.middleware.Caching.PartiallyAppliedCache[G]"></a><a id="publicCacheResponse[G[_]](Duration):PartiallyAppliedCache[G]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/Caching$.html#publicCacheResponse[G[_]](lifetime:scala.concurrent.duration.Duration):org.http4s.server.middleware.Caching.PartiallyAppliedCache[G]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">publicCacheResponse</span><span class="tparams">[<span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="lifetime">lifetime: <a href="https://www.scala-lang.org/api/2.12.10/scala/concurrent/duration/Duration.html#scala.concurrent.duration.Duration" class="extype" name="scala.concurrent.duration.Duration">Duration</a></span>)</span><span class="result">: <a href="Caching$$PartiallyAppliedCache.html" class="extype" name="org.http4s.server.middleware.Caching.PartiallyAppliedCache">PartiallyAppliedCache</a>[<span class="extype" name="org.http4s.server.middleware.Caching.publicCacheResponse.G">G</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Publicly Cache a Response for the given lifetime.</p><div class="fullcomment"><div class="comment cmt"><p>Publicly Cache a Response for the given lifetime.</p><p>Note: If set to Duration.Inf, lifetime falls back to
 10 years for support of Http1 caches.
 </p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
