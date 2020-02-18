@@ -31,7 +31,7 @@
             Documentation
           </a>
           <div class="dropdown-menu" aria-labelledby="doc-menu-item">
-  <a class="dropdown-item" href="/v0.21/">v0.21 (stable)</a>
+  <a class="dropdown-item" href="/v0.21/">v0.21 (dev)</a>  
   <a class="dropdown-item" href="/v0.20/">v0.20 (stable)</a>
   <a class="dropdown-item" href="/v0.19/">v0.19 (EOL)</a>
   <a class="dropdown-item" href="/v0.18/">v0.18 (EOL)</a>
@@ -112,7 +112,7 @@ import cats.effect.IO
   case _ =&gt;
     Ok(&quot;ok&quot;)
 }
-// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$32165/844116744@1b85fdc9)
+// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$32060/1717535428@1d6ffd86)
 
 val request = Request[IO](Method.GET, uri&quot;/&quot;)
 // request: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers())
@@ -131,7 +131,7 @@ response.headers
 </code></pre>
 
 <pre><code class="language-scala">val hstsService = HSTS(service)
-// hstsService: cats.data.Kleisli[[A]cats.data.OptionT[cats.effect.IO,A],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(org.http4s.server.middleware.HSTS$$$Lambda$32261/2084763587@67ddd671)
+// hstsService: cats.data.Kleisli[[A]cats.data.OptionT[cats.effect.IO,A],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(org.http4s.server.middleware.HSTS$$$Lambda$32156/1676289414@284ab781)
 
 // Do not call 'unsafeRunSync' in your code
 val response = hstsService.orNotFound(request).unsafeRunSync
@@ -162,7 +162,7 @@ import scala.concurrent.duration._
 // hstsHeader: org.http4s.headers.Strict-Transport-Security = Strict-Transport-Security: max-age=2592000; includeSubDomains; preload
 
 val hstsService = HSTS(service, hstsHeader)
-// hstsService: cats.data.Kleisli[[A]cats.data.OptionT[cats.effect.IO,A],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(org.http4s.server.middleware.HSTS$$$Lambda$32261/2084763587@58a3c4bf)
+// hstsService: cats.data.Kleisli[[A]cats.data.OptionT[cats.effect.IO,A],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(org.http4s.server.middleware.HSTS$$$Lambda$32156/1676289414@4fcf61f6)
 
 // Do not call 'unsafeRunSync' in your code
 val response = hstsService.orNotFound(request).unsafeRunSync
