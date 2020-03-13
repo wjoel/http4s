@@ -110,7 +110,7 @@ import org.http4s.implicits._
 // defined class User
 
 implicit val UserEncoder: Encoder[User] = deriveEncoder[User]
-// UserEncoder: io.circe.Encoder[User] = io.circe.generic.encoding.DerivedAsObjectEncoder$$anon$1@32ba011c
+// UserEncoder: io.circe.Encoder[User] = io.circe.generic.encoding.DerivedAsObjectEncoder$$anon$1@722c0c3f
 
 trait UserRepo[F[_]] {
   def find(userId: String): F[Option[User]]
@@ -153,7 +153,7 @@ def check[A](actual:        IO[Response[IO]],
 <pre><code class="language-scala">val success: UserRepo[IO] = new UserRepo[IO] {
   def find(id: String): IO[Option[User]] = IO.pure(Some(User(&quot;johndoe&quot;, 42)))
 }
-// success: UserRepo[cats.effect.IO] = $anon$1@4a3d0efb
+// success: UserRepo[cats.effect.IO] = $anon$1@5c6eff62
 
 val response: IO[Response[IO]] = service[IO](success).orNotFound.run(
   Request(method = Method.GET, uri = uri&quot;/user/not-used&quot; )
@@ -179,7 +179,7 @@ check[Json](response, Status.Ok, Some(expectedJson))
 <pre><code class="language-scala">val foundNone: UserRepo[IO] = new UserRepo[IO] {
   def find(id: String): IO[Option[User]] = IO.pure(None)
 } 
-// foundNone: UserRepo[cats.effect.IO] = $anon$1@3691553c
+// foundNone: UserRepo[cats.effect.IO] = $anon$1@5e98032c
 
 val response: IO[Response[IO]] = service[IO](foundNone).orNotFound.run(
   Request(method = Method.GET, uri = uri&quot;/user/not-used&quot; )
@@ -195,7 +195,7 @@ check[Json](response, Status.NotFound, None)
 <pre><code class="language-scala">val doesNotMatter: UserRepo[IO] = new UserRepo[IO] {
   def find(id: String): IO[Option[User]] = IO.raiseError(new RuntimeException(&quot;Should not get called!&quot;))
 } 
-// doesNotMatter: UserRepo[cats.effect.IO] = $anon$1@617913be
+// doesNotMatter: UserRepo[cats.effect.IO] = $anon$1@6b98902c
 
 val response: IO[Response[IO]] = service[IO](doesNotMatter).orNotFound.run(
   Request(method = Method.GET, uri = uri&quot;/not-a-matching-path&quot; )
