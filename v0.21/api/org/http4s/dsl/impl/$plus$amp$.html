@@ -292,7 +292,7 @@
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Multiple param extractor:</p><pre><span class="kw">object</span> A <span class="kw">extends</span> QueryParamDecoderMatcher[<span class="std">String</span>](<span class="lit">"a"</span>)
 <span class="kw">object</span> B <span class="kw">extends</span> QueryParamDecoderMatcher[<span class="std">Int</span>](<span class="lit">"b"</span>)
 <span class="kw">val</span> routes = HttpRoutes.of {
-  <span class="kw">case</span> GET -&gt; Root / <span class="lit">"user"</span> :? A(a) +&amp; B(b) <span class="kw">=&gt;</span> ...</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/4eb53298c2b3d094faf66d88689c59a1df4fca86/dsl/src/main/scala/org/http4s/dsl/impl/Path.scala" target="_blank">Path.scala</a></dd></dl><div class="toggleContainer block">
+  <span class="kw">case</span> GET -&gt; Root / <span class="lit">"user"</span> :? A(a) +&amp; B(b) <span class="kw">=&gt;</span> ...</pre></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/05e3c94e7d7d498c454a7930526f66c444bf5a80/dsl/src/main/scala/org/http4s/dsl/impl/Path.scala" target="_blank">Path.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
