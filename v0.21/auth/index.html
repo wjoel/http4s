@@ -31,7 +31,7 @@
             Documentation
           </a>
           <div class="dropdown-menu" aria-labelledby="doc-menu-item">
-  <a class="dropdown-item" href="/v0.21/">v0.21 (dev)</a>  
+  <a class="dropdown-item" href="/v0.21/">v0.21 (stable)</a>
   <a class="dropdown-item" href="/v0.20/">v0.20 (stable)</a>
   <a class="dropdown-item" href="/v0.19/">v0.19 (EOL)</a>
   <a class="dropdown-item" href="/v0.18/">v0.18 (EOL)</a>
@@ -89,7 +89,7 @@
 <h2 id="built-in">Built in</h2>
 
 <p>For this section, remember that, like mentioned in the <a href="../service">service</a> section, a service is a
-<code>Kleisli[OptionT[F, *], Request[F], Response[F]]</code>, the composable version of <code>Request[F] =&gt; OptionT[F, Response[F]]</code>.</p>
+<code>Kleisli[OptionT[F, ?], Request[F], Response[F]]</code>, the composable version of <code>Request[F] =&gt; OptionT[F, Response[F]]</code>.</p>
 
 <p>Lets start by defining all the imports we will need in the examples below:</p>
 
@@ -118,7 +118,7 @@ would be the equivalent to <code>Request[F] =&gt; OptionT[F, Response[F]]</code>
 to define how to extract the authentication information from the request. For that, we need a function
 with the following signature: <code>Request[F] =&gt; OptionT[F, User]</code>. Here is an example of how to define it:</p>
 
-<pre><code class="language-scala">val authUser: Kleisli[OptionT[IO, *], Request[IO], User] =
+<pre><code class="language-scala">val authUser: Kleisli[OptionT[IO, ?], Request[IO], User] =
   Kleisli(_ =&gt; OptionT.liftF(IO(???)))
 </code></pre>
 
