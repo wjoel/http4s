@@ -701,6 +701,18 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <a class="object" href="ParseResult$.html" title=""></a>
                         <a href="ParseResult$.html" title="">ParseResult</a>
                       </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="ProductComment.html" title=""></a>
+                        <a href="ProductComment.html" title="">ProductComment</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="class" href="ProductId.html" title=""></a>
+                        <a href="ProductId.html" title="">ProductId</a>
+                      </li><li class="current-entities indented2">
+                        <span class="separator"></span>
+                        <a class="trait" href="ProductIdOrComment.html" title=""></a>
+                        <a href="ProductIdOrComment.html" title="">ProductIdOrComment</a>
+                      </li><li class="current-entities indented2">
                         <a class="object" href="QValue$.html" title=""></a>
                         <a class="class" href="QValue.html" title="A Quality Value."></a>
                         <a href="QValue.html" title="A Quality Value.">QValue</a>
@@ -856,7 +868,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/e8f4bb645d4fd1487e7e8bfcef6e02d3155bd900/core/src/main/scala/org/http4s/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/f774529bb320716097fe06772f83857a166c7ad8/core/src/main/scala/org/http4s/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -1726,6 +1738,54 @@ constructed from a partial function and combined as a
       </span>
       
       
+    </li><li name="org.http4s.ProductComment" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProductCommentextendsProductIdOrCommentwithProductwithSerializable"></a><a id="ProductComment:ProductComment"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/ProductComment.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="ProductComment.html"><span class="name">ProductComment</span></a><span class="params">(<span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="ProductIdOrComment.html" class="extype" name="org.http4s.ProductIdOrComment">ProductIdOrComment</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      
+      
+    </li><li name="org.http4s.ProductId" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ProductIdextendsProductIdOrCommentwithProductwithSerializable"></a><a id="ProductId:ProductId"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/ProductId.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="ProductId.html"><span class="name">ProductId</span></a><span class="params">(<span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="version">version: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="ProductIdOrComment.html" class="extype" name="org.http4s.ProductIdOrComment">ProductIdOrComment</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+      </span>
+      
+      
+    </li><li name="org.http4s.ProductIdOrComment" visbl="pub" class="indented0 " data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ProductIdOrCommentextendsRenderable"></a><a id="ProductIdOrComment:ProductIdOrComment"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/ProductIdOrComment.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="ProductIdOrComment.html"><span class="name">ProductIdOrComment</span></a><span class="result"> extends <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a></span>
+      </span>
+      
+      
     </li><li name="org.http4s.QValue" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="QValueextendsAnyValwithOrdered[org.http4s.QValue]"></a><a id="QValue:QValue"></a>
       <span class="permalink">
@@ -1990,7 +2050,7 @@ status line, headers, and a possible request body.
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a title="" href="ResponseCookie.html"><span class="name">ResponseCookie</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="expires">expires: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a>] = <span class="symbol">None</span></span>, <span name="maxAge">maxAge: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a>] = <span class="symbol">None</span></span>, <span name="domain">domain: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="sameSite">sameSite: <a href="SameSite.html" class="extype" name="org.http4s.SameSite">SameSite</a> = <span class="symbol"><span class="name"><a href="SameSite$.html">SameSite.Lax</a></span></span></span>, <span name="secure">secure: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="httpOnly">httpOnly: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="extension">extension: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <a title="" href="ResponseCookie.html"><span class="name">ResponseCookie</span></a><span class="params">(<span name="name">name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="content">content: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="expires">expires: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="HttpDate.html" class="extype" name="org.http4s.HttpDate">HttpDate</a>] = <span class="symbol">None</span></span>, <span name="maxAge">maxAge: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a>] = <span class="symbol">None</span></span>, <span name="domain">domain: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="sameSite">sameSite: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="SameSite.html" class="extype" name="org.http4s.SameSite">SameSite</a>] = <span class="symbol">None</span></span>, <span name="secure">secure: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="httpOnly">httpOnly: <a href="https://www.scala-lang.org/api/2.12.10/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol">false</span></span>, <span name="extension">extension: <a href="https://www.scala-lang.org/api/2.12.10/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.10/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">extension</dt><dd class="cmt"><p>The extension attributes of the cookie.  If there is more
