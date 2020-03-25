@@ -262,7 +262,7 @@ it.</p>
 <h3 id="binary-and-source">Binary and source</h3>
 
 <ul>
-<li><a href="https://github.com/http4s/http4s/pull/3098">#3110</a>: Change <code>MessageFailure#toHttpResponse</code> to return a <code>Response[F]</code> instead of an <code>F[Response[F]]</code>, and relax constraints accordingly. Drops the <code>inHttpResponse</code> method.</li>
+<li><a href="https://github.com/http4s/http4s/pull/3110">#3110</a>: Change <code>MessageFailure#toHttpResponse</code> to return a <code>Response[F]</code> instead of an <code>F[Response[F]]</code>, and relax constraints accordingly. Drops the <code>inHttpResponse</code> method.</li>
 <li><a href="https://github.com/http4s/http4s/pull/3107">#3107</a>: Add <code>covary[F[_]]</code> method to <code>Media</code> types.  Should not break your source unless you have your own <code>Media</code> subclass, which you shouldn&rsquo;t.</li>
 </ul>
 
