@@ -166,17 +166,17 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">BlazeServerBuilder</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>] with <span class="extype" name="org.http4s.blazecore.BlazeBackendBuilder">BlazeBackendBuilder</span>[<a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>]]</span>
+        <span class="name">BlazeServerBuilder</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>] with <span class="extype" name="org.http4s.blazecore.BlazeBackendBuilder">BlazeBackendBuilder</span>[<a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>]</span>
       </span>
       </h4>
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>BlazeBuilder is the component for the builder pattern aggregating
-different components to finally serve requests.</p><p>Variables:</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/0854e16004b7fc742bc42baef7789dec4e38c138/blaze-server/src/main/scala/org/http4s/server/blaze/BlazeServerBuilder.scala" target="_blank">BlazeServerBuilder.scala</a></dd></dl><div class="toggleContainer block">
+different components to finally serve requests.</p><p>Variables:</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/0a06d94890e1a382f799c0c7bf5a269318de1704/blaze-server/src/main/scala/org/http4s/server/blaze/BlazeServerBuilder.scala" target="_blank">BlazeServerBuilder.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><span class="extype" name="org.http4s.blazecore.BlazeBackendBuilder">BlazeBackendBuilder</span>[<a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>]], <a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>], <span class="extype" name="org.http4s.internal.BackendBuilder">BackendBuilder</span>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>, <a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>]], <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.10/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="org.http4s.blazecore.BlazeBackendBuilder">BlazeBackendBuilder</span>[<a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>], <a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>], <span class="extype" name="org.http4s.internal.BackendBuilder">BackendBuilder</span>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>, <a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>], <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.10/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
         </div></div>
         
 
@@ -380,7 +380,7 @@ different components to finally serve requests.</p><p>Variables:</p></div><dl cl
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.server.blaze.BlazeServerBuilder">BlazeServerBuilder</a> → <a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a> → BackendBuilder</dd></dl></div>
     </li><li name="org.http4s.internal.BackendBuilder#allocated" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="allocated:F[(A,F[Unit])]"></a><a id="allocated:F[(Server[F],F[Unit])]"></a>
+      <a id="allocated:F[(A,F[Unit])]"></a><a id="allocated:F[(Server,F[Unit])]"></a>
       <span class="permalink">
       <a href="../../../../org/http4s/server/blaze/BlazeServerBuilder.html#allocated:F[(A,F[Unit])]" title="Permalink">
         <i class="material-icons"></i>
@@ -391,18 +391,18 @@ different components to finally serve requests.</p><p>Variables:</p></div><dl cl
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">allocated</span><span class="result">: <span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>[(<a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>], <span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>])]</span>
+        <span class="name">allocated</span><span class="result">: <span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>[(<a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>, <span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.10/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>])]</span>
       </span>
       
       <p class="shortcomment cmt">Returns an effect that allocates a backend and an <code>F[Unit]</code> to
 release it.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an effect that allocates a backend and an <code>F[Unit]</code> to
 release it.  The returned <code>F</code> waits until the backend is ready
 to process requests.  The second element of the tuple shuts
-down the backend when run.</p><p>Unlike <a href="#resource:cats.effect.Resource[F,org.http4s.server.Server[F]]" class="extmbr" name="org.http4s.server.blaze.BlazeServerBuilder#resource">resource</a> and <a href="#stream:fs2.Stream[F,A]" class="extmbr" name="org.http4s.server.blaze.BlazeServerBuilder#stream">stream</a>, there is no automatic
+down the backend when run.</p><p>Unlike <a href="#resource:cats.effect.Resource[F,org.http4s.server.Server]" class="extmbr" name="org.http4s.server.blaze.BlazeServerBuilder#resource">resource</a> and <a href="#stream:fs2.Stream[F,A]" class="extmbr" name="org.http4s.server.blaze.BlazeServerBuilder#stream">stream</a>, there is no automatic
 release of the backend.  This function is intended for REPL
 sessions, tests, and other situations where composing a
 <span class="extype" name="cats.effect.Resource">cats.effect.Resource</span> or <span class="extype" name="fs2.Stream">fs2.Stream</span> is not tenable.
-<a href="#resource:cats.effect.Resource[F,org.http4s.server.Server[F]]" class="extmbr" name="org.http4s.server.blaze.BlazeServerBuilder#resource">resource</a> or <a href="#stream:fs2.Stream[F,A]" class="extmbr" name="org.http4s.server.blaze.BlazeServerBuilder#stream">stream</a> is recommended wherever possible.
+<a href="#resource:cats.effect.Resource[F,org.http4s.server.Server]" class="extmbr" name="org.http4s.server.blaze.BlazeServerBuilder#resource">resource</a> or <a href="#stream:fs2.Stream[F,A]" class="extmbr" name="org.http4s.server.blaze.BlazeServerBuilder#stream">stream</a> is recommended wherever possible.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>BackendBuilder</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
@@ -822,9 +822,9 @@ sessions, tests, and other situations where composing a
               
         </dd></dl></div>
     </li><li name="org.http4s.server.blaze.BlazeServerBuilder#resource" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="resource:cats.effect.Resource[F,org.http4s.server.Server[F]]"></a><a id="resource:Resource[F,Server[F]]"></a>
+      <a id="resource:cats.effect.Resource[F,org.http4s.server.Server]"></a><a id="resource:Resource[F,Server]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/server/blaze/BlazeServerBuilder.html#resource:cats.effect.Resource[F,org.http4s.server.Server[F]]" title="Permalink">
+      <a href="../../../../org/http4s/server/blaze/BlazeServerBuilder.html#resource:cats.effect.Resource[F,org.http4s.server.Server]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -833,7 +833,7 @@ sessions, tests, and other situations where composing a
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resource</span><span class="result">: <span class="extype" name="cats.effect.Resource">Resource</span>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>, <a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>]]</span>
+        <span class="name">resource</span><span class="result">: <span class="extype" name="cats.effect.Resource">Resource</span>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>, <a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>]</span>
       </span>
       
       <p class="shortcomment cmt">Returns a Server resource.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a Server resource.  The resource is not acquired until the
@@ -940,7 +940,7 @@ Useful for servers with associated lifetime behaviors.
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>BlazeBackendBuilder</dd></dl></div>
     </li><li name="org.http4s.internal.BackendBuilder#stream" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="stream:fs2.Stream[F,A]"></a><a id="stream:Stream[F,Server[F]]"></a>
+      <a id="stream:fs2.Stream[F,A]"></a><a id="stream:Stream[F,Server]"></a>
       <span class="permalink">
       <a href="../../../../org/http4s/server/blaze/BlazeServerBuilder.html#stream:fs2.Stream[F,A]" title="Permalink">
         <i class="material-icons"></i>
@@ -951,7 +951,7 @@ Useful for servers with associated lifetime behaviors.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">stream</span><span class="result">: <span class="extype" name="fs2.Stream">Stream</span>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>, <a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>]]</span>
+        <span class="name">stream</span><span class="result">: <span class="extype" name="fs2.Stream">Stream</span>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>, <a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>]</span>
       </span>
       
       <p class="shortcomment cmt">Returns the backend as a single-element stream.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the backend as a single-element stream.  The stream
@@ -1664,11 +1664,11 @@ default <code>SSLParameters</code></p>
 
         <div id="inheritedMembers">
         <div class="parent" name="org.http4s.blazecore.BlazeBackendBuilder">
-              <h3>Inherited from <span class="extype" name="org.http4s.blazecore.BlazeBackendBuilder">BlazeBackendBuilder</span>[<a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>]]</h3>
+              <h3>Inherited from <span class="extype" name="org.http4s.blazecore.BlazeBackendBuilder">BlazeBackendBuilder</span>[<a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>]</h3>
             </div><div class="parent" name="org.http4s.server.ServerBuilder">
               <h3>Inherited from <a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>]</h3>
             </div><div class="parent" name="org.http4s.internal.BackendBuilder">
-              <h3>Inherited from <span class="extype" name="org.http4s.internal.BackendBuilder">BackendBuilder</span>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>, <a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>]]</h3>
+              <h3>Inherited from <span class="extype" name="org.http4s.internal.BackendBuilder">BackendBuilder</span>[<span class="extype" name="org.http4s.server.blaze.BlazeServerBuilder.F">F</span>, <a href="../Server.html" class="extype" name="org.http4s.server.Server">Server</a>]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.10/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
