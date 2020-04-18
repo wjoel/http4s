@@ -178,6 +178,18 @@
                         <a class="class" href="Age.html" title="Constructs an Age header."></a>
                         <a href="Age.html" title="Constructs an Age header.">Age</a>
                       </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="class" href="AgentComment.html" title=""></a>
+                        <a href="AgentComment.html" title="">AgentComment</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="class" href="AgentProduct.html" title=""></a>
+                        <a href="AgentProduct.html" title="">AgentProduct</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="trait" href="AgentToken.html" title=""></a>
+                        <a href="AgentToken.html" title="">AgentToken</a>
+                      </li><li class="current-entities indented3">
                         <a class="object" href="Allow$.html" title=""></a>
                         <a class="class" href="Allow.html" title=""></a>
                         <a href="Allow.html" title="">Allow</a>
@@ -214,9 +226,9 @@
                         <a class="class" href="Content$minusLength.html" title="Constructs a Content-Length header."></a>
                         <a href="Content$minusLength.html" title="Constructs a Content-Length header.">Content-Length</a>
                       </li><li class="current-entities indented3">
+                        <span class="separator"></span>
                         <a class="object" href="Content$minusLocation$.html" title=""></a>
-                        <a class="class" href="Content$minusLocation.html" title=""></a>
-                        <a href="Content$minusLocation.html" title="">Content-Location</a>
+                        <a href="Content$minusLocation$.html" title="">Content-Location</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="object" href="Content$minusMD5$.html" title=""></a>
@@ -382,9 +394,9 @@
                         <a class="object" href="Sec$minusWebSocket$minusVersion$.html" title=""></a>
                         <a href="Sec$minusWebSocket$minusVersion$.html" title="">Sec-WebSocket-Version</a>
                       </li><li class="current-entities indented3">
+                        <span class="separator"></span>
                         <a class="object" href="Server$.html" title=""></a>
-                        <a class="class" href="Server.html" title="Server header https://tools.ietf.org/html/rfc7231#section-7.4.2"></a>
-                        <a href="Server.html" title="Server header https://tools.ietf.org/html/rfc7231#section-7.4.2">Server</a>
+                        <a href="Server$.html" title="">Server</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="Set$minusCookie$.html" title=""></a>
                         <a class="class" href="Set$minusCookie.html" title=""></a>
@@ -411,8 +423,8 @@
                         <a href="Upgrade$.html" title="">Upgrade</a>
                       </li><li class="current-entities indented3">
                         <a class="object" href="User$minusAgent$.html" title=""></a>
-                        <a class="class" href="" title="User-Agent header https://tools.ietf.org/html/rfc7231#section-5.5.3"></a>
-                        <a href="" title="User-Agent header https://tools.ietf.org/html/rfc7231#section-5.5.3">User-Agent</a>
+                        <a class="class" href="" title=""></a>
+                        <a href="" title="">User-Agent</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
                         <a class="object" href="Vary$.html" title=""></a>
@@ -510,14 +522,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: User$minusAgent" class="name">User-Agent</span><span class="params">(<span name="product">product: <a href="../ProductId.html" class="extype" name="org.http4s.ProductId">ProductId</a></span>, <span name="rest">rest: <span class="extype" name="scala.List">List</span>[<a href="../ProductIdOrComment.html" class="extype" name="org.http4s.ProductIdOrComment">ProductIdOrComment</a>]</span>)</span><span class="result"> extends <a href="../Header$$Parsed.html" class="extype" name="org.http4s.Header.Parsed">Parsed</a> with <a href="https://www.scala-lang.org/api/2.12.11/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.11/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <span title="gt4s: User$minusAgent" class="name">User-Agent</span><span class="params">(<span name="product">product: <a href="AgentProduct.html" class="extype" name="org.http4s.headers.AgentProduct">AgentProduct</a></span>, <span name="other">other: <span class="extype" name="scala.List">List</span>[<a href="AgentToken.html" class="extype" name="org.http4s.headers.AgentToken">AgentToken</a>] = <span class="symbol">Nil</span></span>)</span><span class="result"> extends <a href="../Header$$Parsed.html" class="extype" name="org.http4s.Header.Parsed">Parsed</a> with <a href="https://www.scala-lang.org/api/2.12.11/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.11/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>User-Agent header
-https://tools.ietf.org/html/rfc7231#section-5.5.3
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/d0dcde3137650f0efe7589756d6d2b06fc11c511/core/src/main/scala/org/http4s/headers/User-Agent.scala" target="_blank">User-Agent.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/6769bb7561f2428a27122e1013ca76358b742c27/core/src/main/scala/org/http4s/headers/User-Agent.scala" target="_blank">User-Agent.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -573,9 +583,9 @@ https://tools.ietf.org/html/rfc7231#section-5.5.3
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.http4s.headers.User-Agent#&lt;init&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(product:org.http4s.ProductId,rest:List[org.http4s.ProductIdOrComment]):org.http4s.headers.User-Agent"></a><a id="&lt;init&gt;:User-Agent"></a>
+      <a id="&lt;init&gt;(product:org.http4s.headers.AgentProduct,other:List[org.http4s.headers.AgentToken]):org.http4s.headers.User-Agent"></a><a id="&lt;init&gt;:User-Agent"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/headers/User$minusAgent.html#&lt;init&gt;(product:org.http4s.ProductId,rest:List[org.http4s.ProductIdOrComment]):org.http4s.headers.User-Agent" title="Permalink">
+      <a href="../../../org/http4s/headers/User$minusAgent.html#&lt;init&gt;(product:org.http4s.headers.AgentProduct,other:List[org.http4s.headers.AgentToken]):org.http4s.headers.User-Agent" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -584,7 +594,7 @@ https://tools.ietf.org/html/rfc7231#section-5.5.3
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: User$minusAgent" class="name">User-Agent</span><span class="params">(<span name="product">product: <a href="../ProductId.html" class="extype" name="org.http4s.ProductId">ProductId</a></span>, <span name="rest">rest: <span class="extype" name="scala.List">List</span>[<a href="../ProductIdOrComment.html" class="extype" name="org.http4s.ProductIdOrComment">ProductIdOrComment</a>]</span>)</span>
+        <span title="gt4s: User$minusAgent" class="name">User-Agent</span><span class="params">(<span name="product">product: <a href="AgentProduct.html" class="extype" name="org.http4s.headers.AgentProduct">AgentProduct</a></span>, <span name="other">other: <span class="extype" name="scala.List">List</span>[<a href="AgentToken.html" class="extype" name="org.http4s.headers.AgentToken">AgentToken</a>] = <span class="symbol">Nil</span></span>)</span>
       </span>
       
       
@@ -1055,6 +1065,22 @@ https://tools.ietf.org/html/rfc7231#section-5.5.3
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.http4s.headers.User-Agent#other" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="other:List[org.http4s.headers.AgentToken]"></a><a id="other:List[AgentToken]"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/headers/User$minusAgent.html#other:List[org.http4s.headers.AgentToken]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">other</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="AgentToken.html" class="extype" name="org.http4s.headers.AgentToken">AgentToken</a>]</span>
+      </span>
+      
+      
     </li><li name="org.http4s.Header.Parsed#parsed" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="parsed:Parsed.this.type"></a><a id="parsed:User-Agent.this.type"></a>
       <span class="permalink">
@@ -1072,9 +1098,9 @@ https://tools.ietf.org/html/rfc7231#section-5.5.3
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Header$$Parsed.html" class="extype" name="org.http4s.Header.Parsed">Parsed</a> → <a href="../Header.html" class="extype" name="org.http4s.Header">Header</a></dd></dl></div>
     </li><li name="org.http4s.headers.User-Agent#product" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="product:org.http4s.ProductId"></a><a id="product:ProductId"></a>
+      <a id="product:org.http4s.headers.AgentProduct"></a><a id="product:AgentProduct"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/headers/User$minusAgent.html#product:org.http4s.ProductId" title="Permalink">
+      <a href="../../../org/http4s/headers/User$minusAgent.html#product:org.http4s.headers.AgentProduct" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1083,7 +1109,7 @@ https://tools.ietf.org/html/rfc7231#section-5.5.3
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">product</span><span class="result">: <a href="../ProductId.html" class="extype" name="org.http4s.ProductId">ProductId</a></span>
+        <span class="name">product</span><span class="result">: <a href="AgentProduct.html" class="extype" name="org.http4s.headers.AgentProduct">AgentProduct</a></span>
       </span>
       
       
@@ -1151,22 +1177,6 @@ https://tools.ietf.org/html/rfc7231#section-5.5.3
       </span>
       
       <p class="shortcomment cmt">Length of the rendered header, including name and final '\r\n'</p><div class="fullcomment"><div class="comment cmt"><p>Length of the rendered header, including name and final '\r\n'</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Header.html" class="extype" name="org.http4s.Header">Header</a></dd></dl></div>
-    </li><li name="org.http4s.headers.User-Agent#rest" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="rest:List[org.http4s.ProductIdOrComment]"></a><a id="rest:List[ProductIdOrComment]"></a>
-      <span class="permalink">
-      <a href="../../../org/http4s/headers/User$minusAgent.html#rest:List[org.http4s.ProductIdOrComment]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">rest</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="../ProductIdOrComment.html" class="extype" name="org.http4s.ProductIdOrComment">ProductIdOrComment</a>]</span>
-      </span>
-      
-      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">

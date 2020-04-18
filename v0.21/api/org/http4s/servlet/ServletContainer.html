@@ -203,11 +203,11 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/d0dcde3137650f0efe7589756d6d2b06fc11c511/servlet/src/main/scala/org/http4s/servlet/ServletContainer.scala" target="_blank">ServletContainer.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/6769bb7561f2428a27122e1013ca76358b742c27/servlet/src/main/scala/org/http4s/servlet/ServletContainer.scala" target="_blank">ServletContainer.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="../server/ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>], <span class="extype" name="org.http4s.internal.BackendBuilder">BackendBuilder</span>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>, <a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>], <a href="https://www.scala-lang.org/api/2.12.11/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.11/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="../server/ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>], <span class="extype" name="org.http4s.internal.BackendBuilder">BackendBuilder</span>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>, <a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>]], <a href="https://www.scala-lang.org/api/2.12.11/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.11/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
         </div><div class="toggleContainer block">
             <span class="toggle">
               Known Subclasses
@@ -377,9 +377,9 @@ but all supported backends.  This method is good for legacy scenarios, or for re
 of the servlet ecosystem for an app that is committed to running on a servlet container.
 </p></div></div>
     </li><li name="org.http4s.server.ServerBuilder#resource" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="resource:cats.effect.Resource[F,org.http4s.server.Server]"></a><a id="resource:Resource[F,Server]"></a>
+      <a id="resource:cats.effect.Resource[F,org.http4s.server.Server[F]]"></a><a id="resource:Resource[F,Server[F]]"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/servlet/ServletContainer.html#resource:cats.effect.Resource[F,org.http4s.server.Server]" title="Permalink">
+      <a href="../../../org/http4s/servlet/ServletContainer.html#resource:cats.effect.Resource[F,org.http4s.server.Server[F]]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -388,7 +388,7 @@ of the servlet ecosystem for an app that is committed to running on a servlet co
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">resource</span><span class="result">: <span class="extype" name="cats.effect.Resource">Resource</span>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>, <a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>]</span>
+        <span class="name">resource</span><span class="result">: <span class="extype" name="cats.effect.Resource">Resource</span>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>, <a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Returns a Server resource.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a Server resource.  The resource is not acquired until the
@@ -545,7 +545,7 @@ Not to be confused with the server connectors.
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.http4s.internal.BackendBuilder#allocated" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="allocated:F[(A,F[Unit])]"></a><a id="allocated:F[(Server,F[Unit])]"></a>
+      <a id="allocated:F[(A,F[Unit])]"></a><a id="allocated:F[(Server[F],F[Unit])]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/servlet/ServletContainer.html#allocated:F[(A,F[Unit])]" title="Permalink">
         <i class="material-icons"></i>
@@ -556,18 +556,18 @@ Not to be confused with the server connectors.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">allocated</span><span class="result">: <span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>[(<a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>, <span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.11/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>])]</span>
+        <span class="name">allocated</span><span class="result">: <span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>[(<a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>], <span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>[<a href="https://www.scala-lang.org/api/2.12.11/scala/Unit.html#scala.Unit" class="extype" name="scala.Unit">Unit</a>])]</span>
       </span>
       
       <p class="shortcomment cmt">Returns an effect that allocates a backend and an <code>F[Unit]</code> to
 release it.</p><div class="fullcomment"><div class="comment cmt"><p>Returns an effect that allocates a backend and an <code>F[Unit]</code> to
 release it.  The returned <code>F</code> waits until the backend is ready
 to process requests.  The second element of the tuple shuts
-down the backend when run.</p><p>Unlike <a href="#resource:cats.effect.Resource[F,org.http4s.server.Server]" class="extmbr" name="org.http4s.servlet.ServletContainer#resource">resource</a> and <a href="#stream:fs2.Stream[F,A]" class="extmbr" name="org.http4s.servlet.ServletContainer#stream">stream</a>, there is no automatic
+down the backend when run.</p><p>Unlike <a href="#resource:cats.effect.Resource[F,org.http4s.server.Server[F]]" class="extmbr" name="org.http4s.servlet.ServletContainer#resource">resource</a> and <a href="#stream:fs2.Stream[F,A]" class="extmbr" name="org.http4s.servlet.ServletContainer#stream">stream</a>, there is no automatic
 release of the backend.  This function is intended for REPL
 sessions, tests, and other situations where composing a
 <span class="extype" name="cats.effect.Resource">cats.effect.Resource</span> or <span class="extype" name="fs2.Stream">fs2.Stream</span> is not tenable.
-<a href="#resource:cats.effect.Resource[F,org.http4s.server.Server]" class="extmbr" name="org.http4s.servlet.ServletContainer#resource">resource</a> or <a href="#stream:fs2.Stream[F,A]" class="extmbr" name="org.http4s.servlet.ServletContainer#stream">stream</a> is recommended wherever possible.
+<a href="#resource:cats.effect.Resource[F,org.http4s.server.Server[F]]" class="extmbr" name="org.http4s.servlet.ServletContainer#resource">resource</a> or <a href="#stream:fs2.Stream[F,A]" class="extmbr" name="org.http4s.servlet.ServletContainer#stream">stream</a> is recommended wherever possible.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>BackendBuilder</dd></dl></div>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
@@ -959,7 +959,7 @@ that runs for the rest of the JVM's life.
 Useful for servers with associated lifetime behaviors.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../server/ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a></dd></dl></div>
     </li><li name="org.http4s.internal.BackendBuilder#stream" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="stream:fs2.Stream[F,A]"></a><a id="stream:Stream[F,Server]"></a>
+      <a id="stream:fs2.Stream[F,A]"></a><a id="stream:Stream[F,Server[F]]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/servlet/ServletContainer.html#stream:fs2.Stream[F,A]" title="Permalink">
         <i class="material-icons"></i>
@@ -970,7 +970,7 @@ Useful for servers with associated lifetime behaviors.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">stream</span><span class="result">: <span class="extype" name="fs2.Stream">Stream</span>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>, <a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>]</span>
+        <span class="name">stream</span><span class="result">: <span class="extype" name="fs2.Stream">Stream</span>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>, <a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>]]</span>
       </span>
       
       <p class="shortcomment cmt">Returns the backend as a single-element stream.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the backend as a single-element stream.  The stream
@@ -1126,7 +1126,7 @@ The backend is shut down when the stream is finalized.
         <div class="parent" name="org.http4s.server.ServerBuilder">
               <h3>Inherited from <a href="../server/ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>]</h3>
             </div><div class="parent" name="org.http4s.internal.BackendBuilder">
-              <h3>Inherited from <span class="extype" name="org.http4s.internal.BackendBuilder">BackendBuilder</span>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>, <a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>]</h3>
+              <h3>Inherited from <span class="extype" name="org.http4s.internal.BackendBuilder">BackendBuilder</span>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>, <a href="../server/Server.html" class="extype" name="org.http4s.server.Server">Server</a>[<span class="extype" name="org.http4s.servlet.ServletContainer.F">F</span>]]</h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <a href="https://www.scala-lang.org/api/2.12.11/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a></h3>
             </div><div class="parent" name="scala.Any">
