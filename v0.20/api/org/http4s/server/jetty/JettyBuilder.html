@@ -167,7 +167,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/e03ab45add8d82244c289ff07caa0d37141b3ff8/jetty/src/main/scala/org/http4s/server/jetty/JettyBuilder.scala" target="_blank">JettyBuilder.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/5b2187fb6b69c9ed099cf2591a9bd19626064c89/jetty/src/main/scala/org/http4s/server/jetty/JettyBuilder.scala" target="_blank">JettyBuilder.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -1009,6 +1009,23 @@ The backend is shut down when the stream is finalized.
       </span>
       
       <p class="shortcomment cmt">Set the banner to display when the server starts up</p><div class="fullcomment"><div class="comment cmt"><p>Set the banner to display when the server starts up</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.server.jetty.JettyBuilder">JettyBuilder</a> → <a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a></dd></dl></div>
+    </li><li name="org.http4s.server.jetty.JettyBuilder#withHttp2c" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withHttp2c:JettyBuilder.this.Self"></a><a id="withHttp2c:Self"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/jetty/JettyBuilder.html#withHttp2c:JettyBuilder.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withHttp2c</span><span class="result">: <a href="#Self=org.http4s.server.jetty.JettyBuilder[F]" class="extmbr" name="org.http4s.server.jetty.JettyBuilder.Self">Self</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Enables HTTP/2 connection upgrade over plain text (no TLS).</p><div class="fullcomment"><div class="comment cmt"><p>Enables HTTP/2 connection upgrade over plain text (no TLS).
+See https://webtide.com/introduction-to-http2-in-jetty</p></div></div>
     </li><li name="org.http4s.server.jetty.JettyBuilder#withIdleTimeout" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withIdleTimeout(idleTimeout:scala.concurrent.duration.Duration):JettyBuilder.this.Self"></a><a id="withIdleTimeout(Duration):Self"></a>
       <span class="permalink">
@@ -1143,6 +1160,22 @@ will wait this long before a forcible stop.</p></div></div>
       </span>
       
       <p class="shortcomment cmt">Disable the banner when the server starts up</p><div class="fullcomment"><div class="comment cmt"><p>Disable the banner when the server starts up</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../ServerBuilder.html" class="extype" name="org.http4s.server.ServerBuilder">ServerBuilder</a></dd></dl></div>
+    </li><li name="org.http4s.server.jetty.JettyBuilder#withoutHttp2c" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withoutHttp2c:JettyBuilder.this.Self"></a><a id="withoutHttp2c:Self"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/jetty/JettyBuilder.html#withoutHttp2c:JettyBuilder.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withoutHttp2c</span><span class="result">: <a href="#Self=org.http4s.server.jetty.JettyBuilder[F]" class="extmbr" name="org.http4s.server.jetty.JettyBuilder.Self">Self</a></span>
+      </span>
+      
+      
     </li><li name="scala.Predef.ArrowAssoc#→" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="→[B](y:B):(A,B)"></a><a id="→[B](B):(JettyBuilder[F],B)"></a>
       <span class="permalink">
