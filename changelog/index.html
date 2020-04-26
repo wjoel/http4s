@@ -104,7 +104,6 @@ It is not binary compatible with prior releases.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3257">#3257</a>: Make <code>SameSite</code> cookie attribute optional</li>
 <li><a href="https://github.com/http4s/http4s/pull/3291">#3291</a>: Remove unused <code>F[_]</code> parameter from <code>Server</code></li>
 <li><a href="https://github.com/http4s/http4s/pull/3241">#3241</a>: Port all macros to blackbox in anticipation of Dotty support</li>
-<li><a href="https://github.com/http4s/http4s/pull/3287">#3287</a>: Treat all media types ending in <code>+json</code> as JSON in server <code>Logger</code> middleware</li>
 <li><a href="https://github.com/http4s/http4s/pull/3323">#3323</a>: Drop deprecated <code>ArbitraryInstances#charsetRangesNoQuality</code></li>
 <li><a href="https://github.com/http4s/http4s/pull/3322">#3322</a>: Drop deprecated <code>getAs</code> and <code>prepAs</code> methods from <code>Client</code></li>
 <li><a href="https://github.com/http4s/http4s/pull/3271">#3371</a>: In http4s-metrics, add <code>rootCause</code> field to <code>TerminationType.Abnormal</code> and <code>TerminationType.Error</code>.  Add <code>TerminationType.Canceled</code></li>
@@ -174,6 +173,7 @@ It is the final planned release in the 0.20.x series.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3333">#3333</a>: Add Http2c support to jetty-server</li>
 <li><a href="https://github.com/http4s/http4s/pull/3327">#3327</a>: Add <code>httpRoutes</code> and <code>httpApp</code> convenience constructors to <code>Date</code> middleware</li>
 <li><a href="https://github.com/http4s/http4s/pull/3327">#3381</a>: Add <code>httpRoutes</code> and <code>httpApp</code> convenience constructors to <code>CORS</code> middleware</li>
+<li><a href="https://github.com/http4s/http4s/pull/3298">#3298</a>: In <code>Logger</code> client and server middlewares, detect any media types ending in <code>+json</code> as non-binary</li>
 </ul>
 
 <h2 id="build-improvements">Build improvements</h2>
