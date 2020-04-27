@@ -176,6 +176,18 @@ It is the final planned release in the 0.20.x series.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3298">#3298</a>: In <code>Logger</code> client and server middlewares, detect any media types ending in <code>+json</code> as non-binary</li>
 </ul>
 
+<h2 id="backports">Backports</h2>
+
+<p>These appeared in previous releases, but have been backported to 0.20.x</p>
+
+<ul>
+<li><a href="https://github.com/http4s/http4s/pull/2591">#2591</a>: Change literal interpolator macros to use unsafe methods to avoid triggering Wartremover&rsquo;s EitherProjectionPartial warning</li>
+<li><a href="https://github.com/http4s/http4s/pull/3115">#3115</a>: Drop UTF-8 BOM when decoding</li>
+<li><a href="https://github.com/http4s/http4s/pull/3148">#3148</a>: Add <code>HttpRoutes.strict</code></li>
+<li><a href="https://github.com/http4s/http4s/pull/3185">#3185</a>: In blaze, recover <code>EOF</code> on <code>bodyEncoder.write</code> to close connection</li>
+<li><a href="https://github.com/http4s/http4s/pull/3196">#3196</a>: Add convenience functions to <code>Caching</code> middleware</li>
+</ul>
+
 <h2 id="build-improvements">Build improvements</h2>
 
 <ul>
