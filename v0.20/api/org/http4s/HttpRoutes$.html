@@ -796,7 +796,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Functions for creating <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a> kleislis.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/116ddd31135decf926911511a4f40a03d59cb2a0/core/src/main/scala/org/http4s/HttpRoutes.scala" target="_blank">HttpRoutes.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Functions for creating <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a> kleislis.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/c2cc4f487af67ff099173a354d4397bd169f8729/core/src/main/scala/org/http4s/HttpRoutes.scala" target="_blank">HttpRoutes.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -961,9 +961,9 @@ routes via <code>SemigroupK</code>.
               
         </dd></dl></div>
     </li><li name="org.http4s.HttpRoutes#empty" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="empty[F[_]](implicitevidence$3:cats.Applicative[F]):org.http4s.HttpRoutes[F]"></a><a id="empty[F[_]](Applicative[F]):HttpRoutes[F]"></a>
+      <a id="empty[F[_]](implicitevidence$4:cats.Applicative[F]):org.http4s.HttpRoutes[F]"></a><a id="empty[F[_]](Applicative[F]):HttpRoutes[F]"></a>
       <span class="permalink">
-      <a href="../../org/http4s/HttpRoutes$.html#empty[F[_]](implicitevidence$3:cats.Applicative[F]):org.http4s.HttpRoutes[F]" title="Permalink">
+      <a href="../../org/http4s/HttpRoutes$.html#empty[F[_]](implicitevidence$4:cats.Applicative[F]):org.http4s.HttpRoutes[F]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1213,6 +1213,26 @@ wherever <code>pf</code> is defined, an <code>OptionT.none</code> wherever it is
       
       <p class="shortcomment cmt">Lifts a <a href="Response.html" class="extype" name="org.http4s.Response">Response</a> into an <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Lifts a <a href="Response.html" class="extype" name="org.http4s.Response">Response</a> into an <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>.
 </p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>the base effect of the <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a></p></dd><dt class="param">r</dt><dd class="cmt"><p>the <a href="Response.html" class="extype" name="org.http4s.Response">Response</a> to lift</p></dd><dt>returns</dt><dd class="cmt"><p>an <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a> that always returns <code>r</code> in effect <code>OptionT[F, ?]</code></p></dd></dl></div>
+    </li><li name="org.http4s.HttpRoutes#strict" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="strict[F[_]](pf:PartialFunction[org.http4s.Request[F],F[org.http4s.Response[F]]])(implicitevidence$3:cats.Applicative[F]):org.http4s.HttpRoutes[F]"></a><a id="strict[F[_]](PartialFunction[Request[F],F[Response[F]]])(Applicative[F]):HttpRoutes[F]"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/HttpRoutes$.html#strict[F[_]](pf:PartialFunction[org.http4s.Request[F],F[org.http4s.Response[F]]])(implicitevidence$3:cats.Applicative[F]):org.http4s.HttpRoutes[F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">strict</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="pf">pf: <a href="https://www.scala-lang.org/api/2.12.11/scala/PartialFunction.html#scala.PartialFunction" class="extype" name="scala.PartialFunction">PartialFunction</a>[<a href="Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.HttpRoutes.strict.F">F</span>], <span class="extype" name="org.http4s.HttpRoutes.strict.F">F</span>[<a href="Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.HttpRoutes.strict.F">F</span>]]]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/Applicative.html#cats.Applicative" class="extype" name="cats.Applicative">Applicative</a>[<span class="extype" name="org.http4s.HttpRoutes.strict.F">F</span>]</span>)</span><span class="result">: <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>[<span class="extype" name="org.http4s.HttpRoutes.strict.F">F</span>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Lifts a partial function into an <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Lifts a partial function into an <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>.  The application of the
+partial function is not suspended in <code>F</code>, unlike <a href="#of[F[_]](pf:PartialFunction[org.http4s.Request[F],F[org.http4s.Response[F]]])(implicitF:cats.effect.Sync[F]):org.http4s.HttpRoutes[F]" class="extmbr" name="org.http4s.HttpRoutes#of">of</a>. This allows for less
+constraints when not combining many routes.
+</p></div><dl class="paramcmts block"><dt class="tparam">F</dt><dd class="cmt"><p>the base effect of the <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a></p></dd><dt class="param">pf</dt><dd class="cmt"><p>the partial function to lift</p></dd><dt>returns</dt><dd class="cmt"><p>An <a href="index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a> that returns some <a href="Response.html" class="extype" name="org.http4s.Response">Response</a> in an <code>OptionT[F, ?]</code>
+wherever <code>pf</code> is defined, an <code>OptionT.none</code> wherever it is not</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
