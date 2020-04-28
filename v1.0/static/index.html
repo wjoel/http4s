@@ -33,8 +33,8 @@
           <div class="dropdown-menu" aria-labelledby="doc-menu-item">
   <a class="dropdown-item" href="/v1.0/">v1.0 (development)</a>
   <a class="dropdown-item" href="/v0.21/">v0.21 (stable)</a>
-  <a class="dropdown-item" href="/v0.20/">v0.20 (stable)</a>
-  <a class="dropdown-item" href="/v0.18/">v0.18 (stable)</a>
+  <a class="dropdown-item" href="/v0.20/">v0.20 (EOL)</a>
+  <a class="dropdown-item" href="/v0.18/">v0.18 (EOL)</a>
   <a class="dropdown-item" href="/v0.17/">v0.17 (EOL)</a>
   <a class="dropdown-item" href="/v0.16/">v0.16 (EOL)</a>
   <a class="dropdown-item" href="/versions/">Help me choose...</a>
@@ -118,6 +118,9 @@ import org.http4s.server.staticcontent._
 import org.http4s.syntax.kleisli._
 // import org.http4s.syntax.kleisli._
 
+import scala.concurrent.ExecutionContext.global
+// import scala.concurrent.ExecutionContext.global
+
 object SimpleHttpServer extends IOApp {
   override def run(args: List[String]): IO[ExitCode] =
     app.use(_ =&gt; IO.never).as(ExitCode.Success)
@@ -125,7 +128,7 @@ object SimpleHttpServer extends IOApp {
   val app: Resource[IO, Server] =
     for {
       blocker &lt;- Blocker[IO]
-      server &lt;- BlazeServerBuilder[IO]
+      server &lt;- BlazeServerBuilder[IO](global)
         .bindHttp(8080)
         .withHttpApp(fileService[IO](FileService.Config(&quot;.&quot;, blocker)).orNotFound)
         .resource
@@ -141,16 +144,16 @@ object SimpleHttpServer extends IOApp {
       &quot;api&quot;    -&gt; anotherService,
       &quot;assets&quot; -&gt; fileService(FileService.Config(&quot;./assets&quot;, blocker))
     ).orNotFound
-// &lt;console&gt;:26: error: not found: type HttpApp
+// &lt;console&gt;:27: error: not found: type HttpApp
 //        val httpApp: HttpApp[IO] =
 //                     ^
-// &lt;console&gt;:27: error: not found: value Router
+// &lt;console&gt;:28: error: not found: value Router
 //            Router(
 //            ^
-// &lt;console&gt;:28: error: not found: value anotherService
+// &lt;console&gt;:29: error: not found: value anotherService
 //              &quot;api&quot;    -&gt; anotherService,
 //                          ^
-// &lt;console&gt;:29: error: not found: value blocker
+// &lt;console&gt;:30: error: not found: value blocker
 //              &quot;assets&quot; -&gt; fileService(FileService.Config(&quot;./assets&quot;, blocker))
 //                                                                     ^
 </code></pre>
@@ -213,7 +216,7 @@ val routes = HttpRoutes.of[IO] {
 deliver them from there. For example, for all resources in the classpath under <code>assets</code>:</p>
 
 <pre><code class="language-scala">val routes = resourceService[IO](ResourceService.Config(&quot;/assets&quot;, blocker))
-// routes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.server.staticcontent.ResourceService$$$Lambda$31643/396342768@737fbb50)
+// routes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.server.staticcontent.ResourceService$$$Lambda$31578/1891643329@5871857d)
 </code></pre>
 
 <p>For custom behaviour, <code>StaticFile.fromResource</code> can be used. In this example,
@@ -227,7 +230,7 @@ val routes = HttpRoutes.of[IO] {
   case request @ GET -&gt; Root / path if List(&quot;.js&quot;, &quot;.css&quot;, &quot;.map&quot;, &quot;.html&quot;, &quot;.webm&quot;).exists(path.endsWith) =&gt;
     static(path, blocker, request)
 }
-// routes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$31641/683268050@30fea0cd)
+// routes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$31576/1806835360@e5f4cdb)
 </code></pre>
 
 <h2 id="webjars">Webjars</h2>
@@ -238,10 +241,10 @@ class path, as you usually would:</p>
 <pre><code class="language-scala">libraryDependencies ++= Seq(
   &quot;org.webjars&quot; % &quot;jquery&quot; % &quot;3.1.1-1&quot;
 )
-// &lt;console&gt;:39: error: not found: value libraryDependencies
+// &lt;console&gt;:40: error: not found: value libraryDependencies
 //        libraryDependencies ++= Seq(
 //        ^
-// &lt;console&gt;:40: error: value % is not a member of String
+// &lt;console&gt;:41: error: value % is not a member of String
 //          &quot;org.webjars&quot; % &quot;jquery&quot; % &quot;3.1.1-1&quot;
 //                        ^
 </code></pre>
@@ -263,7 +266,7 @@ val webjars: HttpRoutes[IO] = webjarService(
     blocker = blocker
   )
 )
-// webjars: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.server.staticcontent.WebjarService$$$Lambda$31683/801294000@725a5f2a)
+// webjars: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.server.staticcontent.WebjarService$$$Lambda$31618/551249446@7171482)
 </code></pre>
 
 <pre><code class="language-scala">blockingPool.shutdown()
