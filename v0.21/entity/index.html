@@ -145,17 +145,17 @@ val audioDec = EntityDecoder.decodeBy(MediaType.audio.ogg) { (m: Media[IO]) =&gt
     m.as[String].map(s =&gt; Audio(s).asRight[DecodeFailure])
   }
 }
-// audioDec: org.http4s.EntityDecoder[cats.effect.IO,Audio] = org.http4s.EntityDecoder$$anon$7@cde2f95
+// audioDec: org.http4s.EntityDecoder[cats.effect.IO,Audio] = org.http4s.EntityDecoder$$anon$7@5b81b047
 
 val videoDec = EntityDecoder.decodeBy(MediaType.video.ogg) { (m: Media[IO]) =&gt;
   EitherT {
     m.as[String].map(s =&gt; Video(s).asRight[DecodeFailure])
   }
 }
-// videoDec: org.http4s.EntityDecoder[cats.effect.IO,Video] = org.http4s.EntityDecoder$$anon$7@69cbbcea
+// videoDec: org.http4s.EntityDecoder[cats.effect.IO,Video] = org.http4s.EntityDecoder$$anon$7@7e509afd
 
 implicit val bothDec = audioDec.widen[Resp] orElse videoDec.widen[Resp]
-// bothDec: org.http4s.EntityDecoder[cats.effect.IO,Resp] = org.http4s.EntityDecoder$$anon$5$$anon$6@14b9cec8
+// bothDec: org.http4s.EntityDecoder[cats.effect.IO,Resp] = org.http4s.EntityDecoder$$anon$5$$anon$6@7a2670e9
 
 println(response.flatMap(_.as[Resp]).unsafeRunSync)
 // Audio()
