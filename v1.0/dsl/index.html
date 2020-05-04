@@ -137,7 +137,7 @@ anything.  The right hand side of the request must return a
   case _ =&gt;
     IO(Response(Status.Ok))
 }
-// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@57807092)
+// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@26d502f7)
 </code></pre>
 
 <h2 id="testing-the-service">Testing the Service</h2>
@@ -251,10 +251,10 @@ res6: org.http4s.Headers = Headers(Content-Type: text/plain; charset=UTF-8, Cont
      |     now &lt;- HttpDate.current[IO]
      |   } yield resp.addCookie(ResponseCookie(&quot;foo&quot;, &quot;bar&quot;, expires = Some(now), httpOnly = true, secure = true))
      | }
-cookieResp: cats.effect.IO[org.http4s.Response[cats.effect.IO]] = IO$1670046869
+cookieResp: cats.effect.IO[org.http4s.Response[cats.effect.IO]] = IO$912401566
 
 scala&gt; cookieResp.unsafeRunSync.headers
-res7: org.http4s.Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 12, Set-Cookie: foo=bar; Expires=Mon, 04 May 2020 11:01:27 GMT; Secure; HttpOnly)
+res7: org.http4s.Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 12, Set-Cookie: foo=bar; Expires=Mon, 04 May 2020 11:08:18 GMT; Secure; HttpOnly)
 </code></pre>
 
 <p>To request a cookie to be removed on the client, you need to set the cookie value
@@ -321,13 +321,13 @@ effectful, unless we wrap it in <code>IO</code>:</p>
 suspended future is shifted to the corred thread pool.</p>
 
 <pre><code class="language-scala">scala&gt; implicit val cs: ContextShift[IO] = IO.contextShift(global)
-cs: cats.effect.ContextShift[cats.effect.IO] = cats.effect.internals.IOContextShift@1f736cd4
+cs: cats.effect.ContextShift[cats.effect.IO] = cats.effect.internals.IOContextShift@6f839b44
 
 scala&gt; val io = Ok(IO.fromFuture(IO(Future {
      |   println(&quot;I run when the future is constructed.&quot;)
      |   &quot;Greetings from the future!&quot;
      | })))
-io: cats.effect.IO[org.http4s.Response[cats.effect.IO]] = IO$750301538
+io: cats.effect.IO[org.http4s.Response[cats.effect.IO]] = IO$1962476695
 
 scala&gt; io.unsafeRunSync
 I run when the future is constructed.
@@ -341,7 +341,7 @@ of course prefer to operate in <code>F</code>s:</p>
      |   println(&quot;I run when the IO is run.&quot;)
      |   &quot;Mission accomplished!&quot;
      | })
-io: cats.effect.IO[org.http4s.Response[cats.effect.IO]] = IO$257281370
+io: cats.effect.IO[org.http4s.Response[cats.effect.IO]] = IO$1962786810
 
 scala&gt; io.unsafeRunSync
 I run when the IO is run.
@@ -379,7 +379,7 @@ import scala.concurrent.ExecutionContext.Implicits.global
 dripOutIO: cats.effect.IO[Unit] = &lt;function1&gt;
 
 scala&gt; dripOutIO.unsafeRunSync
-114094911 nanoseconds213877421 nanoseconds315048841 nanoseconds415681157 nanoseconds516314773 nanoseconds617069686 nanoseconds717647598 nanoseconds818382311 nanoseconds919065024 nanoseconds1019874638 nanoseconds
+113232956 nanoseconds220484461 nanoseconds321441853 nanoseconds422128120 nanoseconds522716478 nanoseconds623402245 nanoseconds724046308 nanoseconds824718374 nanoseconds925297732 nanoseconds1025894791 nanoseconds
 </code></pre>
 
 <p>When wrapped in a <code>Response[F]</code>, http4s will flush each chunk of a
@@ -408,7 +408,7 @@ right side, the path info.  The following matches a request to <code>GET
 <pre><code class="language-scala">scala&gt; HttpRoutes.of[IO] {
      |   case GET -&gt; Root / &quot;hello&quot; =&gt; Ok(&quot;hello&quot;)
      | }
-res16: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@46be9450)
+res16: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@383e5135)
 </code></pre>
 
 <p>Methods such as <code>GET</code> are typically found in <code>org.http4s.Method</code>, but are imported automatically as part of the DSL.</p>
@@ -437,7 +437,7 @@ following matches requests to <code>GET /</code>:</p>
 <pre><code class="language-scala">scala&gt; HttpRoutes.of[IO] {
      |   case GET -&gt; Root =&gt; Ok(&quot;root&quot;)
      | }
-res17: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@7992a0f8)
+res17: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@7203b57)
 </code></pre>
 
 <p>We usually match paths in a left-associative manner with <code>Root</code> and
@@ -450,7 +450,7 @@ Alice!&rdquo; to <code>GET /hello/Alice</code>:</p>
 <pre><code class="language-scala">scala&gt; HttpRoutes.of[IO] {
      |   case GET -&gt; Root / &quot;hello&quot; / name =&gt; Ok(s&quot;Hello, $name!&quot;)
      | }
-res18: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@6a766ae)
+res18: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@20b23cf9)
 </code></pre>
 
 <p>The above assumes only one path segment after <code>&quot;hello&quot;</code>, and would not
@@ -462,7 +462,7 @@ say <code>&quot;Hello, Alice and Bob!&quot;</code></p>
 <pre><code class="language-scala">scala&gt; HttpRoutes.of[IO] {
      |   case GET -&gt; &quot;hello&quot; /: rest =&gt; Ok(s&quot;&quot;&quot;Hello, ${rest.toList.mkString(&quot; and &quot;)}!&quot;&quot;&quot;)
      | }
-res19: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@10a2c3b0)
+res19: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@4c036f0e)
 </code></pre>
 
 <p>To match a file extension on a segment, use the <code>~</code> extractor:</p>
@@ -470,7 +470,7 @@ res19: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$L
 <pre><code class="language-scala">scala&gt; HttpRoutes.of[IO] {
      |   case GET -&gt; Root / file ~ &quot;json&quot; =&gt; Ok(s&quot;&quot;&quot;{&quot;response&quot;: &quot;You asked for $file&quot;}&quot;&quot;&quot;)
      | }
-res20: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@75d48094)
+res20: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@7da4fd0d)
 </code></pre>
 
 <h3 id="handling-path-parameters">Handling path parameters</h3>
@@ -486,7 +486,7 @@ val usersService = HttpRoutes.of[IO] {
   case GET -&gt; Root / &quot;users&quot; / IntVar(userId) =&gt;
     Ok(getUserName(userId))
 }
-// usersService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@4c88c459)
+// usersService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@6e2e4f90)
 </code></pre>
 
 <p>If you want to extract a variable of type <code>T</code>, you can provide a custom extractor
@@ -515,7 +515,7 @@ val dailyWeatherService = HttpRoutes.of[IO] {
   case GET -&gt; Root / &quot;weather&quot; / &quot;temperature&quot; / LocalDateVar(localDate) =&gt;
     Ok(getTemperatureForecast(localDate).map(s&quot;The temperature on $localDate will be: &quot; + _))
 }
-// dailyWeatherService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@11024f82)
+// dailyWeatherService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@452a9f6e)
 
 println(GET(uri&quot;/weather/temperature/2016-11-05&quot;).flatMap(dailyWeatherService.orNotFound(_)).unsafeRunSync)
 // Response(status=200, headers=Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 44))
@@ -542,7 +542,7 @@ import cats.data.ValidatedNel
 
 implicit val yearQueryParamDecoder: QueryParamDecoder[Year] =
   QueryParamDecoder[Int].map(Year.of)
-// yearQueryParamDecoder: org.http4s.QueryParamDecoder[java.time.Year] = org.http4s.QueryParamDecoder$$anon$7@11e3a1d
+// yearQueryParamDecoder: org.http4s.QueryParamDecoder[java.time.Year] = org.http4s.QueryParamDecoder$$anon$7@104058dd
 
 object YearQueryParamMatcher extends QueryParamDecoderMatcher[Year](&quot;year&quot;)
 // defined object YearQueryParamMatcher
@@ -554,7 +554,7 @@ val averageTemperatureService = HttpRoutes.of[IO] {
   case GET -&gt; Root / &quot;weather&quot; / &quot;temperature&quot; :? CountryQueryParamMatcher(country) +&amp; YearQueryParamMatcher(year)  =&gt;
     Ok(getAverageTemperatureForCountryAndYear(country, year).map(s&quot;Average temperature for $country in $year was: &quot; + _))
 }
-// averageTemperatureService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@1686c7b9)
+// averageTemperatureService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@ca65124)
 </code></pre>
 
 <p>To support a <code>QueryParamDecoderMatcher[Instant]</code>, consider <code>QueryParamCodec#instantQueryParamCodec</code>. That
@@ -566,7 +566,7 @@ import java.time.format.DateTimeFormatter
 
 <pre><code class="language-scala">implicit val isoInstantCodec: QueryParamCodec[Instant] =
   QueryParamCodec.instantQueryParamCodec(DateTimeFormatter.ISO_INSTANT)
-// isoInstantCodec: org.http4s.QueryParamCodec[java.time.Instant] = org.http4s.QueryParamCodec$$anon$3@37f11e2e
+// isoInstantCodec: org.http4s.QueryParamCodec[java.time.Instant] = org.http4s.QueryParamCodec$$anon$3@102c0011
 
 object IsoInstantParamMatcher extends QueryParamDecoderMatcher[Instant](&quot;timestamp&quot;)
 // defined object IsoInstantParamMatcher
@@ -582,7 +582,7 @@ import org.http4s.client.dsl.io._
 
 <pre><code class="language-scala">implicit val yearQueryParamDecoder: QueryParamDecoder[Year] =
   QueryParamDecoder[Int].map(Year.of)
-// yearQueryParamDecoder: org.http4s.QueryParamDecoder[java.time.Year] = org.http4s.QueryParamDecoder$$anon$7@742e906
+// yearQueryParamDecoder: org.http4s.QueryParamDecoder[java.time.Year] = org.http4s.QueryParamDecoder$$anon$7@4116990b
 
 object OptionalYearQueryParamMatcher extends OptionalQueryParamDecoderMatcher[Year](&quot;year&quot;)
 // defined object OptionalYearQueryParamMatcher
@@ -602,7 +602,7 @@ val routes2 = HttpRoutes.of[IO] {
         Ok(getAverageTemperatureForYear(year))
     }
 }
-// routes2: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@67cdeac)
+// routes2: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@79c82d3e)
 </code></pre>
 
 <h4 id="missing-required-query-parameters">Missing required query parameters</h4>
@@ -615,7 +615,7 @@ val routes2 = HttpRoutes.of[IO] {
 
 <pre><code class="language-scala">implicit val yearQueryParamDecoder: QueryParamDecoder[Year] =
   QueryParamDecoder[Int].map(Year.of)
-// yearQueryParamDecoder: org.http4s.QueryParamDecoder[java.time.Year] = org.http4s.QueryParamDecoder$$anon$7@1a559514
+// yearQueryParamDecoder: org.http4s.QueryParamDecoder[java.time.Year] = org.http4s.QueryParamDecoder$$anon$7@74dcbd9f
 
 object YearQueryParamMatcher extends ValidatingQueryParamDecoderMatcher[Year](&quot;year&quot;)
 // defined object YearQueryParamMatcher
@@ -627,7 +627,7 @@ val routes = HttpRoutes.of[IO] {
       year =&gt; Ok(getAverageTemperatureForYear(year))
     )
 }
-// routes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25142/243588943@3e2ee4ae)
+// routes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$25271/1057005972@70338c0c)
 </code></pre>
 
         </div>
