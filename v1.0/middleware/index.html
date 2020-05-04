@@ -143,7 +143,7 @@ we need to call <code>unsafeRunSync</code> on the result of the function to extr
   case _ =&gt;
     Ok()
 }
-// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$27191/171216974@6145739d)
+// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$27091/91689757@543d3fb7)
 
 val goodRequest = Request[IO](Method.GET, uri&quot;/&quot;)
 // goodRequest: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers())
@@ -161,7 +161,7 @@ service.orNotFound(badRequest).unsafeRunSync
 <p>Now, we&rsquo;ll wrap the service in our middleware to create a new service, and try it out.</p>
 
 <pre><code class="language-scala">val wrappedService = myMiddle(service, Header(&quot;SomeKey&quot;, &quot;SomeValue&quot;));
-// wrappedService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli($Lambda$27268/1480862392@769f2393)
+// wrappedService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli($Lambda$27168/1845875530@5928b0a5)
 
 wrappedService.orNotFound(goodRequest).unsafeRunSync
 // res2: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, SomeKey: SomeValue))
@@ -188,7 +188,7 @@ it as an <code>object</code> and use the <code>apply</code> method.</p>
 // defined object MyMiddle
 
 val newService = MyMiddle(service, Header(&quot;SomeKey&quot;, &quot;SomeValue&quot;))
-// newService: cats.data.Kleisli[[β$0$]cats.data.OptionT[cats.effect.IO,β$0$],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(cats.data.Kleisli$$Lambda$27289/1485303422@3a6f9138)
+// newService: cats.data.Kleisli[[β$0$]cats.data.OptionT[cats.effect.IO,β$0$],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(cats.data.Kleisli$$Lambda$27189/1759710258@775f4004)
 
 newService.orNotFound(goodRequest).unsafeRunSync
 // res4: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, SomeKey: SomeValue))
@@ -218,10 +218,10 @@ You can also wrap a single service in multiple layers of middleware. For example
   case GET -&gt; Root / &quot;api&quot; =&gt;
     Ok()
 }
-// apiService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$27191/171216974@6fe2488f)
+// apiService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$27091/91689757@26187423)
 
 val aggregateService = apiService &lt;+&gt; MyMiddle(service, Header(&quot;SomeKey&quot;, &quot;SomeValue&quot;))
-// aggregateService: cats.data.Kleisli[[β$0$]cats.data.OptionT[cats.effect.IO,β$0$],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(cats.data.KleisliSemigroupK$$Lambda$27291/772100774@3e119e58)
+// aggregateService: cats.data.Kleisli[[β$0$]cats.data.OptionT[cats.effect.IO,β$0$],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(cats.data.KleisliSemigroupK$$Lambda$27191/895135098@29c0c2b0)
 
 val apiRequest = Request[IO](Method.GET, uri&quot;/api&quot;)
 // apiRequest: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/api, headers=Headers())
@@ -278,13 +278,13 @@ import com.codahale.metrics.SharedMetricRegistries
 </code></pre>
 
 <pre><code class="language-scala">implicit val clock = Clock.create[IO]
-// clock: cats.effect.Clock[cats.effect.IO] = cats.effect.Clock$$anon$1@3040edd7
+// clock: cats.effect.Clock[cats.effect.IO] = cats.effect.Clock$$anon$1@61d654b5
 
 val registry = SharedMetricRegistries.getOrCreate(&quot;default&quot;)
-// registry: com.codahale.metrics.MetricRegistry = com.codahale.metrics.MetricRegistry@68df5b31
+// registry: com.codahale.metrics.MetricRegistry = com.codahale.metrics.MetricRegistry@350aa485
 
 val meteredRoutes = Metrics[IO](Dropwizard(registry, &quot;server&quot;))(apiService)
-// meteredRoutes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.server.middleware.Metrics$$$Lambda$27298/331623667@70638166)
+// meteredRoutes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.server.middleware.Metrics$$$Lambda$27198/601156289@3cabb335)
 </code></pre>
 
 <h4 id="prometheus-metrics-middleware">Prometheus Metrics Middleware</h4>
@@ -308,7 +308,7 @@ import org.http4s.server.middleware.Metrics
 </code></pre>
 
 <pre><code class="language-scala">implicit val clock = Clock.create[IO]
-// clock: cats.effect.Clock[cats.effect.IO] = cats.effect.Clock$$anon$1@70501e41
+// clock: cats.effect.Clock[cats.effect.IO] = cats.effect.Clock$$anon$1@6cc2a395
 
 val meteredRouter: Resource[IO, HttpRoutes[IO]] =
   for {
@@ -319,7 +319,7 @@ val meteredRouter: Resource[IO, HttpRoutes[IO]] =
       &quot;/&quot; -&gt; metricsSvc.routes
     )
   } yield router
-// meteredRouter: cats.effect.Resource[cats.effect.IO,org.http4s.HttpRoutes[cats.effect.IO]] = Bind(Bind(Allocate(&lt;function1&gt;),org.http4s.metrics.prometheus.PrometheusExportService$$$Lambda$27331/2041774066@3469ab8d),$Lambda$27332/1514832473@5266c74e)
+// meteredRouter: cats.effect.Resource[cats.effect.IO,org.http4s.HttpRoutes[cats.effect.IO]] = Bind(Bind(Allocate(&lt;function1&gt;),org.http4s.metrics.prometheus.PrometheusExportService$$$Lambda$27231/1402690484@3a0f9da6),$Lambda$27232/859846273@d376e6d)
 </code></pre>
 
         </div>
