@@ -202,7 +202,7 @@
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Client middleware for enabling gzip.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/06f42cc44dfb2e41cdf61cc55e1e6984a274a500/client/src/main/scala/org/http4s/client/middleware/GZip.scala" target="_blank">GZip.scala</a></dd></dl><div class="toggleContainer block">
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/bedd383de3f67acf5542fe01b94e25c0f394caa9/client/src/main/scala/org/http4s/client/middleware/GZip.scala" target="_blank">GZip.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -308,9 +308,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.http4s.client.middleware.GZip#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply[F[_]](bufferSize:Int)(client:org.http4s.client.Client[F])(implicitF:cats.effect.Bracket[F,Throwable]):org.http4s.client.Client[F]"></a><a id="apply[F[_]](Int)(Client[F])(Bracket[F,Throwable]):Client[F]"></a>
+      <a id="apply[F[_]](bufferSize:Int)(client:org.http4s.client.Client[F])(implicitF:cats.effect.Sync[F]):org.http4s.client.Client[F]"></a><a id="apply[F[_]](Int)(Client[F])(Sync[F]):Client[F]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/GZip$.html#apply[F[_]](bufferSize:Int)(client:org.http4s.client.Client[F])(implicitF:cats.effect.Bracket[F,Throwable]):org.http4s.client.Client[F]" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/GZip$.html#apply[F[_]](bufferSize:Int)(client:org.http4s.client.Client[F])(implicitF:cats.effect.Sync[F]):org.http4s.client.Client[F]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -319,7 +319,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="bufferSize">bufferSize: <a href="https://www.scala-lang.org/api/2.12.11/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a> = <span class="symbol">32 * 1024</span></span>)</span><span class="params">(<span name="client">client: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.GZip.apply.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <span class="extype" name="cats.effect.Bracket">Bracket</span>[<span class="extype" name="org.http4s.client.middleware.GZip.apply.F">F</span>, <span class="extype" name="scala.Throwable">Throwable</span>]</span>)</span><span class="result">: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.GZip.apply.F">F</span>]</span>
+        <span class="name">apply</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="bufferSize">bufferSize: <a href="https://www.scala-lang.org/api/2.12.11/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a> = <span class="symbol">32 * 1024</span></span>)</span><span class="params">(<span name="client">client: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.GZip.apply.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.client.middleware.GZip.apply.F">F</span>]</span>)</span><span class="result">: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.GZip.apply.F">F</span>]</span>
       </span>
       
       
