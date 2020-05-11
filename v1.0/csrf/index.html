@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/1.0/docs/src/main/tut/csrf.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/1.0/docs/src/main/mdoc/csrf.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -97,12 +97,11 @@ is modeled after the <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cro
 
 <p>And we need some imports.</p>
 
-<pre><code class="language-scala">  import cats.effect._
-  import org.http4s._
-  import org.http4s.dsl.io._
-  import org.http4s.implicits._
-  import org.http4s.headers.Referer
-  import org.http4s.server.middleware._
+<pre><code class="language-scala">import cats.effect._
+import org.http4s._
+import org.http4s.dsl.io._
+import org.http4s.implicits._
+import org.http4s.server.middleware._
 </code></pre>
 
 <p>Let&rsquo;s start by making a simple service.</p>
@@ -111,13 +110,28 @@ is modeled after the <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cro
   case _ =&gt;
     Ok()
 } 
-// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$28463/1228442856@72ec9931)
+// service: HttpRoutes[IO] = Kleisli(
+//   org.http4s.HttpRoutes$$$Lambda$11109/474646268@4dbe047f
+// ) 
 
 val request = Request[IO](Method.GET, uri&quot;/&quot;)
-// request: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers())
+// request: Request[IO] = (
+//   Method(&quot;GET&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@6ac56e68
+// )
 
 service.orNotFound(request).unsafeRunSync
-// res0: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0))
+// res0: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@2771319
+// )
 </code></pre>
 
 <p>That didn&rsquo;t do all that much. Lets build out our CSRF Middleware by creating a <code>CSRFBuilder</code></p>
@@ -133,17 +147,29 @@ val csrfBuilder = CSRF[IO,IO](key, defaultOriginCheck)
 but we will create a fairly simple CSRF Middleware in our example.</p>
 
 <pre><code class="language-scala">val csrf = csrfBuilder.withCookieName(cookieName).withCookieDomain(Some(&quot;localhost&quot;)).withCookiePath(Some(&quot;/&quot;)).build
-// csrf: org.http4s.server.middleware.CSRF[cats.effect.IO,cats.effect.IO] = org.http4s.server.middleware.CSRF@5c69e91a
+// csrf: CSRF[IO, IO] = org.http4s.server.middleware.CSRF@72c7823f
 </code></pre>
 
 <p>Now we need to wrap this around our service! We&rsquo;re gonna start with a safe call</p>
 
 <pre><code class="language-scala">val dummyRequest: Request[IO] =
     Request[IO](method = Method.GET).putHeaders(Header(&quot;Origin&quot;, &quot;http://localhost&quot;))
-// dummyRequest: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers(Origin: http://localhost))
-
+// dummyRequest: Request[IO] = (
+//   Method(&quot;GET&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(Origin: http://localhost),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@4fe7fde4
+// )
 val resp = csrf.validate()(service.orNotFound)(dummyRequest).unsafeRunSync()
-// resp: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Set-Cookie: &lt;REDACTED&gt;))
+// resp: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0, Set-Cookie: csrf-token=5A1072839613775D77FDD2CA940BCD603F9104CCD232CF7FDC54E15B4C6B3E78-1589219492428-484152F9EF1B0D7D9AA46F44763F920C7834EB18; Domain=localhost; Path=/; SameSite=Lax; HttpOnly),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@7dad667
+// )
 </code></pre>
 
 <p>Notice how the response has the CSRF cookies added. How easy was
@@ -161,17 +187,39 @@ and send it up in our POST. I&rsquo;ve also added the response cookie as a Reque
 the browser would send this up with our request, but I needed to do it manually for the purpose of this demo.</p>
 
 <pre><code class="language-scala">val cookie = resp.cookies.head
-// cookie: org.http4s.ResponseCookie = csrf-token=89BFFBDD216D13443300C570BE8FA893EF1E31533DC80600BB85073FFC362302-1589143813521-F02BAC54CF3FB656A547F897110BCCD6E41D3E26; Domain=localhost; Path=/; SameSite=Lax; HttpOnly
-
+// cookie: ResponseCookie = ResponseCookie(
+//   &quot;csrf-token&quot;,
+//   &quot;5A1072839613775D77FDD2CA940BCD603F9104CCD232CF7FDC54E15B4C6B3E78-1589219492428-484152F9EF1B0D7D9AA46F44763F920C7834EB18&quot;,
+//   None,
+//   None,
+//   Some(&quot;localhost&quot;),
+//   Some(&quot;/&quot;),
+//   Some(Lax),
+//   false,
+//   true,
+//   None
+// )
 val dummyPostRequest: Request[IO] =
     Request[IO](method = Method.POST).putHeaders(
       Header(&quot;Origin&quot;, &quot;http://localhost&quot;),
       Header(&quot;X-Csrf-Token&quot;, cookie.content)
     ).addCookie(RequestCookie(cookie.name,cookie.content))
-// dummyPostRequest: org.http4s.Request[cats.effect.IO] = Request(method=POST, uri=/, headers=Headers(Origin: http://localhost, X-Csrf-Token: 89BFFBDD216D13443300C570BE8FA893EF1E31533DC80600BB85073FFC362302-1589143813521-F02BAC54CF3FB656A547F897110BCCD6E41D3E26, Cookie: &lt;REDACTED&gt;))
-
-val resp = csrf.validate()(service.orNotFound)(dummyPostRequest).unsafeRunSync()
-// resp: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Set-Cookie: &lt;REDACTED&gt;))
+// dummyPostRequest: Request[IO] = (
+//   Method(&quot;POST&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(Origin: http://localhost, X-Csrf-Token: 5A1072839613775D77FDD2CA940BCD603F9104CCD232CF7FDC54E15B4C6B3E78-1589219492428-484152F9EF1B0D7D9AA46F44763F920C7834EB18, Cookie: csrf-token=5A1072839613775D77FDD2CA940BCD603F9104CCD232CF7FDC54E15B4C6B3E78-1589219492428-484152F9EF1B0D7D9AA46F44763F920C7834EB18),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@2fd613e9
+// )
+val validateResp = csrf.validate()(service.orNotFound)(dummyPostRequest).unsafeRunSync()
+// validateResp: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0, Set-Cookie: csrf-token=5A1072839613775D77FDD2CA940BCD603F9104CCD232CF7FDC54E15B4C6B3E78-1589219492442-FE1CB55CF225456C6FE1F0C77ACE832BEF7895AD; Domain=localhost; Path=/; SameSite=Lax; HttpOnly),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@7eee819a
+// )
 </code></pre>
 
         </div>

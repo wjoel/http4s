@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/1.0/docs/src/main/tut/static.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/1.0/docs/src/main/mdoc/static.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -101,25 +101,11 @@ remove dot segments, to prevent attackers from reading files not contained in th
 being served.</p>
 
 <pre><code class="language-scala">import cats.effect._
-// import cats.effect._
-
-import cats.implicits._
-// import cats.implicits._
-
 import org.http4s.server.blaze.BlazeServerBuilder
-// import org.http4s.server.blaze.BlazeServerBuilder
-
 import org.http4s.server.Server
-// import org.http4s.server.Server
-
 import org.http4s.server.staticcontent._
-// import org.http4s.server.staticcontent._
-
 import org.http4s.syntax.kleisli._
-// import org.http4s.syntax.kleisli._
-
 import scala.concurrent.ExecutionContext.global
-// import scala.concurrent.ExecutionContext.global
 
 object SimpleHttpServer extends IOApp {
   override def run(args: List[String]): IO[ExitCode] =
@@ -134,7 +120,6 @@ object SimpleHttpServer extends IOApp {
         .resource
     } yield server
 }
-// defined object SimpleHttpServer
 </code></pre>
 
 <p>Static content services can be composed into a larger application by using a <code>Router</code>:</p>
@@ -144,18 +129,6 @@ object SimpleHttpServer extends IOApp {
       &quot;api&quot;    -&gt; anotherService,
       &quot;assets&quot; -&gt; fileService(FileService.Config(&quot;./assets&quot;, blocker))
     ).orNotFound
-// &lt;console&gt;:27: error: not found: type HttpApp
-//        val httpApp: HttpApp[IO] =
-//                     ^
-// &lt;console&gt;:28: error: not found: value Router
-//            Router(
-//            ^
-// &lt;console&gt;:29: error: not found: value anotherService
-//              &quot;api&quot;    -&gt; anotherService,
-//                          ^
-// &lt;console&gt;:30: error: not found: value blocker
-//              &quot;assets&quot; -&gt; fileService(FileService.Config(&quot;./assets&quot;, blocker))
-//                                                                     ^
 </code></pre>
 
 <h2 id="etags">ETags</h2>
@@ -216,7 +189,9 @@ val routes = HttpRoutes.of[IO] {
 deliver them from there. For example, for all resources in the classpath under <code>assets</code>:</p>
 
 <pre><code class="language-scala">val routes = resourceService[IO](ResourceService.Config(&quot;/assets&quot;, blocker))
-// routes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.server.staticcontent.ResourceService$$$Lambda$31589/109053081@43c7f44e)
+// routes: HttpRoutes[IO] = Kleisli(
+//   org.http4s.server.staticcontent.ResourceService$$$Lambda$12124/169475531@79c4d655
+// )
 </code></pre>
 
 <p>For custom behaviour, <code>StaticFile.fromResource</code> can be used. In this example,
@@ -224,13 +199,14 @@ only files matching a list of extensions are served. Append to the <code>List</c
 
 <pre><code class="language-scala">def static(file: String, blocker: Blocker, request: Request[IO]) =
   StaticFile.fromResource(&quot;/&quot; + file, blocker, Some(request)).getOrElseF(NotFound())
-// static: (file: String, blocker: cats.effect.Blocker, request: org.http4s.Request[cats.effect.IO])cats.effect.IO[org.http4s.Response[cats.effect.IO]]
 
 val routes = HttpRoutes.of[IO] {
   case request @ GET -&gt; Root / path if List(&quot;.js&quot;, &quot;.css&quot;, &quot;.map&quot;, &quot;.html&quot;, &quot;.webm&quot;).exists(path.endsWith) =&gt;
     static(path, blocker, request)
 }
-// routes: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$31587/1772412468@2ea3b1b3)
+// routes: HttpRoutes[IO] = Kleisli(
+//   org.http4s.HttpRoutes$$$Lambda$11109/474646268@44c7d6c2
+// )
 </code></pre>
 
 <h2 id="webjars">Webjars</h2>
@@ -241,12 +217,6 @@ class path, as you usually would:</p>
 <pre><code class="language-scala">libraryDependencies ++= Seq(
   &quot;org.webjars&quot; % &quot;jquery&quot; % &quot;3.1.1-1&quot;
 )
-// &lt;console&gt;:40: error: not found: value libraryDependencies
-//        libraryDependencies ++= Seq(
-//        ^
-// &lt;console&gt;:41: error: value % is not a member of String
-//          &quot;org.webjars&quot; % &quot;jquery&quot; % &quot;3.1.1-1&quot;
-//                        ^
 </code></pre>
 
 <p>Then, mount the <code>WebjarService</code> like any other service:</p>
@@ -258,7 +228,6 @@ import org.http4s.server.staticcontent.WebjarService.{WebjarAsset, Config}
 <pre><code class="language-scala">// only allow js assets
 def isJsAsset(asset: WebjarAsset): Boolean =
   asset.asset.endsWith(&quot;.js&quot;)
-// isJsAsset: (asset: org.http4s.server.staticcontent.WebjarService.WebjarAsset)Boolean
 
 val webjars: HttpRoutes[IO] = webjarService(
   Config(
@@ -266,7 +235,9 @@ val webjars: HttpRoutes[IO] = webjarService(
     blocker = blocker
   )
 )
-// webjars: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.server.staticcontent.WebjarService$$$Lambda$31629/2145471649@2e9264a3)
+// webjars: HttpRoutes[IO] = Kleisli(
+//   org.http4s.server.staticcontent.WebjarService$$$Lambda$12125/1677583967@97beb43
+// )
 </code></pre>
 
 <pre><code class="language-scala">blockingPool.shutdown()

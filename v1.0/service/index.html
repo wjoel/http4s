@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/1.0/docs/src/main/tut/service.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/1.0/docs/src/main/mdoc/service.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -93,7 +93,7 @@ and calling it with http4s&rsquo; client.</p>
 
 <pre><code class="language-scala">scalaVersion := &quot;2.13.2&quot; // Also supports 2.12.x
 
-val http4sVersion = &quot;1.0.0-M0&#43;233-a52d390b-SNAPSHOT&quot;
+val http4sVersion = &quot;1.0.0-M0&#43;254-698e7a2f-SNAPSHOT&quot;
 
 // Only necessary for SNAPSHOT releases
 resolvers += Resolver.sonatypeRepo(&quot;snapshots&quot;)
@@ -153,7 +153,9 @@ greet.</p>
   case GET -&gt; Root / &quot;hello&quot; / name =&gt;
     Ok(s&quot;Hello, $name.&quot;)
 }
-// helloWorldService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$36007/644100243@1230cdff)
+// helloWorldService: HttpRoutes[IO] = Kleisli(
+//   org.http4s.HttpRoutes$$$Lambda$11109/474646268@79129e15
+// )
 </code></pre>
 
 <h3 id="returning-content-in-the-response">Returning content in the response</h3>
@@ -171,19 +173,12 @@ reference it when serving the response, which can be seen as
 <code>getPopularTweets().flatMap(Ok(_))</code>.</p>
 
 <pre><code class="language-scala">case class Tweet(id: Int, message: String)
-// defined class Tweet
 
 implicit def tweetEncoder: EntityEncoder[IO, Tweet] = ???
-// tweetEncoder: org.http4s.EntityEncoder[cats.effect.IO,Tweet]
-
 implicit def tweetsEncoder: EntityEncoder[IO, Seq[Tweet]] = ???
-// tweetsEncoder: org.http4s.EntityEncoder[cats.effect.IO,Seq[Tweet]]
 
 def getTweet(tweetId: Int): IO[Tweet] = ???
-// getTweet: (tweetId: Int)cats.effect.IO[Tweet]
-
 def getPopularTweets(): IO[Seq[Tweet]] = ???
-// getPopularTweets: ()cats.effect.IO[Seq[Tweet]]
 
 val tweetService = HttpRoutes.of[IO] {
   case GET -&gt; Root / &quot;tweets&quot; / &quot;popular&quot; =&gt;
@@ -191,7 +186,9 @@ val tweetService = HttpRoutes.of[IO] {
   case GET -&gt; Root / &quot;tweets&quot; / IntVar(tweetId) =&gt;
     getTweet(tweetId).flatMap(Ok(_))
 }
-// tweetService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$36007/644100243@5605d98e)
+// tweetService: HttpRoutes[IO] = Kleisli(
+//   org.http4s.HttpRoutes$$$Lambda$11109/474646268@50cc498e
+// )
 </code></pre>
 
 <h3 id="running-your-service">Running your service</h3>
@@ -217,13 +214,15 @@ import org.http4s.server.Router
 </code></pre>
 
 <pre><code class="language-scala">val services = tweetService &lt;+&gt; helloWorldService
-// services: cats.data.Kleisli[[β$0$]cats.data.OptionT[cats.effect.IO,β$0$],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(cats.data.KleisliSemigroupK$$Lambda$36208/831760798@2743afc2)
-
+// services: cats.data.Kleisli[cats.data.OptionT[IO, β$0$], Request[IO], Response[IO]] = Kleisli(
+//   cats.data.KleisliSemigroupK$$Lambda$11782/1619609397@27b1e683
+// )
 val httpApp = Router(&quot;/&quot; -&gt; helloWorldService, &quot;/api&quot; -&gt; services).orNotFound
-// httpApp: cats.data.Kleisli[cats.effect.IO,org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(org.http4s.syntax.KleisliResponseOps$$Lambda$36220/766683509@738c82ef)
-
+// httpApp: cats.data.Kleisli[IO, Request[IO], Response[IO]] = Kleisli(
+//   org.http4s.syntax.KleisliResponseOps$$Lambda$11119/1403233485@6edc623a
+// )
 val serverBuilder = BlazeServerBuilder[IO](global).bindHttp(8080, &quot;localhost&quot;).withHttpApp(httpApp)
-// serverBuilder: org.http4s.server.blaze.BlazeServerBuilder[cats.effect.IO] = org.http4s.server.blaze.BlazeServerBuilder@244731d8
+// serverBuilder: BlazeServerBuilder[IO] = org.http4s.server.blaze.BlazeServerBuilder@3d3abc2
 </code></pre>
 
 <p>The <code>bindHttp</code> call isn&rsquo;t strictly necessary as the server will be set to run
@@ -233,7 +232,15 @@ associates the specified routes with this http server instance.</p>
 <p>We start a server resource in the background.  The server will run until we cancel the fiber:</p>
 
 <pre><code class="language-scala">val fiber = serverBuilder.resource.use(_ =&gt; IO.never).start.unsafeRunSync()
-// fiber: cats.effect.Fiber[cats.effect.IO,Nothing] = Tuple(IO$528495924,IO$332250819)
+// fiber: Fiber[IO, Nothing] = Tuple(
+//   Bind(
+//     Async(cats.effect.IO$$$Lambda$11107/1094084034@31e1120f, false),
+//     cats.syntax.MonadErrorRethrowOps$$$Lambda$11201/296438753@194c7f4e
+//   ),
+//   Suspend(
+//     cats.effect.internals.IOConnection$Impl$$Lambda$11798/1849902327@148c13ef
+//   )
+// )
 </code></pre>
 
 <p>Use curl, or your favorite HTTP client, to see your service in action:</p>
@@ -263,9 +270,7 @@ the infinite process and gracefully shut down your server when a
 SIGTERM is received.</p>
 
 <pre><code class="language-scala">import cats.effect._
-import cats.implicits._
 import org.http4s.HttpRoutes
-import org.http4s.syntax._
 import org.http4s.dsl.io._
 import org.http4s.implicits._
 import org.http4s.server.blaze._

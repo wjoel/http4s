@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/1.0/docs/src/main/tut/methods.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/1.0/docs/src/main/mdoc/methods.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -95,28 +95,17 @@ import org.http4s.circe._
 </code></pre>
 
 <pre><code class="language-scala">case class TweetWithId(id: Int, message: String)
-// defined class TweetWithId
-
 case class Tweet(message: String)
-// defined class Tweet
 
 def getTweet(tweetId: Int): IO[Option[TweetWithId]] = ???
-// getTweet: (tweetId: Int)cats.effect.IO[Option[TweetWithId]]
-
 def addTweet(tweet: Tweet): IO[TweetWithId] = ???
-// addTweet: (tweet: Tweet)cats.effect.IO[TweetWithId]
-
 def updateTweet(id: Int, tweet: Tweet): IO[Option[TweetWithId]] = ???
-// updateTweet: (id: Int, tweet: Tweet)cats.effect.IO[Option[TweetWithId]]
-
 def deleteTweet(id: Int): IO[Unit] = ???
-// deleteTweet: (id: Int)cats.effect.IO[Unit]
 
 implicit val tweetWithIdEncoder = jsonEncoderOf[IO, TweetWithId]
-// tweetWithIdEncoder: org.http4s.EntityEncoder[cats.effect.IO,TweetWithId] = org.http4s.EntityEncoder$$anon$1@3b3db51e
-
+// tweetWithIdEncoder: EntityEncoder[IO, TweetWithId] = org.http4s.EntityEncoder$$anon$1@313d60eb
 implicit val tweetDecoder = jsonOf[IO, Tweet]
-// tweetDecoder: org.http4s.EntityDecoder[cats.effect.IO,Tweet] = org.http4s.EntityDecoder$$anon$2@744b6d6e
+// tweetDecoder: EntityDecoder[IO, Tweet] = org.http4s.EntityDecoder$$anon$2@7a29fcd7
 
 val tweetService = HttpRoutes.of[IO] {
   case GET -&gt; Root / &quot;tweets&quot; / IntVar(tweetId) =&gt;
@@ -135,7 +124,9 @@ val tweetService = HttpRoutes.of[IO] {
     deleteTweet(tweetId)
       .flatMap(_ =&gt; Ok())
 }
-// tweetService: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$15396/1395324913@36bc151d)
+// tweetService: HttpRoutes[IO] = Kleisli(
+//   org.http4s.HttpRoutes$$$Lambda$11109/474646268@58246a13
+// )
 </code></pre>
 
 <p>There&rsquo;s also <a href="../api/org/http4s/server/middleware/DefaultHead$.html"><code>DefaultHead</code></a> which replicates the functionality of the native
