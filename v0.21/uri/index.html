@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/tut/uri.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/mdoc/uri.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -97,7 +97,13 @@ import org.http4s.implicits._
 </code></pre>
 
 <pre><code class="language-scala">val uri = uri&quot;http://http4s.org&quot;
-// uri: org.http4s.Uri = http://http4s.org
+// uri: Uri = Uri(
+//   Some(Scheme(http)),
+//   Some(Authority(None, RegName(http4s.org), None)),
+//   &quot;&quot;,
+//   ,
+//   None
+// )
 </code></pre>
 
 <h2 id="building-uris">Building URIs</h2>
@@ -111,11 +117,21 @@ or you could use the URLTemplates.</p>
 <p>Use the methods on the <a href="../api/org/http4s/Uri">uri class</a>.</p>
 
 <pre><code class="language-scala">val docs = uri.withPath(&quot;/docs/0.15&quot;)
-// docs: org.http4s.Uri = http://http4s.org/docs/0.15
-
+// docs: Uri = Uri(
+//   Some(Scheme(http)),
+//   Some(Authority(None, RegName(http4s.org), None)),
+//   &quot;/docs/0.15&quot;,
+//   ,
+//   None
+// )
 val docs2 = uri / &quot;docs&quot; / &quot;0.15&quot;
-// docs2: org.http4s.Uri = http://http4s.org/docs/0.15
-
+// docs2: Uri = Uri(
+//   Some(Scheme(http)),
+//   Some(Authority(None, RegName(http4s.org), None)),
+//   &quot;/docs/0.15&quot;,
+//   ,
+//   None
+// )
 assert(docs == docs2)
 </code></pre>
 
@@ -129,10 +145,24 @@ assert(docs == docs2)
   scheme = Some(Uri.Scheme.http),
   path = List(PathElm(&quot;docs&quot;), PathElm(&quot;0.15&quot;))
 )
-// template: org.http4s.UriTemplate = http://http4s.org/docs/0.15
+// template: UriTemplate = UriTemplate(
+//   Some(Scheme(http)),
+//   Some(Authority(None, RegName(http4s.org), None)),
+//   List(PathElm(&quot;docs&quot;), PathElm(&quot;0.15&quot;)),
+//   List(),
+//   List()
+// )
 
 template.toUriIfPossible
-// res1: scala.util.Try[org.http4s.Uri] = Success(http://http4s.org/docs/0.15)
+// res1: scala.util.Try[Uri] = Success(
+//   Uri(
+//     Some(Scheme(http)),
+//     Some(Authority(None, RegName(http4s.org), None)),
+//     &quot;/docs/0.15&quot;,
+//     ,
+//     None
+//   )
+// )
 </code></pre>
 
 <h2 id="receiving-uris">Receiving URIs</h2>

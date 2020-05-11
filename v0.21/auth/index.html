@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/tut/auth.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/mdoc/auth.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -96,7 +96,6 @@
 <pre><code class="language-scala">import cats._, cats.effect._, cats.implicits._, cats.data._
 import org.http4s._
 import org.http4s.dsl.io._
-import org.http4s.implicits._
 import org.http4s.server._
 </code></pre>
 
@@ -236,11 +235,10 @@ use multiple application instances.</p>
 <p>The message is simply the user id.</p>
 
 <pre><code class="language-scala">import org.reactormonk.{CryptoBits, PrivateKey}
-import java.time._
 
 val key = PrivateKey(scala.io.Codec.toUTF8(scala.util.Random.alphanumeric.take(20).mkString(&quot;&quot;)))
 val crypto = CryptoBits(key)
-val clock = Clock.systemUTC
+val clock = java.time.Clock.systemUTC
 
 def verifyLogin(request: Request[IO]): IO[Either[String,User]] = ??? // gotta figure out how to do the form
 val logIn: Kleisli[IO, Request[IO], Response[IO]] = Kleisli({ request =&gt;
@@ -275,8 +273,7 @@ val authUser: Kleisli[IO, Request[IO], Either[String,User]] = Kleisli({ request 
 way that your <a href="https://en.wikipedia.org/wiki/Single-page_application">SPA</a> understands. Retrieve the header value in the <code>authUser</code>
 function.</p>
 
-<pre><code class="language-scala">import org.http4s.util.string._
-import org.http4s.headers.Authorization
+<pre><code class="language-scala">import org.http4s.headers.Authorization
 
 val authUser: Kleisli[IO, Request[IO], Either[String,User]] = Kleisli({ request =&gt;
   val message = for {

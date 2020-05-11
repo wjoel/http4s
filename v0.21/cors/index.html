@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/tut/cors.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/mdoc/cors.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -111,13 +111,28 @@ import org.http4s.implicits._
   case _ =&gt;
     Ok()
 }
-// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$29942/1697438592@12d4b957)
+// service: HttpRoutes[IO] = Kleisli(
+//   org.http4s.HttpRoutes$$$Lambda$10998/352995148@3514ada1
+// )
 
 val request = Request[IO](Method.GET, uri&quot;/&quot;)
-// request: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers())
+// request: Request[IO] = (
+//   Method(&quot;GET&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@d662f9a
+// )
 
 service.orNotFound(request).unsafeRunSync
-// res0: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0))
+// res0: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@730565af
+// )
 </code></pre>
 
 <p>Now we can wrap the service in the <code>CORS</code> middleware.</p>
@@ -126,23 +141,43 @@ service.orNotFound(request).unsafeRunSync
 </code></pre>
 
 <pre><code class="language-scala">val corsService = CORS(service)
-// corsService: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$30049/1850588125@41994042)
+// corsService: Http[cats.data.OptionT[IO, A], IO] = Kleisli(
+//   org.http4s.server.middleware.CORS$$$Lambda$12367/1429667385@247472c8
+// )
 
 corsService.orNotFound(request).unsafeRunSync
-// res1: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0))
+// res1: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@349dba42
+// )
 </code></pre>
 
 <p>So far, there was no change. That&rsquo;s because an <code>Origin</code> header is required
 in the requests and it must include a scheme. This, of course, is the responsibility of the caller.</p>
 
 <pre><code class="language-scala">val originHeader = Header(&quot;Origin&quot;, &quot;https://somewhere.com&quot;)
-// originHeader: org.http4s.Header.Raw = Origin: https://somewhere.com
-
+// originHeader: Header.Raw = Raw(Origin, &quot;https://somewhere.com&quot;)
 val corsRequest = request.putHeaders(originHeader)
-// corsRequest: request.Self = Request(method=GET, uri=/, headers=Headers(Origin: https://somewhere.com))
+// corsRequest: request.Self = (
+//   Method(&quot;GET&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(Origin: https://somewhere.com),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@d662f9a
+// )
 
 corsService.orNotFound(corsRequest).unsafeRunSync
-// res2: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: true, Access-Control-Allow-Methods: GET, Access-Control-Allow-Origin: https://somewhere.com, Access-Control-Max-Age: 86400))
+// res2: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: true, Access-Control-Allow-Methods: GET, Access-Control-Allow-Origin: https://somewhere.com, Access-Control-Max-Age: 86400),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@83b59b4
+// )
 </code></pre>
 
 <p>Notice how the response has the CORS headers added. How easy was
@@ -159,13 +194,32 @@ are configuration options to modify that.</p>
 have a variety of origins and methods.</p>
 
 <pre><code class="language-scala">val googleGet = Request[IO](Method.GET, uri&quot;/&quot;, headers = Headers.of(Header(&quot;Origin&quot;, &quot;https://google.com&quot;)))
-// googleGet: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers(Origin: https://google.com))
-
+// googleGet: Request[IO] = (
+//   Method(&quot;GET&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(Origin: https://google.com),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@50cb7d01
+// )
 val yahooPut = Request[IO](Method.PUT, uri&quot;/&quot;, headers = Headers.of(Header(&quot;Origin&quot;, &quot;https://yahoo.com&quot;)))
-// yahooPut: org.http4s.Request[cats.effect.IO] = Request(method=PUT, uri=/, headers=Headers(Origin: https://yahoo.com))
-
+// yahooPut: Request[IO] = (
+//   Method(&quot;PUT&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(Origin: https://yahoo.com),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@572ea7e2
+// )
 val duckPost = Request[IO](Method.POST, uri&quot;/&quot;, headers = Headers.of(Header(&quot;Origin&quot;, &quot;https://duckduckgo.com&quot;)))
-// duckPost: org.http4s.Request[cats.effect.IO] = Request(method=POST, uri=/, headers=Headers(Origin: https://duckduckgo.com))
+// duckPost: Request[IO] = (
+//   Method(&quot;POST&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(Origin: https://duckduckgo.com),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@eb848ef
+// )
 </code></pre>
 
 <p>Now, we&rsquo;ll create a configuration that limits the allowed methods to <code>GET</code>
@@ -180,19 +234,46 @@ and <code>POST</code>, pass that to the <code>CORS</code> middleware, and try it
   allowedMethods = Some(Set(&quot;GET&quot;, &quot;POST&quot;)),
   allowCredentials = true,
   maxAge = 1.day.toSeconds)
-// methodConfig: org.http4s.server.middleware.CORSConfig = CORSConfig(true,true,86400,false,org.http4s.server.middleware.CORSConfig$$$Lambda$30048/1026432019@7122cfbc,Some(Set(GET, POST)),Some(Set(Content-Type, Authorization, *)),Some(Set(*)))
+// methodConfig: CORSConfig = CORSConfig(
+//   true,
+//   true,
+//   86400L,
+//   false,
+//   org.http4s.server.middleware.CORSConfig$$$Lambda$12366/1541028135@5c1c5675,
+//   Some(Set(&quot;GET&quot;, &quot;POST&quot;)),
+//   Some(Set(&quot;Content-Type&quot;, &quot;Authorization&quot;, &quot;*&quot;)),
+//   Some(Set(&quot;*&quot;))
+// )
 
 val corsMethodSvc = CORS(service, methodConfig)
-// corsMethodSvc: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$30049/1850588125@2447fb57)
+// corsMethodSvc: Http[cats.data.OptionT[IO, A], IO] = Kleisli(
+//   org.http4s.server.middleware.CORS$$$Lambda$12367/1429667385@57341b82
+// )
 
 corsMethodSvc.orNotFound(googleGet).unsafeRunSync
-// res3: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: true, Access-Control-Allow-Methods: GET, POST, Access-Control-Allow-Origin: https://google.com, Access-Control-Max-Age: 86400))
-
+// res3: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: true, Access-Control-Allow-Methods: GET, POST, Access-Control-Allow-Origin: https://google.com, Access-Control-Max-Age: 86400),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@7507a731
+// )
 corsMethodSvc.orNotFound(yahooPut).unsafeRunSync
-// res4: org.http4s.Response[cats.effect.IO] = Response(status=403, headers=Headers())
-
+// res4: Response[IO] = Response(
+//   Status(403),
+//   HttpVersion(1, 1),
+//   Headers(),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@39b4764e
+// )
 corsMethodSvc.orNotFound(duckPost).unsafeRunSync
-// res5: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: true, Access-Control-Allow-Methods: GET, POST, Access-Control-Allow-Origin: https://duckduckgo.com, Access-Control-Max-Age: 86400))
+// res5: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: true, Access-Control-Allow-Methods: GET, POST, Access-Control-Allow-Origin: https://duckduckgo.com, Access-Control-Max-Age: 86400),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@72530f3
+// )
 </code></pre>
 
 <p>As you can see, the CORS headers were only added to the <code>GET</code> and <code>POST</code> requests.
@@ -204,19 +285,46 @@ Next, we&rsquo;ll create a configuration that limits the origins to &ldquo;yahoo
   allowedOrigins = Set(&quot;https://yahoo.com&quot;, &quot;https://duckduckgo.com&quot;),
   allowCredentials = false,
   maxAge = 1.day.toSeconds)
-// originConfig: org.http4s.server.middleware.CORSConfig = CORSConfig(false,false,86400,true,Set(https://yahoo.com, https://duckduckgo.com),None,Some(Set(Content-Type, Authorization, *)),Some(Set(*)))
+// originConfig: CORSConfig = CORSConfig(
+//   false,
+//   false,
+//   86400L,
+//   true,
+//   Set(&quot;https://yahoo.com&quot;, &quot;https://duckduckgo.com&quot;),
+//   None,
+//   Some(Set(&quot;Content-Type&quot;, &quot;Authorization&quot;, &quot;*&quot;)),
+//   Some(Set(&quot;*&quot;))
+// )
 
 val corsOriginSvc = CORS(service, originConfig)
-// corsOriginSvc: org.http4s.Http[[A]cats.data.OptionT[cats.effect.IO,A],cats.effect.IO] = Kleisli(org.http4s.server.middleware.CORS$$$Lambda$30049/1850588125@45fdc43a)
+// corsOriginSvc: Http[cats.data.OptionT[IO, A], IO] = Kleisli(
+//   org.http4s.server.middleware.CORS$$$Lambda$12367/1429667385@70bac39e
+// )
 
 corsOriginSvc.orNotFound(googleGet).unsafeRunSync
-// res6: org.http4s.Response[cats.effect.IO] = Response(status=403, headers=Headers())
-
+// res6: Response[IO] = Response(
+//   Status(403),
+//   HttpVersion(1, 1),
+//   Headers(),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@384ccc97
+// )
 corsOriginSvc.orNotFound(yahooPut).unsafeRunSync
-// res7: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: false, Access-Control-Allow-Methods: PUT, Access-Control-Allow-Origin: https://yahoo.com, Access-Control-Max-Age: 86400))
-
+// res7: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: false, Access-Control-Allow-Methods: PUT, Access-Control-Allow-Origin: https://yahoo.com, Access-Control-Max-Age: 86400),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@2250cbd6
+// )
 corsOriginSvc.orNotFound(duckPost).unsafeRunSync
-// res8: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: false, Access-Control-Allow-Methods: POST, Access-Control-Allow-Origin: https://duckduckgo.com, Access-Control-Max-Age: 86400))
+// res8: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Length: 0, Access-Control-Expose-Headers: *, Vary: Origin,Access-Control-Request-Method, Access-Control-Allow-Credentials: false, Access-Control-Allow-Methods: POST, Access-Control-Allow-Origin: https://duckduckgo.com, Access-Control-Max-Age: 86400),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@c5cc5c7
+// )
 </code></pre>
 
 <p>Again, the results are as expected. You can, of course, create a configuration that

@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/tut/json.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/mdoc/json.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -150,21 +150,17 @@ import org.http4s.implicits._
 
 <pre><code class="language-scala">def hello(name: String): Json =
   json&quot;&quot;&quot;{&quot;hello&quot;: $name}&quot;&quot;&quot;
-// hello: (name: String)io.circe.Json
 
 val greeting = hello(&quot;world&quot;)
-// greeting: io.circe.Json =
-// {
-//   &quot;hello&quot; : &quot;world&quot;
-// }
+// greeting: Json = JObject(object[hello -&gt; &quot;world&quot;])
 </code></pre>
 
 <p>We now have a JSON value, but we don&rsquo;t have enough to render it:</p>
 
-<pre><code class="language-scala">scala&gt; Ok(greeting).unsafeRunSync
-&lt;console&gt;:32: error: Cannot convert from io.circe.Json to an Entity, because no EntityEncoder[cats.effect.IO, io.circe.Json] instance could be found.
-       Ok(greeting).unsafeRunSync
-         ^
+<pre><code class="language-scala">Ok(greeting).unsafeRunSync
+// error: Cannot convert from io.circe.Json to an Entity, because no EntityEncoder[cats.effect.IO, io.circe.Json] instance could be found.
+// Ok(Hello(&quot;Alice&quot;).asJson).unsafeRunSync
+// ^
 </code></pre>
 
 <p>To encode a Scala value of type <code>A</code> into an entity, we need an
@@ -176,18 +172,30 @@ val greeting = hello(&quot;world&quot;)
 </code></pre>
 
 <pre><code class="language-scala">Ok(greeting).unsafeRunSync
-// res1: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Type: application/json, Content-Length: 17))
+// res1: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Type: application/json, Content-Length: 17),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@2636c521
+// )
 </code></pre>
 
 <p>The same <code>EntityEncoder[Json]</code> we use on server responses is also
 useful on client requests:</p>
 
-<pre><code class="language-scala">import org.http4s.client._
-import org.http4s.client.dsl.io._
+<pre><code class="language-scala">import org.http4s.client.dsl.io._
 </code></pre>
 
 <pre><code class="language-scala">POST(json&quot;&quot;&quot;{&quot;name&quot;: &quot;Alice&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).unsafeRunSync
-// res2: org.http4s.Request[cats.effect.IO] = Request(method=POST, uri=/hello, headers=Headers(Content-Type: application/json, Content-Length: 16))
+// res2: Request[IO] = (
+//   Method(&quot;POST&quot;),
+//   Uri(None, None, &quot;/hello&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(Content-Type: application/json, Content-Length: 16),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@13dfd071
+// )
 </code></pre>
 
 <h2 id="encoding-case-classes-as-json">Encoding case classes as JSON</h2>
@@ -209,10 +217,10 @@ to JSON as long as an implicit <code>Encoder</code> is in scope:</p>
 <pre><code class="language-scala">import io.circe.syntax._
 </code></pre>
 
-<pre><code class="language-scala">scala&gt; Hello(&quot;Alice&quot;).asJson
-&lt;console&gt;:45: error: could not find implicit value for parameter encoder: io.circe.Encoder[Hello]
-       Hello(&quot;Alice&quot;).asJson
-                      ^
+<pre><code class="language-scala">Hello(&quot;Alice&quot;).asJson
+// error: could not find implicit value for parameter encoder: io.circe.Encoder[repl.Session.App.Hello]
+//   Encoder.instance { (hello: Hello) =&gt;
+//                              ^
 </code></pre>
 
 <p>Oops!  We haven&rsquo;t told Circe how we want to encode our case class.
@@ -222,13 +230,10 @@ Let&rsquo;s provide an encoder:</p>
   Encoder.instance { (hello: Hello) =&gt;
     json&quot;&quot;&quot;{&quot;hello&quot;: ${hello.name}}&quot;&quot;&quot;
   }
-// HelloEncoder: io.circe.Encoder[Hello] = io.circe.Encoder$$anon$3@7b68228c
+// HelloEncoder: Encoder[Hello] = io.circe.Encoder$$anon$3@4288a670
 
 Hello(&quot;Alice&quot;).asJson
-// res4: io.circe.Json =
-// {
-//   &quot;hello&quot; : &quot;Alice&quot;
-// }
+// res4: Json = JObject(object[hello -&gt; &quot;Alice&quot;])
 </code></pre>
 
 <p>That was easy, but gets tedious for applications dealing in lots of
@@ -239,20 +244,29 @@ using the field names of the case class as key names in a JSON object:</p>
 </code></pre>
 
 <pre><code class="language-scala">User(&quot;Alice&quot;).asJson
-// res5: io.circe.Json =
-// {
-//   &quot;name&quot; : &quot;Alice&quot;
-// }
+// res5: Json = JObject(object[name -&gt; &quot;Alice&quot;])
 </code></pre>
 
 <p>Equipped with an <code>Encoder</code> and <code>.asJson</code>, we can send JSON in requests
 and responses for our case classes:</p>
 
 <pre><code class="language-scala">Ok(Hello(&quot;Alice&quot;).asJson).unsafeRunSync
-// res6: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Type: application/json, Content-Length: 17))
-
+// res6: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Type: application/json, Content-Length: 17),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@149e696e
+// )
 POST(User(&quot;Bob&quot;).asJson, uri&quot;/hello&quot;).unsafeRunSync
-// res7: org.http4s.Request[cats.effect.IO] = Request(method=POST, uri=/hello, headers=Headers(Content-Type: application/json, Content-Length: 14))
+// res7: Request[IO] = (
+//   Method(&quot;POST&quot;),
+//   Uri(None, None, &quot;/hello&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(Content-Type: application/json, Content-Length: 14),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@39b1d04c
+// )
 </code></pre>
 
 <p>If within some route we serve json only, we can use:</p>
@@ -276,16 +290,9 @@ or client, we need an <code>EntityDecoder[JSON]</code> to receive it.</p>
 response body to JSON using the <a href="../api/org/http4s/MessageOps.html#as[T](implicitF:cats.FlatMap[F],implicitdecoder:org.http4s.EntityDecoder[F,T]):F[T]"><code>as</code> syntax</a>:</p>
 
 <pre><code class="language-scala">Ok(&quot;&quot;&quot;{&quot;name&quot;:&quot;Alice&quot;}&quot;&quot;&quot;).flatMap(_.as[Json]).unsafeRunSync
-// res9: io.circe.Json =
-// {
-//   &quot;name&quot; : &quot;Alice&quot;
-// }
-
+// res9: Json = JObject(object[name -&gt; &quot;Alice&quot;])
 POST(&quot;&quot;&quot;{&quot;name&quot;:&quot;Bob&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).flatMap(_.as[Json]).unsafeRunSync
-// res10: io.circe.Json =
-// {
-//   &quot;name&quot; : &quot;Bob&quot;
-// }
+// res10: Json = JObject(object[name -&gt; &quot;Bob&quot;])
 </code></pre>
 
 <p>Like sending raw JSON, this is useful to a point, but we typically
@@ -300,13 +307,12 @@ the way from HTTP to your type <code>A</code>.  Specifically, <code>jsonOf[A]</c
 an implicit <code>Decoder[A]</code> and makes a <code>EntityDecoder[A]</code>:</p>
 
 <pre><code class="language-scala">implicit val userDecoder = jsonOf[IO, User]
-// userDecoder: org.http4s.EntityDecoder[cats.effect.IO,User] = org.http4s.EntityDecoder$$anon$2@70b557e3
-
+// userDecoder: EntityDecoder[IO, User] = org.http4s.EntityDecoder$$anon$2@62aef3a8
 Ok(&quot;&quot;&quot;{&quot;name&quot;:&quot;Alice&quot;}&quot;&quot;&quot;).flatMap(_.as[User]).unsafeRunSync
-// res11: User = User(Alice)
+// res11: User = User(&quot;Alice&quot;)
 
 POST(&quot;&quot;&quot;{&quot;name&quot;:&quot;Bob&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).flatMap(_.as[User]).unsafeRunSync
-// res12: User = User(Bob)
+// res12: User = User(&quot;Bob&quot;)
 </code></pre>
 
 <p>If we are always decoding from JSON to a typed model, we can use
@@ -336,19 +342,23 @@ proper greeting.</p>
 
 <pre><code class="language-scala">import cats.effect._
 
-import io.circe._
 import io.circe.generic.auto._
 import io.circe.syntax._
 
 import org.http4s._
 import org.http4s.circe._
 import org.http4s.dsl.io._
+import org.http4s.server.blaze._
 import org.http4s.implicits._
 
 import scala.concurrent.ExecutionContext.Implicits.global
 
 case class User(name: String)
 case class Hello(greeting: String)
+
+// Needed by `BlazeServerBuilder`. Provided by `IOApp`.
+implicit val cs: ContextShift[IO] = IO.contextShift(global)
+implicit val timer: Timer[IO] = IO.timer(global)
 
 implicit val decoder = jsonOf[IO, User]
 
@@ -362,13 +372,6 @@ val jsonApp = HttpRoutes.of[IO] {
     } yield (resp)
 }.orNotFound
 
-// Needed by `BlazeServerBuilder`. Provided by `IOApp`.
-implicit val cs: ContextShift[IO] = IO.contextShift(global)
-implicit val timer: Timer[IO] = IO.timer(global)
-
-import org.http4s.server.blaze._
-import scala.concurrent.ExecutionContext.global
-
 val server = BlazeServerBuilder[IO](global).bindHttp(8080).withHttpApp(jsonApp).resource
 val fiber = server.use(_ =&gt; IO.never).start.unsafeRunSync()
 </code></pre>
@@ -377,10 +380,8 @@ val fiber = server.use(_ =&gt; IO.never).start.unsafeRunSync()
 
 <p>Now let&rsquo;s make a client for the service above:</p>
 
-<pre><code class="language-scala">import org.http4s.client._
-import org.http4s.client.dsl.io._
+<pre><code class="language-scala">import org.http4s.client.dsl.io._
 import org.http4s.client.blaze._
-import org.http4s.Method._
 import cats.effect.IO
 import io.circe.generic.auto._
 import fs2.Stream
@@ -401,10 +402,9 @@ def helloClient(name: String): Stream[IO, Hello] = {
 <code>Hello(&quot;Alice&quot;)</code> back:</p>
 
 <pre><code class="language-scala">val helloAlice = helloClient(&quot;Alice&quot;)
-// helloAlice: fs2.Stream[cats.effect.IO,Hello] = Stream(..)
-
+// helloAlice: Stream[IO, Hello] = Stream(..)
 helloAlice.compile.last.unsafeRunSync
-// res2: Option[Hello] = Some(Hello(Alice))
+// res14: Option[Hello] = Some(Hello(&quot;Alice&quot;))
 </code></pre>
 
 <p>Finally, shut down our example server.</p>

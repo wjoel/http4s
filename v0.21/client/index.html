@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/tut/client.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/mdoc/client.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -127,23 +127,41 @@ implicit val timer: Timer[IO] = IO.timer(global)
 <p>Finish setting up our server:</p>
 
 <pre><code class="language-scala">import scala.concurrent.ExecutionContext.global
-// import scala.concurrent.ExecutionContext.global
 
 val app = HttpRoutes.of[IO] {
   case GET -&gt; Root / &quot;hello&quot; / name =&gt;
     Ok(s&quot;Hello, $name.&quot;)
 }.orNotFound
-// app: cats.data.Kleisli[cats.effect.IO,org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(org.http4s.syntax.KleisliResponseOps$$Lambda$18574/291823014@2790430a)
+// app: cats.data.Kleisli[IO, Request[IO], Response[IO]] = Kleisli(
+//   org.http4s.syntax.KleisliResponseOps$$Lambda$11008/685353070@24460493
+// )
 
 val server = BlazeServerBuilder[IO](global).bindHttp(8080, &quot;localhost&quot;).withHttpApp(app).resource
-// server: cats.effect.Resource[cats.effect.IO,org.http4s.server.Server[cats.effect.IO]] = Bind(Allocate(&lt;function1&gt;),org.http4s.server.blaze.BlazeServerBuilder$$Lambda$18583/1337847044@c0a6b14)
+// server: Resource[IO, org.http4s.server.Server[IO]] = Bind(
+//   Allocate(
+//     Map(
+//       Delay(org.http4s.blazecore.package$$$Lambda$11623/248410397@639459bb),
+//       cats.effect.Resource$$$Lambda$11624/1378499876@6680f8e4,
+//       0
+//     )
+//   ),
+//   org.http4s.server.blaze.BlazeServerBuilder$$Lambda$11625/1709945136@5463b94
+// )
 </code></pre>
 
 <p>We&rsquo;ll start the server in the background.  The <code>IO.never</code> keeps it
 running until we cancel the fiber.</p>
 
 <pre><code class="language-scala">val fiber = server.use(_ =&gt; IO.never).start.unsafeRunSync()
-// fiber: cats.effect.Fiber[cats.effect.IO,Nothing] = Tuple(IO$1519391327,IO$812503971)
+// fiber: Fiber[IO, Nothing] = Tuple(
+//   Bind(
+//     Async(cats.effect.IO$$$Lambda$10996/1151000585@11b0d533, false),
+//     cats.syntax.MonadErrorRethrowOps$$$Lambda$11090/885610097@50a80f3f
+//   ),
+//   Suspend(
+//     cats.effect.internals.IOConnection$Impl$$Lambda$11630/1308685495@318e9a16
+//   )
+// )
 </code></pre>
 
 <h3 id="creating-the-client">Creating the client</h3>
@@ -162,7 +180,6 @@ import scala.concurrent.ExecutionContext.global
   // automatically each time the `IO` is run.
   IO.unit
 }
-// res0: cats.effect.IO[Unit] = IO$214134386
 </code></pre>
 
 <p>For the remainder of this tut, we&rsquo;ll use an alternate client backend
@@ -188,7 +205,16 @@ val httpClient: Client[IO] = JavaNetClientBuilder[IO](blocker).create
 and the URI we want:</p>
 
 <pre><code class="language-scala">val helloJames = httpClient.expect[String](&quot;http://localhost:8080/hello/James&quot;)
-// helloJames: cats.effect.IO[String] = IO$1689996647
+// helloJames: IO[String] = Bind(
+//   Map(
+//     Delay(
+//       org.http4s.client.JavaNetClientBuilder$$Lambda$12130/177836298@5a09d28
+//     ),
+//     cats.effect.Resource$$$Lambda$12116/2007497058@122ed9e2,
+//     0
+//   ),
+//   cats.effect.Resource$$Lambda$12119/1055439049@2effd6f
+// )
 </code></pre>
 
 <p>Note that we don&rsquo;t have any output yet.  We have a <code>IO[String]</code>, to
@@ -207,20 +233,23 @@ parallel:</p>
 
 <pre><code class="language-scala">import cats._, cats.effect._, cats.implicits._
 import org.http4s.Uri
-import scala.concurrent.ExecutionContext.Implicits.global
 </code></pre>
 
 <pre><code class="language-scala">def hello(name: String): IO[String] = {
   val target = uri&quot;http://localhost:8080/hello/&quot; / name
   httpClient.expect[String](target)
 }
-// hello: (name: String)cats.effect.IO[String]
 
 val people = Vector(&quot;Michael&quot;, &quot;Jessica&quot;, &quot;Ashley&quot;, &quot;Christopher&quot;)
-// people: scala.collection.immutable.Vector[String] = Vector(Michael, Jessica, Ashley, Christopher)
+// people: Vector[String] = Vector(
+//   &quot;Michael&quot;,
+//   &quot;Jessica&quot;,
+//   &quot;Ashley&quot;,
+//   &quot;Christopher&quot;
+// )
 
 val greetingList = people.parTraverse(hello)
-// greetingList: cats.effect.IO[scala.collection.immutable.Vector[String]] = IO$914726257
+// greetingList: IO[Vector[String]] = Async(&lt;function2&gt;, true)
 </code></pre>
 
 <p>Observe how simply we could combine a single <code>F[String]</code> returned
@@ -239,14 +268,16 @@ server.</li>
 </ul>
 
 <pre><code class="language-scala">val greetingsStringEffect = greetingList.map(_.mkString(&quot;\n&quot;))
-// greetingsStringEffect: cats.effect.IO[String] = &lt;function1&gt;
-
+// greetingsStringEffect: IO[String] = Map(
+//   Async(&lt;function2&gt;, true),
+//   &lt;function1&gt;,
+//   0
+// )
 greetingsStringEffect.unsafeRunSync
-// res1: String =
-// Hello, Michael.
+// res1: String = &quot;&quot;&quot;Hello, Michael.
 // Hello, Jessica.
 // Hello, Ashley.
-// Hello, Christopher.
+// Hello, Christopher.&quot;&quot;&quot;
 </code></pre>
 
 <h2 id="constructing-a-uri">Constructing a URI</h2>
@@ -259,7 +290,13 @@ want to access.</p>
 <p>If you have a literal string, you can use <code>uri&quot;...&quot;</code>:</p>
 
 <pre><code class="language-scala">uri&quot;https://my-awesome-service.com/foo/bar?wow=yeah&quot;
-// res2: org.http4s.Uri = https://my-awesome-service.com/foo/bar?wow=yeah
+// res2: Uri = Uri(
+//   Some(Scheme(https)),
+//   Some(Authority(None, RegName(my-awesome-service.com), None)),
+//   &quot;/foo/bar&quot;,
+//   wow=yeah,
+//   None
+// )
 </code></pre>
 
 <p>This only works with literal strings because it uses a macro to validate the URI
@@ -269,31 +306,58 @@ format at compile-time.</p>
 validation fails:</p>
 
 <pre><code class="language-scala">val validUri = &quot;https://my-awesome-service.com/foo/bar?wow=yeah&quot;
-// validUri: String = https://my-awesome-service.com/foo/bar?wow=yeah
-
+// validUri: String = &quot;https://my-awesome-service.com/foo/bar?wow=yeah&quot;
 val invalidUri = &quot;yeah whatever&quot;
-// invalidUri: String = yeah whatever
+// invalidUri: String = &quot;yeah whatever&quot;
 
 val uri: Either[ParseFailure, Uri] = Uri.fromString(validUri)
-// uri: Either[org.http4s.ParseFailure,org.http4s.Uri] = Right(https://my-awesome-service.com/foo/bar?wow=yeah)
+// uri: Either[ParseFailure, Uri] = Right(
+//   Uri(
+//     Some(Scheme(https)),
+//     Some(Authority(None, RegName(my-awesome-service.com), None)),
+//     &quot;/foo/bar&quot;,
+//     wow=yeah,
+//     None
+//   )
+// )
 
 val parseFailure: Either[ParseFailure, Uri] = Uri.fromString(invalidUri)
-// parseFailure: Either[org.http4s.ParseFailure,org.http4s.Uri] =
-// Left(org.http4s.ParseFailure: Invalid URI: Invalid input ' ', expected Alpha, Digit, '+', '-', '.', ':', Unreserved, PctEncoded or SubDelims (line 1, column 5):
+// parseFailure: Either[ParseFailure, Uri] = Left(
+//   ParseFailure(
+//     &quot;Invalid URI&quot;,
+//     &quot;&quot;&quot;Invalid input ' ', expected Alpha, Digit, '+', '-', '.', ':', Unreserved, PctEncoded or SubDelims (line 1, column 5):
 // yeah whatever
-//     ^)
+//     ^&quot;&quot;&quot;
+//   )
+// )
 </code></pre>
 
 <p>You can also build up a URI incrementally, e.g.:</p>
 
 <pre><code class="language-scala">val baseUri = uri&quot;http://foo.com&quot;
-// baseUri: org.http4s.Uri = http://foo.com
-
+// baseUri: Uri = Uri(
+//   Some(Scheme(http)),
+//   Some(Authority(None, RegName(foo.com), None)),
+//   &quot;&quot;,
+//   ,
+//   None
+// )
 val withPath = baseUri.withPath(&quot;/bar/baz&quot;)
-// withPath: org.http4s.Uri = http://foo.com/bar/baz
-
+// withPath: Uri = Uri(
+//   Some(Scheme(http)),
+//   Some(Authority(None, RegName(foo.com), None)),
+//   &quot;/bar/baz&quot;,
+//   ,
+//   None
+// )
 val withQuery = withPath.withQueryParam(&quot;hello&quot;, &quot;world&quot;)
-// withQuery: org.http4s.Uri = http://foo.com/bar/baz?hello=world
+// withQuery: withPath.Self = Uri(
+//   Some(Scheme(http)),
+//   Some(Authority(None, RegName(foo.com), None)),
+//   &quot;/bar/baz&quot;,
+//   hello=world,
+//   None
+// )
 </code></pre>
 
 <h2 id="middleware">Middleware</h2>
@@ -340,16 +404,14 @@ import com.codahale.metrics.SharedMetricRegistries
 </code></pre>
 
 <pre><code class="language-scala">implicit val clock = Clock.create[IO]
-// clock: cats.effect.Clock[cats.effect.IO] = cats.effect.Clock$$anon$1@33612104
-
+// clock: Clock[IO] = cats.effect.Clock$$anon$1@5fc0b054
 val registry = SharedMetricRegistries.getOrCreate(&quot;default&quot;)
-// registry: com.codahale.metrics.MetricRegistry = com.codahale.metrics.MetricRegistry@2da6003f
-
+// registry: com.codahale.metrics.MetricRegistry = com.codahale.metrics.MetricRegistry@7f5ae868
 val requestMethodClassifier = (r: Request[IO]) =&gt; Some(r.method.toString.toLowerCase)
-// requestMethodClassifier: org.http4s.Request[cats.effect.IO] =&gt; Some[String] = $Lambda$19250/1674016663@71673880
+// requestMethodClassifier: Request[IO] =&gt; Some[String] = &lt;function1&gt;
 
 val meteredClient = Metrics[IO](Dropwizard(registry, &quot;prefix&quot;), requestMethodClassifier)(httpClient)
-// meteredClient: org.http4s.client.Client[cats.effect.IO] = org.http4s.client.Client$$anon$1@71aca259
+// meteredClient: Client[IO] = org.http4s.client.Client$$anon$1@3c9fee5b
 </code></pre>
 
 <p>A <code>classifier</code> is just a function Request[F] =&gt; Option[String] that allows
@@ -371,21 +433,30 @@ provided prefix like this.</p>
 <pre><code class="language-scala">import cats.effect.{Resource, IO}
 import org.http4s.client.middleware.Metrics
 import org.http4s.metrics.prometheus.Prometheus
-import io.prometheus.client.CollectorRegistry
 </code></pre>
 
 <pre><code class="language-scala">implicit val clock = Clock.create[IO]
-// clock: cats.effect.Clock[cats.effect.IO] = cats.effect.Clock$$anon$1@43a8c222
-
+// clock: Clock[IO] = cats.effect.Clock$$anon$1@1a2d40f0
 val requestMethodClassifier = (r: Request[IO]) =&gt; Some(r.method.toString.toLowerCase)
-// requestMethodClassifier: org.http4s.Request[cats.effect.IO] =&gt; Some[String] = $Lambda$19253/1351338646@27d675b4
+// requestMethodClassifier: Request[IO] =&gt; Some[String] = &lt;function1&gt;
 
 val meteredClient: Resource[IO, Client[IO]] =
   for {
     registry &lt;- Prometheus.collectorRegistry[IO]
     metrics &lt;- Prometheus.metricsOps[IO](registry, &quot;prefix&quot;)
   } yield Metrics[IO](metrics, requestMethodClassifier)(httpClient)
-// meteredClient: cats.effect.Resource[cats.effect.IO,org.http4s.client.Client[cats.effect.IO]] = Bind(Allocate(&lt;function1&gt;),$Lambda$19275/729598389@72453160)
+// meteredClient: Resource[IO, Client[IO]] = Bind(
+//   Allocate(
+//     Map(
+//       Delay(
+//         org.http4s.metrics.prometheus.Prometheus$$$Lambda$11700/2101199342@40b9391a
+//       ),
+//       scala.Function1$$Lambda$11035/686415675@71d0b831,
+//       1
+//     )
+//   ),
+//   &lt;function1&gt;
+// )
 </code></pre>
 
 <p>A <code>classifier</code> is just a function Request[F] =&gt; Option[String] that allows
@@ -398,7 +469,16 @@ to add a label to every metric based on the <code>Request</code></p>
 <p>You can send a GET by calling the <code>expect</code> method on the client, passing a <code>Uri</code>:</p>
 
 <pre><code class="language-scala">httpClient.expect[String](uri&quot;https://google.com/&quot;)
-// res3: cats.effect.IO[String] = IO$1182898282
+// res3: IO[String] = Bind(
+//   Map(
+//     Delay(
+//       org.http4s.client.JavaNetClientBuilder$$Lambda$12130/177836298@2b48e44f
+//     ),
+//     cats.effect.Resource$$$Lambda$12116/2007497058@68662a4b,
+//     0
+//   ),
+//   cats.effect.Resource$$Lambda$12119/1055439049@183ccd77
+// )
 </code></pre>
 
 <p>If you need to do something more complicated like setting request headers, you
@@ -415,20 +495,52 @@ import org.http4s.Method._
   Authorization(Credentials.Token(AuthScheme.Bearer, &quot;open sesame&quot;)),
   Accept(MediaType.application.json)
 )
-// request: cats.effect.IO[org.http4s.Request[cats.effect.IO]] = IO(Request(method=GET, uri=https://my-lovely-api.com/, headers=Headers(Authorization: &lt;REDACTED&gt;, Accept: application/json)))
+// request: IO[Request[IO]] = Pure(
+//   (
+//     Method(&quot;GET&quot;),
+//     Uri(
+//       Some(Scheme(https)),
+//       Some(Authority(None, RegName(my-lovely-api.com), None)),
+//       &quot;/&quot;,
+//       ,
+//       None
+//     ),
+//     HttpVersion(1, 1),
+//     Headers(Authorization: Bearer open sesame, Accept: application/json),
+//     Stream(..),
+//     io.chrisdavenport.vault.Vault@5932420b
+//   )
+// )
 
 httpClient.expect[String](request)
-// res4: cats.effect.IO[String] = IO$998643068
+// res4: IO[String] = Bind(
+//   Pure(
+//     (
+//       Method(&quot;GET&quot;),
+//       Uri(
+//         Some(Scheme(https)),
+//         Some(Authority(None, RegName(my-lovely-api.com), None)),
+//         &quot;/&quot;,
+//         ,
+//         None
+//       ),
+//       HttpVersion(1, 1),
+//       Headers(Authorization: Bearer open sesame, Accept: application/json),
+//       Stream(..),
+//       io.chrisdavenport.vault.Vault@5932420b
+//     )
+//   ),
+//   org.http4s.client.DefaultClient$$Lambda$12333/455415502@279b6b2f
+// )
 </code></pre>
 
 <h3 id="post-a-form-decoding-the-json-response-to-a-case-class">Post a form, decoding the JSON response to a case class</h3>
 
 <pre><code class="language-scala">case class AuthResponse(access_token: String)
-// defined class AuthResponse
 
 // See the JSON page for details on how to define this
 implicit val authResponseEntityDecoder: EntityDecoder[IO, AuthResponse] = null
-// authResponseEntityDecoder: org.http4s.EntityDecoder[cats.effect.IO,AuthResponse] = null
+// authResponseEntityDecoder: EntityDecoder[IO, AuthResponse] = null
 
 val postRequest = POST(
   UrlForm(
@@ -438,10 +550,43 @@ val postRequest = POST(
   ),
   uri&quot;https://my-lovely-api.com/oauth2/token&quot;
 )
-// postRequest: cats.effect.IO[org.http4s.Request[cats.effect.IO]] = IO(Request(method=POST, uri=https://my-lovely-api.com/oauth2/token, headers=Headers(Content-Type: application/x-www-form-urlencoded; charset=UTF-8, Content-Length: 78)))
+// postRequest: IO[Request[IO]] = Pure(
+//   (
+//     Method(&quot;POST&quot;),
+//     Uri(
+//       Some(Scheme(https)),
+//       Some(Authority(None, RegName(my-lovely-api.com), None)),
+//       &quot;/oauth2/token&quot;,
+//       ,
+//       None
+//     ),
+//     HttpVersion(1, 1),
+//     Headers(Content-Type: application/x-www-form-urlencoded; charset=UTF-8, Content-Length: 78),
+//     Stream(..),
+//     io.chrisdavenport.vault.Vault@41abaca
+//   )
+// )
 
 httpClient.expect[AuthResponse](postRequest)
-// res6: cats.effect.IO[AuthResponse] = IO$1849603496
+// res5: IO[AuthResponse] = Bind(
+//   Pure(
+//     (
+//       Method(&quot;POST&quot;),
+//       Uri(
+//         Some(Scheme(https)),
+//         Some(Authority(None, RegName(my-lovely-api.com), None)),
+//         &quot;/oauth2/token&quot;,
+//         ,
+//         None
+//       ),
+//       HttpVersion(1, 1),
+//       Headers(Content-Type: application/x-www-form-urlencoded; charset=UTF-8, Content-Length: 78),
+//       Stream(..),
+//       io.chrisdavenport.vault.Vault@41abaca
+//     )
+//   ),
+//   org.http4s.client.DefaultClient$$Lambda$12333/455415502@7c9c18bc
+// )
 </code></pre>
 
 <h2 id="calls-to-a-json-api">Calls to a JSON API</h2>

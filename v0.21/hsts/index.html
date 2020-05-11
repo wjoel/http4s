@@ -69,7 +69,7 @@
         <div class="col-12 col-md-9 order-1">
           <span class="float-right">
           
-<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/tut/hsts.md" class="btn btn-secondary btn-sm">
+<a href="https://github.com/http4s/http4s/edit/series/0.21/docs/src/main/mdoc/hsts.md" class="btn btn-secondary btn-sm">
   <i class="fa fa-edit"></i>
 </a>
 
@@ -112,17 +112,31 @@ import cats.effect.IO
   case _ =&gt;
     Ok(&quot;ok&quot;)
 }
-// service: org.http4s.HttpRoutes[cats.effect.IO] = Kleisli(org.http4s.HttpRoutes$$$Lambda$33046/437167459@6c445c88)
+// service: HttpRoutes[IO] = Kleisli(
+//   org.http4s.HttpRoutes$$$Lambda$10998/352995148@56817855
+// )
 
 val request = Request[IO](Method.GET, uri&quot;/&quot;)
-// request: org.http4s.Request[cats.effect.IO] = Request(method=GET, uri=/, headers=Headers())
+// request: Request[IO] = (
+//   Method(&quot;GET&quot;),
+//   Uri(None, None, &quot;/&quot;, , None),
+//   HttpVersion(1, 1),
+//   Headers(),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@79a35e2e
+// )
 
 // Do not call 'unsafeRunSync' in your code
 val response = service.orNotFound(request).unsafeRunSync
-// response: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2))
-
+// response: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@2ad437cd
+// )
 response.headers
-// res1: org.http4s.Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2)
+// res0: Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2)
 </code></pre>
 
 <p>If we were to wrap this on the <code>HSTS</code> middleware.</p>
@@ -131,14 +145,21 @@ response.headers
 </code></pre>
 
 <pre><code class="language-scala">val hstsService = HSTS(service)
-// hstsService: cats.data.Kleisli[[A]cats.data.OptionT[cats.effect.IO,A],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(org.http4s.server.middleware.HSTS$$$Lambda$33142/503252925@176997ec)
+// hstsService: cats.data.Kleisli[cats.data.OptionT[IO, A], Request[IO], Response[IO]] = Kleisli(
+//   org.http4s.server.middleware.HSTS$$$Lambda$12386/1357937285@7d0e4884
+// )
 
 // Do not call 'unsafeRunSync' in your code
 val response = hstsService.orNotFound(request).unsafeRunSync
-// response: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2, Strict-Transport-Security: max-age=31536000; includeSubDomains))
-
+// response: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2, Strict-Transport-Security: max-age=31536000; includeSubDomains),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@2010c4a0
+// )
 response.headers
-// res3: org.http4s.Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2, Strict-Transport-Security: max-age=31536000; includeSubDomains)
+// res1: Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2, Strict-Transport-Security: max-age=31536000; includeSubDomains)
 </code></pre>
 
 <p>Now the response has the <code>Strict-Transport-Security</code> header which will mandate browsers
@@ -159,17 +180,27 @@ import scala.concurrent.duration._
 </code></pre>
 
 <pre><code class="language-scala">val hstsHeader = `Strict-Transport-Security`.unsafeFromDuration(30.days, includeSubDomains = true, preload = true)
-// hstsHeader: org.http4s.headers.Strict-Transport-Security = Strict-Transport-Security: max-age=2592000; includeSubDomains; preload
-
+// hstsHeader: Strict-Transport-Security = Strict-Transport-Security(
+//   2592000L,
+//   true,
+//   true
+// )
 val hstsService = HSTS(service, hstsHeader)
-// hstsService: cats.data.Kleisli[[A]cats.data.OptionT[cats.effect.IO,A],org.http4s.Request[cats.effect.IO],org.http4s.Response[cats.effect.IO]] = Kleisli(org.http4s.server.middleware.HSTS$$$Lambda$33142/503252925@4bdcb5f0)
+// hstsService: cats.data.Kleisli[cats.data.OptionT[IO, A], Request[IO], Response[IO]] = Kleisli(
+//   org.http4s.server.middleware.HSTS$$$Lambda$12386/1357937285@43a1aca2
+// )
 
 // Do not call 'unsafeRunSync' in your code
 val response = hstsService.orNotFound(request).unsafeRunSync
-// response: org.http4s.Response[cats.effect.IO] = Response(status=200, headers=Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2, Strict-Transport-Security: max-age=2592000; includeSubDomains; preload))
-
+// response: Response[IO] = Response(
+//   Status(200),
+//   HttpVersion(1, 1),
+//   Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2, Strict-Transport-Security: max-age=2592000; includeSubDomains; preload),
+//   Stream(..),
+//   io.chrisdavenport.vault.Vault@48c09144
+// )
 response.headers
-// res5: org.http4s.Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2, Strict-Transport-Security: max-age=2592000; includeSubDomains; preload)
+// res2: Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 2, Strict-Transport-Security: max-age=2592000; includeSubDomains; preload)
 </code></pre>
 
 <h2 id="references">References</h2>
