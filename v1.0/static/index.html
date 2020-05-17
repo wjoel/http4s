@@ -190,7 +190,7 @@ deliver them from there. For example, for all resources in the classpath under <
 
 <pre><code class="language-scala">val routes = resourceService[IO](ResourceService.Config(&quot;/assets&quot;, blocker))
 // routes: HttpRoutes[IO] = Kleisli(
-//   org.http4s.server.staticcontent.ResourceService$$$Lambda$12668/1407727108@649fc7ea
+//   org.http4s.server.staticcontent.ResourceService$$$Lambda$12744/517685720@5e53ab65
 // )
 </code></pre>
 
@@ -205,7 +205,7 @@ val routes = HttpRoutes.of[IO] {
     static(path, blocker, request)
 }
 // routes: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$11066/1019075204@68c5f9ac
+//   org.http4s.HttpRoutes$$$Lambda$11450/612065048@1dc14ffc
 // )
 </code></pre>
 
@@ -236,7 +236,7 @@ val webjars: HttpRoutes[IO] = webjarService(
   )
 )
 // webjars: HttpRoutes[IO] = Kleisli(
-//   org.http4s.server.staticcontent.WebjarService$$$Lambda$12669/200097517@3330fb19
+//   org.http4s.server.staticcontent.WebjarService$$$Lambda$12745/851303374@5165a5c0
 // )
 </code></pre>
 
@@ -317,6 +317,10 @@ val webjars: HttpRoutes[IO] = webjarService(
             
             <li class="nav-item">
 	      <a class="nav-link" href="/v1.0/uri/">URI handling</a>
+            </li>
+            
+            <li class="nav-item">
+	      <a class="nav-link" href="/v1.0/deployment/">Deployment</a>
             </li>
             
             <li class="nav-item">
