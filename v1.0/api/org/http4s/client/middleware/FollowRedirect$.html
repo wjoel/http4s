@@ -214,7 +214,7 @@ all payload headers defined in https://tools.ietf.org/html/rfc7231#section-3.3
 are stripped.</p><p>If the response does not contain a valid Location header, the redirect is
 not followed.</p><p>Headers whose names match <code>sensitiveHeaderFilter</code> are not exposed when
 redirecting to a different authority.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/dac793f48ebab02d3ff1f3aa1f4b5ba9768a44ef/client/src/main/scala/org/http4s/client/middleware/FollowRedirect.scala" target="_blank">FollowRedirect.scala</a></dd></dl><div class="toggleContainer block">
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/af4a5b5242685a0add29f44ed60335538b380f2b/client/src/main/scala/org/http4s/client/middleware/FollowRedirect.scala" target="_blank">FollowRedirect.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -320,9 +320,9 @@ redirecting to a different authority.
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="org.http4s.client.middleware.FollowRedirect#apply" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="apply[F[_]](maxRedirects:Int,sensitiveHeaderFilter:org.http4s.util.CaseInsensitiveString=&gt;Boolean)(client:org.http4s.client.Client[F])(implicitF:cats.effect.Concurrent[F]):org.http4s.client.Client[F]"></a><a id="apply[F[_]](Int,(CaseInsensitiveString)⇒Boolean)(Client[F])(Concurrent[F]):Client[F]"></a>
+      <a id="apply[F[_]](maxRedirects:Int,sensitiveHeaderFilter:org.typelevel.ci.CIString=&gt;Boolean)(client:org.http4s.client.Client[F])(implicitF:cats.effect.Concurrent[F]):org.http4s.client.Client[F]"></a><a id="apply[F[_]](Int,(CIString)⇒Boolean)(Client[F])(Concurrent[F]):Client[F]"></a>
       <span class="permalink">
-      <a href="../../../../org/http4s/client/middleware/FollowRedirect$.html#apply[F[_]](maxRedirects:Int,sensitiveHeaderFilter:org.http4s.util.CaseInsensitiveString=&gt;Boolean)(client:org.http4s.client.Client[F])(implicitF:cats.effect.Concurrent[F]):org.http4s.client.Client[F]" title="Permalink">
+      <a href="../../../../org/http4s/client/middleware/FollowRedirect$.html#apply[F[_]](maxRedirects:Int,sensitiveHeaderFilter:org.typelevel.ci.CIString=&gt;Boolean)(client:org.http4s.client.Client[F])(implicitF:cats.effect.Concurrent[F]):org.http4s.client.Client[F]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -331,7 +331,7 @@ redirecting to a different authority.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="maxRedirects">maxRedirects: <a href="https://www.scala-lang.org/api/2.12.11/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>, <span name="sensitiveHeaderFilter">sensitiveHeaderFilter: (<a href="../../util/CaseInsensitiveString.html" class="extype" name="org.http4s.util.CaseInsensitiveString">CaseInsensitiveString</a>) ⇒ <a href="https://www.scala-lang.org/api/2.12.11/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol"><span class="name"><a href="../../Headers$.html">Headers.SensitiveHeaders</a></span></span></span>)</span><span class="params">(<span name="client">client: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.FollowRedirect.apply.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <span class="extype" name="cats.effect.Concurrent">Concurrent</span>[<span class="extype" name="org.http4s.client.middleware.FollowRedirect.apply.F">F</span>]</span>)</span><span class="result">: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.FollowRedirect.apply.F">F</span>]</span>
+        <span class="name">apply</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="maxRedirects">maxRedirects: <a href="https://www.scala-lang.org/api/2.12.11/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>, <span name="sensitiveHeaderFilter">sensitiveHeaderFilter: (<span class="extype" name="org.typelevel.ci.CIString">CIString</span>) ⇒ <a href="https://www.scala-lang.org/api/2.12.11/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a> = <span class="symbol"><span class="name"><a href="../../Headers$.html">Headers.SensitiveHeaders</a></span></span></span>)</span><span class="params">(<span name="client">client: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.FollowRedirect.apply.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <span class="extype" name="cats.effect.Concurrent">Concurrent</span>[<span class="extype" name="org.http4s.client.middleware.FollowRedirect.apply.F">F</span>]</span>)</span><span class="result">: <a href="../Client.html" class="extype" name="org.http4s.client.Client">Client</a>[<span class="extype" name="org.http4s.client.middleware.FollowRedirect.apply.F">F</span>]</span>
       </span>
       
       

@@ -173,7 +173,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/dac793f48ebab02d3ff1f3aa1f4b5ba9768a44ef/core/src/main/scala/org/http4s/parser/HttpHeaderParser.scala" target="_blank">HttpHeaderParser.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/af4a5b5242685a0add29f44ed60335538b380f2b/core/src/main/scala/org/http4s/parser/HttpHeaderParser.scala" target="_blank">HttpHeaderParser.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -1050,9 +1050,9 @@
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>SimpleHeaders</dd></dl></div>
     </li><li name="org.http4s.parser.HttpHeaderParser#addParser" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="addParser(key:org.http4s.util.CaseInsensitiveString,parser:org.http4s.parser.HttpHeaderParser.HeaderParser):Option[org.http4s.parser.HttpHeaderParser.HeaderParser]"></a><a id="addParser(CaseInsensitiveString,HeaderParser):Option[HeaderParser]"></a>
+      <a id="addParser(key:org.typelevel.ci.CIString,parser:org.http4s.parser.HttpHeaderParser.HeaderParser):Option[org.http4s.parser.HttpHeaderParser.HeaderParser]"></a><a id="addParser(CIString,HeaderParser):Option[HeaderParser]"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/parser/HttpHeaderParser$.html#addParser(key:org.http4s.util.CaseInsensitiveString,parser:org.http4s.parser.HttpHeaderParser.HeaderParser):Option[org.http4s.parser.HttpHeaderParser.HeaderParser]" title="Permalink">
+      <a href="../../../org/http4s/parser/HttpHeaderParser$.html#addParser(key:org.typelevel.ci.CIString,parser:org.http4s.parser.HttpHeaderParser.HeaderParser):Option[org.http4s.parser.HttpHeaderParser.HeaderParser]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1061,7 +1061,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">addParser</span><span class="params">(<span name="key">key: <a href="../util/CaseInsensitiveString.html" class="extype" name="org.http4s.util.CaseInsensitiveString">CaseInsensitiveString</a></span>, <span name="parser">parser: <a href="#HeaderParser=String=&gt;org.http4s.ParseResult[org.http4s.Header.Parsed]" class="extmbr" name="org.http4s.parser.HttpHeaderParser.HeaderParser">HeaderParser</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="#HeaderParser=String=&gt;org.http4s.ParseResult[org.http4s.Header.Parsed]" class="extmbr" name="org.http4s.parser.HttpHeaderParser.HeaderParser">HeaderParser</a>]</span>
+        <span class="name">addParser</span><span class="params">(<span name="key">key: <span class="extype" name="org.typelevel.ci.CIString">CIString</span></span>, <span name="parser">parser: <a href="#HeaderParser=String=&gt;org.http4s.ParseResult[org.http4s.Header.Parsed]" class="extmbr" name="org.http4s.parser.HttpHeaderParser.HeaderParser">HeaderParser</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="#HeaderParser=String=&gt;org.http4s.ParseResult[org.http4s.Header.Parsed]" class="extmbr" name="org.http4s.parser.HttpHeaderParser.HeaderParser">HeaderParser</a>]</span>
       </span>
       
       <p class="shortcomment cmt">Add a parser to the global header parser registry
@@ -1108,9 +1108,9 @@
               
         </dd></dl></div>
     </li><li name="org.http4s.parser.HttpHeaderParser#dropParser" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="dropParser(key:org.http4s.util.CaseInsensitiveString):Option[org.http4s.parser.HttpHeaderParser.HeaderParser]"></a><a id="dropParser(CaseInsensitiveString):Option[HeaderParser]"></a>
+      <a id="dropParser(key:org.typelevel.ci.CIString):Option[org.http4s.parser.HttpHeaderParser.HeaderParser]"></a><a id="dropParser(CIString):Option[HeaderParser]"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/parser/HttpHeaderParser$.html#dropParser(key:org.http4s.util.CaseInsensitiveString):Option[org.http4s.parser.HttpHeaderParser.HeaderParser]" title="Permalink">
+      <a href="../../../org/http4s/parser/HttpHeaderParser$.html#dropParser(key:org.typelevel.ci.CIString):Option[org.http4s.parser.HttpHeaderParser.HeaderParser]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1119,7 +1119,7 @@
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">dropParser</span><span class="params">(<span name="key">key: <a href="../util/CaseInsensitiveString.html" class="extype" name="org.http4s.util.CaseInsensitiveString">CaseInsensitiveString</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="#HeaderParser=String=&gt;org.http4s.ParseResult[org.http4s.Header.Parsed]" class="extmbr" name="org.http4s.parser.HttpHeaderParser.HeaderParser">HeaderParser</a>]</span>
+        <span class="name">dropParser</span><span class="params">(<span name="key">key: <span class="extype" name="org.typelevel.ci.CIString">CIString</span></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="#HeaderParser=String=&gt;org.http4s.ParseResult[org.http4s.Header.Parsed]" class="extmbr" name="org.http4s.parser.HttpHeaderParser.HeaderParser">HeaderParser</a>]</span>
       </span>
       
       <p class="shortcomment cmt">Remove the parser for the specified header key
