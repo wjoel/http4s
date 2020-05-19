@@ -556,7 +556,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/4fd66228818d4e1737ac59ee7c90649bd24e63b9/core/src/main/scala/org/http4s/util/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/dac793f48ebab02d3ff1f3aa1f4b5ba9768a44ef/core/src/main/scala/org/http4s/util/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -771,22 +771,6 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </span>
       
       
-    </li><li name="org.http4s.util#hashLower" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="hashLower(s:String):Int"></a><a id="hashLower(String):Int"></a>
-      <span class="permalink">
-      <a href="../../../org/http4s/util/index.html#hashLower(s:String):Int" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">hashLower</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.11/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
-      </span>
-      
-      
     </li><li name="org.http4s.util.CaseInsensitiveString" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="CaseInsensitiveString"></a><a id="CaseInsensitiveString:CaseInsensitiveString"></a>
       <span class="permalink">
@@ -867,22 +851,6 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </span>
       
       
-    </li><li name="org.http4s.util.threads" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="threads"></a><a id="threads:threads"></a>
-      <span class="permalink">
-      <a href="../../../org/http4s/util/threads$.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="threads$.html"><span class="name">threads</span></a>
-      </span>
-      
-      
     </li>
               </ol>
             </div>
@@ -929,6 +897,25 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.20.22)</i> For internal use only. Will be removed from public API.</p></dd></dl></div>
+    </li><li name="org.http4s.util#hashLower" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashLower(s:String):Int"></a><a id="hashLower(String):Int"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/util/index.html#hashLower(s:String):Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 0.21.5) Not a good hash. Prefer org.typelevel.ci.CIString.">hashLower</span><span class="params">(<span name="s">s: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.11/scala/Int.html#scala.Int" class="extype" name="scala.Int">Int</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.21.5)</i> Not a good hash. Prefer org.typelevel.ci.CIString.</p></dd></dl></div>
     </li><li name="org.http4s.util.execution" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="execution"></a><a id="execution:execution"></a>
       <span class="permalink">
@@ -986,6 +973,25 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.16)</i> Moved to org.http4s.syntax.string</p></dd></dl></div>
+    </li><li name="org.http4s.util.threads" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="threads"></a><a id="threads:threads"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/util/threads$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="threads$.html"><span class="name deprecated" title="Deprecated: (Since version 0.21.5) Not related to HTTP. Will be removed from public API.">threads</span></a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.21.5)</i> Not related to HTTP. Will be removed from public API.</p></dd></dl></div>
     </li></ol>
             </div>
         </div>
