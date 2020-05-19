@@ -2711,7 +2711,7 @@ trip to and from a <code>String</code>.  <code>Uri.Scheme</code> and <code>Trans
 implementors, with more to follow.  Added an <code>HttpCodecLaws</code> to http4s-testing.</li>
 <li><code>Uri.Scheme</code> is now its own type instead of a type alias.</li>
 <li><code>TransferCoding</code> is no longer a case class. Its <code>coding</code> member is now a
-<code>String</code>, not a <code>CaseInsensitiveString</code>. Its companion is no longer a
+<code>String</code>, not a <code>CIString</code>. Its companion is no longer a
 <code>Registry</code>.</li>
 <li>Introduced <code>org.http4s.syntax.literals</code>, which contains a <code>StringContext</code> forAll
 safely constructing a <code>Uri.Scheme</code>.  More will follow.</li>
@@ -3170,7 +3170,7 @@ from a URL</li>
 <li>Overload <code>client.fetchAs</code> and <code>client.streaming</code> to accept a <code>Task[Request]</code></li>
 <li>Replace <code>Instant</code> with <code>HttpDate</code> to avoid silent truncation and constrain
 to dates that are legally renderable in HTTP.</li>
-<li>Fix bug in hash code of <code>CaseInsensitiveString</code></li>
+<li>Fix bug in hash code of <code>CIString</code></li>
 <li>Update <code>request.pathInfo</code> when changing <code>request.withUri</code>. To keep these
 values in sync, <code>request.copy</code> has been deprecated, but copy constructors
 based on <code>with</code> have been added.</li>
@@ -3187,7 +3187,7 @@ changing semantics.</li>
 backends</li>
 <li>Fix <code>Part.name</code> to return the name from the <code>Content-Disposition</code> header
 instead of the name <em>of</em> the <code>Content-Disposition</code> header. Accordingly, it is
-no longer a <code>CaseInsensitiveString</code></li>
+no longer a <code>CIString</code></li>
 <li><code>Request.toString</code> and <code>Response.toString</code> now redact sensitive headers. A
 method to redact arbitrary headers is added to <code>Headers</code>.</li>
 <li><code>Retry-After</code> is now modeled as a <code>Either[HttpDate, Long]</code> to reflect either
@@ -3411,7 +3411,7 @@ deprecated in favor of <code>service |+| anotherService</code>.</li>
 <li>Use <code>SSLContext.getDefault</code> by default in blaze-client.  Use
 <code>BlazeServerConfig.insecure</code> to ignore certificate validity.  But
 please don&rsquo;t.</li>
-<li>Move <code>CaseInsensitiveString</code> syntax to <code>org.http4s.syntax</code>.</li>
+<li>Move <code>CIString</code> syntax to <code>org.http4s.syntax</code>.</li>
 <li>Bundle an internal version of parboiled2.  This decouples core from
 shapeless, allowing applications to use their preferred version of
 shapeless.</li>
