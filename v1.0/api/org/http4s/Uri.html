@@ -849,13 +849,13 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Uri</span><span class="params">(<span name="scheme">scheme: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$$Scheme.html" class="extype" name="org.http4s.Uri.Scheme">Scheme</a>] = <span class="symbol">None</span></span>, <span name="authority">authority: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$$Authority.html" class="extype" name="org.http4s.Uri.Authority">Authority</a>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a> = <span class="symbol">&quot;&quot;</span></span>, <span name="query">query: <a href="Query.html" class="extype" name="org.http4s.Query">Query</a> = <span class="symbol"><span class="name"><a href="Query$.html">Query.empty</a></span></span></span>, <span name="fragment">fragment: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$.html#Fragment=String" class="extmbr" name="org.http4s.Uri.Fragment">Fragment</a>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a> with <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a> with <a href="https://www.scala-lang.org/api/2.12.11/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.11/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
+        <span class="name">Uri</span><span class="params">(<span name="scheme">scheme: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$$Scheme.html" class="extype" name="org.http4s.Uri.Scheme">Scheme</a>] = <span class="symbol">None</span></span>, <span name="authority">authority: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$$Authority.html" class="extype" name="org.http4s.Uri.Authority">Authority</a>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="Uri$$Path.html" class="extype" name="org.http4s.Uri.Path">Path</a> = <span class="symbol"><span class="name"><a href="Uri$.html">Uri.Path.empty</a></span></span></span>, <span name="query">query: <a href="Query.html" class="extype" name="org.http4s.Query">Query</a> = <span class="symbol"><span class="name"><a href="Query$.html">Query.empty</a></span></span></span>, <span name="fragment">fragment: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$.html#Fragment=String" class="extmbr" name="org.http4s.Uri.Fragment">Fragment</a>] = <span class="symbol">None</span></span>)</span><span class="result"> extends <a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a> with <a href="util/Renderable.html" class="extype" name="org.http4s.util.Renderable">Renderable</a> with <a href="https://www.scala-lang.org/api/2.12.11/scala/Product.html#scala.Product" class="extype" name="scala.Product">Product</a> with <a href="https://www.scala-lang.org/api/2.12.11/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
       </span>
       </h4>
 
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Representation of the <a href="Request.html" class="extype" name="org.http4s.Request">Request</a> URI
-</p></div><dl class="paramcmts block"><dt class="param">scheme</dt><dd class="cmt"><p>optional Uri Scheme. eg, http, https</p></dd><dt class="param">authority</dt><dd class="cmt"><p>optional Uri Authority. eg, localhost:8080, www.foo.bar</p></dd><dt class="param">path</dt><dd class="cmt"><p>url-encoded string representation of the path component of the Uri.</p></dd><dt class="param">query</dt><dd class="cmt"><p>optional Query. url-encoded.</p></dd><dt class="param">fragment</dt><dd class="cmt"><p>optional Uri Fragment. url-encoded.</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/0e3456e87cc03465f5aa4c65e1335341c6ba0bad/core/src/main/scala/org/http4s/Uri.scala" target="_blank">Uri.scala</a></dd></dl><div class="toggleContainer block">
+</p></div><dl class="paramcmts block"><dt class="param">scheme</dt><dd class="cmt"><p>optional Uri Scheme. eg, http, https</p></dd><dt class="param">authority</dt><dd class="cmt"><p>optional Uri Authority. eg, localhost:8080, www.foo.bar</p></dd><dt class="param">path</dt><dd class="cmt"><p>url-encoded string representation of the path component of the Uri.</p></dd><dt class="param">query</dt><dd class="cmt"><p>optional Query. url-encoded.</p></dd><dt class="param">fragment</dt><dd class="cmt"><p>optional Uri Fragment. url-encoded.</p></dd></dl><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/52c07bbf1ad918e231f788eeae80325da1407e06/core/src/main/scala/org/http4s/Uri.scala" target="_blank">Uri.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -917,7 +917,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Uri</span><span class="params">(<span name="scheme">scheme: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$$Scheme.html" class="extype" name="org.http4s.Uri.Scheme">Scheme</a>] = <span class="symbol">None</span></span>, <span name="authority">authority: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$$Authority.html" class="extype" name="org.http4s.Uri.Authority">Authority</a>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a> = <span class="symbol">&quot;&quot;</span></span>, <span name="query">query: <a href="Query.html" class="extype" name="org.http4s.Query">Query</a> = <span class="symbol"><span class="name"><a href="Query$.html">Query.empty</a></span></span></span>, <span name="fragment">fragment: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$.html#Fragment=String" class="extmbr" name="org.http4s.Uri.Fragment">Fragment</a>] = <span class="symbol">None</span></span>)</span>
+        <span class="name">Uri</span><span class="params">(<span name="scheme">scheme: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$$Scheme.html" class="extype" name="org.http4s.Uri.Scheme">Scheme</a>] = <span class="symbol">None</span></span>, <span name="authority">authority: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$$Authority.html" class="extype" name="org.http4s.Uri.Authority">Authority</a>] = <span class="symbol">None</span></span>, <span name="path">path: <a href="Uri$$Path.html" class="extype" name="org.http4s.Uri.Path">Path</a> = <span class="symbol"><span class="name"><a href="Uri$.html">Uri.Path.empty</a></span></span></span>, <span name="query">query: <a href="Query.html" class="extype" name="org.http4s.Query">Query</a> = <span class="symbol"><span class="name"><a href="Query$.html">Query.empty</a></span></span></span>, <span name="fragment">fragment: <a href="https://www.scala-lang.org/api/2.12.11/scala/Option.html#scala.Option" class="extype" name="scala.Option">Option</a>[<a href="Uri$.html#Fragment=String" class="extmbr" name="org.http4s.Uri.Fragment">Fragment</a>] = <span class="symbol">None</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">scheme</dt><dd class="cmt"><p>optional Uri Scheme. eg, http, https</p></dd><dt class="param">authority</dt><dd class="cmt"><p>optional Uri Authority. eg, localhost:8080, www.foo.bar</p></dd><dt class="param">path</dt><dd class="cmt"><p>url-encoded string representation of the path component of the Uri.</p></dd><dt class="param">query</dt><dd class="cmt"><p>optional Query. url-encoded.</p></dd><dt class="param">fragment</dt><dd class="cmt"><p>optional Uri Fragment. url-encoded.</p></dd></dl></div>
@@ -1143,9 +1143,9 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       
       <p class="shortcomment cmt">alias for removeQueryParam</p><div class="fullcomment"><div class="comment cmt"><p>alias for removeQueryParam</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
     </li><li name="org.http4s.Uri#/" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="/(newSegment:org.http4s.Uri.Path):org.http4s.Uri"></a><a id="/(Path):Uri"></a>
+      <a id="/(newSegment:String):org.http4s.Uri"></a><a id="/(String):Uri"></a>
       <span class="permalink">
-      <a href="../../org/http4s/Uri.html#/(newSegment:org.http4s.Uri.Path):org.http4s.Uri" title="Permalink">
+      <a href="../../org/http4s/Uri.html#/(newSegment:String):org.http4s.Uri" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1154,7 +1154,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span title="gt4s: $div" class="name">/</span><span class="params">(<span name="newSegment">newSegment: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
+        <span title="gt4s: $div" class="name">/</span><span class="params">(<span name="newSegment">newSegment: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
       </span>
       
       <p class="shortcomment cmt">This is an alias to <span class="extype" name="addSegment(Path)">addSegment(Path)</span>
@@ -1208,9 +1208,9 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       
       <p class="shortcomment cmt">alias for containsQueryParam</p><div class="fullcomment"><div class="comment cmt"><p>alias for containsQueryParam</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
     </li><li name="org.http4s.Uri#addPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="addPath(morePath:org.http4s.Uri.Path):org.http4s.Uri"></a><a id="addPath(Path):Uri"></a>
+      <a id="addPath(morePath:String):org.http4s.Uri"></a><a id="addPath(String):Uri"></a>
       <span class="permalink">
-      <a href="../../org/http4s/Uri.html#addPath(morePath:org.http4s.Uri.Path):org.http4s.Uri" title="Permalink">
+      <a href="../../org/http4s/Uri.html#addPath(morePath:String):org.http4s.Uri" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1219,15 +1219,15 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">addPath</span><span class="params">(<span name="morePath">morePath: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
+        <span class="name">addPath</span><span class="params">(<span name="morePath">morePath: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
       </span>
       
       <p class="shortcomment cmt">Splits the path segments and adds each of them to the path url-encoded.</p><div class="fullcomment"><div class="comment cmt"><p>Splits the path segments and adds each of them to the path url-encoded.
 A segment is delimited by /</p></div><dl class="paramcmts block"><dt class="param">morePath</dt><dd class="cmt"><p>the path to add</p></dd><dt>returns</dt><dd class="cmt"><p>a new uri with the segments added to the path</p></dd></dl></div>
     </li><li name="org.http4s.Uri#addSegment" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="addSegment(newSegment:org.http4s.Uri.Path):org.http4s.Uri"></a><a id="addSegment(Path):Uri"></a>
+      <a id="addSegment(newSegment:String):org.http4s.Uri"></a><a id="addSegment(String):Uri"></a>
       <span class="permalink">
-      <a href="../../org/http4s/Uri.html#addSegment(newSegment:org.http4s.Uri.Path):org.http4s.Uri" title="Permalink">
+      <a href="../../org/http4s/Uri.html#addSegment(newSegment:String):org.http4s.Uri" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1236,7 +1236,7 @@ A segment is delimited by /</p></div><dl class="paramcmts block"><dt class="para
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">addSegment</span><span class="params">(<span name="newSegment">newSegment: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
+        <span class="name">addSegment</span><span class="params">(<span name="newSegment">newSegment: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
       </span>
       
       <p class="shortcomment cmt">Urlencodes and adds a path segment to the Uri
@@ -1547,7 +1547,7 @@ an empty <code>Map</code> is returned.
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">path</span><span class="result">: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>
+        <span class="name">path</span><span class="result">: <a href="Uri$$Path.html" class="extype" name="org.http4s.Uri.Path">Path</a></span>
       </span>
       
       
@@ -1912,7 +1912,7 @@ entry the same instance of <code>Self</code> will be returned.
 If a parameter with the given <code>key</code> already exists the values will be
 replaced.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="QueryOps.html" class="extype" name="org.http4s.QueryOps">QueryOps</a></dd></dl></div>
-    </li><li name="org.http4s.Uri#withPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.http4s.Uri#withPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="withPath(path:org.http4s.Uri.Path):org.http4s.Uri"></a><a id="withPath(Path):Uri"></a>
       <span class="permalink">
       <a href="../../org/http4s/Uri.html#withPath(path:org.http4s.Uri.Path):org.http4s.Uri" title="Permalink">
@@ -1924,10 +1924,10 @@ replaced.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">withPath</span><span class="params">(<span name="path">path: <a href="Uri$.html#Path=String" class="extmbr" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
+        <span class="name">withPath</span><span class="params">(<span name="path">path: <a href="Uri$$Path.html" class="extype" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
       </span>
       
-      <p class="shortcomment cmt">Adds the path exactly as described.</p><div class="fullcomment"><div class="comment cmt"><p>Adds the path exactly as described. Any path element must be urlencoded ahead of time.</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>the path string to replace</p></dd></dl></div>
+      
     </li><li name="org.http4s.QueryOps#withQueryParam" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="withQueryParam[T,K](key:K,values:Seq[T])(implicitevidence$26:org.http4s.QueryParamEncoder[T],implicitevidence$27:org.http4s.QueryParamKeyLike[K]):QueryOps.this.Self"></a><a id="withQueryParam[T,K](K,Seq[T])(QueryParamEncoder[T],QueryParamKeyLike[K]):Self"></a>
       <span class="permalink">
@@ -2049,7 +2049,29 @@ once, it will be self-overwriting.
 
         
 
-        
+        <div class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="org.http4s.Uri#withPath" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withPath(path:String):org.http4s.Uri"></a><a id="withPath(String):Uri"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Uri.html#withPath(path:String):org.http4s.Uri" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 1.0.0-M1) Use {withPath(Uri.Path)} instead">withPath</span><span class="params">(<span name="path">path: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.http4s.Uri">Uri</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Adds the path exactly as described.</p><div class="fullcomment"><div class="comment cmt"><p>Adds the path exactly as described. Any path element must be urlencoded ahead of time.</p></div><dl class="paramcmts block"><dt class="param">path</dt><dd class="cmt"><p>the path string to replace</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 1.0.0-M1)</i> Use {withPath(Uri.Path)} instead</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">

@@ -856,7 +856,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Representation of an incoming HTTP message</p><p>A Request encapsulates the entirety of the incoming HTTP request including the
 status line, headers, and a possible request body.
-</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/0e3456e87cc03465f5aa4c65e1335341c6ba0bad/core/src/main/scala/org/http4s/Message.scala" target="_blank">Message.scala</a></dd></dl><div class="toggleContainer block">
+</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/52c07bbf1ad918e231f788eeae80325da1407e06/core/src/main/scala/org/http4s/Message.scala" target="_blank">Message.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -918,7 +918,7 @@ status line, headers, and a possible request body.
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">Request</span><span class="params">(<span name="method">method: <a href="Method.html" class="extype" name="org.http4s.Method">Method</a> = <span class="symbol"><span class="name"><a href="Method$.html">Method.GET</a></span></span></span>, <span name="uri">uri: <a href="Uri.html" class="extype" name="org.http4s.Uri">Uri</a> = <span class="symbol"><span class="name"><a href="Uri$.html">Uri(path = &quot;/&quot;)</a></span></span></span>, <span name="httpVersion">httpVersion: <a href="HttpVersion.html" class="extype" name="org.http4s.HttpVersion">HttpVersion</a> = <span class="symbol"><span class="name"><a href="HttpVersion$.html">HttpVersion.`HTTP/1.1`</a></span></span></span>, <span name="headers">headers: <a href="Headers.html" class="extype" name="org.http4s.Headers">Headers</a> = <span class="symbol"><span class="name"><a href="Headers$.html">Headers.empty</a></span></span></span>, <span name="body">body: <a href="index.html#EntityBody[+F[_]]=fs2.Stream[F,Byte]" class="extmbr" name="org.http4s.EntityBody">EntityBody</a>[<span class="extype" name="org.http4s.Request.F">F</span>] = <span class="symbol"><span class="name"><a href="index.html#EmptyBody:org.http4s.package.EntityBody[Nothing]">EmptyBody</a></span></span></span>, <span name="attributes">attributes: <span class="extype" name="io.chrisdavenport.vault.Vault">Vault</span> = <span class="symbol">Vault.empty</span></span>)</span>
+        <span class="name">Request</span><span class="params">(<span name="method">method: <a href="Method.html" class="extype" name="org.http4s.Method">Method</a> = <span class="symbol"><span class="name"><a href="Method$.html">Method.GET</a></span></span></span>, <span name="uri">uri: <a href="Uri.html" class="extype" name="org.http4s.Uri">Uri</a> = <span class="symbol"><span class="name"><a href="Uri$.html">Uri(path = Uri.Path.Root)</a></span></span></span>, <span name="httpVersion">httpVersion: <a href="HttpVersion.html" class="extype" name="org.http4s.HttpVersion">HttpVersion</a> = <span class="symbol"><span class="name"><a href="HttpVersion$.html">HttpVersion.`HTTP/1.1`</a></span></span></span>, <span name="headers">headers: <a href="Headers.html" class="extype" name="org.http4s.Headers">Headers</a> = <span class="symbol"><span class="name"><a href="Headers$.html">Headers.empty</a></span></span></span>, <span name="body">body: <a href="index.html#EntityBody[+F[_]]=fs2.Stream[F,Byte]" class="extmbr" name="org.http4s.EntityBody">EntityBody</a>[<span class="extype" name="org.http4s.Request.F">F</span>] = <span class="symbol"><span class="name"><a href="index.html#EmptyBody:org.http4s.package.EntityBody[Nothing]">EmptyBody</a></span></span></span>, <span name="attributes">attributes: <span class="extype" name="io.chrisdavenport.vault.Vault">Vault</span> = <span class="symbol">Vault.empty</span></span>)</span>
       </span>
       
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">method</dt><dd class="cmt"><p><a href="Method$.html#GET:org.http4s.Method.SafeMethodWithBody" class="extmbr" name="org.http4s.Method#GET">Method.GET</a>, <a href="Method$.html#POST:org.http4s.Method.DefaultMethodWithBody" class="extmbr" name="org.http4s.Method#POST">Method.POST</a>, etc.</p></dd><dt class="param">uri</dt><dd class="cmt"><p>representation of the request URI</p></dd><dt class="param">httpVersion</dt><dd class="cmt"><p>the HTTP version</p></dd><dt class="param">headers</dt><dd class="cmt"><p>collection of <a href="Header.html" class="extype" name="org.http4s.Header">Header</a>s</p></dd><dt class="param">body</dt><dd class="cmt"><p>fs2.Stream[F, Byte] defining the body of the request</p></dd><dt class="param">attributes</dt><dd class="cmt"><p>Immutable Map used for carrying additional information in a type safe fashion</p></dd></dl></div>
@@ -1705,9 +1705,9 @@ an empty <code>Map</code> is returned.
       <p class="shortcomment cmt">View of the head elements of the URI parameters in query string.</p><div class="fullcomment"><div class="comment cmt"><p>View of the head elements of the URI parameters in query string.</p><p>In case a parameter has no value the map returns an empty string.
 </p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p>multiParams</p></span></dd></dl></div>
     </li><li name="org.http4s.Request#pathInfo" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="pathInfo:String"></a>
+      <a id="pathInfo:org.http4s.Uri.Path"></a><a id="pathInfo:Path"></a>
       <span class="permalink">
-      <a href="../../org/http4s/Request.html#pathInfo:String" title="Permalink">
+      <a href="../../org/http4s/Request.html#pathInfo:org.http4s.Uri.Path" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1716,7 +1716,7 @@ an empty <code>Map</code> is returned.
         <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
-        <span class="name">pathInfo</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">pathInfo</span><span class="result">: <a href="Uri$$Path.html" class="extype" name="org.http4s.Uri.Path">Path</a></span>
       </span>
       
       
@@ -1932,9 +1932,9 @@ The passed headers are assumed to contain no duplicate Singleton headers.
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Message.html" class="extype" name="org.http4s.Message">Message</a></dd></dl></div>
     </li><li name="org.http4s.Request#scriptName" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="scriptName:String"></a>
+      <a id="scriptName:org.http4s.Uri.Path"></a><a id="scriptName:Path"></a>
       <span class="permalink">
-      <a href="../../org/http4s/Request.html#scriptName:String" title="Permalink">
+      <a href="../../org/http4s/Request.html#scriptName:org.http4s.Uri.Path" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -1943,7 +1943,7 @@ The passed headers are assumed to contain no duplicate Singleton headers.
         <span class="kind">lazy val</span>
       </span>
       <span class="symbol">
-        <span class="name">scriptName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+        <span class="name">scriptName</span><span class="result">: <a href="Uri$$Path.html" class="extype" name="org.http4s.Uri.Path">Path</a></span>
       </span>
       
       
@@ -2349,9 +2349,9 @@ that make no sense with an empty body.
       
       
     </li><li name="org.http4s.Request#withPathInfo" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="withPathInfo(pi:String):Request.this.Self"></a><a id="withPathInfo(String):Self"></a>
+      <a id="withPathInfo(pi:org.http4s.Uri.Path):Request.this.Self"></a><a id="withPathInfo(Path):Self"></a>
       <span class="permalink">
-      <a href="../../org/http4s/Request.html#withPathInfo(pi:String):Request.this.Self" title="Permalink">
+      <a href="../../org/http4s/Request.html#withPathInfo(pi:org.http4s.Uri.Path):Request.this.Self" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -2360,7 +2360,7 @@ that make no sense with an empty body.
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">withPathInfo</span><span class="params">(<span name="pi">pi: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#Self=Message.this.SelfF[F]" class="extmbr" name="org.http4s.Request.Self">Self</a></span>
+        <span class="name">withPathInfo</span><span class="params">(<span name="pi">pi: <a href="Uri$$Path.html" class="extype" name="org.http4s.Uri.Path">Path</a></span>)</span><span class="result">: <a href="#Self=Message.this.SelfF[F]" class="extmbr" name="org.http4s.Request.Self">Self</a></span>
       </span>
       
       
@@ -2511,6 +2511,25 @@ that make no sense with an empty body.
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.19)</i> Use withEntity</p></dd></dl></div>
+    </li><li name="org.http4s.Request#withPathInfo" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="withPathInfo(pi:String):Request.this.Self"></a><a id="withPathInfo(String):Self"></a>
+      <span class="permalink">
+      <a href="../../org/http4s/Request.html#withPathInfo(pi:String):Request.this.Self" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 1.0.0-M1) Use {withPathInfo(Uri.Path)} instead">withPathInfo</span><span class="params">(<span name="pi">pi: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="#Self=Message.this.SelfF[F]" class="extmbr" name="org.http4s.Request.Self">Self</a></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 1.0.0-M1)</i> Use {withPathInfo(Uri.Path)} instead</p></dd></dl></div>
     </li><li name="org.http4s.Message#withType" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="withType(t:org.http4s.MediaType)(implicitF:cats.Functor[F]):Message.this.Self"></a><a id="withType(MediaType)(Functor[F]):Self"></a>
       <span class="permalink">
