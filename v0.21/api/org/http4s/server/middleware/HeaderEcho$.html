@@ -301,7 +301,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/959a32771fe2208cfda3d4d0f85e62e2132072a7/server/src/main/scala/org/http4s/server/middleware/HeaderEcho.scala" target="_blank">HeaderEcho.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/d97768a84f895e75398cd0318bd276e64249e862/server/src/main/scala/org/http4s/server/middleware/HeaderEcho.scala" target="_blank">HeaderEcho.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -555,6 +555,38 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.http4s.server.middleware.HeaderEcho#httpApp" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="httpApp[F[_]](echoHeadersWhen:org.http4s.util.CaseInsensitiveString=&gt;Boolean)(httpApp:org.http4s.HttpApp[F])(implicitevidence$3:cats.Functor[F]):org.http4s.HttpApp[F]"></a><a id="httpApp[F[_]]((CaseInsensitiveString)⇒Boolean)(HttpApp[F])(Functor[F]):HttpApp[F]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/HeaderEcho$.html#httpApp[F[_]](echoHeadersWhen:org.http4s.util.CaseInsensitiveString=&gt;Boolean)(httpApp:org.http4s.HttpApp[F])(implicitevidence$3:cats.Functor[F]):org.http4s.HttpApp[F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">httpApp</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="echoHeadersWhen">echoHeadersWhen: (<a href="../../util/CaseInsensitiveString.html" class="extype" name="org.http4s.util.CaseInsensitiveString">CaseInsensitiveString</a>) ⇒ <a href="https://www.scala-lang.org/api/2.12.11/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="params">(<span name="httpApp">httpApp: <a href="../../index.html#HttpApp[F[_]]=org.http4s.package.Http[F,F]" class="extmbr" name="org.http4s.HttpApp">HttpApp</a>[<span class="extype" name="org.http4s.server.middleware.HeaderEcho.httpApp.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.Functor">Functor</span>[<span class="extype" name="org.http4s.server.middleware.HeaderEcho.httpApp.F">F</span>]</span>)</span><span class="result">: <a href="../../index.html#HttpApp[F[_]]=org.http4s.package.Http[F,F]" class="extmbr" name="org.http4s.HttpApp">HttpApp</a>[<span class="extype" name="org.http4s.server.middleware.HeaderEcho.httpApp.F">F</span>]</span>
+      </span>
+      
+      
+    </li><li name="org.http4s.server.middleware.HeaderEcho#httpRoutes" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="httpRoutes[F[_]](echoHeadersWhen:org.http4s.util.CaseInsensitiveString=&gt;Boolean)(httpRoutes:org.http4s.HttpRoutes[F])(implicitevidence$2:cats.Functor[F]):org.http4s.HttpRoutes[F]"></a><a id="httpRoutes[F[_]]((CaseInsensitiveString)⇒Boolean)(HttpRoutes[F])(Functor[F]):HttpRoutes[F]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/HeaderEcho$.html#httpRoutes[F[_]](echoHeadersWhen:org.http4s.util.CaseInsensitiveString=&gt;Boolean)(httpRoutes:org.http4s.HttpRoutes[F])(implicitevidence$2:cats.Functor[F]):org.http4s.HttpRoutes[F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">httpRoutes</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="echoHeadersWhen">echoHeadersWhen: (<a href="../../util/CaseInsensitiveString.html" class="extype" name="org.http4s.util.CaseInsensitiveString">CaseInsensitiveString</a>) ⇒ <a href="https://www.scala-lang.org/api/2.12.11/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>)</span><span class="params">(<span name="httpRoutes">httpRoutes: <a href="../../index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>[<span class="extype" name="org.http4s.server.middleware.HeaderEcho.httpRoutes.F">F</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.Functor">Functor</span>[<span class="extype" name="org.http4s.server.middleware.HeaderEcho.httpRoutes.F">F</span>]</span>)</span><span class="result">: <a href="../../index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>[<span class="extype" name="org.http4s.server.middleware.HeaderEcho.httpRoutes.F">F</span>]</span>
+      </span>
+      
+      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
