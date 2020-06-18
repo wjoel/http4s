@@ -235,6 +235,10 @@
                         <a href="PushSupport$.html" title="">PushSupport</a>
                       </li><li class="current-entities indented4">
                         <span class="separator"></span>
+                        <a class="object" href="RequestId$.html" title="Propagate a X-Request-Id header to the response, generate a UUID when the X-Request-Id header is unset."></a>
+                        <a href="RequestId$.html" title="Propagate a X-Request-Id header to the response, generate a UUID when the X-Request-Id header is unset.">RequestId</a>
+                      </li><li class="current-entities indented4">
+                        <span class="separator"></span>
                         <a class="object" href="RequestLogger$.html" title="Simple Middleware for Logging Requests As They Are Processed"></a>
                         <a href="RequestLogger$.html" title="Simple Middleware for Logging Requests As They Are Processed">RequestLogger</a>
                       </li><li class="current-entities indented4">
@@ -301,7 +305,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/919b72e1c0be9beaebcab8cca96121a44b664f9c/server/src/main/scala/org/http4s/server/middleware/EntityLimiter.scala" target="_blank">EntityLimiter.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/2ea36fd52dd116cef06b76a9f7b04bc32b4ca9d0/server/src/main/scala/org/http4s/server/middleware/EntityLimiter.scala" target="_blank">EntityLimiter.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -589,6 +593,38 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.http4s.server.middleware.EntityLimiter#httpApp" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="httpApp[F[_]](httpApp:org.http4s.HttpApp[F],limit:Long)(implicitevidence$2:cats.ApplicativeError[F,Throwable]):org.http4s.HttpApp[F]"></a><a id="httpApp[F[_]](HttpApp[F],Long)(ApplicativeError[F,Throwable]):HttpApp[F]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/EntityLimiter$.html#httpApp[F[_]](httpApp:org.http4s.HttpApp[F],limit:Long)(implicitevidence$2:cats.ApplicativeError[F,Throwable]):org.http4s.HttpApp[F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">httpApp</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="httpApp">httpApp: <a href="../../index.html#HttpApp[F[_]]=org.http4s.package.Http[F,F]" class="extmbr" name="org.http4s.HttpApp">HttpApp</a>[<span class="extype" name="org.http4s.server.middleware.EntityLimiter.httpApp.F">F</span>]</span>, <span name="limit">limit: <a href="https://www.scala-lang.org/api/2.12.11/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a> = <span class="symbol"><span class="name"><a href="#DefaultMaxEntitySize:Long">DefaultMaxEntitySize</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/ApplicativeError.html#cats.ApplicativeError" class="extype" name="cats.ApplicativeError">ApplicativeError</a>[<span class="extype" name="org.http4s.server.middleware.EntityLimiter.httpApp.F">F</span>, <span class="extype" name="java.lang.Throwable">Throwable</span>]</span>)</span><span class="result">: <a href="../../index.html#HttpApp[F[_]]=org.http4s.package.Http[F,F]" class="extmbr" name="org.http4s.HttpApp">HttpApp</a>[<span class="extype" name="org.http4s.server.middleware.EntityLimiter.httpApp.F">F</span>]</span>
+      </span>
+      
+      
+    </li><li name="org.http4s.server.middleware.EntityLimiter#httpRoutes" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="httpRoutes[F[_]](httpRoutes:org.http4s.HttpRoutes[F],limit:Long)(implicitevidence$1:cats.ApplicativeError[F,Throwable]):org.http4s.HttpRoutes[F]"></a><a id="httpRoutes[F[_]](HttpRoutes[F],Long)(ApplicativeError[F,Throwable]):HttpRoutes[F]"></a>
+      <span class="permalink">
+      <a href="../../../../org/http4s/server/middleware/EntityLimiter$.html#httpRoutes[F[_]](httpRoutes:org.http4s.HttpRoutes[F],limit:Long)(implicitevidence$1:cats.ApplicativeError[F,Throwable]):org.http4s.HttpRoutes[F]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">httpRoutes</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="httpRoutes">httpRoutes: <a href="../../index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>[<span class="extype" name="org.http4s.server.middleware.EntityLimiter.httpRoutes.F">F</span>]</span>, <span name="limit">limit: <a href="https://www.scala-lang.org/api/2.12.11/scala/Long.html#scala.Long" class="extype" name="scala.Long">Long</a> = <span class="symbol"><span class="name"><a href="#DefaultMaxEntitySize:Long">DefaultMaxEntitySize</a></span></span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <a href="http://typelevel.org/cats/api/cats/ApplicativeError.html#cats.ApplicativeError" class="extype" name="cats.ApplicativeError">ApplicativeError</a>[<span class="extype" name="org.http4s.server.middleware.EntityLimiter.httpRoutes.F">F</span>, <span class="extype" name="java.lang.Throwable">Throwable</span>]</span>)</span><span class="result">: <a href="../../index.html#HttpRoutes[F[_]]=org.http4s.package.Http[[β$0$]cats.data.OptionT[F,β$0$],F]" class="extmbr" name="org.http4s.HttpRoutes">HttpRoutes</a>[<span class="extype" name="org.http4s.server.middleware.EntityLimiter.httpRoutes.F">F</span>]</span>
+      </span>
+      
+      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
