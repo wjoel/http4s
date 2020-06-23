@@ -154,7 +154,7 @@ greet.</p>
     Ok(s&quot;Hello, $name.&quot;)
 }
 // helloWorldService: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12453/955199152@479aa03
+//   org.http4s.HttpRoutes$$$Lambda$12457/1404410690@45d8c843
 // )
 </code></pre>
 
@@ -187,7 +187,7 @@ val tweetService = HttpRoutes.of[IO] {
     getTweet(tweetId).flatMap(Ok(_))
 }
 // tweetService: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12453/955199152@741f7951
+//   org.http4s.HttpRoutes$$$Lambda$12457/1404410690@21459e7b
 // )
 </code></pre>
 
@@ -215,14 +215,14 @@ import org.http4s.server.Router
 
 <pre><code class="language-scala">val services = tweetService &lt;+&gt; helloWorldService
 // services: cats.data.Kleisli[cats.data.OptionT[IO, β$0$], Request[IO], Response[IO]] = Kleisli(
-//   cats.data.KleisliSemigroupK$$Lambda$12454/1762239557@7492a0c8
+//   cats.data.KleisliSemigroupK$$Lambda$12458/1884601440@535e503f
 // )
 val httpApp = Router(&quot;/&quot; -&gt; helloWorldService, &quot;/api&quot; -&gt; services).orNotFound
 // httpApp: cats.data.Kleisli[IO, Request[IO], Response[IO]] = Kleisli(
-//   org.http4s.syntax.KleisliResponseOps$$Lambda$12556/2096497697@6408da50
+//   org.http4s.syntax.KleisliResponseOps$$Lambda$12560/2088832423@1a861f93
 // )
 val serverBuilder = BlazeServerBuilder[IO](global).bindHttp(8080, &quot;localhost&quot;).withHttpApp(httpApp)
-// serverBuilder: BlazeServerBuilder[IO] = org.http4s.server.blaze.BlazeServerBuilder@2de85d60
+// serverBuilder: BlazeServerBuilder[IO] = org.http4s.server.blaze.BlazeServerBuilder@199f4650
 </code></pre>
 
 <p>The <code>bindHttp</code> call isn&rsquo;t strictly necessary as the server will be set to run
@@ -234,11 +234,11 @@ associates the specified routes with this http server instance.</p>
 <pre><code class="language-scala">val fiber = serverBuilder.resource.use(_ =&gt; IO.never).start.unsafeRunSync()
 // fiber: Fiber[IO, Nothing] = Tuple(
 //   Bind(
-//     Async(cats.effect.IO$$$Lambda$12447/1665343706@22327c7d, false),
-//     cats.syntax.MonadErrorRethrowOps$$$Lambda$12580/538475673@43470c13
+//     Async(cats.effect.IO$$$Lambda$12451/237484653@1424b55e, false),
+//     cats.syntax.MonadErrorRethrowOps$$$Lambda$12584/285738578@35dac04d
 //   ),
 //   Suspend(
-//     cats.effect.internals.IOConnection$Impl$$Lambda$12576/604465734@613f9471
+//     cats.effect.internals.IOConnection$Impl$$Lambda$12580/281890929@1f0a3be2
 //   )
 // )
 </code></pre>
