@@ -93,7 +93,7 @@ and calling it with http4s&rsquo; client.</p>
 
 <pre><code class="language-scala">scalaVersion := &quot;2.13.2&quot; // Also supports 2.12.x
 
-val http4sVersion = &quot;1.0.0-M0&#43;479-d89f84c1-SNAPSHOT&quot;
+val http4sVersion = &quot;1.0.0-M0&#43;485-250e9063-SNAPSHOT&quot;
 
 // Only necessary for SNAPSHOT releases
 resolvers += Resolver.sonatypeRepo(&quot;snapshots&quot;)
@@ -154,7 +154,7 @@ greet.</p>
     Ok(s&quot;Hello, $name.&quot;)
 }
 // helloWorldService: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$11457/2095952332@5943e5bf
+//   org.http4s.HttpRoutes$$$Lambda$11481/2054495085@4945de29
 // )
 </code></pre>
 
@@ -187,7 +187,7 @@ val tweetService = HttpRoutes.of[IO] {
     getTweet(tweetId).flatMap(Ok(_))
 }
 // tweetService: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$11457/2095952332@7e02862
+//   org.http4s.HttpRoutes$$$Lambda$11481/2054495085@55d0623c
 // )
 </code></pre>
 
@@ -215,14 +215,14 @@ import org.http4s.server.Router
 
 <pre><code class="language-scala">val services = tweetService &lt;+&gt; helloWorldService
 // services: cats.data.Kleisli[cats.data.OptionT[IO, β$0$], Request[IO], Response[IO]] = Kleisli(
-//   cats.data.KleisliSemigroupK$$Lambda$11458/1120637650@3449e1
+//   cats.data.KleisliSemigroupK$$Lambda$11482/1813829626@5211f9cd
 // )
 val httpApp = Router(&quot;/&quot; -&gt; helloWorldService, &quot;/api&quot; -&gt; services).orNotFound
 // httpApp: cats.data.Kleisli[IO, Request[IO], Response[IO]] = Kleisli(
-//   org.http4s.syntax.KleisliResponseOps$$Lambda$11566/1745349845@3c94343c
+//   org.http4s.syntax.KleisliResponseOps$$Lambda$11590/1133624559@1d11dcf4
 // )
 val serverBuilder = BlazeServerBuilder[IO](global).bindHttp(8080, &quot;localhost&quot;).withHttpApp(httpApp)
-// serverBuilder: BlazeServerBuilder[IO] = org.http4s.server.blaze.BlazeServerBuilder@7a3c400c
+// serverBuilder: BlazeServerBuilder[IO] = org.http4s.server.blaze.BlazeServerBuilder@7ac2ede9
 </code></pre>
 
 <p>The <code>bindHttp</code> call isn&rsquo;t strictly necessary as the server will be set to run
@@ -234,11 +234,11 @@ associates the specified routes with this http server instance.</p>
 <pre><code class="language-scala">val fiber = serverBuilder.resource.use(_ =&gt; IO.never).start.unsafeRunSync()
 // fiber: Fiber[IO, Nothing] = Tuple(
 //   Bind(
-//     Async(cats.effect.IO$$$Lambda$11451/654347206@7c19c411, false),
-//     cats.syntax.MonadErrorRethrowOps$$$Lambda$11590/292528147@5e40f132
+//     Async(cats.effect.IO$$$Lambda$11475/1288917575@2c55b10f, false),
+//     cats.syntax.MonadErrorRethrowOps$$$Lambda$11614/2014769293@71d7ead9
 //   ),
 //   Suspend(
-//     cats.effect.internals.IOConnection$Impl$$Lambda$11586/574179695@43e81b12
+//     cats.effect.internals.IOConnection$Impl$$Lambda$11610/1451345839@62327e6b
 //   )
 // )
 </code></pre>
