@@ -521,10 +521,6 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <a class="object" href="AuthedRoutes$.html" title=""></a>
                         <a href="AuthedRoutes$.html" title="">AuthedRoutes</a>
                       </li><li class="current-entities indented2">
-                        <span class="separator"></span>
-                        <a class="object" href="AuthedService$.html" title=""></a>
-                        <a href="AuthedService$.html" title="">AuthedService</a>
-                      </li><li class="current-entities indented2">
                         <a class="object" href="BasicCredentials$.html" title=""></a>
                         <a class="class" href="BasicCredentials.html" title=""></a>
                         <a href="BasicCredentials.html" title="">BasicCredentials</a>
@@ -640,10 +636,6 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <span class="separator"></span>
                         <a class="object" href="HttpRoutes$.html" title="Functions for creating HttpRoutes kleislis."></a>
                         <a href="HttpRoutes$.html" title="Functions for creating HttpRoutes kleislis.">HttpRoutes</a>
-                      </li><li class="current-entities indented2">
-                        <span class="separator"></span>
-                        <a class="object" href="HttpService$.html" title=""></a>
-                        <a href="HttpService$.html" title="">HttpService</a>
                       </li><li class="current-entities indented2">
                         <a class="object" href="HttpVersion$.html" title=""></a>
                         <a class="class" href="HttpVersion.html" title="An HTTP version, as seen on the start line of an HTTP request or response."></a>
@@ -806,10 +798,6 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
                         <a href="ServerSoftware.html" title="">ServerSoftware</a>
                       </li><li class="current-entities indented2">
                         <span class="separator"></span>
-                        <a class="object" href="Service$.html" title=""></a>
-                        <a href="Service$.html" title="">Service</a>
-                      </li><li class="current-entities indented2">
-                        <span class="separator"></span>
                         <a class="object" href="StaticFile$.html" title=""></a>
                         <a href="StaticFile$.html" title="">StaticFile</a>
                       </li><li class="current-entities indented2">
@@ -884,7 +872,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/250e9063dba717572cfa236ae6537beb84549927/core/src/main/scala/org/http4s/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/63184fc36e6bc66897082c274d00b9a635c5cdd9/core/src/main/scala/org/http4s/package.scala" target="_blank">package.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -2223,25 +2211,6 @@ Level 3 features are limited to:</p><ul><li>Path segments, slash-prefixed</li><l
       </span>
       
       
-    </li><li name="org.http4s.AuthedService" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="AuthedService[T,F[_]]=org.http4s.package.AuthedRoutes[T,F]"></a><a id="AuthedService[T,F[_]]:AuthedService[T,F]"></a>
-      <span class="permalink">
-      <a href="../../org/http4s/index.html#AuthedService[T,F[_]]=org.http4s.package.AuthedRoutes[T,F]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">type</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 0.20.1) Deprecated in favor of AuthedRoutes">AuthedService</span><span class="tparams">[<span name="T">T</span>, <span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result alias"> = <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[[β$1$]<a href="http://typelevel.org/cats/api/cats/data/OptionT.html#cats.data.OptionT" class="extype" name="cats.data.OptionT">OptionT</a>[<span class="extype" name="org.http4s.AuthedService.F">F</span>, <span class="extype" name="org.http4s.&lt;refinement&gt;.Λ$.β$1$">β$1$</span>], <a href="#AuthedRequest[F[_],T]=org.http4s.ContextRequest[F,T]" class="extmbr" name="org.http4s.AuthedRequest">AuthedRequest</a>[<span class="extype" name="org.http4s.AuthedService.F">F</span>, <span class="extype" name="org.http4s.AuthedService.T">T</span>], <a href="Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.AuthedService.F">F</span>]]</span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.20.1)</i> Deprecated in favor of AuthedRoutes</p></dd></dl></div>
     </li><li name="org.http4s.Http4s" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="Http4sextendsHttp4sInstanceswithHttp4sFunctionswithAllSyntax"></a><a id="Http4s:Http4s"></a>
       <span class="permalink">
@@ -2318,44 +2287,6 @@ Level 3 features are limited to:</p><ul><li>Path segments, slash-prefixed</li><l
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.16)</i> Moved to org.http4s.syntax.AllSyntax</p></dd></dl></div>
-    </li><li name="org.http4s.HttpService" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="HttpService[F[_]]=org.http4s.package.HttpRoutes[F]"></a><a id="HttpService[F[_]]:HttpService[F]"></a>
-      <span class="permalink">
-      <a href="../../org/http4s/index.html#HttpService[F[_]]=org.http4s.package.HttpRoutes[F]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">type</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 0.19) Deprecated in favor of HttpRoutes">HttpService</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result alias"> = <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[[β$0$]<a href="http://typelevel.org/cats/api/cats/data/OptionT.html#cats.data.OptionT" class="extype" name="cats.data.OptionT">OptionT</a>[<span class="extype" name="org.http4s.HttpService.F">F</span>, <span class="extype" name="org.http4s.&lt;refinement&gt;.Λ$.β$0$">β$0$</span>], <a href="Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.HttpService.F">F</span>], <a href="Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.HttpService.F">F</span>]]</span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.19)</i> Deprecated in favor of HttpRoutes</p></dd></dl></div>
-    </li><li name="org.http4s.Service" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Service[F[_],A,B]=cats.data.Kleisli[F,A,B]"></a><a id="Service[F[_],A,B]:Service[F,A,B]"></a>
-      <span class="permalink">
-      <a href="../../org/http4s/index.html#Service[F[_],A,B]=cats.data.Kleisli[F,A,B]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">type</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 0.18) Deprecated in favor of just using Kleisli">Service</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="A">A</span>, <span name="B">B</span>]</span><span class="result alias"> = <a href="http://typelevel.org/cats/api/cats/data/Kleisli.html#cats.data.Kleisli" class="extype" name="cats.data.Kleisli">Kleisli</a>[<span class="extype" name="org.http4s.Service.F">F</span>, <span class="extype" name="org.http4s.Service.A">A</span>, <span class="extype" name="org.http4s.Service.B">B</span>]</span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.18)</i> Deprecated in favor of just using Kleisli</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -3341,25 +3272,6 @@ https://github.com/Comcast/ip4s/blob/b4f01a4637f2766a8e12668492a3814c478c6a03/sh
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.16)</i> Moved to org.http4s.syntax.all</p></dd></dl></div>
-    </li><li name="org.http4s.AuthedService" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="AuthedService"></a><a id="AuthedService:AuthedService"></a>
-      <span class="permalink">
-      <a href="../../org/http4s/AuthedService$.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="AuthedService$.html"><span class="name deprecated" title="Deprecated: (Since version 0.20.2) Use AuthedRoutes instead">AuthedService</span></a>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.20.2)</i> Use AuthedRoutes instead</p></dd></dl></div>
     </li><li name="org.http4s.Http4s" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Http4s"></a><a id="Http4s:Http4s"></a>
       <span class="permalink">
@@ -3417,44 +3329,6 @@ https://github.com/Comcast/ip4s/blob/b4f01a4637f2766a8e12668492a3814c478c6a03/sh
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.20.0-M2)</i> Import from or use EntityDecoder/EntityEncoder directly instead</p></dd></dl></div>
-    </li><li name="org.http4s.HttpService" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="HttpService"></a><a id="HttpService:HttpService"></a>
-      <span class="permalink">
-      <a href="../../org/http4s/HttpService$.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="HttpService$.html"><span class="name deprecated" title="Deprecated: (Since version 0.19) Replaced by HttpRoutes">HttpService</span></a><span class="result"> extends <a href="https://www.scala-lang.org/api/2.12.11/scala/Serializable.html#scala.Serializable" class="extype" name="scala.Serializable">Serializable</a></span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.19)</i> Replaced by HttpRoutes</p></dd></dl></div>
-    </li><li name="org.http4s.Service" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Service"></a><a id="Service:Service"></a>
-      <span class="permalink">
-      <a href="../../org/http4s/Service$.html" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">object</span>
-      </span>
-      <span class="symbol">
-        <a title="" href="Service$.html"><span class="name deprecated" title="Deprecated: (Since version 0.18) Deprecated in favor of Kleisli">Service</span></a>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.18)</i> Deprecated in favor of Kleisli</p></dd></dl></div>
     </li></ol>
             </div>
         </div>

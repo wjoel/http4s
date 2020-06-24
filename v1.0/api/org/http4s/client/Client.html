@@ -320,7 +320,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A <a href="" class="extype" name="org.http4s.client.Client">Client</a> submits <a href="../Request.html" class="extype" name="org.http4s.Request">Request</a>s to a server and processes the <a href="../Response.html" class="extype" name="org.http4s.Response">Response</a>.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/250e9063dba717572cfa236ae6537beb84549927/client/src/main/scala/org/http4s/client/Client.scala" target="_blank">Client.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A <a href="" class="extype" name="org.http4s.client.Client">Client</a> submits <a href="../Request.html" class="extype" name="org.http4s.Request">Request</a>s to a server and processes the <a href="../Response.html" class="extype" name="org.http4s.Response">Response</a>.</p></div><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/63184fc36e6bc66897082c274d00b9a635c5cdd9/client/src/main/scala/org/http4s/client/Client.scala" target="_blank">Client.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -869,49 +869,6 @@ or when a common response callback is used by many call sites.
                 <span class="name">@deprecated</span>
               
         </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.19.0-M4)</i> Use <code>client.stream(req).flatMap(f)</code></p></dd></dl></div>
-    </li><li name="org.http4s.client.Client#toHttpService" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="toHttpService:org.http4s.HttpService[F]"></a><a id="toHttpService:HttpService[F]"></a>
-      <span class="permalink">
-      <a href="../../../org/http4s/client/Client.html#toHttpService:org.http4s.HttpService[F]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 0.19) Use toHttpApp. Call .mapF(OptionT.liftF) if OptionT is really desired.">toHttpService</span><span class="result">: <a href="../index.html#HttpService[F[_]]=org.http4s.package.HttpRoutes[F]" class="extmbr" name="org.http4s.HttpService">HttpService</a>[<span class="extype" name="org.http4s.client.Client.F">F</span>]</span>
-      </span>
-      
-      <p class="shortcomment cmt">Returns this client as an <a href="../index.html#HttpService[F[_]]=org.http4s.package.HttpRoutes[F]" class="extmbr" name="org.http4s.HttpService">HttpService</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns this client as an <a href="../index.html#HttpService[F[_]]=org.http4s.package.HttpRoutes[F]" class="extmbr" name="org.http4s.HttpService">HttpService</a>.  It is the
-responsibility of callers of this service to run the response
-body to dispose of the underlying HTTP connection.</p><p>This is intended for use in proxy servers.  <code>fetch</code>, <code>fetchAs</code>,
-<a href="#toKleisli[A](f:org.http4s.Response[F]=&gt;F[A]):cats.data.Kleisli[F,org.http4s.Request[F],A]" class="extmbr" name="org.http4s.client.Client#toKleisli">toKleisli</a>, and <a href="#streaming[A](req:F[org.http4s.Request[F]])(f:org.http4s.Response[F]=&gt;fs2.Stream[F,A]):fs2.Stream[F,A]" class="extmbr" name="org.http4s.client.Client#streaming">streaming</a> are safer alternatives, as their
-signatures guarantee disposal of the HTTP connection.
-</p></div><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.19)</i> Use toHttpApp. Call <code>.mapF(OptionT.liftF)</code> if OptionT is really desired.</p></dd></dl></div>
-    </li><li name="org.http4s.client.Client#toService" visbl="pub" class="indented0 " data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="toService[A](f:org.http4s.Response[F]=&gt;F[A]):org.http4s.Service[F,org.http4s.Request[F],A]"></a><a id="toService[A]((Response[F])⇒F[A]):Service[F,Request[F],A]"></a>
-      <span class="permalink">
-      <a href="../../../org/http4s/client/Client.html#toService[A](f:org.http4s.Response[F]=&gt;F[A]):org.http4s.Service[F,org.http4s.Request[F],A]" title="Permalink">
-        <i class="material-icons"></i>
-      </a>
-    </span>
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 0.18) Use toKleisli">toService</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="f">f: (<a href="../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.client.Client.F">F</span>]) ⇒ <span class="extype" name="org.http4s.client.Client.F">F</span>[<span class="extype" name="org.http4s.client.Client.toService.A">A</span>]</span>)</span><span class="result">: <a href="../index.html#Service[F[_],A,B]=cats.data.Kleisli[F,A,B]" class="extmbr" name="org.http4s.Service">Service</a>[<span class="extype" name="org.http4s.client.Client.F">F</span>, <a href="../Request.html" class="extype" name="org.http4s.Request">Request</a>[<span class="extype" name="org.http4s.client.Client.F">F</span>], <span class="extype" name="org.http4s.client.Client.toService.A">A</span>]</span>
-      </span>
-      
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.18)</i> Use toKleisli</p></dd></dl></div>
     </li></ol>
             </div>
 
