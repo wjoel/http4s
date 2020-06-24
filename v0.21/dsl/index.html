@@ -138,7 +138,7 @@ anything.  The right hand side of the request must return a
     IO(Response(Status.Ok))
 }
 // service: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12480/1840581436@438251ef
+//   org.http4s.HttpRoutes$$$Lambda$12399/122153028@54ec1240
 // )
 </code></pre>
 
@@ -155,13 +155,13 @@ and experiment directly in the REPL.</p>
 //   HttpVersion(1, 1),
 //   Headers(),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@7c45151e
+//   io.chrisdavenport.vault.Vault@b57c901
 // )
 
 val io = service.orNotFound.run(getRoot)
 // io: IO[Response[IO]] = Map(
-//   Suspend(org.http4s.HttpRoutes$$$Lambda$12787/2016603382@4f071838),
-//   cats.data.OptionT$$Lambda$12791/1115368735@51d704d6,
+//   Suspend(org.http4s.HttpRoutes$$$Lambda$12703/188610920@4f8c0568),
+//   cats.data.OptionT$$Lambda$12706/225471920@410e17c3,
 //   0
 // )
 </code></pre>
@@ -183,7 +183,7 @@ run it.</p>
 //   HttpVersion(1, 1),
 //   Headers(),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@b3a2a
+//   io.chrisdavenport.vault.Vault@75c473b0
 // )
 </code></pre>
 
@@ -207,7 +207,7 @@ applying a status code:</p>
 //     HttpVersion(1, 1),
 //     Headers(Content-Length: 0),
 //     Stream(..),
-//     io.chrisdavenport.vault.Vault@543232d0
+//     io.chrisdavenport.vault.Vault@406eb3c8
 //   )
 // )
 val ok = okIo.unsafeRunSync
@@ -216,7 +216,7 @@ val ok = okIo.unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@543232d0
+//   io.chrisdavenport.vault.Vault@406eb3c8
 // )
 </code></pre>
 
@@ -231,7 +231,7 @@ service:</p>
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@238336b6
+//   io.chrisdavenport.vault.Vault@6f6659e8
 // )
 </code></pre>
 
@@ -247,7 +247,7 @@ response:</p>
 //   HttpVersion(1, 1),
 //   Headers(),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@4a1b67a4
+//   io.chrisdavenport.vault.Vault@5ee7fbc8
 // )
 </code></pre>
 
@@ -302,13 +302,13 @@ and invalidate cookies. Adding a cookie will generate the correct <code>Set-Cook
 //       HttpVersion(1, 1),
 //       Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 12),
 //       Stream(..),
-//       io.chrisdavenport.vault.Vault@1398cea7
+//       io.chrisdavenport.vault.Vault@8684a57
 //     )
 //   ),
 //   &lt;function1&gt;
 // )
 cookieResp.unsafeRunSync.headers
-// res6: Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 12, Set-Cookie: foo=bar; Expires=Wed, 24 Jun 2020 18:31:45 GMT; SameSite=Lax; Secure; HttpOnly)
+// res6: Headers = Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 12, Set-Cookie: foo=bar; Expires=Wed, 24 Jun 2020 18:41:13 GMT; SameSite=Lax; Secure; HttpOnly)
 </code></pre>
 
 <p>To request a cookie to be removed on the client, you need to set the cookie value
@@ -340,7 +340,7 @@ box:</p>
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 17),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@5679cab6
+//   io.chrisdavenport.vault.Vault@3dad4861
 // )
 
 import java.nio.charset.StandardCharsets.UTF_8
@@ -350,7 +350,7 @@ Ok(&quot;binary&quot;.getBytes(UTF_8)).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: application/octet-stream, Content-Length: 6),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@6cf56049
+//   io.chrisdavenport.vault.Vault@60d9ff25
 // )
 </code></pre>
 
@@ -385,15 +385,18 @@ effectful, unless we wrap it in <code>IO</code>:</p>
 suspended future is shifted to the corred thread pool.</p>
 
 <pre><code class="language-scala">implicit val cs: ContextShift[IO] = IO.contextShift(ExecutionContext.global)
-// cs: ContextShift[IO] = cats.effect.internals.IOContextShift@47ea5244
+// cs: ContextShift[IO] = cats.effect.internals.IOContextShift@44a41e57
 
 val io = Ok(IO.fromFuture(IO(Future {
   println(&quot;I run when the future is constructed.&quot;)
   &quot;Greetings from the future!&quot;
 })))
 // io: IO[Response[IO]] = Bind(
-//   Async(cats.effect.internals.IOBracket$$$Lambda$13321/96975440@49963966, false),
-//   org.http4s.dsl.impl.EntityResponseGenerator$$Lambda$13322/135271100@6ca422d7
+//   Async(
+//     cats.effect.internals.IOBracket$$$Lambda$13261/1956269484@2c966c83,
+//     false
+//   ),
+//   org.http4s.dsl.impl.EntityResponseGenerator$$Lambda$13262/1383056069@7b0076d8
 // )
 io.unsafeRunSync
 // I run when the future is constructed.
@@ -402,7 +405,7 @@ io.unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 26),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@65a1d72a
+//   io.chrisdavenport.vault.Vault@453b0e6b
 // )
 </code></pre>
 
@@ -415,7 +418,7 @@ of course prefer to operate in <code>F</code>s:</p>
 })
 // io: IO[Response[IO]] = Bind(
 //   Delay(&lt;function0&gt;),
-//   org.http4s.dsl.impl.EntityResponseGenerator$$Lambda$13322/135271100@704cc1a8
+//   org.http4s.dsl.impl.EntityResponseGenerator$$Lambda$13262/1383056069@2189e63d
 // )
 io.unsafeRunSync
 // I run when the IO is run.
@@ -424,7 +427,7 @@ io.unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 21),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@8699bce
+//   io.chrisdavenport.vault.Vault@3e6464fb
 // )
 </code></pre>
 
@@ -457,14 +460,14 @@ import scala.concurrent.duration._
 <pre><code class="language-scala">val dripOutIO = drip.through(fs2.text.lines).through(_.evalMap(s =&gt; {IO{println(s); s}})).compile.drain
 // dripOutIO: IO[Unit] = Map(
 //   Bind(
-//     Delay(fs2.Stream$CompileOps$$Lambda$12936/2065285990@4516b28e),
-//     fs2.Stream$Compiler$$anon$3$$Lambda$12939/417923237@2ee53581
+//     Delay(fs2.Stream$CompileOps$$Lambda$12853/1973689583@462a6359),
+//     fs2.Stream$Compiler$$anon$3$$Lambda$12856/1650826826@5b7f65a1
 //   ),
-//   fs2.Stream$CompileOps$$Lambda$12938/451657967@38b2f074,
+//   fs2.Stream$CompileOps$$Lambda$12854/713150930@35a9c8fd,
 //   0
 // )
 dripOutIO.unsafeRunSync
-// 104106075 nanoseconds204334437 nanoseconds305224700 nanoseconds406047664 nanoseconds506937228 nanoseconds608282593 nanoseconds708953356 nanoseconds809785420 nanoseconds910559683 nanoseconds1011279045 nanoseconds
+// 104762001 nanoseconds204639834 nanoseconds306112922 nanoseconds407032891 nanoseconds508701785 nanoseconds610478583 nanoseconds712008661 nanoseconds812932919 nanoseconds913702572 nanoseconds1014594728 nanoseconds
 </code></pre>
 
 <p>When wrapped in a <code>Response[F]</code>, http4s will flush each chunk of a
@@ -479,7 +482,7 @@ transfer encoding:</p>
 //     HttpVersion(1, 1),
 //     Headers(Content-Type: text/plain; charset=UTF-8, Transfer-Encoding: chunked),
 //     Stream(..),
-//     io.chrisdavenport.vault.Vault@7c41ab47
+//     io.chrisdavenport.vault.Vault@28f7210f
 //   )
 // )
 </code></pre>
@@ -502,7 +505,7 @@ right side, the path info.  The following matches a request to <code>GET
   case GET -&gt; Root / &quot;hello&quot; =&gt; Ok(&quot;hello&quot;)
 }
 // res15: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12480/1840581436@cb3e483
+//   org.http4s.HttpRoutes$$$Lambda$12399/122153028@3d52afe3
 // )
 </code></pre>
 
@@ -577,7 +580,7 @@ val usersService = HttpRoutes.of[IO] {
     Ok(getUserName(userId))
 }
 // usersService: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12480/1840581436@bfd91a9
+//   org.http4s.HttpRoutes$$$Lambda$12399/122153028@1d209785
 // )
 </code></pre>
 
@@ -606,7 +609,7 @@ val dailyWeatherService = HttpRoutes.of[IO] {
     Ok(getTemperatureForecast(localDate).map(s&quot;The temperature on $localDate will be: &quot; + _))
 }
 // dailyWeatherService: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12480/1840581436@2463f1f2
+//   org.http4s.HttpRoutes$$$Lambda$12399/122153028@66355afc
 // )
 
 println(GET(uri&quot;/weather/temperature/2016-11-05&quot;).flatMap(dailyWeatherService.orNotFound(_)).unsafeRunSync)
@@ -632,7 +635,7 @@ then parsing them as a <code>String</code> and <code>java.time.Year</code>.</p>
 
 implicit val yearQueryParamDecoder: QueryParamDecoder[Year] =
   QueryParamDecoder[Int].map(Year.of)
-// yearQueryParamDecoder: QueryParamDecoder[Year] = org.http4s.QueryParamDecoder$$anon$7@55096daa
+// yearQueryParamDecoder: QueryParamDecoder[Year] = org.http4s.QueryParamDecoder$$anon$7@77dbe06c
 
 object YearQueryParamMatcher extends QueryParamDecoderMatcher[Year](&quot;year&quot;)
 
@@ -643,7 +646,7 @@ val averageTemperatureService = HttpRoutes.of[IO] {
     Ok(getAverageTemperatureForCountryAndYear(country, year).map(s&quot;Average temperature for $country in $year was: &quot; + _))
 }
 // averageTemperatureService: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12480/1840581436@460d1c74
+//   org.http4s.HttpRoutes$$$Lambda$12399/122153028@5f5e64c3
 // )
 </code></pre>
 
@@ -670,7 +673,7 @@ import org.http4s.client.dsl.io._
 
 <pre><code class="language-scala">implicit val yearQueryParamDecoder: QueryParamDecoder[Year] =
   QueryParamDecoder[Int].map(Year.of)
-// yearQueryParamDecoder: QueryParamDecoder[Year] = org.http4s.QueryParamDecoder$$anon$7@219abdc5
+// yearQueryParamDecoder: QueryParamDecoder[Year] = org.http4s.QueryParamDecoder$$anon$7@46db4c12
 
 object OptionalYearQueryParamMatcher extends OptionalQueryParamDecoderMatcher[Year](&quot;year&quot;)
 
@@ -687,7 +690,7 @@ val routes2 = HttpRoutes.of[IO] {
     }
 }
 // routes2: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12480/1840581436@1acd2465
+//   org.http4s.HttpRoutes$$$Lambda$12399/122153028@a751c8f
 // )
 </code></pre>
 
@@ -701,7 +704,7 @@ val routes2 = HttpRoutes.of[IO] {
 
 <pre><code class="language-scala">implicit val yearQueryParamDecoder: QueryParamDecoder[Year] =
   QueryParamDecoder[Int].map(Year.of)
-// yearQueryParamDecoder: QueryParamDecoder[Year] = org.http4s.QueryParamDecoder$$anon$7@4377eab
+// yearQueryParamDecoder: QueryParamDecoder[Year] = org.http4s.QueryParamDecoder$$anon$7@2285452d
 
 object YearQueryParamMatcher extends ValidatingQueryParamDecoderMatcher[Year](&quot;year&quot;)
 
@@ -713,7 +716,7 @@ val routes = HttpRoutes.of[IO] {
     )
 }
 // routes: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$12480/1840581436@2af73ce5
+//   org.http4s.HttpRoutes$$$Lambda$12399/122153028@e5145c2
 // )
 </code></pre>
 
