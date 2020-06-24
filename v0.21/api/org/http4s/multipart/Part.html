@@ -170,7 +170,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/8e46ed4b2c1509875d2a8ef0b09334ac8cf7de93/core/src/main/scala/org/http4s/multipart/Part.scala" target="_blank">Part.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/ebbdcc55dde0aaae9399c9c42c0bef2397a15ff6/core/src/main/scala/org/http4s/multipart/Part.scala" target="_blank">Part.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -361,10 +361,10 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.multipart.Part">Part</a> → <a href="../Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
-    </li><li name="org.http4s.Media#bodyAsText" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="bodyAsText(implicitdefaultCharset:org.http4s.Charset):fs2.Stream[F,String]"></a><a id="bodyAsText(Charset):Stream[F,String]"></a>
+    </li><li name="org.http4s.Media#bodyText" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bodyText(implicitRT:fs2.RaiseThrowable[F],implicitdefaultCharset:org.http4s.Charset):fs2.Stream[F,String]"></a><a id="bodyText(RaiseThrowable[F],Charset):Stream[F,String]"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/multipart/Part.html#bodyAsText(implicitdefaultCharset:org.http4s.Charset):fs2.Stream[F,String]" title="Permalink">
+      <a href="../../../org/http4s/multipart/Part.html#bodyText(implicitRT:fs2.RaiseThrowable[F],implicitdefaultCharset:org.http4s.Charset):fs2.Stream[F,String]" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -373,7 +373,7 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">bodyAsText</span><span class="params">(<span class="implicit">implicit </span><span name="defaultCharset">defaultCharset: <a href="../Charset.html" class="extype" name="org.http4s.Charset">Charset</a> = <span class="symbol"><span class="name"><a href="../index.html#DefaultCharset:org.http4s.Charset">DefaultCharset</a></span></span></span>)</span><span class="result">: <span class="extype" name="fs2.Stream">Stream</span>[<span class="extype" name="org.http4s.multipart.Part.F">F</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
+        <span class="name">bodyText</span><span class="params">(<span class="implicit">implicit </span><span name="RT">RT: <span class="extype" name="fs2.RaiseThrowable">RaiseThrowable</span>[<span class="extype" name="org.http4s.multipart.Part.F">F</span>]</span>, <span name="defaultCharset">defaultCharset: <a href="../Charset.html" class="extype" name="org.http4s.Charset">Charset</a> = <span class="symbol"><span class="name"><a href="../index.html#DefaultCharset:org.http4s.Charset">DefaultCharset</a></span></span></span>)</span><span class="result">: <span class="extype" name="fs2.Stream">Stream</span>[<span class="extype" name="org.http4s.multipart.Part.F">F</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Media.html" class="extype" name="org.http4s.Media">Media</a></dd></dl></div>
@@ -730,7 +730,29 @@ experimental.</p><p>Enter this package at your own risk, but we'd love the feedb
 
         
 
-        
+        <div class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="org.http4s.Media#bodyAsText" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bodyAsText(implicitdefaultCharset:org.http4s.Charset):fs2.Stream[F,String]"></a><a id="bodyAsText(Charset):Stream[F,String]"></a>
+      <span class="permalink">
+      <a href="../../../org/http4s/multipart/Part.html#bodyAsText(implicitdefaultCharset:org.http4s.Charset):fs2.Stream[F,String]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 0.21.5) Can go into an infinite loop for charsets other than UTF-8. Replaced by bodyText">bodyAsText</span><span class="params">(<span class="implicit">implicit </span><span name="defaultCharset">defaultCharset: <a href="../Charset.html" class="extype" name="org.http4s.Charset">Charset</a> = <span class="symbol"><span class="name"><a href="../index.html#DefaultCharset:org.http4s.Charset">DefaultCharset</a></span></span></span>)</span><span class="result">: <span class="extype" name="fs2.Stream">Stream</span>[<span class="extype" name="org.http4s.multipart.Part.F">F</span>, <span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../Media.html" class="extype" name="org.http4s.Media">Media</a></dd><dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.21.5)</i> Can go into an infinite loop for charsets other than UTF-8. Replaced by bodyText</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">
