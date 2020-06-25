@@ -320,7 +320,8 @@ contains an invalid token, regardless of whether it is a safe method, this middl
 token.</p><p>The default can be overridden by modifying the <code>predicate</code> in <code>validate</code>. It will, by default, check if the method is safe.
 Thus, you can provide some whitelisting capability for certain kinds of requests.</p><p>We'd like to emphasize that you please follow proper design principles in creating endpoints, as to
 not mutate in what should otherwise be idempotent methods (i.e no dropping your DB in a GET method, or altering
-user data). Please do not use the CSRF protection from this middleware as a safety net for bad design.</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="org.http4s.server.middleware.CSRF">CSRF</a>[<span class="extype" name="org.http4s.server.middleware.CSRF.F">F</span>, <span class="extype" name="org.http4s.server.middleware.CSRF.G">G</span>]</dd><dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/63184fc36e6bc66897082c274d00b9a635c5cdd9/server/src/main/scala/org/http4s/server/middleware/CSRF.scala" target="_blank">CSRF.scala</a></dd></dl><div class="toggleContainer block">
+user data). Please do not use the CSRF protection from this middleware as a safety net for bad design.
+</p></div><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="org.http4s.server.middleware.CSRF">CSRF</a>[<span class="extype" name="org.http4s.server.middleware.CSRF.F">F</span>, <span class="extype" name="org.http4s.server.middleware.CSRF.G">G</span>]</dd><dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/e579089880147ee3a65bb0a241d3c54782393e55/server/src/main/scala/org/http4s/server/middleware/CSRF.scala" target="_blank">CSRF.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -580,7 +581,7 @@ user data). Please do not use the CSRF protection from this middleware as a safe
         <span class="name">embedNewInResponseCookie</span><span class="tparams">[<span name="M">M<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span name="res">res: <a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.CSRF.G">G</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="arg0">arg0: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.server.middleware.CSRF.embedNewInResponseCookie.M">M</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.server.middleware.CSRF.embedNewInResponseCookie.M">M</span>[<a href="../../Response.html" class="extype" name="org.http4s.Response">Response</a>[<span class="extype" name="org.http4s.server.middleware.CSRF.G">G</span>]]</span>
       </span>
       
-      <p class="shortcomment cmt">Embed a token into a response *</p>
+      <p class="shortcomment cmt">Embed a token into a response</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
       <span class="permalink">
@@ -668,7 +669,7 @@ and extract the original token string to sign
         <span class="name">generateToken</span><span class="tparams">[<span name="M">M<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.server.middleware.CSRF.generateToken.M">M</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.server.middleware.CSRF.generateToken.M">M</span>[<a href="CSRF$.html#CSRFToken" class="extmbr" name="org.http4s.server.middleware.CSRF.CSRFToken">CSRFToken</a>]</span>
       </span>
       
-      <p class="shortcomment cmt">Generate a new token *</p>
+      <p class="shortcomment cmt">Generate a new token</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -918,7 +919,8 @@ presence on both the proper cookie, and header values,
 if the predicate is not satisfied</p><p>If it is a valid token, it will then embed a new one,
 to effectively randomize the complete token while
 avoiding the generation of a new secure random Id, to guard
-against [BREACH](http://breachattack.com/)</p></div></div>
+against [BREACH](http://breachattack.com/)
+</p></div></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <span class="permalink">

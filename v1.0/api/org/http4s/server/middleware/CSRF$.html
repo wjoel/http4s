@@ -307,7 +307,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/63184fc36e6bc66897082c274d00b9a635c5cdd9/server/src/main/scala/org/http4s/server/middleware/CSRF.scala" target="_blank">CSRF.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/e579089880147ee3a65bb0a241d3c54782393e55/server/src/main/scala/org/http4s/server/middleware/CSRF.scala" target="_blank">CSRF.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -563,7 +563,8 @@ from key bytes.</p><div class="fullcomment"><div class="comment cmt"><p>Build a 
 from key bytes. This operation is unsafe, in that
 any amount less than 20 bytes will throw an exception when loaded
 into <code>Mac</code>. Any keys larger than 64 bytes are just hashed.</p><p>For more information, refer to: https://tools.ietf.org/html/rfc2104#section-3</p><p>Use for loading a key from a config file, after having generated
-one safely</p></div></div>
+one safely
+</p></div></div>
     </li><li name="org.http4s.server.middleware.CSRF#checkCSRFDefault" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="checkCSRFDefault[F[_],G[_]](implicitF:cats.effect.Sync[F]):org.http4s.server.middleware.CSRF[F,G]=&gt;org.http4s.server.middleware.CSRF.CSRFCheck[F,G]"></a><a id="checkCSRFDefault[F[_],G[_]](Sync[F]):(CSRF[F,G])⇒CSRFCheck[F,G]"></a>
       <span class="permalink">
@@ -705,7 +706,7 @@ one safely</p></div></div>
         <span class="name">generateSigningKey</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="F">F: <span class="extype" name="cats.effect.Sync">Sync</span>[<span class="extype" name="org.http4s.server.middleware.CSRF.generateSigningKey.F">F</span>]</span>)</span><span class="result">: <span class="extype" name="org.http4s.server.middleware.CSRF.generateSigningKey.F">F</span>[<span class="extype" name="javax.crypto.SecretKey">SecretKey</span>]</span>
       </span>
       
-      <p class="shortcomment cmt">Generate a signing Key for the CSRF token *</p>
+      <p class="shortcomment cmt">Generate a signing Key for the CSRF token</p>
     </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <span class="permalink">
@@ -759,7 +760,7 @@ one safely</p></div></div>
         <span class="name">isEqual</span><span class="params">(<span name="s1">s1: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s2">s2: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.11/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
       </span>
       
-      <p class="shortcomment cmt">A Constant-time string equality *</p>
+      <p class="shortcomment cmt">A Constant-time string equality</p>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <span class="permalink">
@@ -893,7 +894,7 @@ one safely</p></div></div>
         <span class="name">tokensEqual</span><span class="params">(<span name="s1">s1: <a href="#CSRFToken" class="extmbr" name="org.http4s.server.middleware.CSRF.CSRFToken">CSRFToken</a></span>, <span name="s2">s2: <a href="#CSRFToken" class="extmbr" name="org.http4s.server.middleware.CSRF.CSRFToken">CSRFToken</a></span>)</span><span class="result">: <a href="https://www.scala-lang.org/api/2.12.11/scala/Boolean.html#scala.Boolean" class="extype" name="scala.Boolean">Boolean</a></span>
       </span>
       
-      <p class="shortcomment cmt">A Constant-time string equality *</p>
+      <p class="shortcomment cmt">A Constant-time string equality</p>
     </li><li name="org.http4s.server.middleware.CSRF#unlift" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="unlift(s:org.http4s.server.middleware.CSRF.CSRFToken):String"></a><a id="unlift(CSRFToken):String"></a>
       <span class="permalink">

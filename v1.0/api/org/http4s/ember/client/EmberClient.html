@@ -169,7 +169,7 @@
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/63184fc36e6bc66897082c274d00b9a635c5cdd9/ember-client/src/main/scala/org/http4s/ember/client/EmberClient.scala" target="_blank">EmberClient.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/e579089880147ee3a65bb0a241d3c54782393e55/ember-client/src/main/scala/org/http4s/ember/client/EmberClient.scala" target="_blank">EmberClient.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
@@ -876,7 +876,8 @@ is a mapping between the number of connections in the pool for each requestKey.
       </span>
       
       <p class="shortcomment cmt">Run the request as a stream.</p><div class="fullcomment"><div class="comment cmt"><p>Run the request as a stream.  The response lifecycle is equivalent
-to the returned Stream's.</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>DefaultClient → <a href="../../client/Client.html" class="extype" name="org.http4s.client.Client">Client</a></dd></dl></div>
+to the returned Stream's.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>DefaultClient → <a href="../../client/Client.html" class="extype" name="org.http4s.client.Client">Client</a></dd></dl></div>
     </li><li name="org.http4s.client.DefaultClient#streaming" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="streaming[A](req:F[org.http4s.Request[F]])(f:org.http4s.Response[F]=&gt;fs2.Stream[F,A]):fs2.Stream[F,A]"></a><a id="streaming[A](F[Request[F]])((Response[F])⇒Stream[F,A]):Stream[F,A]"></a>
       <span class="permalink">
@@ -925,8 +926,10 @@ to the returned Stream's.</p></div><dl class="attributes block"> <dt>Definition 
       </span>
       
       <p class="shortcomment cmt">Submits a request and returns true if and only if the response status is
-successful</p><div class="fullcomment"><div class="comment cmt"><p>Submits a request and returns true if and only if the response status is
-successful</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>DefaultClient → <a href="../../client/Client.html" class="extype" name="org.http4s.client.Client">Client</a></dd></dl></div>
+successful
+</p><div class="fullcomment"><div class="comment cmt"><p>Submits a request and returns true if and only if the response status is
+successful
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>DefaultClient → <a href="../../client/Client.html" class="extype" name="org.http4s.client.Client">Client</a></dd></dl></div>
     </li><li name="org.http4s.client.DefaultClient#successful" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="successful(req:org.http4s.Request[F]):F[Boolean]"></a><a id="successful(Request[F]):F[Boolean]"></a>
       <span class="permalink">
@@ -943,8 +946,10 @@ successful</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd
       </span>
       
       <p class="shortcomment cmt">Submits a request and returns true if and only if the response status is
-successful</p><div class="fullcomment"><div class="comment cmt"><p>Submits a request and returns true if and only if the response status is
-successful</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>DefaultClient → <a href="../../client/Client.html" class="extype" name="org.http4s.client.Client">Client</a></dd></dl></div>
+successful
+</p><div class="fullcomment"><div class="comment cmt"><p>Submits a request and returns true if and only if the response status is
+successful
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>DefaultClient → <a href="../../client/Client.html" class="extype" name="org.http4s.client.Client">Client</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
       <span class="permalink">
@@ -978,7 +983,7 @@ successful</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd
       
       <p class="shortcomment cmt">Returns this client as an <a href="../../index.html#HttpApp[F[_]]=org.http4s.package.Http[F,F]" class="extmbr" name="org.http4s.HttpApp">HttpApp</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns this client as an <a href="../../index.html#HttpApp[F[_]]=org.http4s.package.Http[F,F]" class="extmbr" name="org.http4s.HttpApp">HttpApp</a>.  It is the responsibility of
 callers of this service to run the response body to dispose of the
-underlying HTTP connection.</p><p>This is intended for use in proxy servers.  <code>fetch</code>, <code>fetchAs</code>,
+underlying HTTP connection.</p><p>This is intended for use in proxy servers.  <code>run</code>, <code>fetchAs</code>,
 <a href="#toKleisli[A](f:org.http4s.Response[F]=&gt;F[A]):cats.data.Kleisli[F,org.http4s.Request[F],A]" class="extmbr" name="org.http4s.ember.client.EmberClient#toKleisli">toKleisli</a>, and <a href="#streaming[A](req:F[org.http4s.Request[F]])(f:org.http4s.Response[F]=&gt;fs2.Stream[F,A]):fs2.Stream[F,A]" class="extmbr" name="org.http4s.ember.client.EmberClient#streaming">streaming</a> are safer alternatives, as their
 signatures guarantee disposal of the HTTP connection.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>DefaultClient → <a href="../../client/Client.html" class="extype" name="org.http4s.client.Client">Client</a></dd></dl></div>
@@ -998,7 +1003,7 @@ signatures guarantee disposal of the HTTP connection.
       </span>
       
       <p class="shortcomment cmt">Returns this client as a <span class="extype" name="Kleisli">Kleisli</span>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns this client as a <span class="extype" name="Kleisli">Kleisli</span>.  All connections created by this
-service are disposed on completion of callback task f.</p><p>This method effectively reverses the arguments to <code>fetch</code>, and is
+service are disposed on completion of callback task f.</p><p>This method effectively reverses the arguments to <code>run</code> followed by <code>use</code>, and is
 preferred when an HTTP client is composed into a larger Kleisli function,
 or when a common response callback is used by many call sites.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd>DefaultClient → <a href="../../client/Client.html" class="extype" name="org.http4s.client.Client">Client</a></dd></dl></div>
