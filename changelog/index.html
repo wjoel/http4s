@@ -89,7 +89,7 @@
 ordered chronologically, so each release contains all changes described below
 it.</p>
 
-<h1 id="v1-0-0-m1-unreleased">v1.0.0-M1 (unreleased)</h1>
+<h1 id="v1-0-0-m1-2020-06-25">v1.0.0-M1 (2020-06-25)</h1>
 
 <p>This is the first milestone release in the 1.x series.
 It is not binary compatible with prior releases.</p>
@@ -108,6 +108,14 @@ It is not binary compatible with prior releases.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3322">#3322</a>: Drop deprecated <code>getAs</code> and <code>prepAs</code> methods from <code>Client</code></li>
 <li><a href="https://github.com/http4s/http4s/pull/3271">#3371</a>: In http4s-metrics, add <code>rootCause</code> field to <code>TerminationType.Abnormal</code> and <code>TerminationType.Error</code>.  Add <code>TerminationType.Canceled</code></li>
 <li><a href="https://github.com/http4s/http4s/pull/3335">#3335</a>: Remove unused <code>Bracket</code> instance in <code>Client#translate</code></li>
+<li><a href="https://github.com/http4s/http4s/pull/3390">#3390</a>: Replace <code>org.http4s.util.CaseInsensitiveString</code> with <code>org.typelevel.ci.CIString</code></li>
+<li><a href="https://github.com/http4s/http4s/pull/3221">#3221</a>: Implement a <code>Uri.Path</code> type to replace the type alias for <code>String</code></li>
+<li><a href="https://github.com/http4s/http4s/pull/3450">#3450</a>: Model <code>Accept-Patch</code> header as a <code>NonEmptyList[MediaType]</code></li>
+<li><a href="https://github.com/http4s/http4s/pull/3450">#3463</a>: Model <code>Access-Control-Allow-Credentials</code> header as a nullary case class.</li>
+<li><a href="https://github.com/http4s/http4s/pull/3325">#3325</a>: Add a WebSocket builder with a <code>Pipe[F, WebSocketFrame, WebSocketFrame]</code> to unify sending and receiving.</li>
+<li><a href="https://github.com/http4s/http4s/pull/3373">#3373</a>: Parameterize <code>ClassLoader</code> for <code>ResourceService</code> and <code>WebjarService</code>. Changes the <code>CacheStrategy</code>&rsquo;s <code>uriPath</code> argument to <code>Uri.Path</code>.</li>
+<li><a href="https://github.com/http4s/http4s/pull/3460">#3460</a>: Remove deprecated <code>Service</code> and related aliases</li>
+<li><a href="https://github.com/http4s/http4s/pull/3529">#3529</a>: Refresh the <code>MediaType</code>s constants from the IANA registry. Not source breaking, but shifts constants in a binary breaking way.</li>
 </ul>
 
 <h2 id="enhancements">Enhancements</h2>
@@ -116,10 +124,35 @@ It is not binary compatible with prior releases.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3320">#3320</a>: Reimplement <code>Media#as</code> with <code>F.rethrow</code></li>
 </ul>
 
+<h2 id="deprecations">Deprecations</h2>
+
+<ul>
+<li><a href="https://github.com/http4s/http4s/pull/3359">#3359</a>: Deprecate the <code>org.http4s.util.execution</code> package.</li>
+<li><a href="https://github.com/http4s/http4s/pull/3359">#3422</a>: Deprecate <code>BlazeClientBuilder#withSslContextOption</code>.</li>
+</ul>
+
+<h1 id="documentation">Documentation</h1>
+
+<ul>
+<li><a href="https://github.com/http4s/http4s/pull/3374">#3374</a>: Add a deployment tutorial, including for GraalVM. See also #<a href="https://github.com/http4s/http4s/pull/3416">3416</a>.</li>
+<li><a href="https://github.com/http4s/http4s/pull/3410">#3410</a>: Suggest a global execution context for the argument to <code>BlazeClientBuilder</code></li>
+</ul>
+
+<h2 id="internal-refactoring">Internal refactoring</h2>
+
+<ul>
+<li><a href="https://github.com/http4s/http4s/pull/3386">#3386</a>: Drop internal argonaut parser in favor of jawn&rsquo;s</li>
+<li><a href="https://github.com/http4s/http4s/pull/3266">#3266</a>: Replace <code>fs2.compress</code> with <code>fs2.compression</code></li>
+</ul>
+
 <h2 id="dependency-updates">Dependency updates</h2>
 
 <ul>
-<li>async-http-client-2.11.0</li>
+<li>argonaut-6.3.0</li>
+<li>async-http-client-2.12.1</li>
+<li>blaze-http-0.14.13</li>
+<li>play-json-2.9.0</li>
+<li>simpleclient-0.9.0 (Prometheus)</li>
 </ul>
 
 <h1 id="v0-21-5-2010-06-24">v0.21.5 (2010-06-24)</h1>
@@ -143,7 +176,7 @@ It is not binary compatible with prior releases.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3501">#3501</a>: Explicitly use <code>Locale.ENGLISH</code> when comparing two <code>ContentCoding</code>&rsquo;s coding fields. This only matters if your default locale has different casing semantics than English for HTTP token characters.</li>
 </ul>
 
-<h2 id="deprecations">Deprecations</h2>
+<h2 id="deprecations-1">Deprecations</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/3441">#3441</a>: Deprecate <code>org.http4s.util.threads</code>, which is not related to HTTP</li>
@@ -168,7 +201,7 @@ It is not binary compatible with prior releases.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3497">#3497</a>: Add <code>logBodyText</code> functions to <code>Logger</code> middleware to customize the logging of the bodies</li>
 </ul>
 
-<h2 id="documentation">Documentation</h2>
+<h2 id="documentation-1">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/3358">#3358</a>: Replaced tut with mdoc</li>
@@ -223,7 +256,7 @@ It is not binary compatible with prior releases.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3361">#3361</a>: Deprecate the <code>org.http4s.util.execution</code> package.</li>
 </ul>
 
-<h2 id="documentation-1">Documentation</h2>
+<h2 id="documentation-2">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/3279">#3279</a>: Improve Prometheus middleware usage example</li>
@@ -276,7 +309,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3298">#3298</a>: In <code>Logger</code> client and server middlewares, detect any media types ending in <code>+json</code> as non-binary</li>
 </ul>
 
-<h2 id="deprecations-1">Deprecations</h2>
+<h2 id="deprecations-2">Deprecations</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/3330">#3330</a>: Deprecate <code>BlazeServerBuilder#apply()</code> in favor of passing an <code>ExecutionContext</code> explicitly.  Formerly, <code>ExecutionContext.global</code> was referenced by the default builder, and would spin up its thread pool even if the app never used the global execution context.</li>
@@ -709,7 +742,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/3082">#3082</a>: Wrap <code>UnresolvedAddressException</code> in blaze in an <code>UnresolvedAddressException</code> subtype that contains the address that could not resolve to aid diagnostics.  This is a conservative change.  See <a href="https://github.com/http4s/http4s/pull/3078">#3078</a> for the wrapper forthcoming in http4s-0.21.</li>
 </ul>
 
-<h2 id="documentation-2">Documentation</h2>
+<h2 id="documentation-3">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/3017">#3017</a>: Correct the documentation in <code>Timeout.apply</code></li>
@@ -833,7 +866,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2830">#2830</a>: Add encoder and decoder helpers to <code>Uri</code> companion</li>
 </ul>
 
-<h2 id="documentation-3">Documentation</h2>
+<h2 id="documentation-4">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2733">#2733</a>: Add CSRF documentation</li>
@@ -947,7 +980,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2623">#2623</a>: Propagate cookies in <code>FollowRedirect</code> client middleware</li>
 </ul>
 
-<h2 id="documentation-4">Documentation</h2>
+<h2 id="documentation-5">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2717">#2717</a>: Update quickstart for v0.21</li>
@@ -1000,7 +1033,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2736">#2736</a>: Implement a <code>connectTimeout</code> in blaze-client, defaulted to 10 seconds.  Prevents indefinite hangs on non-responsive hosts.</li>
 </ul>
 
-<h2 id="documentation-5">Documentation</h2>
+<h2 id="documentation-6">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2741">#2741</a>: Improve docs surrounding auth middleware and fall through.</li>
@@ -1044,7 +1077,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2696">#2696</a>: Introduce <code>http4s-ember-server</code> and <code>http4s-ember-client</code></li>
 </ul>
 
-<h2 id="documentation-6">Documentation</h2>
+<h2 id="documentation-7">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2658">#2658</a>: Link to http4s-jdk-http-client</li>
@@ -1100,7 +1133,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2673">#2673</a>: Add <code>GZip</code> middleware for client</li>
 </ul>
 
-<h2 id="documentation-7">Documentation</h2>
+<h2 id="documentation-8">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2668">#2668</a>: Clarifications in <code>Uri.Scheme</code> scaladoc</li>
@@ -1273,7 +1306,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2535">#2535</a>: Add <code>translate</code> to <code>HttpRoutes</code> and <code>HttpApp</code></li>
 </ul>
 
-<h2 id="documentation-8">Documentation</h2>
+<h2 id="documentation-9">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2533">#2533</a>: Fix link to Metrics middleware</li>
@@ -1343,7 +1376,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2520">#2520</a>: Parameterize <code>selectorThreadFactory</code> for blaze server.  This allows setting the priority for selector threads.</li>
 </ul>
 
-<h2 id="documentation-9">Documentation</h2>
+<h2 id="documentation-10">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2488">#2488</a>: Fix bad link in changelog</li>
@@ -1415,7 +1448,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2470">#2470</a>: Don&rsquo;t wait indefinitely if a request timeout happens while borrowing a connection in blaze-client.</li>
 </ul>
 
-<h2 id="documentation-10">Documentation</h2>
+<h2 id="documentation-11">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2469">#2469</a>: Add scala-steward to adopters</li>
@@ -1458,7 +1491,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2458">#2458</a>: Building on bugfix in <a href="https://github.com/http4s/http4s/pull/2453">#2453</a>, don&rsquo;t clean up the stage if it&rsquo;s going to be shut down anyway</li>
 </ul>
 
-<h2 id="documentation-11">Documentation</h2>
+<h2 id="documentation-12">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2432">#2432</a>: Fix Github URL in Scaladoc for tagged versions</li>
@@ -1539,7 +1572,7 @@ This incompatibility will be corrected in 0.20.23.</p>
 <li><a href="https://github.com/http4s/http4s/pull/2424">#2424</a>: Include Chunked Transfer-Encoding header in Multipart Requests</li>
 </ul>
 
-<h2 id="documentation-12">Documentation</h2>
+<h2 id="documentation-13">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2378">#2378</a>: Fix typo in <code>EntityDecoder</code> scaladoc</li>
@@ -1608,7 +1641,7 @@ there is a scalafix to assist migration from 0.18!</p>
 <li><a href="https://github.com/http4s/http4s/pull/2328">#2328</a>: Add a <code>SecureSession</code> attribute to server requests to expose the SSL session ID, the cipher suite, the key size, and a list of X509 certificates.</li>
 </ul>
 
-<h2 id="documentation-13">Documentation</h2>
+<h2 id="documentation-14">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2337">#2337</a>: Use <code>tut:silent</code> on imports in docs</li>
@@ -1664,7 +1697,7 @@ there is a scalafix to assist migration from 0.18!</p>
 </ul></li>
 </ul>
 
-<h1 id="documentation-14">Documentation</h1>
+<h1 id="documentation-15">Documentation</h1>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2297">#2297</a>: Remove appveyor badge</li>
@@ -1722,7 +1755,7 @@ there is a scalafix to assist migration from 0.18!</p>
 <li><a href="https://github.com/http4s/http4s/pull/2271">#2271</a>: Fix compilation error introduced between <a href="https://github.com/http4s/http4s/pull/2228">#2228</a> and <a href="https://github.com/http4s/http4s/pull/2262">#2262</a>.</li>
 </ul>
 
-<h2 id="documentation-15">Documentation</h2>
+<h2 id="documentation-16">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2255">#2255</a>: Improve scalafix docs</li>
@@ -1801,7 +1834,7 @@ there is a scalafix to assist migration from 0.18!</p>
 <li><a href="https://github.com/http4s/http4s/pull/2241">#2241</a>: Restrict internal <code>IdleTimeoutStage</code> to a <code>FiniteDuration</code>.  Fixes an exception when converting to milliseconds when debug logging.</li>
 </ul>
 
-<h2 id="documentation-16">Documentation</h2>
+<h2 id="documentation-17">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2223">#2223</a>: Fix color of EOL label on v0.19</li>
@@ -1906,7 +1939,7 @@ there is a scalafix to assist migration from 0.18!</p>
 <li><a href="https://github.com/http4s/http4s/pull/2178">#2178</a>: Redact sensitive headers by default in <code>Retry</code> middleware. Add <code>retryWithRedactedHeaders</code> function that parameterizes the headers predicate.</li>
 </ul>
 
-<h2 id="documentation-17">Documentation</h2>
+<h2 id="documentation-18">Documentation</h2>
 
 <ul>
 <li><a href="https://github.com/http4s/http4s/pull/2147">#2147</a>: Fix link to v0.19 docs</li>
