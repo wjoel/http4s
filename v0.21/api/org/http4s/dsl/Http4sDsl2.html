@@ -147,8 +147,16 @@
                         <a href="" title="">Http4sDsl2</a>
                       </li><li class="current-entities indented3">
                         <span class="separator"></span>
+                        <a class="trait" href="RequestDsl.html" title=""></a>
+                        <a href="RequestDsl.html" title="">RequestDsl</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
                         <a class="object" href="io$.html" title=""></a>
                         <a href="io$.html" title="">io</a>
+                      </li><li class="current-entities indented3">
+                        <span class="separator"></span>
+                        <a class="object" href="request$.html" title=""></a>
+                        <a href="request$.html" title="">request</a>
                       </li>
               </ul>
             </div>
@@ -172,16 +180,16 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">Http4sDsl2</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="impl/Methods.html" class="extype" name="org.http4s.dsl.impl.Methods">Methods</a> with <a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a> with <a href="impl/Responses.html" class="extype" name="org.http4s.dsl.impl.Responses">Responses</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.F">F</span>, <span class="extype" name="org.http4s.dsl.Http4sDsl2.G">G</span>] with <a href="impl/Auth.html" class="extype" name="org.http4s.dsl.impl.Auth">Auth</a></span>
+        <span class="name">Http4sDsl2</span><span class="tparams">[<span name="F">F<span class="tparams">[<span name="_">_</span>]</span></span>, <span name="G">G<span class="tparams">[<span name="_">_</span>]</span></span>]</span><span class="result"> extends <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a> with <a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a> with <a href="impl/Responses.html" class="extype" name="org.http4s.dsl.impl.Responses">Responses</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.F">F</span>, <span class="extype" name="org.http4s.dsl.Http4sDsl2.G">G</span>]</span>
       </span>
       </h4>
 
       
-          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/v0.21.5/dsl/src/main/scala/org/http4s/dsl/Http4sDsl.scala" target="_blank">Http4sDsl.scala</a></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Source</dt><dd><a href="https://github.com/http4s/http4s/blob/9441507f83e4dce0e4cb4d0ba554d5be209f93ee/dsl/src/main/scala/org/http4s/dsl/Http4sDsl.scala" target="_blank">Http4sDsl.scala</a></dd></dl><div class="toggleContainer block">
           <span class="toggle">
             Linear Supertypes
           </span>
-          <div class="superTypes hiddenContent"><a href="impl/Auth.html" class="extype" name="org.http4s.dsl.impl.Auth">Auth</a>, <a href="impl/Responses.html" class="extype" name="org.http4s.dsl.impl.Responses">Responses</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.F">F</span>, <span class="extype" name="org.http4s.dsl.Http4sDsl2.G">G</span>], <a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a>, <a href="impl/Methods.html" class="extype" name="org.http4s.dsl.impl.Methods">Methods</a>, <a href="https://www.scala-lang.org/api/2.12.11/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.11/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
+          <div class="superTypes hiddenContent"><a href="impl/Responses.html" class="extype" name="org.http4s.dsl.impl.Responses">Responses</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.F">F</span>, <span class="extype" name="org.http4s.dsl.Http4sDsl2.G">G</span>], <a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a>, <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a>, <a href="impl/Auth.html" class="extype" name="org.http4s.dsl.impl.Auth">Auth</a>, <a href="impl/Methods.html" class="extype" name="org.http4s.dsl.impl.Methods">Methods</a>, <a href="https://www.scala-lang.org/api/2.12.11/scala/AnyRef.html#scala.AnyRef" class="extype" name="scala.AnyRef">AnyRef</a>, <a href="https://www.scala-lang.org/api/2.12.11/scala/Any.html#scala.Any" class="extype" name="scala.Any">Any</a></div>
         </div><div class="toggleContainer block">
             <span class="toggle">
               Known Subclasses
@@ -212,7 +220,7 @@
                   <span class="filtertype">Inherited<br />
                   </span>
                   <ol id="linearization">
-                    <li class="in" name="org.http4s.dsl.Http4sDsl2"><span>Http4sDsl2</span></li><li class="in" name="org.http4s.dsl.impl.Auth"><span>Auth</span></li><li class="in" name="org.http4s.dsl.impl.Responses"><span>Responses</span></li><li class="in" name="org.http4s.dsl.impl.Statuses"><span>Statuses</span></li><li class="in" name="org.http4s.dsl.impl.Methods"><span>Methods</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                    <li class="in" name="org.http4s.dsl.Http4sDsl2"><span>Http4sDsl2</span></li><li class="in" name="org.http4s.dsl.impl.Responses"><span>Responses</span></li><li class="in" name="org.http4s.dsl.impl.Statuses"><span>Statuses</span></li><li class="in" name="org.http4s.dsl.RequestDsl"><span>RequestDsl</span></li><li class="in" name="org.http4s.dsl.impl.Auth"><span>Auth</span></li><li class="in" name="org.http4s.dsl.impl.Methods"><span>Methods</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                   </ol>
                 </div><div class="ancestors">
               <span class="filtertype"></span>
@@ -234,7 +242,7 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="org.http4s.dsl.Http4sDsl2./" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.http4s.dsl.RequestDsl./" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="/=org.http4s.dsl.impl./"></a><a id="/:/"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#/=org.http4s.dsl.impl./" title="Permalink">
@@ -249,8 +257,8 @@
         <span title="gt4s: $div" class="name">/</span><span class="result alias"> = <a href="impl/$div.html" class="extype" name="org.http4s.dsl.impl./">impl./</a></span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.FlagQueryParamMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.FlagQueryParamMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="FlagQueryParamMatcher=org.http4s.dsl.impl.FlagQueryParamMatcher"></a><a id="FlagQueryParamMatcher:FlagQueryParamMatcher"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#FlagQueryParamMatcher=org.http4s.dsl.impl.FlagQueryParamMatcher" title="Permalink">
@@ -265,8 +273,8 @@
         <span class="name">FlagQueryParamMatcher</span><span class="result alias"> = <a href="impl/FlagQueryParamMatcher.html" class="extype" name="org.http4s.dsl.impl.FlagQueryParamMatcher">impl.FlagQueryParamMatcher</a></span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.MethodConcat" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.MethodConcat" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="MethodConcat=org.http4s.dsl.impl.MethodConcat"></a><a id="MethodConcat:MethodConcat"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#MethodConcat=org.http4s.dsl.impl.MethodConcat" title="Permalink">
@@ -281,8 +289,8 @@
         <span class="name">MethodConcat</span><span class="result alias"> = <a href="impl/MethodConcat.html" class="extype" name="org.http4s.dsl.impl.MethodConcat">impl.MethodConcat</a></span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.OptionalMultiQueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.OptionalMultiQueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="OptionalMultiQueryParamDecoderMatcher[T]=org.http4s.dsl.impl.OptionalMultiQueryParamDecoderMatcher[T]"></a><a id="OptionalMultiQueryParamDecoderMatcher[T]:OptionalMultiQueryParamDecoderMatcher[T]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#OptionalMultiQueryParamDecoderMatcher[T]=org.http4s.dsl.impl.OptionalMultiQueryParamDecoderMatcher[T]" title="Permalink">
@@ -294,11 +302,11 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">OptionalMultiQueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/OptionalMultiQueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.OptionalMultiQueryParamDecoderMatcher">impl.OptionalMultiQueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.OptionalMultiQueryParamDecoderMatcher.T">T</span>]</span>
+        <span class="name">OptionalMultiQueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/OptionalMultiQueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.OptionalMultiQueryParamDecoderMatcher">impl.OptionalMultiQueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.RequestDsl.OptionalMultiQueryParamDecoderMatcher.T">T</span>]</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.OptionalQueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.OptionalQueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="OptionalQueryParamDecoderMatcher[T]=org.http4s.dsl.impl.OptionalQueryParamDecoderMatcher[T]"></a><a id="OptionalQueryParamDecoderMatcher[T]:OptionalQueryParamDecoderMatcher[T]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#OptionalQueryParamDecoderMatcher[T]=org.http4s.dsl.impl.OptionalQueryParamDecoderMatcher[T]" title="Permalink">
@@ -310,11 +318,11 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">OptionalQueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/OptionalQueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.OptionalQueryParamDecoderMatcher">impl.OptionalQueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.OptionalQueryParamDecoderMatcher.T">T</span>]</span>
+        <span class="name">OptionalQueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/OptionalQueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.OptionalQueryParamDecoderMatcher">impl.OptionalQueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.RequestDsl.OptionalQueryParamDecoderMatcher.T">T</span>]</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.OptionalQueryParamMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.OptionalQueryParamMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="OptionalQueryParamMatcher[T]=org.http4s.dsl.impl.OptionalQueryParamMatcher[T]"></a><a id="OptionalQueryParamMatcher[T]:OptionalQueryParamMatcher[T]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#OptionalQueryParamMatcher[T]=org.http4s.dsl.impl.OptionalQueryParamMatcher[T]" title="Permalink">
@@ -326,11 +334,11 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">OptionalQueryParamMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/OptionalQueryParamMatcher.html" class="extype" name="org.http4s.dsl.impl.OptionalQueryParamMatcher">impl.OptionalQueryParamMatcher</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.OptionalQueryParamMatcher.T">T</span>]</span>
+        <span class="name">OptionalQueryParamMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/OptionalQueryParamMatcher.html" class="extype" name="org.http4s.dsl.impl.OptionalQueryParamMatcher">impl.OptionalQueryParamMatcher</a>[<span class="extype" name="org.http4s.dsl.RequestDsl.OptionalQueryParamMatcher.T">T</span>]</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.OptionalValidatingQueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.OptionalValidatingQueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="OptionalValidatingQueryParamDecoderMatcher[T]=org.http4s.dsl.impl.OptionalValidatingQueryParamDecoderMatcher[T]"></a><a id="OptionalValidatingQueryParamDecoderMatcher[T]:OptionalValidatingQueryParamDecoderMatcher[T]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#OptionalValidatingQueryParamDecoderMatcher[T]=org.http4s.dsl.impl.OptionalValidatingQueryParamDecoderMatcher[T]" title="Permalink">
@@ -342,11 +350,11 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">OptionalValidatingQueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/OptionalValidatingQueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.OptionalValidatingQueryParamDecoderMatcher">impl.OptionalValidatingQueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.OptionalValidatingQueryParamDecoderMatcher.T">T</span>]</span>
+        <span class="name">OptionalValidatingQueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/OptionalValidatingQueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.OptionalValidatingQueryParamDecoderMatcher">impl.OptionalValidatingQueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.RequestDsl.OptionalValidatingQueryParamDecoderMatcher.T">T</span>]</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.Path" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.Path" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Path=org.http4s.dsl.impl.Path"></a><a id="Path:Path"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#Path=org.http4s.dsl.impl.Path" title="Permalink">
@@ -361,8 +369,8 @@
         <span class="name">Path</span><span class="result alias"> = <a href="impl/Path.html" class="extype" name="org.http4s.dsl.impl.Path">impl.Path</a></span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.QueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.QueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="QueryParamDecoderMatcher[T]=org.http4s.dsl.impl.QueryParamDecoderMatcher[T]"></a><a id="QueryParamDecoderMatcher[T]:QueryParamDecoderMatcher[T]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#QueryParamDecoderMatcher[T]=org.http4s.dsl.impl.QueryParamDecoderMatcher[T]" title="Permalink">
@@ -374,11 +382,11 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">QueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/QueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.QueryParamDecoderMatcher">impl.QueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.QueryParamDecoderMatcher.T">T</span>]</span>
+        <span class="name">QueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/QueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.QueryParamDecoderMatcher">impl.QueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.RequestDsl.QueryParamDecoderMatcher.T">T</span>]</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.QueryParamMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.QueryParamMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="QueryParamMatcher[T]=org.http4s.dsl.impl.QueryParamMatcher[T]"></a><a id="QueryParamMatcher[T]:QueryParamMatcher[T]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#QueryParamMatcher[T]=org.http4s.dsl.impl.QueryParamMatcher[T]" title="Permalink">
@@ -390,11 +398,11 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">QueryParamMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/QueryParamMatcher.html" class="extype" name="org.http4s.dsl.impl.QueryParamMatcher">impl.QueryParamMatcher</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.QueryParamMatcher.T">T</span>]</span>
+        <span class="name">QueryParamMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/QueryParamMatcher.html" class="extype" name="org.http4s.dsl.impl.QueryParamMatcher">impl.QueryParamMatcher</a>[<span class="extype" name="org.http4s.dsl.RequestDsl.QueryParamMatcher.T">T</span>]</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.Root" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.Root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Root=org.http4s.dsl.impl.Root.type"></a><a id="Root:Root"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#Root=org.http4s.dsl.impl.Root.type" title="Permalink">
@@ -409,8 +417,8 @@
         <span class="name">Root</span><span class="result alias"> = <a href="impl/Root$.html" class="extype" name="org.http4s.dsl.impl.Root">impl.Root</a>.type</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2.ValidatingQueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.RequestDsl.ValidatingQueryParamDecoderMatcher" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ValidatingQueryParamDecoderMatcher[T]=org.http4s.dsl.impl.ValidatingQueryParamDecoderMatcher[T]"></a><a id="ValidatingQueryParamDecoderMatcher[T]:ValidatingQueryParamDecoderMatcher[T]"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#ValidatingQueryParamDecoderMatcher[T]=org.http4s.dsl.impl.ValidatingQueryParamDecoderMatcher[T]" title="Permalink">
@@ -422,10 +430,10 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">ValidatingQueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/ValidatingQueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.ValidatingQueryParamDecoderMatcher">impl.ValidatingQueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.ValidatingQueryParamDecoderMatcher.T">T</span>]</span>
+        <span class="name">ValidatingQueryParamDecoderMatcher</span><span class="tparams">[<span name="T">T</span>]</span><span class="result alias"> = <a href="impl/ValidatingQueryParamDecoderMatcher.html" class="extype" name="org.http4s.dsl.impl.ValidatingQueryParamDecoderMatcher">impl.ValidatingQueryParamDecoderMatcher</a>[<span class="extype" name="org.http4s.dsl.RequestDsl.ValidatingQueryParamDecoderMatcher.T">T</span>]</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li></ol>
             </div>
 
@@ -485,7 +493,7 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#+&amp;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.dsl.Http4sDsl2#+&amp;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="+&amp;:org.http4s.dsl.impl.+&amp;.type"></a><a id="+&amp;:impl.+&amp;.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#+&amp;:org.http4s.dsl.impl.+&amp;.type" title="Permalink">
@@ -500,8 +508,8 @@
         <span title="gt4s: $plus$amp" class="name">+&amp;</span><span class="result">: <a href="impl/$plus$amp$.html" class="extype" name="org.http4s.dsl.impl.+&amp;">impl.+&amp;</a>.type</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2#-&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.Http4sDsl2#-&gt;" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="-&gt;:org.http4s.dsl.impl.-&gt;.type"></a><a id="-&gt;:impl.-&gt;.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#-&gt;:org.http4s.dsl.impl.-&gt;.type" title="Permalink">
@@ -516,8 +524,8 @@
         <span title="gt4s: $minus$greater" class="name">-&gt;</span><span class="result">: <a href="impl/$minus$greater$.html" class="extype" name="org.http4s.dsl.impl.-&gt;">impl.-&gt;</a>.type</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2#/" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.Http4sDsl2#/" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="/:org.http4s.dsl.impl./.type"></a><a id="/:impl./.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#/:org.http4s.dsl.impl./.type" title="Permalink">
@@ -532,8 +540,8 @@
         <span title="gt4s: $div" class="name">/</span><span class="result">: <span class="extype" name="org.http4s.dsl.impl./">impl./</span>.type</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2#/:" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.Http4sDsl2#/:" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="/::org.http4s.dsl.impl./:.type"></a><a id="/::impl./:.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#/::org.http4s.dsl.impl./:.type" title="Permalink">
@@ -548,8 +556,8 @@
         <span title="gt4s: $div$colon" class="name">/:</span><span class="result">: <a href="impl/$div$colon$.html" class="extype" name="org.http4s.dsl.impl./:">impl./:</a>.type</span>
       </span>
       
-      
-    </li><li name="org.http4s.dsl.Http4sDsl2#:?" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
+    </li><li name="org.http4s.dsl.Http4sDsl2#:?" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id=":?:org.http4s.dsl.impl.:?.type"></a><a id=":?:impl.:?.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#:?:org.http4s.dsl.impl.:?.type" title="Permalink">
@@ -564,7 +572,7 @@
         <span title="gt4s: $colon$qmark" class="name">:?</span><span class="result">: <a href="impl/$colon$qmark$.html" class="extype" name="org.http4s.dsl.impl.:?">impl.:?</a>.type</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
       <span class="permalink">
@@ -901,7 +909,7 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a></dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#IntVar" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.dsl.Http4sDsl2#IntVar" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="IntVar:org.http4s.dsl.impl.IntVar.type"></a><a id="IntVar:impl.IntVar.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#IntVar:org.http4s.dsl.impl.IntVar.type" title="Permalink">
@@ -916,7 +924,7 @@
         <span class="name">IntVar</span><span class="result">: <a href="impl/IntVar$.html" class="extype" name="org.http4s.dsl.impl.IntVar">impl.IntVar</a>.type</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="org.http4s.dsl.impl.Statuses#InternalServerError" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="InternalServerError:org.http4s.Status.InternalServerError.type"></a><a id="InternalServerError:Status.InternalServerError.type"></a>
       <span class="permalink">
@@ -965,7 +973,7 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a></dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#LongVar" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.dsl.Http4sDsl2#LongVar" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="LongVar:org.http4s.dsl.impl.LongVar.type"></a><a id="LongVar:impl.LongVar.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#LongVar:org.http4s.dsl.impl.LongVar.type" title="Permalink">
@@ -980,7 +988,7 @@
         <span class="name">LongVar</span><span class="result">: <a href="impl/LongVar$.html" class="extype" name="org.http4s.dsl.impl.LongVar">impl.LongVar</a>.type</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="org.http4s.dsl.impl.Statuses#LoopDetected" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="LoopDetected:org.http4s.Status.LoopDetected.type"></a><a id="LoopDetected:Status.LoopDetected.type"></a>
       <span class="permalink">
@@ -1285,7 +1293,7 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a></dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#Path" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.dsl.Http4sDsl2#Path" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Path:org.http4s.dsl.impl.Path.type"></a><a id="Path:impl.Path.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#Path:org.http4s.dsl.impl.Path.type" title="Permalink">
@@ -1300,7 +1308,7 @@
         <span class="name">Path</span><span class="result">: <a href="impl/Path$.html" class="extype" name="org.http4s.dsl.impl.Path">impl.Path</a>.type</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="org.http4s.dsl.impl.Statuses#PayloadTooLarge" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="PayloadTooLarge:org.http4s.Status.PayloadTooLarge.type"></a><a id="PayloadTooLarge:Status.PayloadTooLarge.type"></a>
       <span class="permalink">
@@ -1477,7 +1485,7 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a></dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#Root" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.dsl.Http4sDsl2#Root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Root:org.http4s.dsl.impl.Root.type"></a><a id="Root:impl.Root.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#Root:org.http4s.dsl.impl.Root.type" title="Permalink">
@@ -1492,7 +1500,7 @@
         <span class="name">Root</span><span class="result">: <a href="impl/Root$.html" class="extype" name="org.http4s.dsl.impl.Root">impl.Root</a>.type</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="org.http4s.dsl.impl.Statuses#SeeOther" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="SeeOther:org.http4s.Status.SeeOther.type"></a><a id="SeeOther:Status.SeeOther.type"></a>
       <span class="permalink">
@@ -1589,7 +1597,7 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a></dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#UUIDVar" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.dsl.Http4sDsl2#UUIDVar" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="UUIDVar:org.http4s.dsl.impl.UUIDVar.type"></a><a id="UUIDVar:impl.UUIDVar.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#UUIDVar:org.http4s.dsl.impl.UUIDVar.type" title="Permalink">
@@ -1604,7 +1612,7 @@
         <span class="name">UUIDVar</span><span class="result">: <a href="impl/UUIDVar$.html" class="extype" name="org.http4s.dsl.impl.UUIDVar">impl.UUIDVar</a>.type</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="org.http4s.dsl.impl.Statuses#Unauthorized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="Unauthorized:org.http4s.Status.Unauthorized.type"></a><a id="Unauthorized:Status.Unauthorized.type"></a>
       <span class="permalink">
@@ -2201,10 +2209,10 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="impl/Responses.html" class="extype" name="org.http4s.dsl.impl.Responses">Responses</a></dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#http4sMethodConcatSyntax" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="http4sMethodConcatSyntax(methods:Http4sDsl2.this.MethodConcat):org.http4s.dsl.Http4sDsl.MethodConcatOps"></a><a id="http4sMethodConcatSyntax(MethodConcat):MethodConcatOps"></a>
+    </li><li name="org.http4s.dsl.RequestDsl#http4sMethodConcatSyntax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="http4sMethodConcatSyntax(methods:RequestDsl.this.MethodConcat):org.http4s.dsl.Http4sDsl.MethodConcatOps"></a><a id="http4sMethodConcatSyntax(MethodConcat):MethodConcatOps"></a>
       <span class="permalink">
-      <a href="../../../org/http4s/dsl/Http4sDsl2.html#http4sMethodConcatSyntax(methods:Http4sDsl2.this.MethodConcat):org.http4s.dsl.Http4sDsl.MethodConcatOps" title="Permalink">
+      <a href="../../../org/http4s/dsl/Http4sDsl2.html#http4sMethodConcatSyntax(methods:RequestDsl.this.MethodConcat):org.http4s.dsl.Http4sDsl.MethodConcatOps" title="Permalink">
         <i class="material-icons"></i>
       </a>
     </span>
@@ -2216,7 +2224,7 @@
         <span class="name">http4sMethodConcatSyntax</span><span class="params">(<span name="methods">methods: <a href="#MethodConcat=org.http4s.dsl.impl.MethodConcat" class="extmbr" name="org.http4s.dsl.Http4sDsl2.MethodConcat">MethodConcat</a></span>)</span><span class="result">: <a href="Http4sDsl$$MethodConcatOps.html" class="extype" name="org.http4s.dsl.Http4sDsl.MethodConcatOps">MethodConcatOps</a></span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="org.http4s.dsl.impl.Responses#http4sMethodNotAllowedSyntax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="http4sMethodNotAllowedSyntax(status:org.http4s.Status.MethodNotAllowed.type):org.http4s.dsl.impl.Responses.MethodNotAllowedOps[F,G]"></a><a id="http4sMethodNotAllowedSyntax(Status.MethodNotAllowed.type):MethodNotAllowedOps[F,G]"></a>
       <span class="permalink">
@@ -2233,7 +2241,7 @@
       </span>
       
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="impl/Responses.html" class="extype" name="org.http4s.dsl.impl.Responses">Responses</a></dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#http4sMethodSyntax" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.dsl.RequestDsl#http4sMethodSyntax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="http4sMethodSyntax(method:org.http4s.Method):org.http4s.dsl.Http4sDsl.MethodOps"></a><a id="http4sMethodSyntax(Method):MethodOps"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#http4sMethodSyntax(method:org.http4s.Method):org.http4s.dsl.Http4sDsl.MethodOps" title="Permalink">
@@ -2248,7 +2256,7 @@
         <span class="name">http4sMethodSyntax</span><span class="params">(<span name="method">method: <a href="../Method.html" class="extype" name="org.http4s.Method">Method</a></span>)</span><span class="result">: <a href="Http4sDsl$$MethodOps.html" class="extype" name="org.http4s.dsl.Http4sDsl.MethodOps">MethodOps</a></span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="org.http4s.dsl.impl.Responses#http4sMisdirectedRequestSyntax" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="http4sMisdirectedRequestSyntax(status:org.http4s.Status.MisdirectedRequest.type):org.http4s.dsl.impl.Responses.MisdirectedRequestOps[F,G]"></a><a id="http4sMisdirectedRequestSyntax(MisdirectedRequest.type):MisdirectedRequestOps[F,G]"></a>
       <span class="permalink">
@@ -3011,7 +3019,7 @@
                 <span class="name">@native</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.http4s.dsl.Http4sDsl2#~" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.http4s.dsl.Http4sDsl2#~" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="~:org.http4s.dsl.impl.~.type"></a><a id="~:impl.~.type"></a>
       <span class="permalink">
       <a href="../../../org/http4s/dsl/Http4sDsl2.html#~:org.http4s.dsl.impl.~.type" title="Permalink">
@@ -3026,7 +3034,7 @@
         <span title="gt4s: $tilde" class="name">~</span><span class="result">: <a href="impl/$tilde$.html" class="extype" name="org.http4s.dsl.impl.~">impl.~</a>.type</span>
       </span>
       
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.http4s.dsl.Http4sDsl2">Http4sDsl2</a> → <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></dd></dl></div>
     </li><li name="org.http4s.dsl.Http4sDsl2#→" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="→:org.http4s.dsl.impl.-&gt;.type"></a><a id="→:impl.-&gt;.type"></a>
       <span class="permalink">
@@ -3071,12 +3079,14 @@ pattern matching when using this operator.</p><p>For example:</p><pre>(request.m
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="org.http4s.dsl.impl.Auth">
-              <h3>Inherited from <a href="impl/Auth.html" class="extype" name="org.http4s.dsl.impl.Auth">Auth</a></h3>
-            </div><div class="parent" name="org.http4s.dsl.impl.Responses">
+        <div class="parent" name="org.http4s.dsl.impl.Responses">
               <h3>Inherited from <a href="impl/Responses.html" class="extype" name="org.http4s.dsl.impl.Responses">Responses</a>[<span class="extype" name="org.http4s.dsl.Http4sDsl2.F">F</span>, <span class="extype" name="org.http4s.dsl.Http4sDsl2.G">G</span>]</h3>
             </div><div class="parent" name="org.http4s.dsl.impl.Statuses">
               <h3>Inherited from <a href="impl/Statuses.html" class="extype" name="org.http4s.dsl.impl.Statuses">Statuses</a></h3>
+            </div><div class="parent" name="org.http4s.dsl.RequestDsl">
+              <h3>Inherited from <a href="RequestDsl.html" class="extype" name="org.http4s.dsl.RequestDsl">RequestDsl</a></h3>
+            </div><div class="parent" name="org.http4s.dsl.impl.Auth">
+              <h3>Inherited from <a href="impl/Auth.html" class="extype" name="org.http4s.dsl.impl.Auth">Auth</a></h3>
             </div><div class="parent" name="org.http4s.dsl.impl.Methods">
               <h3>Inherited from <a href="impl/Methods.html" class="extype" name="org.http4s.dsl.impl.Methods">Methods</a></h3>
             </div><div class="parent" name="scala.AnyRef">
