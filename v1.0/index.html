@@ -127,17 +127,19 @@ generated:</p>
 
 <pre><code class="language-sh">$ cd quickstart
 $ find src/main -name '*.scala'
-./src/main/scala/com/example/http4squickstart/HelloWorldServer.scala
-./src/main/scala/com/example/http4squickstart/HelloWorldService.scala
+./src/main/scala/com/example/quickstart/HelloWorld.scala
+./src/main/scala/com/example/quickstart/QuickstartRoutes.scala
+./src/main/scala/com/example/quickstart/Jokes.scala
+./src/main/scala/com/example/quickstart/Main.scala
+./src/main/scala/com/example/quickstart/QuickstartServer.scala
 </code></pre>
 
-<p><code>HelloWorldServer.scala</code> defines a runnable object <code>HelloWorldServer extends StreamApp[IO]</code>
- overriding the <code>stream(args: List[String],
-requestShutdown: IO[Unit])</code> method which acts as the entry point to your application by
- starting blaze, http4s&rsquo; native server backend.</p>
+<p><code>Main.scala</code> defines a runnable object <code>Main extends IOApp</code> with an entry point method <code>run</code>
+which calls the <code>stream</code> method of the object <code>QuickstartServer</code> defined on <code>QuickstartServer.scala</code>.
+Starting blaze, http4s&rsquo; native server backend.</p>
 
-<p><code>HelloWorldService</code> defines a <code>service</code> value containing a simple <code>HttpService</code> that responds to <code>GET
-/hello/$USERNAME</code> with a JSON greeting.  Let&rsquo;s try it:</p>
+<p><code>QuickStartRoutes</code> has two <code>route</code> definitions. The <code>helloWorldRoutes</code> containing a simple <code>HttpRoutes</code>
+that responds to <code>GET/hello/$USERNAME</code> with a JSON greeting.  Let&rsquo;s try it:</p>
 
 <pre><code class="language-sh">$ sbt run
 </code></pre>
@@ -146,16 +148,15 @@ requestShutdown: IO[Unit])</code> method which acts as the entry point to your a
 download.  This is a good time to grab a beverage.  When you come
 back, you should see a line similar to this:</p>
 
-<pre><code>264 [run-main-0] INFO org.http4s.blaze.channel.nio1.NIO1SocketServerGroup - Service bound to address /127.0.0.1:8080
+<pre><code>[ioapp-compute-0] INFO  o.h.b.c.n.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:8080 
 </code></pre>
 
 <p>This indicates that blaze is running our service on port 8080. Let&rsquo;s try out the
 hello world service with curl:</p>
 
-<pre><code class="language-sh">$ curl -i http://localhost:8080/hello/world
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-Date: Thu, 01 Dec 2016 05:05:24 GMT
+<pre><code class="language-sh">HTTP/1.1 200 OK
+Content-Type: application/json
+Date: Sun, 28 Jun 2020 16:23:31 GMT
 Content-Length: 26
 
 {&quot;message&quot;:&quot;Hello, world&quot;}
