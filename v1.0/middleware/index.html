@@ -143,7 +143,7 @@ we need to call <code>unsafeRunSync</code> on the result of the function to extr
     Ok()
 }
 // service: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$11566/437476720@120a3d98
+//   org.http4s.HttpRoutes$$$Lambda$11552/1489766304@4a0017ce
 // )
 
 val goodRequest = Request[IO](Method.GET, uri&quot;/&quot;)
@@ -153,7 +153,7 @@ val goodRequest = Request[IO](Method.GET, uri&quot;/&quot;)
 //   HttpVersion(1, 1),
 //   Headers(),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@36620cf0
+//   io.chrisdavenport.vault.Vault@2e19b28a
 // )
 val badRequest = Request[IO](Method.GET, uri&quot;/bad&quot;)
 // badRequest: Request[IO] = (
@@ -162,7 +162,7 @@ val badRequest = Request[IO](Method.GET, uri&quot;/bad&quot;)
 //   HttpVersion(1, 1),
 //   Headers(),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@4e877e47
+//   io.chrisdavenport.vault.Vault@4fdbd8c6
 // )
 
 service.orNotFound(goodRequest).unsafeRunSync
@@ -171,7 +171,7 @@ service.orNotFound(goodRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@4dc0dd93
+//   io.chrisdavenport.vault.Vault@ed79bda
 // )
 service.orNotFound(badRequest).unsafeRunSync
 // res1: Response[IO] = Response(
@@ -179,7 +179,7 @@ service.orNotFound(badRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@e65df4e
+//   io.chrisdavenport.vault.Vault@442353a9
 // )
 </code></pre>
 
@@ -194,7 +194,7 @@ wrappedService.orNotFound(goodRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0, SomeKey: SomeValue),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@284647fe
+//   io.chrisdavenport.vault.Vault@274d2445
 // )
 wrappedService.orNotFound(badRequest).unsafeRunSync
 // res3: Response[IO] = Response(
@@ -202,7 +202,7 @@ wrappedService.orNotFound(badRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@5dc661f7
+//   io.chrisdavenport.vault.Vault@36c1d582
 // )
 </code></pre>
 
@@ -224,7 +224,7 @@ it as an <code>object</code> and use the <code>apply</code> method.</p>
 
 val newService = MyMiddle(service, Header(&quot;SomeKey&quot;, &quot;SomeValue&quot;))
 // newService: Kleisli[cats.data.OptionT[IO, β$0$], Request[IO], Response[IO]] = Kleisli(
-//   cats.data.Kleisli$$Lambda$12612/1384858906@16210399
+//   cats.data.Kleisli$$Lambda$12510/1204799530@4fa81cb
 // )
 
 newService.orNotFound(goodRequest).unsafeRunSync
@@ -233,7 +233,7 @@ newService.orNotFound(goodRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0, SomeKey: SomeValue),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@361e21bc
+//   io.chrisdavenport.vault.Vault@5a9a34e6
 // )
 newService.orNotFound(badRequest).unsafeRunSync
 // res5: Response[IO] = Response(
@@ -241,7 +241,7 @@ newService.orNotFound(badRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@2cfde936
+//   io.chrisdavenport.vault.Vault@14bb5cfc
 // )
 </code></pre>
 
@@ -267,12 +267,12 @@ You can also wrap a single service in multiple layers of middleware. For example
     Ok()
 }
 // apiService: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$11566/437476720@425aec87
+//   org.http4s.HttpRoutes$$$Lambda$11552/1489766304@2c6ef62c
 // )
 
 val aggregateService = apiService &lt;+&gt; MyMiddle(service, Header(&quot;SomeKey&quot;, &quot;SomeValue&quot;))
 // aggregateService: Kleisli[cats.data.OptionT[IO, β$0$], Request[IO], Response[IO]] = Kleisli(
-//   cats.data.KleisliSemigroupK$$Lambda$11567/2033382726@5cf9029e
+//   cats.data.KleisliSemigroupK$$Lambda$11553/402605209@7ccaceb3
 // )
 
 val apiRequest = Request[IO](Method.GET, uri&quot;/api&quot;)
@@ -282,7 +282,7 @@ val apiRequest = Request[IO](Method.GET, uri&quot;/api&quot;)
 //   HttpVersion(1, 1),
 //   Headers(),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@1b2ddb7c
+//   io.chrisdavenport.vault.Vault@777ce8c8
 // )
 
 aggregateService.orNotFound(goodRequest).unsafeRunSync
@@ -291,7 +291,7 @@ aggregateService.orNotFound(goodRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0, SomeKey: SomeValue),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@58da2576
+//   io.chrisdavenport.vault.Vault@39ee0667
 // )
 aggregateService.orNotFound(apiRequest).unsafeRunSync
 // res7: Response[IO] = Response(
@@ -299,7 +299,7 @@ aggregateService.orNotFound(apiRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Length: 0),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@4df1d43e
+//   io.chrisdavenport.vault.Vault@62ea58e0
 // )
 </code></pre>
 
@@ -349,13 +349,13 @@ import com.codahale.metrics.SharedMetricRegistries
 </code></pre>
 
 <pre><code class="language-scala">implicit val clock = Clock.create[IO]
-// clock: Clock[IO] = cats.effect.Clock$$anon$1@5988d2ec
+// clock: Clock[IO] = cats.effect.Clock$$anon$1@48ffbd58
 val registry = SharedMetricRegistries.getOrCreate(&quot;default&quot;)
-// registry: com.codahale.metrics.MetricRegistry = com.codahale.metrics.MetricRegistry@2560b215
+// registry: com.codahale.metrics.MetricRegistry = com.codahale.metrics.MetricRegistry@1d46a58f
 
 val meteredRoutes = Metrics[IO](Dropwizard(registry, &quot;server&quot;))(apiService)
 // meteredRoutes: HttpRoutes[IO] = Kleisli(
-//   org.http4s.server.middleware.Metrics$$$Lambda$12893/700183298@2c8b149a
+//   org.http4s.server.middleware.Metrics$$$Lambda$12792/251098363@58553627
 // )
 </code></pre>
 
@@ -380,7 +380,7 @@ import org.http4s.server.middleware.Metrics
 </code></pre>
 
 <pre><code class="language-scala">implicit val clock = Clock.create[IO]
-// clock: Clock[IO] = cats.effect.Clock$$anon$1@257365e8
+// clock: Clock[IO] = cats.effect.Clock$$anon$1@1141de74
 
 val meteredRouter: Resource[IO, HttpRoutes[IO]] =
   for {
@@ -396,13 +396,13 @@ val meteredRouter: Resource[IO, HttpRoutes[IO]] =
 //     Allocate(
 //       Map(
 //         Delay(
-//           org.http4s.metrics.prometheus.Prometheus$$$Lambda$12274/1300243331@518460bf
+//           org.http4s.metrics.prometheus.Prometheus$$$Lambda$12165/1256850732@21ebed7d
 //         ),
-//         scala.Function1$$Lambda$11716/501513023@6660055c,
+//         scala.Function1$$Lambda$11704/646178916@215cb9e4,
 //         1
 //       )
 //     ),
-//     org.http4s.metrics.prometheus.PrometheusExportService$$$Lambda$12894/1554048441@7960b4ce
+//     org.http4s.metrics.prometheus.PrometheusExportService$$$Lambda$12793/1990358137@147cc5ea
 //   ),
 //   &lt;function1&gt;
 // )
@@ -434,20 +434,20 @@ extracted from the header, or the generated request id.</p>
 
 <pre><code class="language-scala">// generated request id can be correlated with logs
 val resp = responseIO.unsafeRunSync()
-// request received, cid=2353a3f0-0d53-4bf9-b491-cf5b4426ecdf
+// request received, cid=dd15c8fe-a4d6-432a-80cf-7346a2df695c
 // resp: Response[IO] = Response(
 //   Status(200),
 //   HttpVersion(1, 1),
-//   Headers(Content-Length: 0, X-Request-ID: 2353a3f0-0d53-4bf9-b491-cf5b4426ecdf),
+//   Headers(Content-Length: 0, X-Request-ID: dd15c8fe-a4d6-432a-80cf-7346a2df695c),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@dbb40bc
+//   io.chrisdavenport.vault.Vault@65693d4c
 // )
 // X-Request-ID header added to response
 resp.headers
-// res8: Headers = Headers(Content-Length: 0, X-Request-ID: 2353a3f0-0d53-4bf9-b491-cf5b4426ecdf)
+// res8: Headers = Headers(Content-Length: 0, X-Request-ID: dd15c8fe-a4d6-432a-80cf-7346a2df695c)
 // the request id is also available using attributes
 resp.attributes.lookup(RequestId.requestIdAttrKey)
-// res9: Option[String] = Some(&quot;2353a3f0-0d53-4bf9-b491-cf5b4426ecdf&quot;)
+// res9: Option[String] = Some(&quot;dd15c8fe-a4d6-432a-80cf-7346a2df695c&quot;)
 </code></pre>
 
         </div>

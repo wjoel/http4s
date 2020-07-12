@@ -111,7 +111,7 @@ in its body. We&rsquo;ll use <code>as[String]</code> to examine the body.</p>
     Ok(&quot;I repeat myself when I'm under stress. &quot; * 3)
 }
 // service: HttpRoutes[IO] = Kleisli(
-//   org.http4s.HttpRoutes$$$Lambda$11566/437476720@38496475
+//   org.http4s.HttpRoutes$$$Lambda$11552/1489766304@2dd910b1
 // )
 
 val request = Request[IO](Method.GET, uri&quot;/&quot;)
@@ -121,7 +121,7 @@ val request = Request[IO](Method.GET, uri&quot;/&quot;)
 //   HttpVersion(1, 1),
 //   Headers(),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@2fda28ec
+//   io.chrisdavenport.vault.Vault@22efbc1e
 // )
 
 // Do not call 'unsafeRun' in your code - see note at bottom.
@@ -131,7 +131,7 @@ val response = service.orNotFound(request).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 117),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@1ed1d66d
+//   io.chrisdavenport.vault.Vault@1bd0728b
 // )
 val body = response.as[String].unsafeRunSync
 // body: String = &quot;I repeat myself when I'm under stress. I repeat myself when I'm under stress. I repeat myself when I'm under stress. &quot;
@@ -144,7 +144,7 @@ body.length
 <pre><code class="language-scala">import org.http4s.server.middleware._
 val zipService = GZip(service)
 // zipService: Http[cats.data.OptionT[IO, A], IO] = Kleisli(
-//   org.http4s.server.middleware.GZip$$$Lambda$12550/307664045@36a7e9de
+//   org.http4s.server.middleware.GZip$$$Lambda$12448/758586850@34234b32
 // )
 
 // Do not call 'unsafeRun' in your code - see note at bottom.
@@ -154,7 +154,7 @@ val response = zipService.orNotFound(request).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: text/plain; charset=UTF-8, Content-Length: 117),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@45be49b3
+//   io.chrisdavenport.vault.Vault@511a899f
 // )
 val body = response.as[String].unsafeRunSync
 // body: String = &quot;I repeat myself when I'm under stress. I repeat myself when I'm under stress. I repeat myself when I'm under stress. &quot;
@@ -175,7 +175,7 @@ val zipRequest = request.putHeaders(acceptHeader)
 //   HttpVersion(1, 1),
 //   Headers(Accept-Encoding: gzip),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@2fda28ec
+//   io.chrisdavenport.vault.Vault@22efbc1e
 // )
 
 // Do not call 'unsafeRun' in your code - see note at bottom.
@@ -185,7 +185,7 @@ val response = zipService.orNotFound(zipRequest).unsafeRunSync
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: text/plain; charset=UTF-8, Content-Encoding: gzip),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@3bdd94a0
+//   io.chrisdavenport.vault.Vault@e4ac0ee
 // )
 val body = response.as[String].unsafeRunSync
 // body: String = &quot;\u001f\ufffd\b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\ufffdT(J-HM,Q\u022d,N\ufffdIS(\ufffdH\ufffdS\ufffdT\ufffdU(\ufffdKI-R(.)J-.\ufffdS\ufffd2\u0000UX\ufffd&lt;u\u0000\u0000\u0000&quot;
