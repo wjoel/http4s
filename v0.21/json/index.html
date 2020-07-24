@@ -157,9 +157,9 @@ val greeting = hello(&quot;world&quot;)
 
 <p>We now have a JSON value, but we don&rsquo;t have enough to render it:</p>
 
-<pre><code class="language-scala">Ok(greeting).unsafeRunSync
+<pre><code class="language-scala">Ok(greeting).unsafeRunSync()
 // error: Cannot convert from io.circe.Json to an Entity, because no EntityEncoder[cats.effect.IO, io.circe.Json] instance could be found.
-// Ok(Hello(&quot;Alice&quot;).asJson).unsafeRunSync
+// Ok(Hello(&quot;Alice&quot;).asJson).unsafeRunSync()
 // ^
 </code></pre>
 
@@ -171,13 +171,13 @@ val greeting = hello(&quot;world&quot;)
 <pre><code class="language-scala">import org.http4s.circe._
 </code></pre>
 
-<pre><code class="language-scala">Ok(greeting).unsafeRunSync
+<pre><code class="language-scala">Ok(greeting).unsafeRunSync()
 // res1: Response[IO] = Response(
 //   Status(200),
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: application/json, Content-Length: 17),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@4ce78354
+//   io.chrisdavenport.vault.Vault@5c33b6c0
 // )
 </code></pre>
 
@@ -187,14 +187,14 @@ useful on client requests:</p>
 <pre><code class="language-scala">import org.http4s.client.dsl.io._
 </code></pre>
 
-<pre><code class="language-scala">POST(json&quot;&quot;&quot;{&quot;name&quot;: &quot;Alice&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).unsafeRunSync
+<pre><code class="language-scala">POST(json&quot;&quot;&quot;{&quot;name&quot;: &quot;Alice&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).unsafeRunSync()
 // res2: Request[IO] = (
 //   Method(&quot;POST&quot;),
 //   Uri(None, None, &quot;/hello&quot;, , None),
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: application/json, Content-Length: 16),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@7bb3bb0e
+//   io.chrisdavenport.vault.Vault@791d4e1c
 // )
 </code></pre>
 
@@ -230,7 +230,7 @@ Let&rsquo;s provide an encoder:</p>
   Encoder.instance { (hello: Hello) =&gt;
     json&quot;&quot;&quot;{&quot;hello&quot;: ${hello.name}}&quot;&quot;&quot;
   }
-// HelloEncoder: Encoder[Hello] = io.circe.Encoder$$anon$3@3c86739e
+// HelloEncoder: Encoder[Hello] = io.circe.Encoder$$anon$3@39332fe6
 
 Hello(&quot;Alice&quot;).asJson
 // res4: Json = JObject(object[hello -&gt; &quot;Alice&quot;])
@@ -250,22 +250,22 @@ using the field names of the case class as key names in a JSON object:</p>
 <p>Equipped with an <code>Encoder</code> and <code>.asJson</code>, we can send JSON in requests
 and responses for our case classes:</p>
 
-<pre><code class="language-scala">Ok(Hello(&quot;Alice&quot;).asJson).unsafeRunSync
+<pre><code class="language-scala">Ok(Hello(&quot;Alice&quot;).asJson).unsafeRunSync()
 // res6: Response[IO] = Response(
 //   Status(200),
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: application/json, Content-Length: 17),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@623d607f
+//   io.chrisdavenport.vault.Vault@3b527ea1
 // )
-POST(User(&quot;Bob&quot;).asJson, uri&quot;/hello&quot;).unsafeRunSync
+POST(User(&quot;Bob&quot;).asJson, uri&quot;/hello&quot;).unsafeRunSync()
 // res7: Request[IO] = (
 //   Method(&quot;POST&quot;),
 //   Uri(None, None, &quot;/hello&quot;, , None),
 //   HttpVersion(1, 1),
 //   Headers(Content-Type: application/json, Content-Length: 14),
 //   Stream(..),
-//   io.chrisdavenport.vault.Vault@3609fecf
+//   io.chrisdavenport.vault.Vault@30657a37
 // )
 </code></pre>
 
@@ -289,9 +289,9 @@ or client, we need an <code>EntityDecoder[JSON]</code> to receive it.</p>
 <code>EntityDecoder[Json]</code>.  This makes it very easy to decode a request or
 response body to JSON using the <a href="../api/org/http4s/MessageOps.html#as[T](implicitF:cats.FlatMap[F],implicitdecoder:org.http4s.EntityDecoder[F,T]):F[T]"><code>as</code> syntax</a>:</p>
 
-<pre><code class="language-scala">Ok(&quot;&quot;&quot;{&quot;name&quot;:&quot;Alice&quot;}&quot;&quot;&quot;).flatMap(_.as[Json]).unsafeRunSync
+<pre><code class="language-scala">Ok(&quot;&quot;&quot;{&quot;name&quot;:&quot;Alice&quot;}&quot;&quot;&quot;).flatMap(_.as[Json]).unsafeRunSync()
 // res9: Json = JObject(object[name -&gt; &quot;Alice&quot;])
-POST(&quot;&quot;&quot;{&quot;name&quot;:&quot;Bob&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).flatMap(_.as[Json]).unsafeRunSync
+POST(&quot;&quot;&quot;{&quot;name&quot;:&quot;Bob&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).flatMap(_.as[Json]).unsafeRunSync()
 // res10: Json = JObject(object[name -&gt; &quot;Bob&quot;])
 </code></pre>
 
@@ -307,11 +307,11 @@ the way from HTTP to your type <code>A</code>.  Specifically, <code>jsonOf[A]</c
 an implicit <code>Decoder[A]</code> and makes a <code>EntityDecoder[A]</code>:</p>
 
 <pre><code class="language-scala">implicit val userDecoder = jsonOf[IO, User]
-// userDecoder: EntityDecoder[IO, User] = org.http4s.EntityDecoder$$anon$2@37fba774
-Ok(&quot;&quot;&quot;{&quot;name&quot;:&quot;Alice&quot;}&quot;&quot;&quot;).flatMap(_.as[User]).unsafeRunSync
+// userDecoder: EntityDecoder[IO, User] = org.http4s.EntityDecoder$$anon$2@61f9d830
+Ok(&quot;&quot;&quot;{&quot;name&quot;:&quot;Alice&quot;}&quot;&quot;&quot;).flatMap(_.as[User]).unsafeRunSync()
 // res11: User = User(&quot;Alice&quot;)
 
-POST(&quot;&quot;&quot;{&quot;name&quot;:&quot;Bob&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).flatMap(_.as[User]).unsafeRunSync
+POST(&quot;&quot;&quot;{&quot;name&quot;:&quot;Bob&quot;}&quot;&quot;&quot;, uri&quot;/hello&quot;).flatMap(_.as[User]).unsafeRunSync()
 // res12: User = User(&quot;Bob&quot;)
 </code></pre>
 
@@ -403,7 +403,7 @@ def helloClient(name: String): Stream[IO, Hello] = {
 
 <pre><code class="language-scala">val helloAlice = helloClient(&quot;Alice&quot;)
 // helloAlice: Stream[IO, Hello] = Stream(..)
-helloAlice.compile.last.unsafeRunSync
+helloAlice.compile.last.unsafeRunSync()
 // res14: Option[Hello] = Some(Hello(&quot;Alice&quot;))
 </code></pre>
 
