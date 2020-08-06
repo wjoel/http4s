@@ -108,7 +108,7 @@ import org.http4s.implicits._
 
 <pre><code class="language-scala">case class User(name: String, age: Int)  
 implicit val UserEncoder: Encoder[User] = deriveEncoder[User]
-// UserEncoder: Encoder[User] = io.circe.generic.encoding.DerivedAsObjectEncoder$$anon$1@31203d58
+// UserEncoder: Encoder[User] = io.circe.generic.encoding.DerivedAsObjectEncoder$$anon$1@63dd0af3
 
 trait UserRepo[F[_]] {
   def find(userId: String): F[Option[User]]
@@ -133,11 +133,11 @@ def check[A](actual:        IO[Response[IO]],
             expectedBody:   Option[A])(
     implicit ev: EntityDecoder[IO, A]
 ): Boolean =  {
-   val actualResp         = actual.unsafeRunSync
+   val actualResp         = actual.unsafeRunSync()
    val statusCheck        = actualResp.status == expectedStatus 
    val bodyCheck          = expectedBody.fold[Boolean](
-       actualResp.body.compile.toVector.unsafeRunSync.isEmpty)( // Verify Response's body is empty.
-       expected =&gt; actualResp.as[A].unsafeRunSync == expected
+       actualResp.body.compile.toVector.unsafeRunSync().isEmpty)( // Verify Response's body is empty.
+       expected =&gt; actualResp.as[A].unsafeRunSync() == expected
    )
    statusCheck &amp;&amp; bodyCheck   
 }
@@ -148,14 +148,14 @@ def check[A](actual:        IO[Response[IO]],
 <pre><code class="language-scala">val success: UserRepo[IO] = new UserRepo[IO] {
   def find(id: String): IO[Option[User]] = IO.pure(Some(User(&quot;johndoe&quot;, 42)))
 }
-// success: UserRepo[IO] = repl.MdocSession$App$$anon$3@75503788
+// success: UserRepo[IO] = repl.MdocSession$App$$anon$3@60c5d6d1
 
 val response: IO[Response[IO]] = service[IO](success).orNotFound.run(
   Request(method = Method.GET, uri = uri&quot;/user/not-used&quot; )
 )
 // response: IO[Response[IO]] = Map(
-//   Suspend(org.http4s.HttpRoutes$$$Lambda$11862/2026283720@6fa53d84),
-//   cats.data.OptionT$$Lambda$11864/536463825@5733c90c,
+//   Suspend(org.http4s.HttpRoutes$$$Lambda$11867/579130883@b5396a6),
+//   cats.data.OptionT$$Lambda$11869/1125096337@301dbc38,
 //   0
 // )
 
@@ -174,14 +174,14 @@ check[Json](response, Status.Ok, Some(expectedJson))
 <pre><code class="language-scala">val foundNone: UserRepo[IO] = new UserRepo[IO] {
   def find(id: String): IO[Option[User]] = IO.pure(None)
 } 
-// foundNone: UserRepo[IO] = repl.MdocSession$App$$anon$4@6749e44f 
+// foundNone: UserRepo[IO] = repl.MdocSession$App$$anon$4@3b1ca25a 
 
 val response: IO[Response[IO]] = service[IO](foundNone).orNotFound.run(
   Request(method = Method.GET, uri = uri&quot;/user/not-used&quot; )
 )
 // response: IO[Response[IO]] = Map(
-//   Suspend(org.http4s.HttpRoutes$$$Lambda$11862/2026283720@13d17359),
-//   cats.data.OptionT$$Lambda$11864/536463825@55de25ba,
+//   Suspend(org.http4s.HttpRoutes$$$Lambda$11867/579130883@752198b6),
+//   cats.data.OptionT$$Lambda$11869/1125096337@6250c612,
 //   0
 // )
 
@@ -194,14 +194,14 @@ check[Json](response, Status.NotFound, None)
 <pre><code class="language-scala">val doesNotMatter: UserRepo[IO] = new UserRepo[IO] {
   def find(id: String): IO[Option[User]] = IO.raiseError(new RuntimeException(&quot;Should not get called!&quot;))
 } 
-// doesNotMatter: UserRepo[IO] = repl.MdocSession$App$$anon$5@1cecfda4 
+// doesNotMatter: UserRepo[IO] = repl.MdocSession$App$$anon$5@3f714a1c 
 
 val response: IO[Response[IO]] = service[IO](doesNotMatter).orNotFound.run(
   Request(method = Method.GET, uri = uri&quot;/not-a-matching-path&quot; )
 )
 // response: IO[Response[IO]] = Map(
-//   Suspend(org.http4s.HttpRoutes$$$Lambda$11862/2026283720@34af09ea),
-//   cats.data.OptionT$$Lambda$11864/536463825@2c7cff9d,
+//   Suspend(org.http4s.HttpRoutes$$$Lambda$11867/579130883@612121da),
+//   cats.data.OptionT$$Lambda$11869/1125096337@183cf160,
 //   0
 // )
 
