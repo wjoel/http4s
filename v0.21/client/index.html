@@ -133,19 +133,19 @@ val app = HttpRoutes.of[IO] {
     Ok(s&quot;Hello, $name.&quot;)
 }.orNotFound
 // app: cats.data.Kleisli[IO, Request[IO], Response[IO]] = Kleisli(
-//   org.http4s.syntax.KleisliResponseOps$$Lambda$12336/945777127@1ae12ed0
+//   org.http4s.syntax.KleisliResponseOps$$Lambda$12346/1836890453@2de801dd
 // )
 
 val server = BlazeServerBuilder[IO](global).bindHttp(8080, &quot;localhost&quot;).withHttpApp(app).resource
 // server: Resource[IO, org.http4s.server.Server[IO]] = Bind(
 //   Allocate(
 //     Map(
-//       Delay(org.http4s.blazecore.package$$$Lambda$12340/905527012@62c29232),
-//       cats.effect.Resource$$$Lambda$12341/346919634@686a2734,
+//       Delay(org.http4s.blazecore.package$$$Lambda$12350/2025952577@44c79d1f),
+//       cats.effect.Resource$$$Lambda$12351/1935844232@206a337e,
 //       0
 //     )
 //   ),
-//   org.http4s.server.blaze.BlazeServerBuilder$$Lambda$12342/1614616121@b06a758
+//   org.http4s.server.blaze.BlazeServerBuilder$$Lambda$12352/1636612700@71ea97e6
 // )
 </code></pre>
 
@@ -155,11 +155,11 @@ running until we cancel the fiber.</p>
 <pre><code class="language-scala">val fiber = server.use(_ =&gt; IO.never).start.unsafeRunSync()
 // fiber: Fiber[IO, Nothing] = Tuple(
 //   Bind(
-//     Async(cats.effect.IO$$$Lambda$12230/9605640@1261e28f, false),
-//     cats.syntax.MonadErrorRethrowOps$$$Lambda$12360/1058375806@c0359b4
+//     Async(cats.effect.IO$$$Lambda$12240/88331262@3aec3113, false),
+//     cats.syntax.MonadErrorRethrowOps$$$Lambda$12370/985385937@458d650a
 //   ),
 //   Suspend(
-//     cats.effect.internals.IOConnection$Impl$$Lambda$12356/1180373839@7ba21588
+//     cats.effect.internals.IOConnection$Impl$$Lambda$12366/885599606@3f1905bb
 //   )
 // )
 </code></pre>
@@ -208,12 +208,12 @@ and the URI we want:</p>
 // helloJames: IO[String] = Bind(
 //   Map(
 //     Delay(
-//       org.http4s.client.JavaNetClientBuilder$$Lambda$12428/562309358@452051c3
+//       org.http4s.client.JavaNetClientBuilder$$Lambda$12438/509468524@1a69f019
 //     ),
-//     cats.effect.Resource$$$Lambda$12380/99057398@5848b672,
+//     cats.effect.Resource$$$Lambda$12390/1717597174@41d63eee,
 //     0
 //   ),
-//   cats.effect.Resource$$Lambda$12383/255348551@4e908a36
+//   cats.effect.Resource$$Lambda$12393/790330168@6fddb6eb
 // )
 </code></pre>
 
@@ -404,14 +404,14 @@ import com.codahale.metrics.SharedMetricRegistries
 </code></pre>
 
 <pre><code class="language-scala">implicit val clock = Clock.create[IO]
-// clock: Clock[IO] = cats.effect.Clock$$anon$1@28b07966
+// clock: Clock[IO] = cats.effect.Clock$$anon$1@4ab63dfb
 val registry = SharedMetricRegistries.getOrCreate(&quot;default&quot;)
-// registry: com.codahale.metrics.MetricRegistry = com.codahale.metrics.MetricRegistry@63569d52
+// registry: com.codahale.metrics.MetricRegistry = com.codahale.metrics.MetricRegistry@7f13595c
 val requestMethodClassifier = (r: Request[IO]) =&gt; Some(r.method.toString.toLowerCase)
 // requestMethodClassifier: Request[IO] =&gt; Some[String] = &lt;function1&gt;
 
 val meteredClient = Metrics[IO](Dropwizard(registry, &quot;prefix&quot;), requestMethodClassifier)(httpClient)
-// meteredClient: Client[IO] = org.http4s.client.Client$$anon$1@134c8f25
+// meteredClient: Client[IO] = org.http4s.client.Client$$anon$1@5b88c656
 </code></pre>
 
 <p>A <code>classifier</code> is just a function Request[F] =&gt; Option[String] that allows
@@ -436,7 +436,7 @@ import org.http4s.metrics.prometheus.Prometheus
 </code></pre>
 
 <pre><code class="language-scala">implicit val clock = Clock.create[IO]
-// clock: Clock[IO] = cats.effect.Clock$$anon$1@5bd032cf
+// clock: Clock[IO] = cats.effect.Clock$$anon$1@447a19ef
 val requestMethodClassifier = (r: Request[IO]) =&gt; Some(r.method.toString.toLowerCase)
 // requestMethodClassifier: Request[IO] =&gt; Some[String] = &lt;function1&gt;
 
@@ -449,9 +449,9 @@ val meteredClient: Resource[IO, Client[IO]] =
 //   Allocate(
 //     Map(
 //       Delay(
-//         org.http4s.metrics.prometheus.Prometheus$$$Lambda$12823/1466782708@70801b9a
+//         org.http4s.metrics.prometheus.Prometheus$$$Lambda$12855/767865719@3fd8bd7e
 //       ),
-//       scala.Function1$$Lambda$12378/124088886@276bb4d5,
+//       scala.Function1$$Lambda$12388/1264405551@5a64da60,
 //       1
 //     )
 //   ),
@@ -472,12 +472,12 @@ to add a label to every metric based on the <code>Request</code></p>
 // res3: IO[String] = Bind(
 //   Map(
 //     Delay(
-//       org.http4s.client.JavaNetClientBuilder$$Lambda$12428/562309358@50a932ba
+//       org.http4s.client.JavaNetClientBuilder$$Lambda$12438/509468524@47c31d0c
 //     ),
-//     cats.effect.Resource$$$Lambda$12380/99057398@ab5342a,
+//     cats.effect.Resource$$$Lambda$12390/1717597174@5362c17a,
 //     0
 //   ),
-//   cats.effect.Resource$$Lambda$12383/255348551@7a19a22d
+//   cats.effect.Resource$$Lambda$12393/790330168@29abb525
 // )
 </code></pre>
 
@@ -508,7 +508,7 @@ import org.http4s.Method._
 //     HttpVersion(1, 1),
 //     Headers(Authorization: Bearer open sesame, Accept: application/json),
 //     Stream(..),
-//     io.chrisdavenport.vault.Vault@73383751
+//     io.chrisdavenport.vault.Vault@6a5792c
 //   )
 // )
 
@@ -527,10 +527,10 @@ httpClient.expect[String](request)
 //       HttpVersion(1, 1),
 //       Headers(Authorization: Bearer open sesame, Accept: application/json),
 //       Stream(..),
-//       io.chrisdavenport.vault.Vault@73383751
+//       io.chrisdavenport.vault.Vault@6a5792c
 //     )
 //   ),
-//   org.http4s.client.DefaultClient$$Lambda$12826/1548867942@55767b7a
+//   org.http4s.client.DefaultClient$$Lambda$12858/1335103829@69103236
 // )
 </code></pre>
 
@@ -563,7 +563,7 @@ val postRequest = POST(
 //     HttpVersion(1, 1),
 //     Headers(Content-Type: application/x-www-form-urlencoded; charset=UTF-8, Content-Length: 78),
 //     Stream(..),
-//     io.chrisdavenport.vault.Vault@7069784e
+//     io.chrisdavenport.vault.Vault@21e9c4cd
 //   )
 // )
 
@@ -582,10 +582,10 @@ httpClient.expect[AuthResponse](postRequest)
 //       HttpVersion(1, 1),
 //       Headers(Content-Type: application/x-www-form-urlencoded; charset=UTF-8, Content-Length: 78),
 //       Stream(..),
-//       io.chrisdavenport.vault.Vault@7069784e
+//       io.chrisdavenport.vault.Vault@21e9c4cd
 //     )
 //   ),
-//   org.http4s.client.DefaultClient$$Lambda$12826/1548867942@6fd5b827
+//   org.http4s.client.DefaultClient$$Lambda$12858/1335103829@722de7c1
 // )
 </code></pre>
 
